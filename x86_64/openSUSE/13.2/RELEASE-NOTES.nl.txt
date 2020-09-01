@@ -1,0 +1,371 @@
+Release Notes
+
+13.2.20170117
+
+Copyright © 2006 Ruurd Pels (ruurdpels@kde.nl)
+
+Copyright © 2006, 2007 Rinse de Vries (rinsedevries@kde.nl)
+
+Copyright © 2008, 2009, 2010, 2011, 2012 Freek de Kruijf (freek@opensuse.org)
+
+Samenvatting
+
+openSUSE is a free and Linux-based operating system for your PC, Laptop or
+Server. You can surf the web, manage your e-mails and photos, do office work,
+play videos or music and have a lot of fun!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Inhoudsopgave
+
+Installatie
+
+    Installeren met Live CD en toetsenbordinstellingen
+    Network na opwaarderen met YaST
+    Waarschuwing: geen locatie voor Bootloader Stage1 geselecteerd
+    BtrFS and Windows XP
+    Niet aangebrachte Grub2 bij nieuwe installaties vanuit Live
+    Installeren met NET met gebruik van Wi-Fi
+
+Algemeen
+
+    UEFI—Unified Extensible Firmware Interface
+    UEFI, GPT en MS-DOS partities
+    Booten in Secure Boot Mode
+
+Systeemopwaardering
+Technisch
+
+    Rommel op het scherm bij een installatie met het apparaatstuurprogramma
+        Nouveau
+    Informatie over het FGLRX-apparaatstuurprogramma
+    Tweede statische muisaanwijzer
+    Ontbrekende afhankelijkheden voor virt-manager
+    Modem-autorisatie na slaapstand
+    Zoeken naar pakketen ontbreekt in GTK UI van YaST
+    Migratie van openSUSE vóór-13.2 cifstab
+    Verwijderen van openSUSE 13.1 KDE achtergrondafbeelding na opwaarderen
+    MATE-bureaublad officiële integratie
+    Langzaam opstarten in GNOME
+    AppArmor en instellingen voor toegang
+
+Diversen
+
+    YaST (Qt GUI): Pictogram "Servicebeheerder" verschijnt dubbel
+
+Meer informatie en terugkoppeling
+
+The end of the maintenance period for openSUSE 13.2 is now reached. To keep
+your systems up to date and secure, migrate to a current openSUSE version.
+
+For more information about upgrading to a current openSUSE version, see http://
+en.opensuse.org/SDB:Distribution-Upgrade. Make sure that all maintenance
+updates for openSUSE 13.2 are applied before starting the update.
+
+Als u opwaardeert van een oudere versie naar deze uitgave van openSUSE, kijk
+dan naar de vorige uitgavenotities hier: http://nl.opensuse.org/
+openSUSE:Release_Notes
+
+Installatie
+
+Installeren met Live CD en toetsenbordinstellingen
+
+Installeren met de Live CD levert een probleem gerelateerd aan de
+toetsenbordinstellingen. Als de gebruiker verandert vanuit de QWERTY indeling
+van het toetsenbord (de standaard en-US variant), dan wordt deze instelling
+niet goed toegepast en het nieuw systeem blijft in een QWERTY voorinstelling.
+
+Als workaround gebruikt u de het hulpmiddel voor de opdrachtregel localectl na
+de installatie. bijvoorbeeld (om een Duitse toetsenbordindeling te
+installeren):
+
+localectl set-x11-keymap de pc105 nodeadkeys
+
+Dit probleem is niet aanwezig bij het installeren met de DVD.
+
+Network na opwaarderen met YaST
+
+Na opwaarderen van 13.1 naar 13.2 met YaST, is er een goede kans dat, als u een
+laptop met een wifi-verbinding gebruikt, de nieuwe Wicked netwerkmethode draait
+samen met de oude NetworkManager.
+
+Om dit op te lossen, schakel eerst Wicked uit en schakel opnieuw NetworkManager
+in:
+
+systemctl is-active network.service && systemctl stop network.service
+systemctl is-active wickedd.service && systemctl stop wickedd.service
+systemctl disable wicked.service
+systemctl --force enable NetworkManager.service
+systemctl start network.service
+
+Controleer dan of de nu geselecteerde service ook echt NetworkManager is:
+
+systemctl -p Id show network.service
+
+En werk /etc/resolv.conf bij:
+
+netconfig update
+
+Of start opnieuw op na het commando systemctl om ook wpa_suplicant opnieuw op
+te starten.
+
+Waarschuwing: geen locatie voor Bootloader Stage1 geselecteerd
+
+Bij de initiële installatie, in de samenvatting van YaST, kan er een volgende
+waarschuwing verschijnen onder de sectie van de bootloader: “Waarschuwing: geen
+locatie voor bootloader stage1 geselecteerd. Tenzij u weet wat u doet,
+selecteer de bovenstaande locatie.”
+
+Deze waarschuwing is een bug in YaST (nu in Factory gerepareerd) en u kunt deze
+veilig negeren.
+
+BtrFS and Windows XP
+
+If you have Windows XP and want to install openSUSE 13.2 with BtrFS, an error
+message in YaST will inform you about problems during the bootloader
+installation.
+
+De veiligste optie is om te installeren in een partitie met Ext4 in plaats van
+BtrFS. Er is een reparatie die Factory spoedig zal bereiken, maar niet aanwezig
+is voor 13.2.
+
+Niet aangebrachte Grub2 bij nieuwe installaties vanuit Live
+
+Een bug in YaST voorkomt het aanbrengen in de GRUB2 bootloader bij installatie
+vanuit het medium LiveCD. Merk op, de manier van voorkeur om openSUSE 13.2 te
+installeren is met de DVD of de installatie met NET. Beide media genereren een
+juist aangebrachte bootloader bij de installatie.
+
+Installeren met NET met gebruik van Wi-Fi
+
+Uitvoeren van een installatie met NET met aanwezigheid van Wifi levert
+problemen in YaST. Repareren hiervan is gaande en zal spoedig beschikbaar zijn.
+Intussen is de enige optie om een draadverbinding te gebruiken om de
+installatie met NET te volbrengen.
+
+Algemeen
+
+UEFI—Unified Extensible Firmware Interface
+
+Alvorens openSUSE te installeren op een systeem dat boot met UEFI (Unified
+Extensible Firmware Interface), wordt u dringend aangeraden om te controleren
+op firmware updates, die de maker van de hardware aanbeveelt en, indien
+beschikbaar, zo'n update te installeren. Een vooraf geïnstalleerde Windows 8 is
+een sterke aanwijzing dat uw systeem boot met UEFI.
+
+Achtergrond: Sommige UEFI firmware bevat bugs die er de oorzaak van is dat het
+niet werkt als er te veel gegevens naar het UEFI-opslaggebied weggeschreven
+zijn. Niemand weet echter echt hoeveel "te veel" is. openSUSE minimaliseert het
+risico door niet meer weg te schrijven dan het noodzakelijke minimum nodig om
+het OS op te starten. Het minimum betekent het aan de UEFI firmware vertellen
+van de locatie van de openSUSE bootloader. Bovenstroomse functies van de
+Linux-kernel die het UEFI-opslaggebied gebruikt voor opslag van opstart- and
+crashinformatie (pstore) zijn standaard uitgeschakeld. Niettemin is het
+aanbevolen, om elke update van firmware, die de maker van de hardware
+aanbeveelt, uit te voeren.
+
+UEFI, GPT en MS-DOS partities
+
+Samen met de EFI/UEFI specificaties is er een nieuwe stijl van partities maken
+gekomen: GPT (GUID Partition Table). Dit nieuwe schema gebruikt globaal unieke
+identifiers (128-bit waarden getoond in 32 hexadecimale tekens) om apparaten en
+typen partities te identificeren.
+
+Bovendien staat de UEFI specificatie ook MBR (MS-DOS) partities toe. De Linux
+bootloaders (ELILO of GRUB2) proberen automatisch een GUID voor deze ouderwetse
+partities te genereren en schrijven ze naar de firmware. Zo'n GUID kan frequent
+wijzigen, wat opnieuw schrijven in de firmware veroorzaakt. Herschrijven
+bestaat uit twee verschillende bewerkingen: verwijderen van het oude item en
+maken van een nieuw item dat de eerste vervangt.
+
+Moderne firmware heeft een garbage-collector die verwijderde items verzameld en
+het voor oude items gereserveerde geheugen vrijmaakt. Er ontstaat een probleem
+wanneer foute firmware dit niet verzameld en deze items niet vrij maakt; dit
+kan eindigen met een niet te booten systeem.
+
+Er omheen werken is eenvoudig: converteer de ouderwetse MBR-partitie naar het
+nieuwe GPT om dit probleem volledig te vermijden.
+
+Booten in Secure Boot Mode
+
+Dit is alleen van belang bij machines in UEFI-modus met veilig opstarten
+ingeschakeld.
+
+De nieuwe versie van de shim-loader staat toe meer typen machines te booten met
+ingeschakeld Secure Boot dan met openSUSE 13.1. Niettemin is de aanbeveling, in
+geval van problemen, eerst de BIOS van uw machine tot de laatste versie bij te
+werken. Als het bijwerken van de BIOS niet helpt, rapporteer dan het model van
+uw machine in de wiki (http://en.opensuse.org/openSUSE:UEFI). We kunnen het dan
+volgen voor de volgende uitgave.
+
+Systeemopwaardering
+
+Technisch
+
+Rommel op het scherm bij een installatie met het apparaatstuurprogramma Nouveau
+
+Op sommige systemen met een NVIDIA kaart kan het installatieprogramma rommel
+bovenaan het scherm tonen vanwege problemen met het standaard
+apparaatstuurprogramma nouveau. Als u door dit probleem bent getroffen kunt u
+de nouveau kernel-module uitschakelen om het installatieprogramma uit te voeren
+en het daarna opnieuw in te schakelen als het systeem is geïnstalleerd op
+opgewaardeerd.
+
+Om de kernel-module uit te schakelen, wanneer u boot vanaf het
+installatiemedium, selecteer het item 'Installatie' in grub en druk op 'e' om
+de parameters te bewerken. Ga daarna naar de regel beginnend met 'linux' (of
+'linuxefi') en voeg aan het eind brokenmodules=nouveau toe. Druk dan op F10 om
+door te gaan met booten met de nieuwe parameter. Nadat het systeem is
+geïnstalleerd kunt u de module nouveau weer inschakelen door het bewerken van /
+etc/modprobe.d/50-blacklist.conf en het item dat nouveau op de zwarte lijst zet
+te verwijderen.
+
+Informatie over het FGLRX-apparaatstuurprogramma
+
+Voor meer informatie over de AMD FGLRX apparaatstuurprogramma's in openSUSE
+13.2 en hun status, zie https://lizards.opensuse.org/2014/11/01/
+fglrx-warning-opensuse-13-2-tumbleweed/.
+
+Tweede statische muisaanwijzer
+
+Als u twee muisaanwijzers ziet en u hebt twee grafische kaarten, waarvan een
+een Intel kaart is, probeer dan het pakket xf86-video-intel te verwijderen en
+dus alleen de andere te gebruiken. Dit zal de statische muisaanwijzer laten
+verdwijnen.
+
+Aan dit en andere problemen met het Intel-apparaatstuurprogramma zoals (zie
+http://bugzilla.opensuse.org/show_bug.cgi?id=901506) zal gewerkt worden en,
+indien mogelijk, opgelost worden met het online bijwerken.
+
+Ontbrekende afhankelijkheden voor virt-manager
+
+If you find a problem executing virt-manager, try installing
+typelib-1_0-Gtk-3_0, typelib-1_0-SpiceClientGtk-3_0 and typelib-1_0-GtkVnc-2_0.
+
+Bij het online bijwerken zal er een nieuwe versie komen met deze
+afhankelijkheden expliciet gemaakt.
+
+Modem-autorisatie na slaapstand
+
+openSUSE 13.2 is veel strikter met beveiliging dan 13.1. Als u verbonden bent
+via een UMTS- of 3G-modem en u brengt de machine in slaapstand, dan zal het
+systeem u vragen om het wachtwoord van root alvorens opnieuw te verbinden.
+
+U kunt dit gedrag wijzigen in een regel in /etc/polkit-default-privs.standard:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin:auth_admin:yes
+
+
+door:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin_keep
+
+
+Zoeken naar pakketen ontbreekt in GTK UI van YaST
+
+Het GTK-interface van YaST bevat niet de mogelijkheid van een zoekvak naar een
+pakket. Dus als u in GNOME of XFCE zit en u hebt deze mogelijkheid nodig,
+gebruik dan in plaats daarvan het QT-interface:
+
+sudo /sbin/yast2 --qt
+
+Migratie van openSUSE vóór-13.2 cifstab
+
+Aankoppelen van cifs-shares bij opstarten van het systeem via /etc/samba/
+cifstab is niet doorgegaan en verouderd. Nu wordt dat gedaan door het algemene
+/etc/fstab bestand.
+
+Het migratieproces vereist twee stappen:
+
+ 1. Voeg al uw aankoppelpunten uit /etc/samba/cifstab.rpmsave achteraan in /etc
+    /fstab.
+
+ 2. Voeg 0 0 toe aan het eind van elke nieuwe aankoppelregel voor cifs in /etc/
+    fstab.
+
+Voor meer informatie en voorbeelden, zie /usr/share/doc/packages/cifs-utils/
+README.cifstab.migration in het geïnstalleerde systeem.
+
+Verwijderen van openSUSE 13.1 KDE achtergrondafbeelding na opwaarderen
+
+Als de openSUSE 13.1 KDE achtergrondafbeelding nog steeds verschijnt na
+opwaarderen van het systeem, verwijder het dan handmatig uit de cache van de
+gebruiker:
+
+rm ~/.kde4/cache-*/plasma-wallpapers/usr/share/wallpapers/openSUSEdefault/contents/images/*
+
+MATE-bureaublad officiële integratie
+
+Het MATE-bureaublad is nu officieel beschikbaar onder openSUSE 13.2 met MATE
+versie 1.8.1, de nieuwste stabiele uitgave. Het levert een intuïtieve en
+attractieve bureaubladomgeving met traditionele metaforen voor Linux en andere
+Unix-achtige besturingssystemen.
+
+Het doel, voor openSUSE, is om dezelfde ervaring te leveren die gebruikers
+hadden toen ze GNOME onder openSUSE 11.4 gebruikten, met het hoofdmenu en het
+thema Sonar.
+
+Langzaam opstarten in GNOME
+
+GNOME automatisch aanmelden kan een langzaam opstartproces veroorzaken.
+Waarschijnlijk is er een gevecht tussen services die niet juist zijn gemarkeerd
+als afhankelijk van elkaar. Totdat de reparatie beschikbaar is als met online
+bijwerken, is een workaround om tijdelijk de functie automatisch aanmelden uit
+te schakelen.
+
+AppArmor en instellingen voor toegang
+
+AppArmor is standaard ingeschakeld. Dit betekent meer veiligheid, maar kan het
+werken van services in de weg zitten, als u ze op minder verwachte wijze
+uitvoert. Als u vreemde problemen met toegang tegenkomt, probeer dan het
+AppArmor profiel van de betrokken service om te schakelen naar de modus klagen
+met:
+
+aa-complain /usr/bin/$uw_service
+
+Modus klagen betekent: sta alles toe en log zaken die het profiel niet zou
+toestaan.
+
+Zelfs als het helpt rapporteer het als een bug! We willen AppArmor-profielen
+repareren om ook alle randgevallen te dekken.
+
+Diversen
+
+YaST (Qt GUI): Pictogram "Servicebeheerder" verschijnt dubbel
+
+In de sectie Systeem van YaST (Qt GUI) verschijnt het pictogram 
+Servicebeheerder dubbel. Er is een bug in de Qt-versie van het YaST
+besturingscentrum die de vlag “hidden” in de desktop-bestanden niet
+gehoorzaamd.
+
+Dit zal gerepareerd worden in het volgende YaST online bijwerken.
+
+Meer informatie en terugkoppeling
+
+  • Lees de README's op de cd's.
+
+  • Gedetailleerde log met informatie over wijzigingen over een specifiek
+    pakket uit de RPM:
+
+    rpm --changelog -qp <BESTANDSNAAM>.rpm
+
+    <BESTANDSNAAM>. is de naam van de RPM.
+
+  • Controleer het bestand ChangeLog op het topniveau van de dvd voor een
+    chronologische log van alle wijzigingen gemaakt aan de bijgewerkte
+    pakketten.
+
+  • Meer informatie in de map docu op de dvd.
+
+  • https://activedoc.opensuse.org/ bevat extra of bijgewerkte documentatie.
+
+  • Visit http://www.opensuse.org for the latest product news from openSUSE.
+
+Copyright © 2014 SUSE LLC
+
+Thanks for using openSUSE.
+
+The openSUSE Team.
+

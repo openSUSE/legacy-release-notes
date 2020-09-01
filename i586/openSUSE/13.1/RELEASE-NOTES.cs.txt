@@ -1,0 +1,395 @@
+Poznámky k vydání openSUSE 13.1
+
+Version: 13.1.10 (2014-01-08)
+
+Copyright © 2011, 2012, 2013 Jan Papež (honyczek@centrum.cz)
+
+Copyright © 2013 SUSE LLC
+
+Tento text můžete kopírovat, distribuovat a/nebo měnit podle GNU Free
+Documentation License, verze 1.2 nebo novější, vydané Free Software
+Foundation. Není povoleno měnit sekce a přidávat text. Kopii licence
+najdete v souboru fdl.txt.
+
+---------------------------------------------------------------------------
+
+1. Různé
+2. Instalace
+
+    2.1. Pro detailní informace k instalaci
+
+3. Obecné
+
+    3.1. Dokumentace openSUSE
+    3.2. Opuštěné moduly YaSTU
+    3.3. UEFI—Unified Extensible Firmware Interface
+    3.4. UEFI, GPT a oddíly MS-DOSu
+    3.5. Zavádění systému v režimu Secure Boot
+    3.6. Adobe Reader (acroread) a další čtečky PDF
+
+4. Aktualizace systému
+
+    4.1. Povýšení systému pomocí Zypperu (dup) vyžaduje vyčištění /etc/
+        fstab
+    4.2. Odstraněna proměnná SYSLOG_DAEMON
+    4.3. Duplikovaná síťová rozhraní
+
+5. Technické
+
+    5.1. Inicializace grafiky s KMS (Kernel Mode Setting)
+    5.2. Nesmysly na obrazovce během instalace s ovladačem Nouveau
+    5.3. Samba verze 4.1
+    5.4. Konfigurace Postfixu
+    5.5. xinetd: Protokolování do systémového protokolu
+    5.6. Apache verze 2.4
+    5.7. tomcat: Protokolování do systémového protokolu
+    5.8. Darktable: Vyžadována obnova souborů vyrovnávací paměti
+    5.9. Locate: Náhrada findutils-locate za mlocate
+    5.10. KDE a Bluetooth
+    5.11. AppArmor a nastavení oprávnění
+    5.12. Skype
+    5.13. AutoYaST
+
+Pokud aktualizujete openSUSE ze starší verze vydání, můžete si poznámky k
+vydání zobrazit zde: http://en.opensuse.org/openSUSE:Release_Notes
+
+Tyto poznámky jsou děleny do následujících okruhů:
+
+  o 1 – „Různé": Tyto záznamy jsou automaticky vkládány z openFATE, systému
+    správy požadavků a funkcí (http://features.opensuse.org).
+
+    není k dispozici
+
+  o 2 – „Instalace": Toto si přečtěte, pokud chcete systém nainstalovat "na
+    čisto".
+
+  o 3 – „Obecné": Informace určené pro všechny uživatele.
+
+  o 4 – „Aktualizace systému": Problémy spojené s procesem aktualizace
+    pokud přecházíte z dřívějších verzí na tuto verzi openSUSE.
+
+  o 5 – „Technické": Sekce pro pokročilejší uživatele věnovaná technickým
+    změnám a rozšířením.
+
+1. Různé
+
+není k dispozici
+
+2. Instalace
+
+2.1. Pro detailní informace k instalaci
+
+Pro detailní informace k instalaci vizte 3.1 – „Dokumentace openSUSE".
+
+3. Obecné
+
+3.1. Dokumentace openSUSE
+
+V Po spuštění (Start-Up) naleznete instalační instrukce krok za krokem a
+úvod do pracovního prostředí KDE či Gnome. Taktéž se zde nachází úvod k
+balíku LibreOffice a základní administrační témata jako například nasazení
+a správa softwaru. Nechybí ani úvod do shellu Bash.
+
+Dokumentaci naleznete v /usr/share/doc/manual/opensuse-manuals_$LANG a to
+po nainstalování balíčku opensuse-startup_$LANG, nebo ještě online na
+adrese http://doc.opensuse.org.
+
+3.2. Opuštěné moduly YaSTU
+
+Následující moduly YaSTu jsou zastaralé a v těchto dnech zřídka využívané:
+
+  o yast2-autofs
+
+  o yast2-dbus-client
+
+  o yast2-dirinstall
+
+  o yast2-fingerprint-reader
+
+  o yast2-irda
+
+  o yast2-mouse
+
+  o yast2-phone-services
+
+  o yast2-power-management
+
+  o yast2-profile-manager
+
+  o yast2-sshd
+
+  o yast2-tv
+
+Hlavním důvodem jejich opuštění bylo zvýšení úsilí věnovanému údržbě a
+zaměření na jiné mnohem více užívané moduly.
+
+3.3. UEFI—Unified Extensible Firmware Interface
+
+Dříve než nainstalujete openSUSE na váš systém, který je zaváděn pomocí
+UEFI, důrazně doporučujeme zkontrolovat, zda nejsou u výrobce hardwaru k
+dispozici doporučené aktualizace firmwaru. Pokud jsou k dispozici,
+nainstalujte je. Předinstalovaný systém Windows 8 je značnou známkou toho,
+že váš systém UEFI používá.
+
+Pozadí: Některý firmware UEFI obsahuje chyby, které způsobují znefunkčnění,
+pokud je zapsáno do uložného prostoru UEFI příliš mnoho dat. Nikdo ve
+skutečnosti neví, kolik je to "příliš mnoho". openSUSE snižuje riziko tím,
+že nezapisuje více než pouhé minimum potřebné pro zavedení OS. To minimum
+znamená sdělení firmwaru UEFI, kde se nachází zavaděč openSUSE. Upstreamové
+funkce jádra Linuxu, které používají úložný prostor UEFI pro ukládání
+informací o zavádění systému a jeho pádu (pstore) jsou ve výchozím stavu
+zakázané. Přesto však je doporučeno nainstalovat veškeré aktualizace
+firmwaru, které výrobce doporučuje.
+
+3.4. UEFI, GPT a oddíly MS-DOSu
+
+Společně se specifikací EFI/UEFI se objevil nový styl dělení disků: GPT
+(GUID Partition Table). Je to nové schéma, které k identifikaci zařízení a
+typů diskových oddílů používá globálně unikátní identifikátory (128bitové
+hodnoty zobrazené jako 32 šestnáctkových číslic).
+
+Navíc pak specifikace UEFI umožňuje užívání starších oddílů MBR (MS-DOS).
+Zavaděče Linuxu (ELILO nebo GRUB2) zkoušejí automaticky vygenerovat GUID
+těchto starších oddílů a zapsat je do firmwaru. Takový GUID se může často
+měnit, což způsobuje přepis firmwaru. Přepis se skládá ze dvou různých
+operací: odstranění starého záznamu a vytvoření nového, který nahradí ten
+původní.
+
+Moderní firmware má garbage collector, který sbírá smazané položky a
+uvolňuje paměť, která byla pro ně rezervována. Může se objevit problém,
+když chybný firmware tyto položky nesbírá a neuvolňuje; to může skončit
+nezaveditelným systémem.
+
+Je jednoduché to obejít: abyste se tomuto problému úplně vyhli,
+zkonvertujte starší oddíly MBR na nové GPT.
+
+3.5. Zavádění systému v režimu Secure Boot
+
+Toto ovlivňuje pouze stroje, které mají UEFI s povolenou volbou Secure
+Boot.
+
+Tato nová verze vloženého načítání umožňuje ještě více strojům zavádět
+systém v povoleném režimu Secure Boot, než tomu bylo u verze openSUSE 12.3.
+Nicméně v případě potíží nejdříve aktualizujte na nejnovější verzi BIOSu
+vašeho stroje. Pokud vám aktualizace BIOSu nepomůže, nahlašte model vašeho
+stroje na wiki (http://en.opensuse.org/openSUSE:UEFI). Tak jej budeme moci
+sledovat v příštím vydání.
+
+3.6. Adobe Reader (acroread) a další čtečky PDF
+
+Adobe již nadále neposkytuje (bezpečnostní) aktualizace pro Adobe Reader
+(acroread). Proto, abychom chránili uživatele openSUSE, byl balíček
+acroread z této distribuce vypuštěn.
+
+openSUSE obsahuje různé nástroje pro zobrazování PDF jako je Okular, Evince
+nebo poppler-tools. Tyto nástroje jsou pod aktivní správou a získávají
+bezpečnostní záplaty od openSUSE a jejich autorů z upstreamu.
+
+Více informací naleznete na http://en.opensuse.org/Adobe_Reader.
+
+4. Aktualizace systému
+
+4.1. Povýšení systému pomocí Zypperu (dup) vyžaduje vyčištění /etc/fstab
+
+Pokud je povyšován systém pomocí zypper dup (YaST upgrade to provádí
+automaticky), měli by uživatelé ze souboru /etc/fstab odstranit následující
+položky (pokud tam jsou):
+
+tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc
+
+To je zvláště důležité pro uživatele Gnomu, jinak Terminál Gnome bude
+selhávat s chybou "grantpt selhalo: Operace není povolena". Tyto přípojné
+body jsou spravovány pomocí systemd a již by se nadále neměly objevovat v
+souboru /etc/fstab.
+
+4.2. Odstraněna proměnná SYSLOG_DAEMON
+
+Byla odstraněna proměnná SYSLOG_DAEMON. Dříve byla používána k výběru
+démona syslogu. Počínaje openSUSE 12.3 může být v systému nainstalována
+pouze jedna implementace syslogu a její použití bude vybráno automaticky.
+
+Pro více podrobností navštivte manuálovou stránku syslog(8).
+
+4.3. Duplikovaná síťová rozhraní
+
+Současná verze systemd používá novou konvenci pro přiřazování
+předvídatelných jmen síťových rozhraní. YaST se podle toho změnil.
+
+Některá hlášení označují chybu v YaSTU, která se objevuje při převodu z
+jednoho pojmenovávacího schématu na jiný. Pokud to samé rozhraní má dvě
+různá jména, narazili jste na tuto chybu. V tomto případě odstraňte odlišná
+síťová rozhraní v souboru /etc/sysconfig/network a znovu použijte YaST pro
+vytvoření konfigurace.
+
+Více informací o předvídatelných jménech síťových rozhraní si můžete
+přečíst na http://www.freedesktop.org/wiki/Software/systemd/
+PredictableNetworkInterfaceNames/.
+
+5. Technické
+
+5.1. Inicializace grafiky s KMS (Kernel Mode Setting)
+
+V openSUSE 11.3 jsme přešli na KMS (Kernel Mode Setting) u grafických karet
+Intel, ATI a NVIDIA, což je nyní výchozí. Pokud narazíte na problémy s
+podporou ovladače KMS (intel, radeon, nouveau), vypněte KMS přidáním
+nomodeset do příkazové řádky pro startování jádra. Abyste to v Grubu 2
+(výchozí zavaděč) nastavili natrvalo, přidejte tuto volbu jako root v
+textovém souboru /etc/default/grub na řádek GRUB_CMDLINE_LINUX_DEFAULT, což
+jsou výchozí volby jádra, a poté spusťte terminálový příkaz
+
+sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+aby byly tyto změny uplatněny. Pro zastaralý Grub přidejte jako root tuto
+volbu do příkazové řádky jádra v souboru /boot/grub/menu.lst. Tato volba
+zajišťuje, že odpovídající jaderný modul (intel, radeon, nouveau) je v
+initrd načten s volbou modeset=0, tzn. KMS je vypnuto.
+
+Ve vzácných případech je načítání modulu DRM z initrd obecným problémem
+nesouvisející s KMS, je dokonce možné v initrd úplně vypnout podporu modulu
+DRM. Abyste tak učinili, nastavte pomocí YaSTu proměnnou sysconfig
+NO_KMS_IN_INITRD na hodnotu yes, což poté způsobí znovuvytvoření initrd.
+Pak restartujte počítač.
+
+Na grafikách Intel bez KMS se Xserver vrací zpět k ovladači fbdev (ovladač
+intel podporuje pouze KMS). Alternativně pro starší Intelovské GPU je k
+dispozici ovladač "intellegacy" (balíček
+xorg-x11-driver-video-intel-legacy), který stále podporuje UMS (User Mode
+Setting = uživatelský mód nastavení). K jeho použití upravte /etc/X11/
+xorg.conf.d/50-device.conf a změňte záznam "driver" na intellegacy.
+
+Na grafikách ATI se současnými GPU se vrací k radeonhd. U grafických karet
+NVIDIA bez KMS je použit ovladač nv (ovladač nouveau podporuje pouze KMS).
+Nutno poznamenat, že novější grafické karty ATI a NVIDIA se vrací k fbdev,
+pokud uvedete jako spouštěcí parametr jádra nomodeset.
+
+5.2. Nesmysly na obrazovce během instalace s ovladačem Nouveau
+
+Na některých systémech s kartami NVIDIA se v instalátoru mohou zobrazovat
+nesmysly v horní části obrazovky kvůli problémům s výchozím ovladačem
+nouveau. Pokud se vás tento problém týká, můžete jaderný modul nouveau před
+instalací zakázat a po dokončení instalace nebo povýšení systému jej opět
+povolit.
+
+K tomu, abyste zakázali modul jádra při zavádění z instačního média,
+vyberte v grubu položku 'Instalace' a stiskněte 'e', abyste mohli upravit
+parametry. Pak se přesuňte na řádek začínající slovem 'linux' (respektive
+'linuxefi') a přidejte na konec řádku řetězec brokenmodules=nouveau. Poté
+pro pokračování zavádění s novým parametrem stiskněte F10. Po instalaci
+systému můžete modul nouveau znovu povolit tak, že upravíte soubor /etc/
+modprobe.d/50-blacklist.conf a odstraníte z něj položku, která vede k
+zákazu nouveau.
+
+5.3. Samba verze 4.1
+
+Samba ve verzi 4.1, která je obsažena v openSUSE 13.1 neobsahuje podporu
+práce ve stylu řadiče domény Active Directory. Tato funkčnost je v
+současnosti zakázána, protože vyžaduje integraci s celosystémovým MIT
+Kerberos.
+
+5.4. Konfigurace Postfixu
+
+V openSUSE 12.3 byl SuSEconfig.postfix přejmenován na /usr/sbin/
+config.postfix. Pokud nastavíte volby sysconfigu v souboru /etc/sysconfig/
+postfix nebo /etc/sysconfig/mail, musíte ručně jako root spustit /usr/sbin/
+config.postfix.
+
+5.5. xinetd: Protokolování do systémového protokolu
+
+Nové výchozí nastavení pro xinetd mění výchozí cíl protokolu z /var/log/
+xinetd.log na systémový protokol. To znamená, že všechny zprávy z démona 
+xinetd se zobrazí v systémovém protokolu jako démon vybavení a s úrovní
+protokolování info.
+
+Pokud chcete přepnout na starý způsob, najděte patřičný útržek v souboru /
+etc/xinetd.conf. Šablonu skriptu pro rotování protokolu xinetd.log
+naleznete v /usr/share/doc/packages/xinetd/logrotate.
+
+5.6. Apache verze 2.4
+
+Apache 2.4 provádí různé změny v souborech konfigurace. Více informací o
+povyšování z předchozích verzí naleznete na http://httpd.apache.org/docs/
+2.4/upgrading.html.
+
+5.7. tomcat: Protokolování do systémového protokolu
+
+Startovací skripty tomcatu již nadále nezapisují výstup do /var/log/tomcat/
+catalina.out. Všechny zprávy jsou nyní přesměrovány do systémového
+protokolu přes tomcat.service (tomcat-jsvc.service) a s úrovní
+protokolování info.
+
+5.8. Darktable: Vyžadována obnova souborů vyrovnávací paměti
+
+Pokud povyšujete systém z předchozího vydání na openSUSE 13.1, nebudou již
+dále fungovat původní soubory vyrovnávací paměti. V takovém případě je
+nutné odstranit ~/.cache/darktable/mipmaps.
+
+5.9. Locate: Náhrada findutils-locate za mlocate
+
+Nástroj mlocate je náhradou findutils-locate. Ve výchozím konfiguraci se 
+mlocate chová stejně jako findutils-locate. Kvůli vylepšené práci s
+oprávněními však může trvat až 24 hodin než je databázový soubor k
+dispozici pro běžné uživatele.
+
+V případě, že zaznamenáte hlášení "Přístup odepřen" krátce po instalaci 
+mlocate, spusťte jednou jako root příkaz
+
+/etc/cron.daily/mlocate.cron
+
+abyste se tohoto zbavili.
+
+5.10. KDE a Bluetooth
+
+Vrstvy Bluetooth jsou poskytovány skrze Bluez 5 (větší zpětně
+nekompatibilní verzi), nezbytně povýšený kvůli pracovní ploše GNOME a
+dalším součástem základního systému. Naneštěstí pracovní prostředí KDE v
+současnosti podporuje pouze Bluez verze 4.
+
+Takže komunitní tým openSUSE KDE nabízí neoficiální balíček Bluedevil,
+který poskytuje alespoň základní funkčnost, jako je párování zařízení nebo
+podpora myší na bluetooth; o některých dalších funkcích, jako je přenos
+souborů, není známo, zda jsou funkční.
+
+V současnosti by neměla být zapisována žádná hlášení chyb podpory Bluetooth
+v KDE kvůli probíhajícímu portování Bluedevilu na Bluez 5.
+
+5.11. AppArmor a nastavení oprávnění
+
+Jako výchozí je AppArmor povolen. To sice znamená více bezpečnosti, ale
+také to může bránit službám v práci, pokud je spouštíte neočekávanými
+způsoby. Pokud se setkáte s podivnými problémy, zkuste pro danou službu
+přepnout v profilu AppArmoru dané služby přepnout na režim stěžování si
+pomocí:
+
+aa-complain /usr/bin/$vase_sluzba
+
+Režim stěžování si znamená: povolit vše a zapsat do protokolu věci, které
+by profil neměl povolovat.
+
+I v případě, že to pomůže, nahlašte to jako chybu! Chceme opravit profily
+AppArmoru tak, aby pokryly i krajní případy.
+
+5.12. Skype
+
+PulseAudio 4.0 odhaluje chybu v současné verzi Skype pro Linux (v4.2).
+Dokud Skype nebude opraven a zaktualizován, spouštějte skype z příkazové
+řádky následovně:
+
+PULSE_LATENCY_MSEC=60 skype
+
+Více informací o této chybě naleznete na adrese http://arunraghavan.net/
+2013/08/pulseaudio-4-0-and-skype/.
+
+5.13. AutoYaST
+
+Pokud profil autoyast obsahuje volby v části <add-on> (doplněk), dojde k
+chybě, která brání přenosu informací v profilu z prvního stupně do druhého
+stupně. Proto jsou v takovém případě přeskočeny všechny konfigurační kroky
+druhého stupně, které za běžných okolností vedou k víceméně naprosto
+nepoužitelné instalaci.
+
+Jako dočasné obejití chyby se v profilech AutoYaSTu openSUSE 13.1 vyhněte
+používání části <add-on>.
+

@@ -1,0 +1,361 @@
+Release Notes
+
+13.2.20170117
+
+概要
+
+openSUSE is a free and Linux-based operating system for your PC, Laptop or
+Server. You can surf the web, manage your e-mails and photos, do office work,
+play videos or music and have a lot of fun!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+目次
+
+インストール
+
+    ライブ CD のインストーラとキーボードの設定について
+    YaST で更新を行なった後のネットワークについて
+    "警告: ブートローダのステージ 1 の場所を選択していません" について
+    BtrFS と Windows XP
+    ライブメディアからの新規インストールで Grub2 のブランディングがインストール
+        されない
+    無線 LAN 環境での NET インストール
+
+全般
+
+    UEFI—Unified Extensible Firmware Interface
+    UEFI, GPT, MS-DOS の各パーティションについて
+    Secure Boot モードでの起動について
+
+システムアップグレード
+テクニカル
+
+    Nouveau ドライバを利用してインストールした場合の画面の乱れについて
+    FGLRX ドライバに関する情報
+    動作しない 2 つめのマウスポインタが表示されてしまう問題について
+    virt-manager の依存性欠如について
+    サスペンド後のモデム利用時の認証について
+    YaST の GTK UI にパッケージ検索機能が存在しない問題について
+    openSUSE 13.2 以前からの cifstab の移行
+    アップグレード後も openSUSE 13.1 KDE の壁紙が削除されない問題について
+    MATE デスクトップとの公式統合について
+    GNOME の起動が遅い問題について
+    AppArmor とパーミッション (アクセス権) 設定について
+
+その他
+
+    YaST (Qt GUI): "サービスマネージャ" のアイコンが 2 つ表示されてしまう問題に
+        ついて
+
+さらに詳しい情報とフィードバック
+
+The end of the maintenance period for openSUSE 13.2 is now reached. To keep
+your systems up to date and secure, migrate to a current openSUSE version.
+
+For more information about upgrading to a current openSUSE version, see http://
+en.opensuse.org/SDB:Distribution-Upgrade. Make sure that all maintenance
+updates for openSUSE 13.2 are applied before starting the update.
+
+openSUSE の旧バージョンからアップグレードした場合は、下記に示す旧バージョンのリ
+リースノートもお読みください: http://ja.opensuse.org/openSUSE:Release_Notes
+
+インストール
+
+ライブ CD のインストーラとキーボードの設定について
+
+ライブ CD のインストーラにはキーボードの設定まわりに不具合があり、 QWERTY 形式
+のキーボードレイアウト (既定の en-US 系のレイアウト) から変更を行なっても設定が
+適用されず、インストール後の新しいシステムで QWERTY 設定のままになってしまいま
+す。
+
+この問題への回避策としては、インストール後に localectl コマンドラインツールを使
+用する方法があります。たとえばドイツ語のキーボードレイアウトの場合は、下記のよ
+うにします:
+
+localectl set-x11-keymap de pc105 nodeadkeys
+
+この問題は、 DVD からのインストールでは発生しません。
+
+YaST で更新を行なった後のネットワークについて
+
+無線 LAN デバイスを持つラップトップで、 YaST を利用して 13.1 から 13.2 にアップ
+グレードすると、従来の NetworkManager とともに Wicked ネットワークメソッドが動
+作してしまいます。
+
+この問題を解決するには、先に Wicked を無効化してから NetworkManager を有効化し
+ます:
+
+systemctl is-active network.service && systemctl stop network.service
+systemctl is-active wickedd.service && systemctl stop wickedd.service
+systemctl disable wicked.service
+systemctl --force enable NetworkManager.service
+systemctl start network.service
+
+あとは正しく NetworkManager が選択されていることを確認します:
+
+systemctl -p Id show network.service
+
+最後に /etc/resolv.conf を更新します:
+
+netconfig update
+
+なお、一連の systemctl コマンドの後に再起動を行ない、 wpa_suplicant を再起動し
+てもかまいません。
+
+"警告: ブートローダのステージ 1 の場所を選択していません" について
+
+インストールの初期段階で YaST が概要を表示する際、ブートローダの箇所に「警告:
+ブートローダのステージ 1 の場所を選択していません。特別な知識がある場合を除き、
+上記の場所を選択してください。」というメッセージが表示される場合があります。
+
+この警告は YaST のバグ (Factory では既に修正済み) ですので、無視してかまいませ
+ん。
+
+BtrFS と Windows XP
+
+Windows XP をお使いの環境に Btrfs を利用して openSUSE 13.2 をインストールする場
+合、ブートローダのインストール時に YaST がエラーメッセージを通知します。
+
+この問題に対する最も安全な解決方法は、 BtrFS ではなく Ext4 を利用することです。
+この問題は Factory でまもなく修正されますが、現時点の 13.2 では用意されていませ
+ん。
+
+ライブメディアからの新規インストールで Grub2 のブランディングがインストールされ
+ない
+
+ライブメディアからのインストールの際、 YaST 内のバグにより GRUB2 ブートローダに
+ブランディングがインストールされません。openSUSE 13.2 をインストールするにあた
+って、最も適切な方法は DVD または NET メディアのインストールを使用する方法で、
+これらのメディアであれば正しくブートローダのブランディングがインストールされま
+す。
+
+無線 LAN 環境での NET インストール
+
+無線 LAN 環境で NET メディアを利用してインストールしようとすると、 YaST 内でい
+くつかの問題が発生します。これらの問題への対応は現在進行中で、まもなく提供され
+る予定です。 NET メディアでのインストールの場合は、有線 LAN をお使いください。
+
+全般
+
+UEFI—Unified Extensible Firmware Interface
+
+UEFI (Unified Extensible Firmware Interface) を利用して起動するシステムに
+openSUSE をインストールする場合、事前に製造元が推奨するファームウエア更新を必ず
+チェックし、可能であればインストールしておくことを強くお勧めします。 Windows 8
+がプレインストールされているマシンの場合、お使いのシステムが UEFI である可能性
+が高いものと思われます。
+
+背景: UEFI のファームウエアによっては、 UEFI のストレージ領域に多くのデータが書
+き込まれることで、起動に失敗してしまうバグを抱えています。もちろんこれはバグで
+あるため、どれだけ "多くの"データを書き込むことで問題を発生させるのかは、誰にも
+わかりません。 openSUSE では、 OS を起動するのに最低限必要となるデータ (UEFI に
+対して、 openSUSE のブートローダの場所を示すための情報) しか書き込まないように
+することで、このバグの発生を最小化しています。 Linux カーネルのオリジナル版では
+、 UEFI のストレージ領域に起動やクラッシュに関する情報を書き込む機能 (pstore)
+がありますが、openSUSE の既定では無効化しています。ただし、バグである都合上、ハ
+ードウエアの製造元が推奨するファームウエア更新については、必ずインストールして
+おくことをお勧めします。
+
+UEFI, GPT, MS-DOS の各パーティションについて
+
+EFI/UEFI の仕様には、新しい形式のパーティションテーブル GPT (GUID パーティショ
+ンテーブル) が定義されています。この新しい方式では、ユニークな GUID (識別子; 32
+桁の 16 進数で表わされる 128 ビットの値) を利用してデバイスとパーティション種別
+を識別します。
+
+これに加えて、 UEFI の仕様では古い MBR (MS-DOS) 形式のパーティションテーブルに
+も対応しています。 Linux のブートローダ (ELILO, GRUB2) では、これらの古い形式の
+パーティションに対して、自動的に GUID を割り当ててファームウエア内に書き込もう
+とします。この場合、 GUID は頻繁に変更されるものであるため、ファームウエアへの
+再書き込みも頻繁に発生することになります。この再書き込みには 2 つの操作、具体的
+には古い項目の削除と、それを置き換える新しい項目の作成を行ないます。
+
+新しいファームウエアでは、削除された項目を収集して古い項目用に確保したメモリを
+解放する、ガーベージコレクタ機能が用意されています。ファームウエアに不具合があ
+ると、これらの古い項目を収集できなかったり、メモリを解放しなかったりする場合が
+あり、これにより起動が不可能になる場合があります。
+
+このような場合は、古い MBR 形式のパーティションを新しい GPT 形式のパーティショ
+ンに更新して、問題を回避してください。
+
+Secure Boot モードでの起動について
+
+この問題は、 Secure Boot が有効化された UEFI モードのマシンにのみ影響があります
+。
+
+shim ローダの新しいバージョンでは、 openSUSE 13.1 で提供されていたものより多く
+のマシンで、 Secure Boot を利用できるようになっています。今回のバージョンでも起
+動に問題がある場合は、まずお使いのマシンの BIOS を、最新バージョンに更新してみ
+てください。 BIOS の更新でもうまく動作しない場合は、お使いのマシンの型式を wiki
+(http://ja.opensuse.org/openSUSE:UEFI) にご報告ください。これにより、対応可否が
+わかるようになります。
+
+システムアップグレード
+
+テクニカル
+
+Nouveau ドライバを利用してインストールした場合の画面の乱れについて
+
+NVIDIA カードを搭載したシステムでは、既定の nouveau ドライバの問題により、画面
+の上部に乱れが発生する場合があります。この問題に直面した場合は、インストーラの
+実行時に nouveau ドライバを無効化し、インストールまたは更新の作業が終わった後に
+有効化し直してください。
+
+カーネルモジュールを無効化するには、インストールメディアから起動する際に grub
+のメニューで 'インストール' の項目を選び、'e' を押してパラメータを編集してくだ
+さい。あとは 'linux' (または 'linuxefi') で始まる行に移動して、行末に
+brokenmodules=nouveau を追加してください。追加後は F10 を押すと、新しいパラメー
+タで起動することができます。システムのインストール後は /etc/modprobe.d/
+50-blacklist.conf ファイルを編集し、nouveau と書かれた行を削除することで、再度
+有効化することができます。
+
+FGLRX ドライバに関する情報
+
+openSUSE 13.2 での AMD FGLRX ドライバに関する情報とその状況について、詳しくは
+https://lizards.opensuse.org/2014/11/01/fglrx-warning-opensuse-13-2-tumbleweed/
+をお読みください。
+
+動作しない 2 つめのマウスポインタが表示されてしまう問題について
+
+一方のグラフィックカードが Intel チップである 2 枚のグラフィックカードをお使い
+の場合で、マウスポインタが 2 つ表示されてしまう問題に直面している場合は、
+xf86-video-intel をアンインストールし、もう一方のカードのみをお使いください。こ
+れにより、動作しないマウスポインタが表示されないようになります。
+
+この問題を含む複数の問題が Intel ドライバに対して報告されています (詳しくは
+http://bugzilla.opensuse.org/show_bug.cgi?id=901506 をお読みください) 。現在解
+決に向けた作業を実施中で、解決が可能であればオンライン更新にて提供する予定です
+。
+
+virt-manager の依存性欠如について
+
+virt-manager の実行時に何らかの問題が発生した場合は、 typelib-1_0-Gtk-3_0,
+typelib-1_0-SpiceClientGtk-3_0, typelib-1_0-GtkVnc-2_0 の各パッケージをインスト
+ールしてみてください。
+
+これらの依存関係を正しく設定した新しいバージョンが、オンライン更新で提供される
+予定です。
+
+サスペンド後のモデム利用時の認証について
+
+openSUSE 13.2 は 13.1 よりもより厳しいセキュリティ設定を行なっています。 UMTS
+や 3G のモデムをお使いの場合、マシンをサスペンドしてしまうと、システムは再接続
+の際に再度 root のパスワードを尋ねるようになっています。
+
+このような動作を変更したい場合は、 /etc/polkit-default-privs.standard 内の下記
+の行を修正します:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin:auth_admin:yes
+
+
+上記の行を下記のように変更します:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin_keep
+
+
+YaST の GTK UI にパッケージ検索機能が存在しない問題について
+
+YaST の GTK インターフェイスには検索ボックスが用意されていません。 GNOME や
+XFCE をお使いの場合で、検索機能を使用したい場合は、QT インターフェイスをお使い
+ください:
+
+sudo /sbin/yast2 --qt
+
+openSUSE 13.2 以前からの cifstab の移行
+
+/etc/samba/cifstab ファイルを利用した、システム起動時の cifs 共有のマウントは廃
+止されました。一般的に使用される /etc/fstab ファイルで設定してください。
+
+移行は下記 2 つの手順で行ないます:
+
+ 1. /etc/samba/cifstab.rpmsave ファイルに書かれているマウントの設定を、/etc/
+    fstab ファイルに追記します。
+
+ 2. /etc/fstab 内に追記した cifs マウントの各行に対して、行末に 0 0 を追記しま
+    す。
+
+詳しい情報と設定例を知りたい場合は、インストール後のシステムで /usr/share/doc/
+packages/cifs-utils/README.cifstab.migration ファイルをお読みください。
+
+アップグレード後も openSUSE 13.1 KDE の壁紙が削除されない問題について
+
+システムを更新しても openSUSE 13.1 KDE の壁紙が残ってしまった場合は、下記のよう
+にしてユーザキャッシュから削除してください:
+
+rm ~/.kde4/cache-*/plasma-wallpapers/usr/share/wallpapers/openSUSEdefault/contents/images/*
+
+MATE デスクトップとの公式統合について
+
+MATE デスクトップは openSUSE 13.2 から公式版が利用できるようになり、バージョン
+は最新の安定版である 1.8.1 が用意されています。このデスクトップは直感的で魅力的
+なデスクトップ環境で、 Linux や Unix 系オペレーティングシステムの従来の形態を残
+した外観になっています。
+
+openSUSE での MATE デスクトップは、 openSUSE 11.4 でメインメニューや Sonar テー
+マなどの設定で GNOME をお使いになっていた方に対して、似通った使い心地を提供する
+ことを目指しています。
+
+GNOME の起動が遅い問題について
+
+GNOME 自動ログイン機能を利用すると、起動処理に時間がかかってしまいます。これは
+サービス間の競合により発生しているもので、お互いに依存するように設定してしまっ
+ていることによるものと考えられています。オンライン更新で修正が適用されるまでは
+、 GNOME の自動ログイン機能を一時的に無効化して回避してください。
+
+AppArmor とパーミッション (アクセス権) 設定について
+
+AppArmor は既定で有効化されています。これによりセキュリティが強化されますが、サ
+ービスを予期しない方法で起動しているような場合、それらがうまく動作しないことが
+あります。パーミッション関連の問題でおかしな動作を発見した場合は、まず対象のサ
+ービスに対して AppArmor を不平モードに切り替えてみることをお勧めします:
+
+aa-complain /usr/bin/$your_service
+
+不平モードとは、全ての動作を許可するものの、許可するはずではない動作を記録する
+ためのモードです。
+
+なお、このようにして動作するようになった場合も、バグとして報告してください。
+AppArmor のプロファイルのうち、ごく稀に発生する問題についても、修正を行ないたい
+と考えているためです。
+
+その他
+
+YaST (Qt GUI): "サービスマネージャ" のアイコンが 2 つ表示されてしまう問題につい
+て
+
+YaST (Qt GUI) のシステムセクションには、サービスマネージャが 2 つ現われてしまっ
+ています。これは YaST コントロールセンターの Qt 版でのバグで、デスクトップファ
+イル内の「hidden」フラグを無視してしまっているために発生しています。
+
+この問題は、次回の YaST オンライン更新で解決する予定です。
+
+さらに詳しい情報とフィードバック
+
+  • CD 内の README をお読みください。
+
+  • また、特定のパッケージに対する詳細な変更点を RPM パッケージから表示するには
+    、下記のコマンドを実行します:
+
+    rpm --changelog -qp <ファイル名>.rpm
+
+    ここで、 <ファイル名> には RPM のファイル名を指定します。
+
+  • また、 DVD のルートディレクトリには ChangeLog ファイルがあります。ここには
+    、更新されたパッケージに対する全ての変更点が時系列順に並んでいます。
+
+  • そのほか、 DVD の docu ディレクトリには、さらに詳しい情報が書いてあります。
+
+  • それ以外にも、 https://activedoc.opensuse.org/ には追加／更新されたドキュメ
+    ンテーションがあります。
+
+  • Visit http://www.opensuse.org for the latest product news from openSUSE.
+
+Copyright © 2014 SUSE LLC
+
+Thanks for using openSUSE.
+
+The openSUSE Team.
+

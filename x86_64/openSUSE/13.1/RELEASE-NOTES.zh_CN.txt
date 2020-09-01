@@ -1,0 +1,345 @@
+openSUSE 13.1 版本资讯
+
+Version: 13.1.10 (2014-01-08)
+
+版权 © 2013 玛格丽特 · 苏 (marguerite@opensuse.org)
+
+版权所有 © 2013 SUSE LLC
+
+您有权以 GNU 自由文档协议 (1.2版及以后，由自由软件基金会发布) 对此文档进行
+复制、传播和/或修订；但必须保留不变章节、封面和底面文本。该协议副本在
+fdl.txt 文件中。
+
+---------------------------------------------------------------------------
+
+1. 杂项
+2. 安装
+
+    2.1. 关于详细安装信息
+
+3. 常规
+
+    3.1. openSUSE 文档
+    3.2. 作废的 YaST 模块
+    3.3. UEFI—统一可扩展固件接口
+    3.4. UEFI, GPT 和 MS-DOS 分区
+    3.5. Secure Boot 模式引导
+    3.6. Adobe Reader (acroread) 和其它 PDF 阅读器
+
+4. 系统升级
+
+    4.1. 使用 Zypper (dup) 升级需要清理 /etc/fstab
+    4.2. 移除了 SYSLOG_DAEMON 变量
+    4.3. 重复的网络接口
+
+5. 技术
+
+    5.1. 使用 KMS 初始化图形界面 (内核模式设置)
+    5.2. 使用 Nouveau 驱动进行安装时屏幕上有噪点
+    5.3. Samba 4.1 版
+    5.4. 配置 Postfix
+    5.5. xinetd：记录到系统日志
+    5.6. Apache 2.4 版
+    5.7. tomcat：记录到系统日志
+    5.8. Darktable：需要刷新缓存文件
+    5.9. Locate：findutils-locate 被 mlocate 替换了
+    5.10. KDE 和蓝牙
+    5.11. AppArmor 和权限设置
+    5.12. Skype
+    5.13. AutoYaST
+
+若您是从某个旧版本升级到本版 openSUSE 的，之前的版本资讯列示于此，供您参考
+：
+
+这些版本资讯涵盖以下领域：
+
+  o 第 1 节 "杂项"：这些条文是自动从 openFATE 捕获的，openFATE 是 openSUSE
+    的特性/需求管理系统 (http://features.opensuse.org)。
+
+    不可用
+
+  o 第 2 节 "安装"：若您想从零开始安装系统，请阅读本章。
+
+  o 第 3 节 "常规"：那美克星人都该看的信息。
+
+  o 第 4 节 "系统升级"：若您是从之前版本运行系统升级获得的本版 openSUSE，本
+    章是与该过程相关的一些提问荟萃。
+
+  o 第 5 节 "技术"：本章涵盖了有经验的用户可能感兴趣的一系列技术上的改进和
+    扩充。
+
+1. 杂项
+
+不可用
+
+2. 安装
+
+2.1. 关于详细安装信息
+
+详细安装信息请见第 3.1 节 "openSUSE 文档"。
+
+3. 常规
+
+3.1. openSUSE 文档
+
+在新手入门中，您能够找到按步就班的安装指南，和 KDE、GNOME 桌面以及
+LibreOffice 套装的介绍。该手册也涵盖了一些基础管理话题如部署、软件管理以及
+bash 壳层的扫盲。
+
+安装 opensuse-startup_$LANG 软件包后可在 /usr/share/doc/manual/
+opensuse-manuals_$LANG 找到我们的文档，也可以使用在线文档 http://
+doc.opensuse.org。
+
+3.2. 作废的 YaST 模块
+
+以下 YaST 模块被淘汰了，实际上现在确实也很少用到：
+
+  o yast2-autofs
+
+  o yast2-dbus-client
+
+  o yast2-dirinstall
+
+  o yast2-fingerprint-reader
+
+  o yast2-irda
+
+  o yast2-mouse
+
+  o yast2-phone-services
+
+  o yast2-power-management
+
+  o yast2-profile-manager
+
+  o yast2-sshd
+
+  o yast2-tv
+
+之所以作废它们，主要原因是为了降低维护压力并更好的聚焦于其它用得更多的模块
+。
+
+3.3. UEFI—统一可扩展固件接口
+
+在将 openSUSE 安装到一个使用 UEFI (统一可扩展固件接口) 引导的计算机上之前，
+特别建议您检查一下硬件制造商推荐的任何固件更新，并且，如果有的话，安装这样
+的更新。计算机预装了 Windows 8 是表明您的计算机使用 UEFI 引导的一个明显标志
+。
+
+背景知识：某些 UEFI 固件有故障，会导致它在太多数据被写入 UEFI 存储区域时崩
+溃。但是，没有人真正知道多少是"太多"。openSUSE 仅会写入引导操作系统必需的超
+小数据，从而最小化了该风险。"超小数据"意思是说仅知会 UEFI 固件 openSUSE 引
+导加载器的位置。我们默认禁用了上游 Linux 内核的使用 UEFI 存储区域存放引导和
+崩溃信息 (pstore) 的功能。然而还是推荐安装硬件制造商推荐的任何固件更新。
+
+3.4. UEFI, GPT 和 MS-DOS 分区
+
+伴随着 EFI/UEFI 规范到来的是一种新的分区风格：GPT（GUID 分区表）。这个新样
+板使用全局唯一标识符（128 位值显示成 32 个十六进制数字）来识别设备和分区类
+型。
+
+另外，UEFI 规范也允许传统的 MBR（MS-DOS）分区。Linux 引导加载器（ELILO 或
+GRUB2）会尝试为这些传统分区自动生成一个 GUID，并将它们写入到固件中。这样的
+GUID 可频繁变化，将导致重写固件。重写由两个不同操作组成：移除旧项和创建替代
+前一个项的新项。
+
+现代固件有一个垃圾收集器可搜集删除的项并释放为旧项预留的内存。当问题固件不
+搜集并释放这些项时就会导致问题; 这可能导致系统无法引导。
+
+规避方法很简单：将传统的 MBR 分区转换成新的 GPT 分区来彻底避免此问题。
+
+3.5. Secure Boot 模式引导
+
+这只影响 UEFI 模式中开启了安全引导的机器。
+
+新版的 shim 加载器比起 openSUSE 12.3 中的版本允许更多的计算机在启用了
+Secure Boot 的情况下引导。虽说如此，遇到问题时，还请先更新您计算机的 BIOS
+到最新版本。若更新 BIOS 没有帮助，请把您计算机的型号报到维基上 (https://
+en.opensuse.org/openSUSE:UEFI)。这样下一个版本的时候我们就可以跟踪看它是否
+能用了。
+
+3.6. Adobe Reader (acroread) 和其它 PDF 阅读器
+
+Adobe 不再为 Adobe Reader (acroread) 提供 (安全) 更新了。因此我们从发行版中
+作废了 acroread 软件包以保护 openSUSE 用户。
+
+openSUSE 携带了许多 PDF 查看工具如 Okular，Evince 和 poppler-tools。这些工
+具被积极地维护着并可以从 openSUSE 和它们的上游作者这里获得安全修复。
+
+更多信息请访问： http://zh.opensuse.org/Adobe_Reader。
+
+4. 系统升级
+
+4.1. 使用 Zypper (dup) 升级需要清理 /etc/fstab
+
+当使用 zypper dup 升级时 (YaST 升级程序可自动处理) 用户应该移除以下或有的 /
+etc/fstab 项：
+
+tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc
+
+这对 GNOME 用户是特别重要的，否则 GNOME 终端将失败，消息为 "grantpt failed:
+Operation not permitted"。这些挂载点现在由 systemd 管理并不再应该出现在 /
+etc/fstab 中。
+
+4.2. 移除了 SYSLOG_DAEMON 变量
+
+SYSLOG_DAEMON 变量被移除了。之前，它用于选择 syslog 守护精灵。自 openSUSE
+12.3 起，同一时间在系统上只能安装一个 syslog 实现，并将被自动选用。
+
+细节请见 syslog(8) 手册页。
+
+4.3. 重复的网络接口
+
+当前版本的 systemd 使用了一个新的惯例来为网络接口指派可预测的名称。YaST 也
+相应变化了。
+
+某些故障报告表明 YaST 有一个故障，当从一种命名方案转换为另一种时就会发生。
+若相同的网络接口有两个不同的名称，那您就遇到这个故障了。在这种情况下请在 /
+etc/sysconfig/network 中移除不同的网络接口并使用 YaST 来配置一个新的。
+
+关于可预测网络接口名称的更多信息，请参考 http://www.freedesktop.org/wiki/
+Software/systemd/PredictableNetworkInterfaceNames/。
+
+5. 技术
+
+5.1. 使用 KMS 初始化图形界面 (内核模式设置)
+
+自 openSUSE 11.3 起，我们为 Intel、ATI 和 NVIDIA 显卡切换到了 KMS (内核模式
+设置)，因此现在 KMS 是我们的默认设置。若您遇到了 KMS 驱动支持问题 (intel，
+radeon，nouveau)，可通过向内核引导命令行添加 nomodeset 来禁用 KMS。若使用
+Grub2, 我们的默认引导加载器，欲永久设置，可以根用户身份将该选项添加到您的 /
+etc/default/grub 文本文件中的 GRUB_CMDLINE_LINUX_DEFAULT 内核默认加载选项行
+中去，并运行终端命令
+
+sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+以让修改生效。另外，若使用 Grub Legacy，也请以根用户身份将该选项添加到 /
+boot/grub/menu.lst中的内核命令行中。该选项保证了在 initrd 中使用 modeset=0
+加载适当的内核模块 (intel, radeon, nouveau)，也就是说，禁用了 KMS。
+
+在极少见的情况下从 initrd 挂载 DRM 模块出错是一个常见的问题，KMS 只是躺着中
+枪而已。这时更应该在 initrd 里完全禁用加载 DRM 模块而不是去搞 KMS。通过
+YaST 将 NO_KMS_IN_INITRD sysconfig 变量设置为 yes，之后会重建 initrd。然后
+重启计算机。
+
+若 Intel 显卡未开启 KMS， X 服务器会退而求其次使用 fbdev 驱动 (intel 驱动只
+支持 KMS);另外，对于旧款 Intel 显卡，"intellegacy" 驱动
+(xorg-x11-driver-video-intel-legacy 软件包) 依然可用，它依然支持 UMS (用户
+模式设置)。欲使用它，可编辑 /etc/X11/xorg.conf.d/50-device.conf，并将
+driver 驱动条目修改为 intellegacy。
+
+若检测到 ATI 显卡是目前流行型号的，X 服务器会退而求其次使用 radeonhd。若
+NVIDIA 显卡未开启 KMS，X 服务器将使用 nv 驱动。(nouveau 驱动只支持 KMS)。注
+意，若您指定了 nomodeset 内核引导参数，新型号的 ATI 和 NVIDIA 显示处理器会
+退而求其次使用 fbdev。
+
+5.2. 使用 Nouveau 驱动进行安装时屏幕上有噪点
+
+在一些 NVIDIA 显卡的系统上，安装器可能会在屏幕上方显示噪点，这是默认
+nouveau 驱动的问题导致的。若您被此问题影响了，您可以禁用 nouveau 内核模块后
+再运行安装器，在系统安装好后或升级后再启用该模块。
+
+要禁用该内核模块，当您从安装介质引导后，在 grub 中选择 '安装 (Installation)
+' 项并按 'e' 来编辑参数。然后前往以 'linux' (或 'linuxefi') 开头的行并在末
+尾添加 brokenmodules=nouveau。现在按 F10 以新参数继续引导。在系统安装好后，
+您可以通过编辑 /etc/modprobe.d/50-blacklist.conf 并移除 blacklist nouveau
+那项来重新启用 nouveau 模块。
+
+5.3. Samba 4.1 版
+
+openSUSE 13.1 携带的 Samba 4.1 版并未包含作为一个活动目录风格的域控制器运行
+的支持。这个功能目前是禁用的，因为它缺少与系统全局的 MIT Kerberos 的整合。
+
+5.4. 配置 Postfix
+
+自 openSUSE 12.3 起，SuSEconfig.postfix 被重命名为了 /usr/sbin/
+config.postfix。若您在 /etc/sysconfig/postfix 或 /etc/sysconfig/mail 中设置
+了 sysconfig 变量，您必须以 root 身份手动运行 /usr/sbin/config.postfix。
+
+5.5. xinetd：记录到系统日志
+
+xinetd 的新默认值把默认日志对象从 /var/log/xinetd.log 修改到系统日志了。这
+意味着 xinetd 的全部消息均将作为设施守护程序和日志级别信息出现在系统日志中
+。
+
+若您想要切换回以前的方法，请去 /etc/xinetd.conf 中查找中意的脚本。
+xinetd.log 的 logrotate 脚本模板可在 /usr/share/doc/packages/xinetd/
+logrotate 中找到。
+
+5.6. Apache 2.4 版
+
+Apache 2.4 的配置文件有许多变化。更多从之前版本升级过来的信息请见 http://
+httpd.apache.org/docs/2.4/upgrading.html。
+
+5.7. tomcat：记录到系统日志
+
+tomcat 启动脚本不再将输出写入到 /var/log/tomcat/catalina.out 了。现在全部消
+息均通过 tomcat.service (tomcat-jsvc.service) 重定向到系统日志和日志级别信
+息了。
+
+5.8. Darktable：需要刷新缓存文件
+
+若您是从之前版本升级到 openSUSE 13.1 的，旧缓存文件可能不再能用了。在这种情
+况下需要移除 ~/.cache/darktable/mipmaps。
+
+5.9. Locate：findutils-locate 被 mlocate 替换了
+
+mlocate 工具是 findutils-locate 的替代品。在默认配置时 mlocate 和 
+findutils-localte 的行为是一样的。由于一项改进过的权限处理，现在需要 24 小
+时后常规用户才能访问数据库文件。
+
+若您遇到了 "权限拒绝 (Permission denied)" 消息，并想要加速访问数据库文件，
+请考虑移除 cron.daily (若您通过 cron.daily 机制运行着一些敏感任务请不要这么
+做)：
+
+rm /var/spool/cron/lastrun/cron.daily
+
+以 root 身份做，一次即可。
+
+5.10. KDE 和蓝牙
+
+蓝牙堆栈是由 Bluez 5 (一个主要的，向后不兼容的版本) 提供的，是 GNOME 桌面和
+基础系统的一些其它组件能够升级所必须的。很不幸的是，KDE workspace 在其目前
+发布的版本中只支持 Bluez 4 版。
+
+因此，openSUSE KDE 社区团队提供了一个非官方的 Bluedevil 软件包，至少提供了
+一些基本功能诸如设备配对或蓝牙鼠标支持; 一些其它的功能是已知尚不可用的，如
+文件传输。
+
+暂时，不应该针对 KDE 中的蓝牙支持填报故障报告，因为 Bluedevil 的 Bluez 5 移
+植仍在进行呢。
+
+5.11. AppArmor 和权限设置
+
+AppArmor 是默认启用的。这意味着更多的安全性，但若您以非预期的方式运行服务可
+能导致它们无法工作。若您遇到了诡异的权限问题，请尝试把受影响的服务的
+AppArmor 方案切换为抱怨模式，使用：
+
+aa-complain /usr/bin/$your_service
+
+抱怨模式意味着：允许任何东西，并记录方案不允许的东西。
+
+即便它能够有助于回报为故障！我们想要修复 AppArmor 方案以同样覆盖边角问题。
+
+5.12. Skype
+
+PulseAudio 4.0 暴露了 Skype for Linux 当前版本（v4.2）中的一个故障。直到
+Skype 被修复和更新前，请这样运行 skype：
+
+PULSE_LATENCY_MSEC=60 skype
+
+关于此故障的更多信息，请见 http://arunraghavan.net/2013/08/
+pulseaudio-4-0-and-skype/。
+
+5.13. AutoYaST
+
+若 autoyast 方案在 <add-on> 部分有项，有一个故障会被触发，从而阻碍了方案中
+的信息从第一阶段传递到第二阶段。因此，在这种情况下，全部第二阶段配置步骤均
+会被跳过，这中场会导致或多或少的完全不稳定的系统。
+
+一个暂时性规避方法是，在 openSUSE 13.1 中，避免在 AutoYaST 方案中使用
+<add-on> 部分。
+

@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>openSUSE 12.1 Kiadási megjegyzések</title>
+</head>
+<body>
+ <h1>openSUSE 12.1 Kiadási megjegyzések</h1>
+ <p>Verzió: </p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>A dokumentum szabadon másolható, terjeszthető és/vagy módosítható a Free Software Foundation által kiadott GNU Free Documentation License 1.2 vagy ennél újabb verziójának megfelelően, Nem Változtatható rész, Borítószöveg és Hátlapszöveg nélkül. A licenc angol nyelvű másolata az <tt>fdl.txt</tt> fájlban található.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Amennyiben egy régebbi verzióról frissít erre az openSUSE kiadásra, akkor olvassa el a korábbi kiadási megjegyzéseket: <a href="http://en.opensuse.org/openSUSE:Release_Notes">http://en.opensuse.org/openSUSE:Release_Notes</a></p>
+
+ 
+ 
+ <p>Jelen Kiadási megjegyzés a következő témaköröket érinti:</p>
+<div>
+<dl>
+<dt>Egyéb</dt>
+<dd><ol><li><a href="#01">YaST AppArmor beállítómodul</a></li></ol></dd>
+<dt>Telepítés</dt>
+<dd><ol><li><a href="#02">Részletes telepítési információ</a></li></ol></dd>
+<dt>Általános</dt>
+<dd><ol>
+<li><a href="#03">openSUSE dokumentáció</a></li>
+<li><a href="#04">GNOME 3</a></li>
+<li><a href="#05">PulseAudio hangrendszer</a></li>
+<li><a href="#06">Btrfs</a></li>
+<li><a href="#07">Windows-tartománytagság bejelentkezés KDM-mel</a></li>
+<li><a href="#08">Oracle Java külső elérhetősége</a></li>
+<li><a href="#09">Removing 32-Bit XEN Hypervisor</a></li>
+<li><a href="#10">Formatting Large Disk Partitions on Windows 8 Server</a></li>
+<li><a href="#11">Configuring Postfix</a></li>
+</ol></dd>
+<dt>Rendszerfrissítés</dt>
+<dd><ol>
+<li><a href="#12">Mounting Encrypted Partitions with dm-crypt</a></li>
+<li><a href="#13">Mounting Encrypted Partitions Using systemd</a></li>
+</ol></dd>
+<dt>Technikai</dt>
+<dd><ol>
+<li><a href="#14">Grafikus megjelenés előkészítése KMS (Kernel Mode Setting) használatával</a></li>
+<li><a href="#15">Radeon HDMI hangkimenet le van tiltva</a></li>
+<li><a href="#16">Rendszerindítás systemd vagy sysvinit segítségével</a></li>
+<li><a href="#17">systemd: Supplying Service Start-up Parameters</a></li>
+<li><a href="#18">systemd: Rendszer leállítása</a></li>
+<li><a href="#19">systemd: tmpfs használata: /run, /var/run, /media stb.</a></li>
+<li><a href="#20">systemd: Könyvtárak ürítése (/tmp és /var/tmp)</a></li>
+<li><a href="#21">CUPS 1.5</a></li>
+<li><a href="#22">A rename parancs</a></li>
+<li><a href="#23">NetworkManager parancssori felület</a></li>
+<li><a href="#24">rpm: %_topdir megváltozott nem a root felhasználók számára</a></li>
+</ol></dd>
+</dl>
+<hr>
+</div>
+
+ <ul>
+  <li>
+   <p>Egyéb: Ezek a bejegyzések automatikusan kerültek be az openFATE-ről, amely egy funkció- és követelménykezelő rendszer (<a href="http://features.opensuse.org">http://features.opensuse.org</a>).</p>
+   <p>Jelenleg ezek a bejegyzések nincsenek sorbarendezve — fejlesztésén jelenleg is dolgozunk.</p>
+  </li>
+
+ <li>
+   <p>Telepítés: Új telepítéssel kapcsolatos fontos információk</p>
+  </li>
+
+ <li>
+   <p>Általános: mindenki számára fontos információ.</p>
+  </li>
+
+  <li><p>Rendszerfrissítés: a korábbi openSUSE verzióról történő rendszerfrissítéssel kapcsolatos problémák.</p></li>
+
+  <li><p>Műszaki: Ebben a részben a tapasztalt felhasználókat érintő műszaki változásokról és frissítésekről esik szó.</p></li>
+ </ul>
+
+
+  <div>
+<h2>Egyéb</h2>
+    <div>
+<h3><a name="01">YaST AppArmor beállítómodul</a></h3>
+<p>FATE kategóriák <a href="https://features.opensuse.org/305278">https://features.opensuse.org/305278</a>: AppArmor, YaST.</p>
+
+<p>Az AppArmor beállítómodul jelenleg a YaST "Biztonság és felhasználók" részében található.</p>
+
+</div>
+  </div>
+
+
+
+
+ <div>
+  <h2>Telepítés</h2>
+  
+  <div>
+   <h3><a name="02">Részletes telepítési információ</a></h3>
+
+  <p>Részletes telepítési információért tekintse meg az alábbi 
+  "openSUSE Dokumentációkat"
+.</p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Általános</h2>
+
+  
+  <div>
+   <h3><a name="03">openSUSE dokumentáció</a></h3>
+
+   <ul>
+    <li><p>A Start-Up kézikönyvben telepítési útmutatót, a KDE és a GNOME asztali környezettel valamint a LibreOffice irodai programcsomaggal kapcsolatos leírások találhatók. Ugyanakkor érint néhány alapvető adminisztrációs területet is, mint a terítés és a szoftverkezelés, valamint foglalkozik a bash alapjaival is.</p></li>
+    <li>
+     <p>A Kézikönyv (Reference) részletesen tárgyalja az adminisztrációt és a rendszerbeállításokat, valamint bemutatja a különböző hálózati szolgáltatásokat.</p>
+    </li>
+    <li><p>A Biztonsági kézikönyv bemutatja a rendszer biztonsági felépítését, beleértve annak helyi és hálózati biztonsági szempontjait.</p></li>
+    <li>
+<p>A System Analysis és a Tuning Guide segít a probléma felderítésében, megoldásában és optimalizációjában.</p>
+    </li>
+    <li>
+<p>A Virtualization with KVM bemutatja a KVM, libvirt és QEMU eszközökkel megvalósítható virtualizáció beállításait és kezelését.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   <h3><a name="04">GNOME 3</a></h3>
+   
+   <p>A GNOME 3 a GNOME 2-höz képest teljesen új megjelenésű. Ennek eredményeként, valamint a felhasználók érdekében a GNOME 2 asztal nem kerül automatikus migrálásra.  AVezérlőközpont használható a GNOME 3 beállítására és a <tt>gnome-tweak-tool</tt> további, részletes beállításokat biztosít.</p>
+   <p>A GNOME 3 alapértelmezett módban megköveteli a grafikus kártya 3D támogatását. Ha a 3D gyorsítás nem érhető el, a GNOME 3 akkor csökkentett módban használja. Ha kiderül, hogy a GNOME 3 érzékeli rendelkezésre álló 3D gyorsítást, de az a normál módban nem használható, akkor valószínűleg egy hibát talált az illesztőprogramban. Ki lehet kényszeríteni a csökkentett módot a grub indítósorában megadott "<tt> gnome.fallback = 1 literal&gt;" be</tt></p>
+   <p>A csökkentett mód használatakor a panelek az Alt és a jobb egér gomb együttes megnyomásakor szabhatók testre.</p>
+   <p>Számos GNOME Shell funkció, mint amilyen a billentyűzetkombinációk, fogd-és-vidd funkciók és speciális programok leírása a <a href="https://live.gnome.org/GnomeShell/CheatSheet">https://live.gnome.org/GnomeShell/CheatSheet</a> oldalon található.</p>
+  </div>
+
+  <div>
+   <h3><a name="05">PulseAudio hangrendszer</a></h3>
+   
+   <p>A PulseAudio hangrendszer mostantól rendszerszinten integrált és új telepítésekkor alapértelmezetten engedélyezett. Amennyiben a korábbi kiadásban letiltotta és most engedélyezni szeretné, akkor ellenőrizze a <tt>PULSEAUDIO_ENABLE</tt> változót a <tt>/etc/sysconfig/sound</tt> fájlban:</p>
+
+   <p>Állítsa be a <tt>PULSEAUDIO_ENABLE</tt> változót "<tt>yes</tt>" értékre és így ez mindenhol engedélyezésre kerül. A <tt>PULSEAUDIO_ENABLE</tt> változó "<tt>no</tt>" értékre állításával a PulseAudio a teljes rendszeren letiltásra kerül. A "custom" beállítás azt jelenti, hogy egyedi beállítások érintetlenül maradnak.</p>
+  </div>
+
+
+  <div>
+   
+   <h3><a name="06">Btrfs</a></h3>
+   <p>Btrfs a Linux következő generációs fájlrendszere. Ennek megfelelően btrfs partíciók hozhatók létre vagy a teljes rendszer btrfs partíció alá helyezhető.</p>
+
+   <p>Megjegyzés: A btrfs fájlrendszer fejlesztés alatt áll. Az ellenőrzés és javítás funkció ("scrub") nemrég lett a fejlesztés része. A "Scrub" feladata az adatok és a metaadatok ellenőrzése, feltételezve, hogy a fastruktúra rendben van; ez meghatározott időközönként, háttérfolyamtként futhat (és futnia is kell) a felcsatolt fájlrendszereken.</p>
+
+   <p>Ezért azt javasoljuk, hogy gondolja át alaposan, hogy milyen adatokat tesz erre a fájlrendszerre és kövesse a szokásos mentésre és redundanciára vonatkozó ajánlásokat. További információ a <a href="http://btrfs.wiki.kernel.org">http://btrfs.wiki.kernel.org</a> weboldalon található.</p>
+
+   <p>A Btrfs számos érdekes, új funkciót tartalmaz, mint például a pillanatkép készítése a fájlrendszerről. A pillanatkép és a visszaállítás funkciókat a <tt>snapper</tt> parancs teszi lehetővé, amely integrálásra került az openSUSE csomag- és rendszerkezelő eszközökbe, így a <tt>zypper</tt>-be és a YaST-ba is.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="07">Windows-tartománytagság bejelentkezés KDM-mel</a></h3>
+
+   <p>A SUSE KDM téma nem teszi lehetővé a Windows-tartománytagság. bejelentkezést.</p>
+
+   <p>Ennek kerülőmegoldása a DISPLAYMANAGER_KDM_THEME beállítása üres értékre az <tt>/etc/sysconfig/displaymanager</tt> fájlban, hogy az újra az alapértelmezett témát használja:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  </div>
+
+  <div>
+   <h3><a name="08">Oracle Java külső elérhetősége</a></h3>
+   <p>A java-1_6_0-sun csomag licencváltozása miatt mostantól nem része az openSUSE operációs rendszernek. Helyette az OpenJDK került a telepítőkészletbe.  Azok a felhasználók, akik inkább az Oracle JDK bináris verziót kívánják használni, azok letölthetik azt a <a href="http://oracle.com/java">http://oracle.com/java</a> weboldalról.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="09">Removing 32-Bit XEN Hypervisor</a></h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  </div>
+
+  
+  
+  <div>
+   <h3><a name="10">Formatting Large Disk Partitions on Windows 8 Server</a></h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  </div>
+
+  <div>
+   
+   <h3><a name="11">Configuring Postfix</a></h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Rendszerfrissítés</h2>
+
+  <div>
+   
+   <h3><a name="12">Mounting Encrypted Partitions with dm-crypt</a></h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="13">Mounting Encrypted Partitions Using systemd</a></h3>
+   <p>
+If encrypted partitions are not automatically mounted when using
+systemd, the <tt>noauto</tt> flag in
+<tt>/etc/fstab</tt> for these partitions could be the
+cause. Replacing this flag with <tt>nofail</tt> will fix
+it. For instance, change the following line:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>erre</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  </div>
+ </div>
+
+
+ <div>
+  <h2>Technikai</h2>
+  
+  <div>
+   <h3><a name="14">Grafikus megjelenés előkészítése KMS (Kernel Mode Setting) használatával</a></h3>
+   
+   <p>Az openSUSE 11.3 megjelenésével, a KMS (Kernel Mode Setting) lett az alapértelmezett az Intel, ATI és NVIDIA grafikus kártyák számára. Amennyiben valamilyen probléma merül fel a KMS illesztőprogram támogatásával kapcsolatban (intel, radeon, nouveau), akkor tiltsa le a <tt>nomodeset</tt> kernelbetöltő parancs segítségével. Ennek tartós beállításához adja hozza a kernelparamétert a <tt>/boot/grub/menu.lst</tt> fájlhoz. A beállítás segítségével az adott kernelmodul (intel, radeon, nouveau) a <tt>modeset=0</tt> beállítással töltődik be az <tt>initrd</tt>-be, pl. így a KMS letiltásra kerül.</p>
+
+   <p>Azokban a ritka esetekben, amikor a DRM-modul az <tt>initrd</tt> fájlból töltődik be, az egy általános probléma és nincsen köze a KMS-hez. Lehetőség van arra is, hogy <tt>initrd</tt> fájlból való betöltés teljes mértékben letiltásra kerüljön. Ehhez a YaST-ban meg kell adni a <tt>NO_KMS_IN_INITRD</tt>  sysconfig változóhoz a <tt>yes</tt> értéket, amely ezt követően újra létrehozza az <tt>initrd</tt>-t. Indítsa újra a gépet.</p>
+
+   <p>Intel gépeken KMS nélkül az Xserver visszaáll <tt>fbdev</tt> illesztőprogramra (az <tt>intel</tt> illesztőprogram csak a KMS-t támogatja). Alternatívaként, a régebbi Intel videókártyákhoz létezik egy "intellegacy" illesztőprogram (<tt>xorg-x11-driver-video-intel-legacy</tt> csomag), amely támogatja az UMS-t (User Mode Setting). Ennek használatához a <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> fájlban módosítani kell az illesztőprogram bejegyzést <tt>intellegacy</tt> értékre.</p>
+
+   <p>Az ATI-nál a mostani GPU-k visszaállnak a <tt>radeonhd</tt> használatára. Az NVIDIA KMS nélküli használatakor az <tt>nv</tt> illesztőprogram kerül felhasználásra (a <tt>nouveau</tt> illesztőprogram csak a KMS-t támogatja). Az újabb ATI és NVIDIA grafikuskártyák <tt>fbdev</tt> használatára állnak vissza, amennyiben a <tt>nomodeset</tt> kernelparaméter van megadva.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="15">Radeon HDMI hangkimenet le van tiltva</a></h3>
+
+   <p>Néhány probléma miatt a HDMI hangkimenet le van tiltva a radeon illesztőprogramoknál, amely az AMD/ATI grafikus kártyáknál az alapértelmezett.</p>
+   <p>Újraengedélyezéséhez a <tt>radeon.audio=1</tt> kernelparamétert kell használni. A YaST-ban, a Rendszer -&gt; Rendszerbetöltő modulban, az alapértelmezett bejegyzésnél a Szerkesztés gombot kell megnyomni, majd a következőket kell az  'Egyéb parancssori kernelparaméterek' végére írni:</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>A változások érvényrejutásához a számítógépet újra kell indítani.</p>
+   <p>Másik lehetőséd, a hivatalos AMD illesztőprogram telepítése. Erről bővebb információ az <a href="http://en.opensuse.org/SDB:ATI_drivers">http://en.opensuse.org/SDB:ATI_drivers</a> oldalon található.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="16">Rendszerindítás systemd vagy sysvinit segítségével</a></h3>
+
+   <p>Alapértelmezés szerint az openSUSE a <tt>systemd</tt> használatával indul el. Ha valamilyen probléma adódik, akkor a rendszertöltés közben az F5 gomb megnyomásával vissza lehet állni a <tt>sysvinit</tt> használatára.</p>
+
+   <p>Amennyiben át kíván állni a <tt>sysvinit</tt> használatára, akkor telepíteni kell a <tt>sysvinit-init</tt> csomagot. A <tt>systemd</tt>-re való visszaálláshoz újra kell telepíteni a <tt>systemd-sysvinit</tt> csomagot.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="17">systemd: Supplying Service Start-up Parameters</a></h3>
+   <p><tt>systemctl</tt> parancs csak az általános paramétereket támogatja (lásd <a href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>).</p>
+   <p>Az új viselkedés megkerülhető, ha az indítóparancs közvetlen meghívásával, például:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;your_parameters&gt;
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="18">systemd: Rendszer leállítása</a></h3>
+
+   <p>A <tt>systemd</tt> használatával történő rendszer leállításhoz és kikapcsoláshoz a <tt>halt -p</tt> vagy a <tt>shutdown -h now</tt> parancsot kell kiadni a parancssorban, vagy a grafikus felületen kell a leállítás gombot használni.</p>
+
+   <p>Megjegyzés: Az egyszerű <tt>halt</tt> parancs nem állítja le megfelelően a rendszert.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="19">systemd: tmpfs használata: /run, /var/run, /media stb.</a></h3>
+
+   <p>a systemd felcsatol olyan könyvtárakat, amelyek csupán átmeneti adatokat tartalmaznak, mint a tmpfs fájlrendszerek: a <tt>/run</tt>, a <tt>/var/run</tt>, a <tt>/var/lock</tt>, és a <tt>/media</tt> ezek a könyvtárak. További információért lásd: <a href="http://lwn.net/Articles/436012/">http://lwn.net/Articles/436012/</a>.</p>
+
+   <p>Megjegyzés: Ne tároljon olyan adatokat a <tt>/run</tt>, a <tt>/var/run</tt> stb. könyvtárakban, amelynek szükséges egy újraindítás után.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="20">systemd: Könyvtárak ürítése (/tmp és /var/tmp)</a></h3>
+
+   <p>a systemd karbantartja azokat a könyvtárakat, amelyek szerepelnek a <tt>tmpfiles.d</tt> könyvtárakban és a  <tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt> fájlban. További információ a <tt>tmpfiles.d</tt> man oldalaiban olvashatók.</p>
+
+   <p>Alapértelmezés szerint a systemd naponta kiüríti a <tt>tmp</tt> könyvtárakat a <tt>/usr/lib/tmpfiles.d/tmp.conf</tt> beállításának megfelelően:</p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>Megjegyzés: a systemd nem fogadja elfogadni az <tt>/etc/sysconfig/cron</tt> fájlban lévő olyan változókat, mint a <tt>TMP_DIRS_TO_CLEAR</tt>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="21">CUPS 1.5</a></h3>
+   <p>A CUPS 1.5 visszafele nem kompatibilis az alábbi funkciókban:</p>
+   <ul>
+    <li>
+     <p>A CUPS nem támogatja a <tt>~/.cupsrc</tt> vagy <tt>~/.lpoptions</tt> CUPS 1.1-es beállítófájlokat. Helyette a <tt>~/.cups/client.conf</tt> és a <tt>~/.cups/lpoptions</tt> fájlokat használja, amelyek a CUPS 1.2-es verziójában jelentek meg.</p>
+    </li>
+    <li>
+     <p>Az ütemező most megköveteli, hogy a szűrők és háttérszolgáltatások csoportjogosultságai a biztonság érdekében írás joggal ne rendelkezzenek.Ha a nyomtató illesztőprogram gyártója más jogosultságot ad, akkor azt kézzel kell a megfelelő értékre állítani.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   
+   <h3><a name="22">A rename parancs</a></h3>
+   <p>A GNU Coding Standards (programozási szabályok) szerint a rename parancs mostantól az összes kötőjellel kezdődő karakterláncot parancssori kapcsolóként kezel. Ennek megakadályozására az alábbiak szerint, a <tt>--</tt> jelet használja a kapcsolók és egyéb paraméterek megkülönböztetésére:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="23">NetworkManager parancssori felület</a></h3>
+
+   <p><tt>cnetworkmanager</tt> a továbbiakban nem érhető el, helyette az <tt>nmcli</tt> kell használni. Migrációs információ a <a href="http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html">http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</a> weboldalon található.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="24">rpm: %_topdir megváltozott nem a root felhasználók számára</a></h3>
+
+   <p>Jogosultsággal nem rendelkező felhasználók mostantól nem tudják írni a <tt>/usr/src/packages</tt> fájlt. Az <tt>rpmbuild</tt> mostantól az <tt>~/rpmbuild</tt> fájlt használják alapértelmezettként. A könyvtár megváltoztatásához egy sort kell hozzáadni, a következő után <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir /some/where/else</pre>
+   <p>A <tt>$HOME</tt> <tt>foo</tt> alkönyvtár használatához az <tt>~/.rpmmacros</tt> kell a következő sort adni:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  </div>
+ </div>
+</body>
+</html>

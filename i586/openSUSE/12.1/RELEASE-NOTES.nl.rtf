@@ -1,0 +1,316 @@
+
+ <h1>openSUSE 12.1  Uitgavenotities</h1>
+ <p>Versie:</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>Het is toegestaan om dit document te kopiëren, verspreiden en/of te wijzigen onder de voorwaarden van de  GNU Free Documentation License, versie 1.2 of een latere versie, gepubliceerd door de Free Software Foundation, zonder invariante secties en zonder omslagteksten, zowel voor- als achterzijde. Een kopie van de licentie is bijgevoegd in het bestand <tt>fdl.txt</tt>.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Als u opwaardeert van een oudere versie naar deze uitgave van openSUSE, kijk dan naar de vorige uitgavenotities hier: <tt>http://nl.opensuse.org/openSUSE:Release_Notes</tt></p>
+
+ 
+ 
+ <p>Deze uitgavenotities beslaat de volgende gebieden:</p>
+
+ <ul>
+  <li>
+   <p>Diversen: Deze items zijn automatisch vanuit openFATE ingevoegd, het systeem voor beheer van functies en verzoeken (<tt>http://features.opensuse.org</tt>).</p>
+   <p>Op dit moment staan deze snippers ongesorteerd in een lijst — we werken aan verbeteringen.</p>
+  </li>
+
+ <li>
+   <p>Installatie: lees dit als u het systeem vanaf niets wilt installeren.</p>
+  </li>
+
+ <li>
+   <p>Algemeen: informatie die iedereen zou moeten lezen.</p>
+  </li>
+
+  <li><p>Systeem opwaarderen: zaken die verband houden met het proces van opwaarderen van de vorige uitgave naar deze openSUSE versie.</p></li>
+
+  <li><p>Technisch: deze sectie bevat een aantal technische wijzigingen en verbeteringen voor de ervaren gebruiker.</p></li>
+ </ul>
+
+
+  <h2>Diversen</h2>
+    <h3>YaST-configuratiemodule voor AppArmor</h3><p>FATE Categorieën voor <tt>https://features.opensuse.org/305278</tt>: AppArmor, YaST.</p>
+
+<p>De configuratiemodule voor AppArmor is nu te vinden in de sectie "Beveiliging en gebruikers" van het YaST controlecentrum.</p>
+
+
+  
+
+
+
+
+ 
+  <h2>Installatie</h2>
+  
+  
+   <h3>Voor gedetailleerde informatie over installeren</h3>
+
+  <p>Voor gedetailleerde informatie over installeren, zie de onderstaande verwijzing naar 
+  "openSUSE documentatie"
+.</p>
+  
+
+ 
+
+ 
+  <h2>Algemeen</h2>
+
+  
+  
+   <h3>openSUSE documentatie</h3>
+
+   <ul>
+    <li><p>In Start-Up vindt u stap-bij-stap installatie-instructies, evenals introducties in de KDE- en Gnome-bureaubladen en de LibreOffice suite. Ook onderwerpen over basis beheertaken, zoals gebruik en softwarebeheer en een introductie in het gebruik van de bash-shell.</p></li>
+    <li>
+     <p>De referentie-handleiding dekt in detail beheer en systeemconfiguratie en legt uit hoe verschillende netwerkdiensten ingesteld kunnen worden.</p>
+    </li>
+    <li><p>De Beveiligingshandleiding introduceert basisconcepten voor systeembeveiliging, die zowel locale als beveiligingsaspecten in het netwerk dekt.</p></li>
+    <li><p>De handleiding voor systeemanalyses en afregelen (System Analysis and Tuning Guide) helpt bij het vinden en oplossen van problemen en met optimalisatie.</p>
+    </li>
+    <li><p>Virtualizatie met KVM biedt een introductie in het opzetten en beheren van virtualisatie met de hulpmiddelen KVM, libvirt en QEMU.</p>
+    </li>
+   </ul>
+  
+
+  
+   <h3>GNOME 3</h3>
+   
+   <p>GNOME 3 biedt een nieuw ontwerp voor het bureaublad dat verschilt van GNOME 2. Het resultaat en om gebruikers voordeel te laten hebben van de wijzigingen, is het uiterlijk en het gedrag van uw GNOME 2 bureaublad niet automatisch gemigreerd. Systeeminstellingen kan worden gebruikt om GNOME 3 aan te passen en een geavanceerd hulpmiddel (<tt>gnome-tweak-tool</tt>) wordt geleverd voor meer gedetailleerde aanpassingen.</p>
+   <p>De standaard modus van GNOME 3 vereist ondersteuning voor 3D-versnelling in de grafische stuurprogramma's. Wanneer 3D-versnelling niet beschikbaar is, dan gebruikt GNOME 3 de terugvalmodus. Als het blijkt dat GNOME 3 beschikbaarheid van 3D-versnelling detecteert, maar de standaard modus is onbruikbaar, dan bent getroffen door een bug in de grafische stuurprogramma's. U kunt de terugvalmodus forceren met het argument "<tt>gnome.fallback=1</tt>" in de opstartregel in grub.</p>
+   <p>Als u de terugvalmodus gebruikt, weet dan dat u de panelen kunt aanpassen door op Alt te drukken en met rechts op een paneel te klikken.</p>
+   <p>Voor een korte beschrijving van veel GNOME-shell-functies, zoals binding aan toetsen, eigenschappen van slepen en laten vallen en speciale hulpmiddelen, zie <tt>https://live.gnome.org/GnomeShell/CheatSheet</tt>.</p>
+  
+
+  
+   <h3>PulseAudio geluidssysteem</h3>
+   
+   <p>Het PulseAudio geluidssysteem is nu systeembreed geïntegreerd en standaard ingeschakeld voor nieuwe installaties. Als u het in een vorige uitgave had uitgeschakeld en het nu wilt inschakelen, controleer dan de variabele <tt>PULSEAUDIO_ENABLE</tt> in <tt>/etc/sysconfig/sound</tt>:</p>
+
+   <p>Stel <tt>PULSEAUDIO_ENABLE</tt> in op "<tt>yes</tt>" om PA overal in te schakelen. Instellen van <tt>PULSEAUDIO_ENABLE</tt> op "<tt>no</tt>" zal PulseAudio volledig uitschakelen en het op "custom" instellen betekent dat een eigen configuratie onaangetast blijft.</p>
+  
+
+
+  
+   
+   <h3>Btrfs</h3>
+   <p>Btrfs is het bestandssysteem van de volgende generatie voor Linux. Als een voorproefje van de nieuwe technologie, kunt u btrfs-partities aanmaken of uw gehele systeem met btrfs opzetten.</p>
+
+   <p>Opmerking: Het btrfs-bestandssysteem wordt actief ontwikkeld en functionaliteit controleren en repareren ("scrub") is nog maar net toegevoegd. "Scrub" is bedoeld om gegevens en metagegevens te verifiëren aannemend dat de boomstructuren in orde zijn; het kan (en zou) periodiek op een aangekoppeld bestandssysteem moeten worden uitgevoerd: het draait als een achtergrondproces gedurende het normale werk.</p>
+
+   <p>Ons advies is om voorzichtig te overwegen, welke gegevens op dat bestandssysteem te zetten en de gebruikelijke suggesties voor redundantie en reservekopieën te volgen. Voor meer informatie, zie <tt>http://btrfs.wiki.kernel.org</tt>.</p>
+
+   <p>Btrfs bevat vele interessante nieuwe mogelijkheden, waaronder de mogelijkheid om momentopnamen van uw bestandssysteem te maken. Momentopnamen en terugrollen wordt ondersteund door <tt>snapper</tt> en is al geïntegreerd in pakket en systeembeheerhulpmiddelen zoals <tt>zypper</tt> en YaST.</p>
+  
+
+  
+   
+   <h3>Windows-domein Aanmelden met KDM</h3>
+
+   <p>Het KDM-thema van SUSE staat het aanmelden aan een Windows-domein niet toe.</p>
+
+   <p>Om hier omheen te werken zet u DISPLAYMANAGER_KDM_THEME naar een lege tekenreeks in <tt>/etc/sysconfig/displaymanager</tt> om het standaard KDM-thema te gebruiken:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  
+
+  
+   <h3>Oracle Java extern beschikbaar</h3>
+   <p>Het java-1_6_0-sun pakket is niet langer onderdeel van openSUSE vanwege een wijziging in de licentie. Wij leveren de OpenJDK-build als vervanger. Gebruikers van openSUSE die de Oracle JDK binaire versie prefereren boven de openSUSE OpenJDK-build, kunnen de Oracle versie downloaden van <tt>http://oracle.com/java</tt>.</p>
+  
+
+  
+   
+   <h3>32-Bit XEN Hypervisor verwijderen</h3>
+
+   <p>De 32-Bit XEN Hypervisor is niet langer beschikbaar. Gebruik in plaats daarvan de 64-bit XEN Hypervisor voor 32-bit en 64-bit virtuele guests.</p>
+  
+
+  
+  
+  
+   <h3>Grote schijfpartities op Windows 8 Server formatteren</h3>
+   <p>Een guest gehost op Windows 8 Server kan mislukken wanneer een grote virtuele schijf-image (groter dan 50 GB) in het formaat <tt>.vhdx</tt> wordt toegekend aan de guest. Om hier omheen te werken kunt u ofwel een virtuele schijf-image gebruiken met een vaste grootte of de schijf-image met dynamische grootte met Powershell gebruiken.</p>
+
+   <dl>
+    
+     <dt>Technische achtergrond van het probleem</dt>
+     <dd>
+      <p>De <tt>.vhd</tt> en <tt>.vhdx</tt> images zijn 'sparse' bestanden. Wanneer een dynamische <tt>.vhdx</tt> wordt gemaakt met een maximum grootte van 127 GB, wordt de initiële grootte ongeveer 256 KB. Omdat de standaard blokgrootte voor <tt>.vhdx</tt> bestanden 32 MB is, resulteert het schrijven van één 512 byte sector in een toekenning van een 32 MB sectie aan het 'sparse' bestand. Wanneer <tt>ext3</tt> is toegekend zal de MBR, het superblok, de backup-superblokken, inodes, mappen, etc., ruimte krijgen toegekend in het 'sparse' bestand. Vanwege het suboptimale IO van <tt>ext3</tt>, over hoe de datastructuren op de schijf zijn geplaatst en de standaard blokgrootte, wordt een grote partitie van het <tt>.vhdx</tt> bestand toegewezen alleen door het formatteren. De oplossing is om een <tt>.vhdx</tt> bestand met 1 MB blokgrootte te maken in plaats van de standaard 32 MB.</p>
+      <p>De blokgrootte in de UI wijzigen is niet geïmplementeerd. Het kan alleen gewijzigd worden wanneer het VHDx-bestand wordt gemaakt met Powershell. Om een VHD te maken met een gewijzigde blokgrootte, gebruikt u dit Powershell-script (alles op één regel):</p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  
+
+  
+   
+   <h3>Postfix configureren</h3>
+
+   <p>Er is geen postfix-module meer in <tt>SuSEconfig</tt>. Dus schrijft <tt>SuSEconfig</tt> niet langer de configuratiebestanden van postfix als u sysconfig-variables instelt in <tt>/etc/sysconfig/postfix</tt> of <tt>/etc/sysconfig/mail</tt>.</p>
+
+   <p>Na het wijzigen van sysconfig-variabelen moet u handmatig <tt>/usr/sbin/SuSEconfig.postfix</tt> als <tt>root</tt> uitvoeren.</p>
+  
+
+ 
+
+ 
+  <h2>Systeemopwaardering</h2>
+
+  
+   
+   <h3>Versleutelde partities aankoppelen met dm-crypt</h3>
+
+   <p>Op vroegere SUSE-systemen werd <tt>/etc/cryptotab</tt> gebruikt voor het instellen van apparaten met de nu verouderde cryptoloop-technologie. 12.1 ondersteunt alleen <tt>/etc/crypttab</tt> (zonder 'o'!), die dm-crypt gebruikt. Gebruikers die nog steeds een <tt>/etc/cryptotab</tt> van vroeger hebben zouden <tt>convert_cryptotab</tt> moeten uitvoeren, die instructies afdrukt over wat er in plaats daarvan in <tt>/etc/crypttab</tt> en <tt>/etc/fstab</tt> gezet moet worden.</p>
+  
+
+  
+   
+   <h3>Versleutelde partities aankoppelen met systemd</h3>
+   <p>Als versleutelde partities niet automatisch worden aangekoppeld met systemd, dan kan de vlag <tt>noauto</tt> in <tt>/etc/fstab</tt> voor deze partities de oorzaak zijn. Deze vlag vervangen door <tt>nofail</tt> zal het repareren. Wijzig bijvoorbeeld de volgende regel:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>in</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  
+ 
+
+
+ 
+  <h2>Technisch</h2>
+  
+  
+   <h3>Grafische systeem initialiseren met KMS (Kernel Mode Setting)</h3>
+   
+   <p>Met openSUSE 11.3 schakelden we om naar KMS (Kernel Mode Setting) voor Intel, ATI en NVIDIA grafische systemen, wat nu onze standaard is. Als u problemen tegen komt met de ondersteuning van het KMS apparaatstuurprogramma (intel, radeon, nouveau), schakel KMS dan uit door <tt>nomodeset</tt> toe te voegen aan de commandoregel van de kernel boot. Om dit permanent in te stellen, voeg het toe aan de commandoregel van de kernel in <tt>/boot/grub/menu.lst</tt>. Deze optie verzekert dat de juiste kernelmodule (intel, radeon, nouveau) wordt geladen met <tt>modeset=0</tt> in <tt>initrd</tt>, dwz. KMS is uitgeschakeld.</p>
+
+   <p>In zeldzame gevallen, bij het laden van de DRM-module uit <tt>initrd</tt>, is er een algemeen probleem, niet gerelateerd aan KMS. Het is zelfs mogelijk om het laden van de DRM-module volledig uit te schakelen in <tt>initrd</tt>. Stel hiervoor de <tt>NO_KMS_IN_INITRD</tt> sysconfig-variabele in op <tt>yes</tt> via YAST, die dan later  <tt>initrd</tt> opnieuw aanmaakt. Herstart uw machine.</p>
+
+   <p>Op Intel zonder KMS valt de X-server terug op het stuurprogramma <tt>fbdev</tt> (het <tt>intel</tt> stuurprogramma ondersteunt alleen KMS); als alternatief is er voor oudere GPU's van Intel het stuurprogramma "intellegacy" (<tt>xorg-x11-driver-video-intel-legacy</tt> pakket) beschikbaar, dat nog steeds UMS (User Mode Settings) ondersteunt. Om het te gebruiken bewerkt u <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> en wijzigt u het stuurprogramma item in <tt>intellegacy</tt>.</p>
+
+   <p>Op ATI voor de huidige GPU's valt het stuurprogramma terug op <tt>radeonhd</tt>. Op NVIDIA zonder KMS wordt het stuurprogramma <tt>nv</tt> gebruikt (het stuurprogramma <tt>nouveau</tt> ondersteunt alleen KMS). Opmerking: nieuwere ATI en NVIDIA GPU's vallen terug op <tt>fbdev</tt>, als u de kernel-boot-parameter <tt>nomodeset</tt> specificeert.</p>
+  
+
+  
+   
+   <h3>Radeon HDMI geluidsuitvoer wordt uitgeschakeld</h3>
+
+   <p>Vanwege problemen met sommige hardware is geluidsuitvoer met HDMI standaard uitgeschakeld in het apparaatstuurprogramma radeon, wat het standaard apparaatstuurprogramma is voor AMD/ATI grafische kaarten.</p>
+   <p>Het kan opnieuw ingeschakeld worden door <tt>radeon.audio=1</tt> als kernelparameter toe te voegen. Ga in YaST naar Systeem -&gt; Bootloader en klik dan op Bewerken op het standaard item en voeg het volgende toe aan het eind van 'Optionele kernelparameter voor op de commandoregel':</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Start het systeem opnieuw na de wijziging.</p>
+   <p>Als alternatief kunnen gebruikers het eigen apparaatstuurprogramma van AMD. Voor meer informatie, zie <tt>http://nl.opensuse.org/SDB:ATI_drivers</tt>.</p>
+  
+
+  
+   
+   <h3>Opstarten met systemd of sysvinit</h3>
+
+   <p>Standaard start openSUSE nu op met <tt>systemd</tt>. Als er problemen zijn dan kunt u terugvallen op de oude manier met <tt>sysvinit</tt> door bij het opstarten de F5-toets in te drukken.</p>
+
+   <p>Als u permanent wilt omschakelen naar <tt>sysvinit</tt>, installeer dan het pakket <tt>sysvinit-init</tt>. Om weer terug te schakelen naar <tt>systemd</tt>, installeer dan opnieuw het pakket <tt>systemd-sysvinit</tt>.</p>
+  
+
+  
+   
+   <h3>systemd: Meegeven van service-opstartparameters </h3>
+   <p><tt>systemctl</tt> ondersteunt alleen "standaard" parameters (zie <tt>http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</tt>).</p>
+   <p>U kunt dit nieuwe gedrag omzeilen door het opstartscript direct aan te roepen, bijvoorbeeld:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;uw_parameters&gt;
+</pre>
+  
+
+  
+   
+   <h3>systemd: Systeem afsluiten</h3>
+
+   <p>Om het systeem helemaal te stoppen wanneer <tt>systemd</tt> wordt gebruikt, geef dan <tt>halt -p</tt> of <tt>shutdown -h now</tt> op de commandoregel of gebruik de afsluitknop in uw bureaubladomgeving.</p>
+
+   <p>Opmerking: Gewoon <tt>halt</tt> geven zal het systeem niet juist afsluiten.</p>
+  
+
+  
+   
+   <h3>systemd: Gebruik maken van tmpfs: /run, /var/run, /media, etc.</h3>
+
+   <p>systemd koppelt verschillende mappen die bedoeld zijn om alleen vlottende (tijdelijke) gegevens te bevatten, als tmpfs bestandssystemen: <tt>/run</tt>, <tt>/var/run</tt>, <tt>/var/lock</tt> en <tt>/media</tt> zijn zulke mappen. Voor achtergrondinformatie, zie <tt>http://lwn.net/Articles/436012/</tt>.</p>
+
+   <p>Opmerking: Sla geen bestanden, die bedoeld zijn om een opstart van het systeem te overleven, op in <tt>/run</tt>, <tt>/var/run</tt>, etc.</p>
+  
+
+  
+   
+   <h3>systemd: Opschonen van mappen (/tmp and /var/tmp)</h3>
+
+   <p>systemd behoudt mappen zoals gespecificeerd in de <tt>tmpfiles.d</tt> mappen en in <tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>. Voor meer informatie, zie de manpagina <tt>tmpfiles.d</tt>.</p>
+
+   <p>systemd schoont <tt>tmp</tt> mappen dagelijks standaard op zoals ingesteld in <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:</p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>Opmerking: systemd houdt geen rekening met sysconfig-variabelen in <tt>/etc/sysconfig/cron</tt> zoals <tt>TMP_DIRS_TO_CLEAR</tt>.</p>
+  
+
+  
+   
+   <h3>CUPS 1.5</h3>
+   <p>CUPS 1.5 komt met achterwaarts incompatibele wijzigingen:</p>
+   <ul>
+    <li>
+     <p>CUPS ondersteunt niet langer de configuratiebestanden <tt>~/.cupsrc</tt> of <tt>~/.lpoptions</tt> van CUPS 1.1. In plaats hiervan gebruikt u  <tt>~/.cups/client.conf</tt> en <tt>~/.cups/lpoptions</tt> die zijn geïntroduceerd met CUPS 1.2.</p>
+    </li>
+    <li>
+     <p>De scheduler vereist nu dat in filters en backends schrijfrechten van groepen zijn uitgeschakeld. Als u apparaatstuurprogramma's van makers van printers van derden gebruikt met gemakkelijke bestandsrechten, pas deze rechten dan handmatig aan.</p>
+    </li>
+   </ul>
+  
+
+  
+   
+   <h3>Het commando 'rename'</h3>
+   <p>Volgens de 'GNU Coding Standards', behandelt het commando 'rename' nu alle tekenreeksen die beginnen met een minteken als een commandoregeloptie. Om dit te voorkomen, scheidt u de optie van het andere arguments als volgt met <tt>--</tt>:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  
+
+  
+   
+   <h3>Netwerkbeheerder commandoregelinterface</h3>
+
+   <p><tt>cnetworkmanager</tt> is niet langer beschikbaar—gebruik <tt>nmcli</tt> in plaats hiervan. Voor migratieinformatie, zie <tt>http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</tt>.</p>
+  
+
+  
+   
+   <h3>rpm: %_topdir Gewijzigd voor niet-root gebruikers</h3>
+
+   <p>Gebruikers zonder privileges kunnen niet langer naar <tt>/usr/src/packages</tt> schrijven. <tt>rpmbuild</tt> gebruikt nu standaard  <tt>~/rpmbuild</tt>. Om de map te wijzigen voegt u een regel toe aan <tt>~/.rpmmacros</tt> als volgt:</p>
+   <pre>%_topdir /some/where/else</pre>
+   <p>Om de submap <tt>foo</tt> van <tt>$HOME</tt> te gebruiken voegt u aan <tt>~/.rpmmacros</tt> toe:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  
+ 
+

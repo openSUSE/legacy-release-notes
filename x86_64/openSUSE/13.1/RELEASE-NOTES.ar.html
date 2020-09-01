@@ -1,0 +1,150 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>أوبن سوزي 13.1 ملاحظات الاصدار</title><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" dir="rtl"><div lang="ar" class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idm139760782784752"></a><span class="phrase">أوبن سوزي 13.1</span> ملاحظات الاصدار</h2></div><div><p class="releaseinfo">Version: 13.1.10 (2014-01-08)</p></div><div><div class="legalnotice"><a name="idm139760782781744"></a><p>حقوق الطبع والنشر © 2013 SUSE LLC</p><p>يتم منح الإذن نسخ، توزيع و/أو تعديل هذا المستند تحت شروط رخصة جنو للوثائق الحرة، الإصدار 1.2 أو أي إصدار أحدث المنشورة من قبل مؤسسة البرمجيات الحرة؛ مع لا الأقسام الثابتة ونصوص الغلاف الأمامي واي نصوص أخرى. وترد نسخة من الترخيص كملف في <code class="filename">fdl.txt</code> ملف.</p></div></div></div><hr></div><div class="toc"><dl class="toc"><dt><span class="sect1"><a href="#misc">1. منوعات</a></span></dt><dt><span class="sect1"><a href="#installation">2. التثبيت</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm139760782945920">2.1. للحصول على معلومات مفصلة عن التثبيت</a></span></dt></dl></dd><dt><span class="sect1"><a href="#general">3. عام</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.123.documentation">3.1. وثائق أوبن سوزي</a></span></dt><dt><span class="sect2"><a href="#sec.131.yastmodules">3.2. إسقاط وحدات YaST النمطية</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi">3.3. UEFI—واجهة البرنامج الثابت الممتد</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi-part">3.4. UEFI, GPT, and MS-DOS Partitions</a></span></dt><dt><span class="sect2"><a href="#sec.131.secboot">3.5. Booting When in Secure Boot Mode</a></span></dt><dt><span class="sect2"><a href="#sec.131.acroread">3.6. Adobe Reader (acroread) and Other PDF Readers</a></span></dt></dl></dd><dt><span class="sect1"><a href="#upgrade">4. ترقية النظام</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm139760777773120">4.1. الترقية باستخدام Zypper (dup) تتطلب /etc/fstab Cleanup</a></span></dt><dt><span class="sect2"><a href="#sec.123.syslog">4.2. تمت إزالة المتغير SYSLOG_DAEMON</a></span></dt><dt><span class="sect2"><a href="#sec.131.systemd-networkif">4.3. Duplicated Network Interfaces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#technical">5. تقني</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.114.kms">5.1. تهيئة الرسومات مع KMS (إعداد وضع النواة)</a></span></dt><dt><span class="sect2"><a href="#sec.131.nouveau-inst">5.2. Garbage on the Screen During Installation with the Nouveau
+   Driver</a></span></dt><dt><span class="sect2"><a href="#idm139760777698752">5.3. Samba Version 4.1</a></span></dt><dt><span class="sect2"><a href="#idm139760777696512">5.4. إعداد Postfix</a></span></dt><dt><span class="sect2"><a href="#idm139760777685440">5.5. xinetd: تسجيل في سجل النظام</a></span></dt><dt><span class="sect2"><a href="#idm139760777677152">5.6. أباتشي الإصدار 2.4</a></span></dt><dt><span class="sect2"><a href="#idm139760777674816">5.7. tomcat: تسجيل في سجل النظام</a></span></dt><dt><span class="sect2"><a href="#sec.131.darktable">5.8. Darktable: تحديث ذاكرة التخزين المؤقت للملفات المطلوبة</a></span></dt><dt><span class="sect2"><a href="#sec.131.locate">5.9. Locate: Replacing findutils-locate by mlocate</a></span></dt><dt><span class="sect2"><a href="#sec.131.kdeandbt">5.10. KDE and Bluetooth</a></span></dt><dt><span class="sect2"><a href="#sec.131.apparmor">5.11. AppArmor and Permission Settings</a></span></dt><dt><span class="sect2"><a href="#sec.131.skype">5.12. Skype</a></span></dt><dt><span class="sect2"><a href="#sec.131.autoyast">5.13. AutoYaST</a></span></dt></dl></dd></dl></div><p>إذا قمت بالترقية من إصدار قديم إلى هذا الإصدار openSUSE، انظر ملاحظات الإصدار السابق المدرجة هنا: <a class="ulink" href="http://en.opensuse.org/openSUSE:Release_Notes" target="_top">http://en.opensuse.org/openSUSE:Release_Notes</a></p><p>ملاحظات الإصدار تغطي المناطق الأتية:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="xref" href="#misc" title="1. منوعات">قسم 1, “منوعات”</a>: هذه الإدخالات مضمنة تلقائياً مع استخدام openFATE, المميزات ونظام الإدارة (<a class="ulink" href="http://features.opensuse.org" target="_top">http://features.opensuse.org</a>).</p><p>غير متوفر</p></li><li class="listitem"><p><a class="xref" href="#installation" title="2. التثبيت">قسم 2, “التثبيت”</a>: اقرأ هذا إذا كنت ترغب في تثبيت النظام من الصفر.</p></li><li class="listitem"><p><a class="xref" href="#general" title="3. عام">قسم 3, “عام”</a>: معلومات يجب على الجميع قراءتها.</p></li><li class="listitem"><p><a class="xref" href="#upgrade" title="4. ترقية النظام">قسم 4, “ترقية النظام”</a>: ما يتعلق بعملية ترقية النظام من الإصدار السابق لهذا الإصدار openSUSE.</p></li><li class="listitem"><p><a class="xref" href="#technical" title="5. تقني">قسم 5, “تقني”</a>: ما يتعلق بالتغييرات التقنية والتحسينات للمستخدمين ذوي الخبرة.</p></li></ul></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="misc"></a>1. منوعات</h2></div></div></div><p>غير متوفر</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation"></a>2. التثبيت</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760782945920"></a>2.1. للحصول على معلومات مفصلة عن التثبيت</h3></div></div></div><p>للحصول على معلومات مفصلة عن التثبيت، راجع <a class="xref" href="#sec.123.documentation" title="3.1. وثائق أوبن سوزي">قسم 3.1, “وثائق أوبن سوزي”</a>.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="general"></a>3. عام</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.documentation"></a>3.1. وثائق أوبن سوزي</h3></div></div></div><p>في <span class="emphasis"><em>بدء التشغيل</em></span>، تجد إرشادات التثبيت خطوة بخطوة، وكذلك مقدمات لسطح المكتب كيدي وجنوم وليبر أوفيس. وأيضا المواضيع الأساسية للإدارة مثل نشر وإدارة البرامج، ومقدمة للتعرف على الشل.</p><p>ستجد الوثائق في <code class="filename">/usr/share/doc/manual/opensuse-manuals_$LANG</code> بعد تثبيت حزمة <code class="systemitem">opensuse-startup_$LANG</code>, أو على الإنترنت في<a class="ulink" href="http://doc.opensuse.org" target="_top">http://doc.opensuse.org</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.yastmodules"></a>3.2. إسقاط وحدات YaST النمطية</h3></div></div></div><p>وحدات YaST النمطية التالية أصبحت قديمة، ونادراً ما تستخدم في هذه الأيام:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+      <code class="systemitem">yast2-autofs</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-dbus-client</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-dirinstall</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">قارئ بصمات الأصابع-yast2</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-irda</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">الفأرة-yast2</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">خدمات-الهاتف-yast2</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">مدير-الطاقة-yast2</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">مدير-الملف-الشخصي-yast2</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-sshd</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">تلفزيون-yast2</code>
+     </p></li></ul></div><p>السبب الرئيسي لإسقاطها هو تقليل أعباء الصيانة، والتركيز بشكل أفضل على الوحدات النمطية الأخرى المستخدمة أكثر.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi"></a>3.3. UEFI—واجهة البرنامج الثابت الممتد</h3></div></div></div><p>قبل تثبيت أوبن سوزي على نظام يستخدم إقلاع UEFI (واجهة البرنامج الثابت الممتد) ينصح بالتحقق من تحديثات البرامج الثابتة للأجهزة الموصي بها من البائع. وجود 8 Windows مثبتة مسبقاً هو إشارة قوية إلى أن النظام يستخدم إقلاع UEFI.</p><p><span class="emphasis"><em>معلومات أساسية:</em></span> هناك علل في بعض البرامج الثابتة UEFI تؤدي إلى الإنهيار إذا تمت كتابة بيانات كثيرة جداً إلى منطقة تخزين UEFI. هذه البيانات "الكثيرة" ليس هناك تقدير لها. أوبن سوزي تقلل الخطر بعدم كتابة أكثر من الحد الأدنى المطلوب لإقلاع نظام التشغيل الحد الأدنى يخبر البرنامج الثابت UEFI عن موقع أوبن سوزي على محمل الإقلاع. تم تعطيل ميزات نواة لينكس التي تستخدم منطقة تخزين UEFI (<code class="literal">pstore</code>) بشكل افتراضي. ومع ذلك يوصي بتثبيت أي تحديثات برامج ثابتة يوصي بها بائع الأجهزة.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi-part"></a>3.4. UEFI, GPT, and MS-DOS Partitions</h3></div></div></div><p>
+Together with the EFI/UEFI specification a new style of partitioning
+arrived: GPT (GUID Partition Table). This new schema uses globally
+unique identifiers (128-bit values displayed in 32 hexadecimal digits)
+to identify devices and partition types.
+   </p><p>
+Additionally, the UEFI specification also allows legacy MBR (MS-DOS)
+partitions. The Linux boot loaders (ELILO or GRUB2) try to generate
+automatically a GUID for those legacy partitions, and write them to the
+firmware. Such a GUID can change frequently, causing a rewrite in the
+firmware. A rewrite consist of two different operation: removing the old
+entry and creating a new entry that replaces the first one.
+   </p><p>
+Modern firmware has a garbage collector that collects deleted entries
+and frees the memory reserved for old entries. A problem arises when
+faulty firmware does not collect and free those entries; this may end up
+with a non-bootable system.
+   </p><p>
+The workaround is simple: convert the legacy MBR partition
+to the new GPT to avoid this problem completely.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.secboot"></a>3.5. Booting When in Secure Boot Mode</h3></div></div></div><p>هذا يؤثر فقط على الأجهزة في وضع UEFI عند تمكين الإقلاع الآمن.</p><p>
+    The new version of the shim loader allows more machines to boot with
+    Secure Boot enabled than with openSUSE 12.3.  Nevertheless, in case
+    of trouble, first update the BIOS of your machine to the latest
+    version. If the BIOS update does not help, report the model of your
+    machine it the wiki (http://en.opensuse.org/openSUSE:UEFI). Then we
+    can track it for the next release.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.acroread"></a>3.6. Adobe Reader (acroread) and Other PDF Readers</h3></div></div></div><p>
+    Adobe no longer provides (security) updates for Adobe Reader
+    (<code class="systemitem">acroread</code>).  Therefore the
+    <code class="systemitem">acroread</code> package was dropped from the
+    distribution to protect openSUSE users.
+   </p><p>
+    openSUSE includes various PDF viewing tools like Okular, Evince, and
+    poppler-tools. These tools are actively maintained and get security
+    fixes from openSUSE and their upstream authors.
+   </p><p>
+    For more information, see <a class="ulink" href="http://en.opensuse.org/Adobe_Reader" target="_top">http://en.opensuse.org/Adobe_Reader</a>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="upgrade"></a>4. ترقية النظام</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760777773120"></a>4.1. الترقية باستخدام Zypper (dup) تتطلب /etc/fstab Cleanup</h3></div></div></div><p>عند الترقية باستخدام <span class="command"><strong>zypper dup</strong></span> (ترقية YaST تتعامل تلقائياً مع ذلك) يجب على المستخدم إزالة الملفات التالية <code class="filename">/etc/fstab</code> entries if present:</p><pre class="screen">tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc</pre><p>هذا مهم بشكل خاص لمستخدمي جنوم، وإلا فستفشل طرفية جنوم مع "<code class="literal">فشل grantpt: العملية غير مسموح بها</code>". نقطة التوصيل هذه تتم إدارتها من قبل <span class="command"><strong>systemd</strong></span> ولم تعد موجودة في <code class="filename">/etc/fstab</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.syslog"></a>4.2. تمت إزالة المتغير SYSLOG_DAEMON</h3></div></div></div><p>تم إزالة متغير SYSLOG_DAEMON. من قبل، كان يستخدم في السابق لتحديد البرنامج الخفي syslog. بدءاً من أوبن سوزي 12.3، سيتم السماح بتثبيت syslog واحد فقط على نظام وسيتم اختياره تلقائياً للاستخدام.</p><p>راجع استخدام syslog(8) للحصول على تفاصيل.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.systemd-networkif"></a>4.3. Duplicated Network Interfaces</h3></div></div></div><p>
+    The current version of systemd uses a new convention for assigning
+    predictable names to network interfaces.  YaST is changed
+    accordingly.
+   </p><p>
+    Some reports indicate a bug in YaST when conversion from one naming
+    scheme to another takes place. If the same network interface has two
+    different names, you have been hit by this bug. In this case remove
+    the different network interfaces in
+    <code class="filename">/etc/sysconfig/network</code> and use YaST to
+    configure the network anew.
+   </p><p>
+    For more information about predictable network interface names, see
+    <a class="ulink" href="http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/" target="_top">http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/</a>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="technical"></a>5. تقني</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.114.kms"></a>5.1. تهيئة الرسومات مع KMS (إعداد وضع النواة)</h3></div></div></div><p>نحاول منذ إطلاق 11.3 التحول إلى KMS (إعداد وضع النواة) للطباقات الرسومية من l ، ATI و NVIDIA، وأصبح الآن إفتراضي. إذا واجهت مشاكل مع دعم KMS لسواقات (intel, radeon, nouveau)، عطل KMS بإضافة <code class="literal">nomodeset</code> إلى سطر أوامر إقلاع النواة. ولتعيين هذا بشكل دائم باستخدام Grub 2، محمل الإقلاع الافتراضي، أضف هذا لسطر محمل النواة <code class="literal">GRUB_CMDLINE_LINUX_DEFAULT</code> في خيارات النواة في <code class="filename">/etc/default/grub</code> يجب تحريره كالجذر في الطرفية</p><pre class="screen">sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg</pre><p>لتصبح التغييرات سارية المفعول. غير ذلك، Grub القديم، أضافتها إلى سطر أوامر النواة في <code class="filename">/boot/grub/menu.lst</code>، أضيفت كجذر. هذا الخيار للتأكد من تحميل وحدة النواة النمطية المناسبة (intel, radeon, nouveau) مع <code class="literal">modeset = 0</code> في <code class="filename">initrd</code>، .. الخ KMS.</p><p>في حالات نادرة عند تحميل DRM غير النمطية من <code class="filename">initrd</code> تحدث مشكلة لا علاقة لها ب KMS، من الممكن تعطيل DRM في <code class="filename">initrd</code> تماما. لمجموعة هذ المتغيرات إعداد النظام <code class="literal">NO_KMS_IN_INITRD</code> أضبطه إلى <code class="literal">نعم</code> عن طريق YAST، الذي سيستعيد <code class="filename">initrd</code> . ثم أعد تشغيل الحاسب.</p><p>على إنتل بدون KMS ومع الخادم X يستعيد سواقة التشغيل <code class="literal">fbdev</code> (برنامج التشغيل <code class="literal">intel</code> فقط يدعم KMS)؛ وبدلاً من ذلك، ل GPUs الموروثة من Intel "intellegacy" (مجموعة<code class="systemitem">xorg-x11-driver-video-intel-legacy</code> ) يتوفر سواقة تشغيل، التي ما زالت تدعم UMS (إعداد وضع المستخدم). لتستخدمها، حرر <code class="filename">/etc/X11/xorg.conf.d/50-device.conf</code> وغير إدخال برنامج التشغيل إلى <code class="literal">intellegacy</code>.</p><p>على ATI ل GPUs الحالي يستعيد <code class="literal">radeonhd</code> . يتم استخدام سواقة التشغيل على NVIDIA دون KMS <code class="literal">nv</code> (تعتمد سواقة التشغيل <code class="literal">nouveau</code> KMS فقط). لاحظ أن ATI و NVIDIA GPUs الحديثة تعود إلى <code class="literal">fbdev</code>، إذا قمت بتحديد معلمة إقلاع النواة <code class="literal">nomodeset</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.nouveau-inst"></a>5.2. Garbage on the Screen During Installation with the Nouveau
+   Driver</h3></div></div></div><p>
+On some systems with NVIDIA cards, the installer may show garbage on the
+top part of the screen due to problems with the default nouveau
+driver. If you are affected by this problem, you can disable the nouveau
+kernel module to run the installer and then enable it again once the
+system is installed or upgraded.
+   </p><p>
+To disable the kernel module, once you boot from the installation media,
+select the 'Installation' entry in grub and press 'e' to edit the
+parameters. Then go to the line starting with 'linux' (or 'linuxefi')
+and add <code class="literal">brokenmodules=nouveau</code> at the end. Now press
+F10 to continue booting with the new parameter.  After the system is
+installed, you can re-enable the nouveau module by editing
+<code class="filename">/etc/modprobe.d/50-blacklist.conf</code> and removing the
+entry that blacklists nouveau.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760777698752"></a>5.3. Samba Version 4.1</h3></div></div></div><p>سامبا الإصدار 4.1 يتم إرفاقها مع اوبن سوزي 13.1 ولا يتضمن ذلك دعم للعمل في نمط وحدة تحكم بمجال المجلد النشط. هذه الوظيفة معطلة حاليا، كما أنها تفتقر إلى التكامل مع المنظومة MIT Kerberos.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760777696512"></a>5.4. إعداد Postfix</h3></div></div></div><p>مع سوزي 12.3تمت إعادة تسمية <code class="filename">SuSEconfig.postfix</code> ك <code class="filename">/usr/sbin/config.postfix</code>. إذا قمت بتعيين المتغيرات sysconfig في <code class="filename">/etc/sysconfig/postfix</code> أو <code class="filename">/etc/sysconfig/mail</code>، يجب عليك يدوياً تشغيل <code class="filename">/usr/sbin/config.postfix</code> كجذر.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760777685440"></a>5.5. xinetd: تسجيل في سجل النظام</h3></div></div></div><p>تغير الافتراضي الجديد إلى <span class="command"><strong>xinetd</strong></span> الهدف الافتراضي لتسجيل الدخول من <code class="filename">/var/log/xinetd.log</code> إلى سجل النظام. وهذا يعني أن كافة الرسائل من <span class="command"><strong>xinetd</strong></span> ستظهر في سجل النظام كبرنامج خفي مرفق ومعلومات مستوى وسجل.</p><p>إذا رغبت في تبديل مرة أخرى للطريقة القديمة، ابحث على قصاصة سليمة في <code class="filename">/etc/xinetd.conf</code>. يمكن العثور على قالب للبرنامج النصي logrotate ل <code class="filename">xinetd.log</code> في <code class="filename">/usr/share/doc/packages/xinetd/logrotate</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760777677152"></a>5.6. أباتشي الإصدار 2.4</h3></div></div></div><p>أباتشي الإصدار 2.4 بميزات إعدادات ملف مختلفة. للحصول على مزيد من المعلومات حول الترقية من إصدار سابق، راجع <a class="ulink" href="http://httpd.apache.org/docs/2.4/upgrading.html" target="_top">http://httpd.apache.org/docs/2.4/upgrading.html</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm139760777674816"></a>5.7. tomcat: تسجيل في سجل النظام</h3></div></div></div><p>لم يعد البرامج النصية لبدء التشغيل tomcat يكتب الإخراج في <code class="filename">/var/log/tomcat/catalina.out</code>. يتم الآن إعادة توجيه كافة الرسائل إلى سجل النظام عن طريق <code class="systemitem">tomcat.service</code> (<code class="systemitem">tomcat-jsvc.service</code>) وسجل مستوى المعلومات.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.darktable"></a>5.8. Darktable: تحديث ذاكرة التخزين المؤقت للملفات المطلوبة</h3></div></div></div><p>إذا كانت الترقية من إصدار سوزي سابق سوزي 13.1 قد لا تعمل ذاكرة التخزين المؤقت للملفات القديمة. من الضروري في هذه الحالة إزالة <code class="filename">~/.cache/darktable/mipmaps</code> لحل المشكلة.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.locate"></a>5.9. Locate: Replacing findutils-locate by mlocate</h3></div></div></div><p>
+    The <span class="command"><strong>mlocate</strong></span> tool is the replacement for
+    <span class="command"><strong>findutils-locate</strong></span>.  In the default configuration
+    <span class="command"><strong>mlocate</strong></span> behave the same as
+    <span class="command"><strong>findutils-locate</strong></span>.  Because of an improved
+    permission handling, it could take up to 24 hours, until the
+    database file will become available to regular users.
+   </p><p>
+    In case you encounter a "Permission denied" message shortly
+    after installing <span class="command"><strong>mlocate</strong></span>, run
+   </p><pre class="screen">/etc/cron.daily/mlocate.cron</pre><p>
+    as root once.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.kdeandbt"></a>5.10. KDE and Bluetooth</h3></div></div></div><p>
+The Bluetooth stack is provided by Bluez 5 (a major,
+backwards-incompatbile version), a necessary upgrade for GNOME desktop
+and some other components of the base system. Unfortunately, the KDE
+workspace only supports Bluez version 4 in its currently-released
+versions.
+   </p><p>
+Therefore, the openSUSE KDE community team offers an unofficial
+Bluedevil package providing at least basic functionality such as device
+pairing or support for bluetooth mice; Some other features are known not
+to work jet, like file transfer.
+   </p><p>
+For the moment, bugs should not be filed against Bluetooth support in KDE as
+the Bluez 5 port of Bluedevil is still ongoing.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.apparmor"></a>5.11. AppArmor and Permission Settings</h3></div></div></div><p>
+    AppArmor is enabled by default. This means more security, but might
+    prevent services from working, if you run them in unexpected
+    ways. If you encounter strange permission problems, try to switch
+    the AppArmor profile for the affected service to complain mode with:
+   </p><pre class="screen">aa-complain /usr/bin/$your_service</pre><p>
+    Complain mode means: allow everything, and log things that
+    the profile would not allow.
+   </p><p>
+    Even if it helps report it as a bug!  We want to fix AppArmor
+    profiles to cover also corner cases.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.skype"></a>5.12. Skype</h3></div></div></div><p>
+PulseAudio 4.0 exposes a bug in the current version of Skype for Linux
+(v4.2). Until Skype is fixed and updated, run <span class="command"><strong>skype</strong></span>
+from the command line:
+   </p><pre class="screen">PULSE_LATENCY_MSEC=60 skype</pre><p>
+For more information about this bug, see
+<a class="ulink" href="http://arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/" target="_top">http://arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/</a>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.autoyast"></a>5.13. AutoYaST</h3></div></div></div><p>
+    If the autoyast profile contains entries in an
+    <code class="literal">&lt;add-on&gt;</code> section there is a bug triggered that
+    prevents information in the profile from being transferred from the
+    first stage into the second stage. Therefore, in this case all
+    second stage configuration steps are skipped, which normally leads
+    to more or less completely unusable installations.
+   </p><p>
+    As a temporary workaround, avoid using
+    <code class="literal">&lt;add-on&gt;</code> sections in profiles with AutoYaST in
+    openSUSE 13.1.
+   </p></div></div></div></body></html>

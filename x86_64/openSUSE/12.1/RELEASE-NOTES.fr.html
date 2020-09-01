@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Notes de version d'openSUSE 12.1</title>
+</head>
+<body>
+ <h1>Notes de version d'openSUSE 12.1</h1>
+ <p>Version :</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>Il est permis de copier, distribuer et/ou modifier ce document selon les conditions de la licence GNU Free Documentation, Version 1.2 ou n'importe quelle version plus récente publiée par la Free Software Foundation ; sans section inaltérable, sans texte de première page de couverture ni texte de dernière page de couverture. Une copie de la licence est incluse dans le fichier <tt>fdl.txt</tt>.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Si vous mettez à jour une ancienne installation vers cette version d'openSUSE, consultez les précédentes notes de version listées ici : <a href="http://en.opensuse.org/openSUSE:Release_Notes">http://en.opensuse.org/openSUSE:Release_Notes</a></p>
+
+ 
+ 
+ <p>Ces notes de version traitent des points suivants :</p>
+<div>
+<dl>
+<dt>Divers</dt>
+<dd><ol><li><a href="#01">Module de configuration YaST AppArmor</a></li></ol></dd>
+<dt>Installation</dt>
+<dd><ol><li><a href="#02">Pour des informations détaillées sur l'installation</a></li></ol></dd>
+<dt>Généralités</dt>
+<dd><ol>
+<li><a href="#03">Documentation openSUSE</a></li>
+<li><a href="#04">GNOME 3</a></li>
+<li><a href="#05">Système sonore PulseAudio</a></li>
+<li><a href="#06">Btrfs</a></li>
+<li><a href="#07">Connexion à un domaine Windows avec KDM</a></li>
+<li><a href="#08">Oracle Java disponible séparément</a></li>
+<li><a href="#09">Removing 32-Bit XEN Hypervisor</a></li>
+<li><a href="#10">Formatting Large Disk Partitions on Windows 8 Server</a></li>
+<li><a href="#11">Configuring Postfix</a></li>
+</ol></dd>
+<dt>Mise à niveau du système</dt>
+<dd><ol>
+<li><a href="#12">Monter des partitions cryptées avec dm-crypt</a></li>
+<li><a href="#13">Monter des partitions cryptées en utilisant systemd</a></li>
+</ol></dd>
+<dt>Aspect technique</dt>
+<dd><ol>
+<li><a href="#14">Initialisation de la carte graphique avec KMS (Kernel Mode Setting)</a></li>
+<li><a href="#15">Sortie audio HDMI désactivée sur les cartes Radeon</a></li>
+<li><a href="#16">Amorçage avec systemd ou sysvinit</a></li>
+<li><a href="#17">systemd : fournir des paramètres de démarrage de service</a></li>
+<li><a href="#18">systemd: Extinction du système</a></li>
+<li><a href="#19">systemd : Utilisation de tmpfs : /run, /var/run, /media, etc.</a></li>
+<li><a href="#20">systemd : Nettoyage des dossiers (/tmp and /var/tmp)</a></li>
+<li><a href="#21">CUPS 1.5</a></li>
+<li><a href="#22">La commande rename</a></li>
+<li><a href="#23">Interface en ligne de commande pour NetworkManager</a></li>
+<li><a href="#24">rpm: %_topdir modifié pour les utilisateurs non-root</a></li>
+</ol></dd>
+</dl>
+<hr>
+</div>
+
+ <ul>
+  <li>
+   <p>Divers : ces éléments sont automatiquement inclus à partir d'openFATE, le système de gestion des fonctionnalités et exigences fonctionnelles (<a href="http://features.opensuse.org">http://features.opensuse.org</a>).</p>
+   <p>Pour le moment, ces extraits sont listés sans tri particulier ; nous travaillons sur des améliorations.</p>
+  </li>
+
+ <li>
+   <p>Installation : lisez ceci si vous voulez installer un nouveau système.</p>
+  </li>
+
+ <li>
+   <p>Généralités : les informations qui s'adressent à tous.</p>
+  </li>
+
+  <li><p>Mise à niveau du système : problèmes lié à une mise à niveau du système depuis la version précédente à cette version d'openSUSE.</p></li>
+
+  <li><p>Aspect technique : cette section contient un certain nombre de modifications et améliorations techniques qui s'adressent à l'utilisateur expérimenté.</p></li>
+ </ul>
+
+
+  <div>
+<h2>Divers</h2>
+    <div>
+<h3><a name="01">Module de configuration YaST AppArmor</a></h3>
+<p>Catégories FATE pour <a href="https://fate.novell.com/305278">https://fate.novell.com/305278</a> : AppArmor, YaST.</p>
+
+<p>Vous trouverez maintenant le module de configuration AppArmor dans la section "Sécurité et Utilisateurs" du Centre de Contrôle YaST.</p>
+
+</div>
+  </div>
+
+
+
+
+ <div>
+  <h2>Installation</h2>
+  
+  <div>
+   <h3><a name="02">Pour des informations détaillées sur l'installation</a></h3>
+
+  <p>Pour des informations détaillées sur l'installation, reportez-vous à la 
+  "Documentation openSUSE"
+ référencée ci-dessous. </p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Généralités</h2>
+
+  
+  <div>
+   <h3><a name="03">Documentation openSUSE</a></h3>
+
+   <ul>
+    <li><p>Dans le Guide de démarrage, vous trouverez des instructions d'installation étape par étape, ainsi qu'une introduction aux bureaux KDE et GNOME et à la suite LibreOffice. Les questions d'administration générale y sont également évoquées, comme le déploiement, la gestion de logiciels et une introduction au shell bash.</p></li>
+    <li>
+     <p>Le Guide de Référence couvre l'administration et la configuration du système en détail, et explique comment configurer divers services réseau.</p>
+    </li>
+    <li><p>Le Guide de la Sécurité introduit certains concepts de base de la sécurité système, couvrant à la fois les aspects de sécurité locale et réseau.</p></li>
+    <li>
+<p>Le Guide d'analyse et de réglage du système aide à la détection de problèmes, à leur résolution et à l'optimisation.</p>
+    </li>
+    <li>
+<p>La Virtualisation avec KVM offre une introduction à la mise en place et à la gestion de la virtualisation avec les outils KVM, libvirt et QEMU.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   <h3><a name="04">GNOME 3</a></h3>
+   
+   <p>GNOME 3 propose un nouveau design du bureau, différent de GNOME 2. En conséquence, et pour que les utilisateurs puissent tirer parti de ces changements, l'apparence de votre bureau GNOME 2 ne sera pas migrée automatiquement. Les Préférences Système peuvent être utilisées pour personnaliser GNOME 3, et un outil avancé (<tt>gnome-tweak-tool</tt>) est fourni pour une personnalisation plus poussée.</p>
+   <p>Le mode standard de GNOME 3 requiert le support de l'accélération 3D par les pilotes graphiques. Lorsque l'accélération 3D n'est pas disponible, GNOME 3 utilise alors le mode restreint. Si GNOME 3 détecte la disponibilité de l'accélération 3D mais que le mode standard est inutilisable, vous rencontrez vraisemblablement un bug du pilote graphique. Vous pouvez forcer l'utilisation du mode restreint avec l'argument "<tt>gnome.fallback=1</tt>" sur la ligne d'amorçage de GRUB.</p>
+   <p>Si vous utilisez le mode restreint, vous pouvez personnaliser les panneaux en appuyant sur Alt lorsque vous effectuez un clic droit sur un panneau.</p>
+   <p>Pour une brève description des nombreuses fonctionnalités de GNOME Shell, telles que les raccourcis claviers, les fonctionnalités de glisser-déposer et les utilitaires spécialisés, consultez <a href="https://live.gnome.org/GnomeShell/CheatSheet">https://live.gnome.org/GnomeShell/CheatSheet</a>.</p>
+  </div>
+
+  <div>
+   <h3><a name="05">Système sonore PulseAudio</a></h3>
+   
+   <p>Le système sonore PulseAudio est maintenant intégré à travers le système et activé par défaut lors d'une nouvelle installation. Si vous l'aviez désactivé dans une version antérieure et souhaitez à présent l'activer, ajustez la variable <tt>PULSEAUDIO_ENABLE</tt> dans <tt>/etc/sysconfig/sound</tt> :</p>
+
+   <p>Définissez <tt>PULSEAUDIO_ENABLE</tt> à "<tt>yes</tt>" pour forcer l'activation de PA partout. Définir <tt>PULSEAUDIO_ENABLE</tt> à "<tt>no</tt>" désactivera PulseAudio complètement, et le définir à "<tt>custom</tt>" permet de conserver une configuration personnalisée intacte.</p>
+  </div>
+
+
+  <div>
+   
+   <h3><a name="06">Btrfs</a></h3>
+   <p>Btrfs constitue la prochaine génération de systèmes de fichiers pour Linux. En tant qu'aperçu de la technologie, vous pouvez créer des partitions btrfs ou configurer votre système entier avec btrfs.</p>
+
+   <p>Note : le système de fichiers btrfs est toujours activement développé, et la fonction de vérification et de réparation ("scrub") n'a été ajoutée que très récemment. "Scrub" a pour but de vérifier les données et métadonnées en supposant que les structures arborescentes sont saines ; il peut (et devrait) être exécuté de manière régulière sur un système de fichier monté : il s'exécute comme processus en arrière-plan pendant le fonctionnement normal.</p>
+
+   <p>Ainsi, nous conseillons de considérer attentivement quelles données mettre sur ce système de fichier et de suivre les conseils habituels de redondance et de sauvegarde. Pour plus d'informations, voir <a href="http://btrfs.wiki.kernel.org">http://btrfs.wiki.kernel.org</a>.</p>
+
+   <p>Btrfs contient de nombreuses nouvelles fonctionnalités intéressantes comme la possibilité de prendre des instantanés de votre système de fichiers. Les instantanés et les restaurations sont supportés par <tt>snapper</tt> et déjà intégrés dans les outils de gestion des paquets et du système openSUSE, comme <tt>zypper</tt> et YaST.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="07">Connexion à un domaine Windows avec KDM</a></h3>
+
+   <p>Le thème KDM SUSE ne permet pas de se connecter à un domaine Windows.</p>
+
+   <p>Pour contourner ce problème, définissez DISPLAYMANAGER_KDM_THEME à une chaine vide dans <tt>/etc/sysconfig/displaymanager</tt> pour utiliser le thème KDE par défaut :</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  </div>
+
+  <div>
+   <h3><a name="08">Oracle Java disponible séparément</a></h3>
+   <p>Le paquet java-1_6_0-sun ne fait plus partie d'openSUSE en raison d'un changement de licence. Nous intégrons OpenJDK en tant que remplacement. Les utilisateurs d'openSUSE qui préfèrent utiliser les binaires JDK d'Oracle plutôt que la version OpenJDK fournie par openSUSE, peuvent les télécharger depuis <a href="http://oracle.com/java">http://oracle.com/java</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="09">Removing 32-Bit XEN Hypervisor</a></h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  </div>
+
+  
+  
+  <div>
+   <h3><a name="10">Formatting Large Disk Partitions on Windows 8 Server</a></h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  </div>
+
+  <div>
+   
+   <h3><a name="11">Configuring Postfix</a></h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Mise à niveau du système</h2>
+
+  <div>
+   
+   <h3><a name="12">Monter des partitions cryptées avec dm-crypt</a></h3>
+
+   <p>Sur des systèmes SUSE anciens, <tt>/etc/cryptotab</tt> était utilisé pour configurer des périphériques avec la technologie cryptoloop qui n'est maintenant plus utilisé. La 12.1 supporte uniquement <tt>/etc/crypttab</tt> (sans 'o' !), qui utilise dm-crypt. Les utilisateurs qui ont encore un <tt>cryptotab</tt> devraient lancer la commande <tt>convert_cryptotab</tt> qui affiche des instructions à propos de ce qu'il faut mettre dans <tt>crypttab</tt> et <tt>fstab</tt> à la place.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="13">Monter des partitions cryptées en utilisant systemd</a></h3>
+   <p>Si des partitions cryptées ne sont pas montées automatiquement en utilisant systemd, le flag <tt>noauto</tt> de ces partitions dans <tt>/etc/fstab</tt> peut en être la cause. Remplacer ce flag par <tt>nofail</tt> permettra de résoudre le problème. Par exemple, modifiez la ligne suivante :</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>en</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  </div>
+ </div>
+
+
+ <div>
+  <h2>Aspect technique</h2>
+  
+  <div>
+   <h3><a name="14">Initialisation de la carte graphique avec KMS (Kernel Mode Setting)</a></h3>
+   
+   <p>Depuis openSUSE 11.3, KMS (Kernel Mode Setting) est activé par défaut pour les cartes graphiques Intel, ATI et NVIDIA. Si vous rencontrez des problèmes avec le support de KMS par les pilotes (intel, radeon, nouveau), désactivez KMS en ajoutant <tt>nomodeset</tt> à la ligne de commande d'amorçage du noyau. Pour définir ceci de manière permanente, ajoutez-le à la ligne de commande du noyau dans <tt>/boot/grub/menu.lst</tt>. Cette option permet de s'assurer que le module du noyau (intel, radeon, nvidia) est chargé avec <tt>modeset=0</tt> dans <tt>initrd</tt>, c'est à dire que KMS est désactivé.</p>
+
+   <p>Dans les rares cas où le chargement du module DRM depuis <tt>initrd</tt> pose problème, sans relation avec KMS, il est même possible de désactiver complètement le chargement du module DRM dans <tt>initrd</tt>. Pour cela, définissez la variable sysconfig <tt>NO_KMS_IN_INITRD</tt> à <tt>yes</tt> via YaST, ce qui recrée ensuite <tt>initrd</tt>. Redémarrez votre machine.</p>
+
+   <p>Sur Intel sans KMS, le serveur X se replie vers le pilote <tt>fbdev</tt> (le pilote <tt>intel</tt> ne supporte que KMS) ; alternativement, il existe aussi le pilote "intellegacy" (paquet <tt>xorg-x11-driver-video-intel-legacy</tt>) qui supporte toujours UMS (User Mode Setting). Pour l'utiliser, éditez <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> et changez la valeur de driver à <tt>intellegacy</tt>.</p>
+
+   <p>Sur ATI pour les cartes graphiques actuelles, le serveur X se rabat sur <tt>radeonhd</tt>. Sur NVIDIA sans KMS, le pilote <tt>nv</tt> est utilisé (le pilote <tt>nouveau</tt> ne supporte que KMS). Notez que les cartes graphiques ATI et NVIDIA les plus récentes basculeront sur <tt>fbdev</tt> si vous spécifiez le paramètre d'amorçage du noyau <tt>nomodeset</tt>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="15">Sortie audio HDMI désactivée sur les cartes Radeon</a></h3>
+
+   <p>En raison de problèmes avec certains périphériques, la sortie son HDMI a été désactivée par défaut sur le pilote radeon, qui est le pilote par défaut pour les cartes graphiques AMD/ATI.</p>
+   <p>Elle peut être réactivée en ajoutant <tt>radeon.audio=1</tt> comme paramètre du noyau. Dans YaST, allez dans Système -&gt; Configuration du chargeur d'amorçage, cliquez sur Modifier sur l'entrée par défaut et ajoutez ceci à la fin de "Paramètre facultatif de ligne de commande du noyau" :</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Redémarrez votre ordinateur pour que les modifications prennent effet.</p>
+   <p>Une solution alternative consiste à installer le pilote propriétaire fourni par AMD. Pour plus d'informations, consultez <a href="http://en.opensuse.org/SDB:ATI_drivers">http://en.opensuse.org/SDB:ATI_drivers</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="16">Amorçage avec systemd ou sysvinit</a></h3>
+
+   <p>Par défaut, openSUSE démarre maintenant avec <tt>systemd</tt>. En cas de problème, vous pouvez revenir à l'ancienne méthode basée sur <tt>sysvinit</tt> en appuyant sur la touche F5 lors de l'amorçage.</p>
+
+   <p>Si vous voulez rester sur <tt>sysvinit</tt> de manière permanente, installez le paquet <tt>sysvinit-init</tt>. Pour revenir à <tt>systemd</tt>, réinstallez le paquet <tt>systemd-sysvinit</tt>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="17">systemd : fournir des paramètres de démarrage de service</a></h3>
+   <p><tt>systemctl</tt> ne supporte que des paramètres "standards" (cf. <a href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>).</p>
+   <p>Vous pouvez contourner ce nouveau comportement en appelant le script de démarrage directement, par exemple :</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;vos_parametres&gt;
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="18">systemd: Extinction du système</a></h3>
+
+   <p>Pour arrêter et éteindre le système lorsque <tt>systemd</tt> est utilisé, tapez les commandes <tt>halt -p</tt> ou <tt>shutdown -h now</tt>, ou utilisez le bouton d'arrêt fourni par votre environnement de bureau.</p>
+
+   <p>Note : une simple commande <tt>halt</tt> n'arrêtera pas le système correctement.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="19">systemd : Utilisation de tmpfs : /run, /var/run, /media, etc.</a></h3>
+
+   <p>systemd monte plusieurs dossiers qui contiennent uniquement des données volatiles, comme les systèmes de fichier tmpfs : <tt>/run</tt>, <tt>/var/run</tt>, <tt>/var/lock</tt>, et <tt>/media</tt> sont ces dossiers. Pour plus d'informations, voir <a href="http://lwn.net/Articles/436012/">http://lwn.net/Articles/436012/</a>.</p>
+
+   <p>Note : ne sauvegardez pas des fichiers qui doivent survivre à un redémarrage dans <tt>/run</tt>, <tt>/var/run</tt>, etc.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="20">systemd : Nettoyage des dossiers (/tmp and /var/tmp)</a></h3>
+
+   <p>systemd maintient des dossiers comme spécifié dans le dossier <tt>tmpfiles.d</tt> et dans <tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>. Pour plus d'informations, voir la page de manuel de <tt>tmpfiles.d</tt>.</p>
+
+   <p>Par défaut, systemd nettoie le dossier <tt>tmp</tt> comme configuré dans <tt>/usr/lib/tmpfiles.d/tmp.conf</tt> :</p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>Note : systemd n'honore pas les variables sysconfig dans <tt>/etc/sysconfig/cron</tt> telle que <tt>TMP_DIRS_TO_CLEAR</tt>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="21">CUPS 1.5</a></h3>
+   <p>CUPS 1.5 apporte des changements incompatibles avec les versions précédentes :</p>
+   <ul>
+    <li>
+     <p>CUPS ne supporte plus les fichiers de configuration <tt>~/.cupsrc</tt> et <tt>~/.lpoptions</tt> de CUPS 1.1. A la place, utilisez <tt>~/.cups/client.conf</tt> et <tt>~/.cups/lpoptions</tt>, introduits avec CUPS 1.2.</p>
+    </li>
+    <li>
+     <p>L'ordonnanceur requiert maintenant que les filtres et backends aient leurs permissions d'écriture du groupe désactivées pour plus de sécurité. Si vous utilisez des pilotes d'imprimantes de fournisseurs avec des permissions de fichier laxistes, ajustez les permissions manuellement.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   
+   <h3><a name="22">La commande rename</a></h3>
+   <p>Conformément aux standards de code GNU, la commande rename traite maintenant toutes les chaines commençant par un tiret comme une option de ligne de commande. Pour éviter cela, séparez l'option des autres arguments avec <tt>--</tt> comme suit :</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="23">Interface en ligne de commande pour NetworkManager</a></h3>
+
+   <p><tt>cnetworkmanager</tt> n'est plus disponible — utilisez <tt>nmcli</tt> à la place. Pour plus d'informations sur la migration, consultez <a href="http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html">http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="24">rpm: %_topdir modifié pour les utilisateurs non-root</a></h3>
+
+   <p>Les utilisateurs sans privilèges ne peuvent plus écrire dans <tt>/usr/src/packages</tt>. <tt>rpmbuild</tt> utilise maintenant <tt>~/rpmbuild</tt> par défaut. Pour changer ce répertoire, ajoutez la ligne suivante dans le fichier <tt>~/.rpmmacros</tt> :</p>
+   <pre>%_topdir /un/autre/emplacement</pre>
+   <p>Pour utiliser le sous-répertoire <tt>foo</tt> de <tt>$HOME</tt>, ajoutez ceci à <tt>~/.rpmmacros</tt> :</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  </div>
+ </div>
+</body>
+</html>

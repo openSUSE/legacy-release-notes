@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ឯកសារ​ចេញ​ផ្សាយ​របស់អូផឹន​ស៊ូស៊ី ១២.១</title>
+</head>
+<body>
+ <h1>ឯកសារ​ចេញ​ផ្សាយ​របស់អូផឹន​ស៊ូស៊ី ១២.១</h1>
+ <p>កំណែ ៖ </p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>សិទ្ធិ​ត្រូវ​បានផ្ដល់​ឲ្យ​ចម្លង ចែកចាយ និង/ឬ​កែប្រែ​ឯកសារ​ក្រោម​លក្ខខណ្ឌ​អាជ្ញាប័ណ្ណ​ឯកសារ​ដោយ​ឥត​គិត​ថ្លៃ GNU កំណែ ១.២ ឬ​ខ្ពស់​ជាង​នេះ​ ដែលបាន​បោះពុម្ព​ផ្សាយ​ដោយ​មូលនិធិ​កម្មវិធី​ឥត​គិតថ្លៃ ដែល​​គ្មាន​ផ្នែក​ដែល​មិន​ប្រែប្រួល គ្មាន​អត្ថបទ​គម្រប​មុខ និង​គម្រប​ក្រោយ​ ។ ច្បាប់​ចម្លង​នៃ​អាជ្ញាប័ណ្ណ​ត្រូវ​បាន​រួម​បញ្ចូល​ឯកសារ <tt>fdl.txt</tt> ។</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>ប្រសិនបើ​អ្នក​​ធ្វើ​បច្ចុប្បន្នភាព​ពី​កំណែ​ចាស់​ទៅ​កំណែ​ចេញ​ផ្សាយ​របស់​អូផឹន​ស៊ូស៊ី​នេះ សូម​មើល​ឯកសារ​ចេញ​ផ្សាយ​របស់​កំណែ​មុន​នៅ​ទីនេះ ៖ <a href="http://en.opensuse.org/openSUSE:Release_Notes">http://en.opensuse.org/openSUSE:Release_Notes</a></p>
+
+ 
+ 
+ <p>ឯកសារ​ចេញ​ផ្សាយ​មាន​ផ្នែក​ដូច​ខាង​ក្រោម ៖</p>
+<div>
+<dl>
+<dt>ផ្សេងៗ</dt>
+<dd><ol><li><a href="#01">ម៉ូឌុល​កំណត់​រចនាសម្ព័ន្ធ YaST AppArmor</a></li></ol></dd>
+<dt>ការ​ដំឡើង</dt>
+<dd><ol><li><a href="#02">For Detailed Installation Information</a></li></ol></dd>
+<dt>ទូទៅ</dt>
+<dd><ol>
+<li><a href="#03">ឯកសារ​អូផឹនស៊ូស៊ី</a></li>
+<li><a href="#04">GNOME 3</a></li>
+<li><a href="#05">ប្រព័ន្ធ​សំឡេង PulseAudio</a></li>
+<li><a href="#06">Btrfs</a></li>
+<li><a href="#07">Windows Domain Logon with KDM</a></li>
+<li><a href="#08">Oracle Java អាច​ប្រើ​បាន​ខាង​ក្នុង</a></li>
+<li><a href="#09">Removing 32-Bit XEN Hypervisor</a></li>
+<li><a href="#10">Formatting Large Disk Partitions on Windows 8 Server</a></li>
+<li><a href="#11">Configuring Postfix</a></li>
+</ol></dd>
+<dt>ការ​ធ្វើ​ឲ្យ​ប្រព័ន្ធ​ប្រសើរ​ឡើង</dt>
+<dd><ol>
+<li><a href="#12">Mounting Encrypted Partitions with dm-crypt</a></li>
+<li><a href="#13">Mounting Encrypted Partitions Using systemd</a></li>
+</ol></dd>
+<dt>បច្ចេកទេស</dt>
+<dd><ol>
+<li><a href="#14">ចាប់ផ្ដើម​ក្រាហ្វិក​ជា​មួយ KMS (Kernel Mode Setting)</a></li>
+<li><a href="#15">Radeon HDMI Sound Output Being Disabled</a></li>
+<li><a href="#16">Booting with systemd or sysvinit</a></li>
+<li><a href="#17">systemd: Supplying Service Start-up Parameters</a></li>
+<li><a href="#18">systemd: System Shutdown</a></li>
+<li><a href="#19">systemd: Making Use of tmpfs: /run, /var/run, /media, etc.</a></li>
+<li><a href="#20">systemd: Cleaning Directories (/tmp and /var/tmp)</a></li>
+<li><a href="#21">CUPS 1.5</a></li>
+<li><a href="#22">ពាក្យ​បញ្ជា​ប្ដូរ​ឈ្មោះ</a></li>
+<li><a href="#23">NetworkManager Command Line Interface</a></li>
+<li><a href="#24">rpm: %_topdir Changed for Non-root Users</a></li>
+</ol></dd>
+</dl>
+<hr>
+</div>
+
+ <ul>
+  <li>
+   <p>ផ្សេងៗ ៖ ធាតុ​ទាំង​នេះ​ត្រូវ​បាន​ដាក់​បញ្ចូល​ដោយ​ស្វ័យ​ប្រវត្តិ​ពី openFATE លក្ខណពិសេស និង​ប្រព័ន្ធ​គ្រប់គ្រង​តម្រូវ​ការ (<a href="http://features.opensuse.org">http://features.opensuse.org</a>).</p>
+   <p>ចាប់​ពី​ពេល​នេះ អត្ថបទ​ខ្លីៗ​ត្រូវ​បាន​រាយ​ដោយ​មិន​តម្រៀត​ទេ— យើង​កំពុង​ធ្វើការ​ដើម្បី​ធ្វើ​ឲ្យ​ប្រសើរ​ឡើង ។</p>
+  </li>
+
+ <li>
+   <p>ការ​ដំឡើង ៖ អាន​ផ្នែក​នេះ ប្រសិន​បើ​អ្នក​ចង់​ដំឡើង​ប្រព័ន្ធ​ពី​ដំបូង ។</p>
+  </li>
+
+ <li>
+   <p>ទូទៅ ៖ ព័ត៌មាន​ដែល​អ្នករាល់​គ្នា​គួរ​តែ​អាន ។</p>
+  </li>
+
+  <li><p>ការ​ធ្វើ​ឲ្យ​ប្រព័ន្ធ​ប្រសើរ​ឡើង ៖ ចេញ​ផ្សាយ​អ្វី​ដែល​ទាក់ទង ដើម្បី​ដំណើរការ ប្រសិនបើ​អ្នក​ដំណើរការ​ការ​ធ្វើ​ឲ្យ​ប្រព័ន្ធ​ប្រសើរ​ឡើង​ពី​ការ​ចេញ​ផ្សាយ​មុន​ទៅ​កំណែ​របស់​អូផឹន​ស៊ូស៊ី​នេះ ។</p></li>
+
+  <li><p>បច្ចេកទេស ៖ ផ្នែក​នេះ​មាន​ចំនួន​ការ​ផ្លាស់ប្ដូរ​ផ្នែក​បច្ចេកទេស និង​ការ​ធ្វើ​ឲ្យ​ប្រសើរ​ឡើង​សម្រាប់​អ្នកប្រើ​ដែលមាន​បទ​ពិសោធន៍ ។</p></li>
+ </ul>
+
+
+  <div>
+<h2>ផ្សេងៗ</h2>
+    <div>
+<h3><a name="01">ម៉ូឌុល​កំណត់​រចនាសម្ព័ន្ធ YaST AppArmor</a></h3>
+<p>ប្រភេទ​ FATE ​សម្រាប់​ <a href="https://features.opensuse.org/305278">https://features.opensuse.org/305278</a> ​៖ AppArmor, YaST ។</p>
+
+<p>រក​ម៉ូឌុល​កំណត់​រចនាសម្ព័ន្ធ  AppArmor ឥឡូវ​នៅ​ក្នុង​ផ្នែក "សុត្ថិភាព និង​អ្នក​ប្រើ" នៃ​មជ្ឈមណ្ឌល​បញ្ជា YaST ។</p>
+
+</div>
+  </div>
+
+
+
+
+ <div>
+  <h2>ការ​ដំឡើង</h2>
+  
+  <div>
+   <h3><a name="02">For Detailed Installation Information</a></h3>
+
+  <p>For detailed installation information, see the 
+  "openSUSE
+  Documentation"
+ referenced below.</p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>ទូទៅ</h2>
+
+  
+  <div>
+   <h3><a name="03">ឯកសារ​អូផឹនស៊ូស៊ី</a></h3>
+
+   <ul>
+    <li><p>
+     In Start-Up, find step-by-step installation instructions, as well as   
+    introductions to the KDE and Gnome desktops and to the LibreOffice
+      suite. Also covered are basic administration topics such as deployment
+      and software management and an introduction to the bash shell.
+    </p></li>
+    <li>
+     <p>
+      Reference covers  administration, and system configuration in detail and
+      explains how to set up various network services.</p>
+    </li>
+    <li><p>មគ្គុទ្ទេសក៍​សុវត្ថិភាព​ណែនាំ​ទស្សនាទាន​មូលដ្ឋាន​​នៃ​សុវត្ថិភាព​ប្រព័ន្ធ ​រួមមាន ទិដ្ឋភាព​សុវត្ថិភាព​បណ្ដាញ​មូលដ្ឋាន ។</p></li>
+    <li>
+<p>ការ​វិភាគ​ប្រព័ន្ធ និង​មគ្គុទ្ទេសក៍​នៃ​ការ​កែប្រែ​ជួយស្វែងរក​បញ្ហា ដោះស្រាយ និង​ធ្វើ​ឲ្យ​ប្រសើរ​ឡើង ។</p>
+    </li>
+    <li>
+<p>ការ​ធ្វើ​និម្មិត​នៅ​ក្នុង KVM ផ្ដល់​នូវ​ការ​ណែនាំ​អំពី​ការ​រៀបចំ​ និង​គ្រប់គ្រង​ការ​ធ្វើ​និម្មិត​ជា​មួយ​ឧបករណ៍ KVM, libvirt និង QEMU ។</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   <h3><a name="04">GNOME 3</a></h3>
+   
+   <p>GNOME 3 ផ្ដល់​នូវ​ការ​រចនា​ថ្មី​សម្រាប់​ផ្ទៃតុ ដែល​ខុស​ពី GNOME 2 ។ ជា​លទ្ធផល ហើយ​ដើម្បី​​​ឲ្យ​អ្នក​ប្រើ​មាន​ផលប្រយោជន៍​ពី​ការ​ផ្លាស់ប្ដូរ រូបរាង​របស់​ផ្ទៃតុ GNOME 2 នឹង​មិន​ត្រូវ​បាន​ផ្លាស់ប្ដូរ​ដោយ​ស្វ័យ​ប្រវត្តិ​ទេ ។ ការ​កំណត់​ប្រព័ន្ធ អាច​ត្រូវ​បាន​ប្រើ​ប្រាស់ ដើម្បី​ប្ដូរ GNOME 3 តាម​បំណង និង​ឧបករណ៍​កម្រិត​ខ្ពស់ (<tt>gnome-tweak-tool</tt>) ត្រូវ​បាន​ផ្ដល់​សម្រាប់​ការ​​ផ្លាស់ប្ដូរ​តាម​បំណង​ដោយ​លម្អិត ។</p>
+   <p>The standard mode of GNOME 3 requires support for 3D acceleration in the graphic drivers. When 3D acceleration is not available, GNOME 3 then uses the fallback mode. If it turns out that GNOME 3 detects availability of 3D acceleration, but the standard mode is unusable, then you likely hit a bug in the graphic drivers. You can force the fallback mode with the "<tt>gnome.fallback=1</tt>" argument on the boot line in grub.</p>
+   <p>ប្រសិនបើ​អ្នក​ប្រើ​ប្រាស់​របៀប fallback ចំណាំថា អ្នក​អាច​ប្ដូរ​បន្ទះ​តាម​បំណង​ដោយ​ចុច​គ្រាប់​ចុច​ជំនួស (Alt) នៅពេល​ចុច​​ខាង​ស្ដាំ​លើ​ពួកវា ។</p>
+   <p>ចំពោះ​សេចក្ដី​អធិប្បាយ​សង្ខេប​​នៃ​លក្ខណ​ពិសេស​សែល​របស់ GNOME ជា​ច្រើន​ ដូចជា ការ​ផ្ដុំ​គ្រាប់ចុច អូស និង​ទម្លាក់ និង​ឧបករណ៍​ពិសេសៗ​ជា​ច្រើន​ទៀត សូម​មើល <a href="https://live.gnome.org/GnomeShell/CheatSheet">https://live.gnome.org/GnomeShell/CheatSheet</a> ។</p>
+  </div>
+
+  <div>
+   <h3><a name="05">ប្រព័ន្ធ​សំឡេង PulseAudio</a></h3>
+   
+   <p>ប្រព័ន្ធ​សំឡេង PulseAudio ឥឡូវ​​ត្រូវ​បាន​បញ្ចូល​​ប្រព័ន្ធ​យ៉ាង​ទូលំទូលាយ ហើយ​បាន​បើក​តាម​លំនាំដើម​សម្រាប់​ការ​ដំឡើង​ថ្មី ។ ប្រសិន​បើ​អ្នក​បិទ​វា​​នៅ​ក្នុង​ការ​ចេញ​ផ្សាយ​លើក​មុន ហើយ​ចង់​ហើក​វា​ឥឡូវ ពិនិត្យ​មើល​អថេរ​<tt>PULSEAUDIO_ENABLE</tt> នៅ​ក្នុង <tt>/etc/sysconfig/sound</tt> ៖</p>
+
+   <p>កំណត់ <tt>PULSEAUDIO_ENABLE</tt> ទៅ "<tt>បាទ/ចាស</tt>" ដើម្បីបង្ខំ​ឲ្យ​បើក PA គ្រប់កន្លែង ។ ការ​កំណត់ <tt>PULSEAUDIO_ENABLE</tt> ទៅ "<tt>ទេ</tt>" នឹង​បិទ​ PulseAudio ទាំង​ស្រុង ហើយ​ការកំណត់​វា​ទៅ​ "ផ្ទាល់ខ្លួន" មាន​ន័យ​ថា​​រក្សាទុក​ការ​កំណត់​រចនាសម្ព័ន្ធ​ផ្ទាល់ខ្លួន​ដោយ​មិនប៉ះពាល់​ទេ ។</p>
+  </div>
+
+
+  <div>
+   
+   <h3><a name="06">Btrfs</a></h3>
+   <p>
+Btrfs is the next generation filesystem for Linux. As a preview of the new
+technology, you can create btrfs partitions or setup your whole system with
+btrfs.
+   </p>
+
+   <p>
+Note: The btrfs filesystem is in active development, and check and
+repair functionality ("scrub") has been added just recently. "Scrub" is
+aimed to verify data and metadata assuming the tree structures are fine;
+it can (and should) be run periodically on a mounted filesystem: it runs
+as a background process during normal operation.
+   </p>
+
+   <p>
+Thus we advice to carefully consider, which data to put on the filesystem, and
+follow the usual suggestions for redundancy and backup. For more
+information, see <a href="http://btrfs.wiki.kernel.org">http://btrfs.wiki.kernel.org</a>.
+   </p>
+
+   <p>
+Btrfs contains many interesting new features, including the ability to
+take snapshots of your filesystem. Snapshot and rollback is supported by
+<tt>snapper</tt>, and already integrated into openSUSE package
+and system management tools such as <tt>zypper</tt> and YaST.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="07">Windows Domain Logon with KDM</a></h3>
+
+   <p>The SUSE KDM theme does not allow Windows Domain logons.</p>
+
+   <p>To work around this issue, set DISPLAYMANAGER_KDM_THEME to an
+   empty string in <tt>/etc/sysconfig/displaymanager</tt> to
+   use the default KDM theme:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  </div>
+
+  <div>
+   <h3><a name="08">Oracle Java អាច​ប្រើ​បាន​ខាង​ក្នុង</a></h3>
+   <p>កញ្ចប់ java-1_6_0-sun លែង​ជា​ផ្នែក​របស់​អូផឹនស៊ូស៊ី​ទៀត​ហើយ ដោយ​សារ​តែ​ផ្លាស់ប្ដូរ​អាជ្ញាប័ណ្ណ ។ យើង​ដាក់​បញ្ចូល​ការ​ស្ថាបនា OpenJDK ជំនួស​វិញ ។ អ្នកប្រើ​ប្រាស់​អូផឹនស៊ូស៊ី ដែល​ចង់​ប្រើ​ការ​បម្លែង​គោលពីរ​របស់ Oracle JDK ទៅ​ជា​ការ​ស្ថាបនា OpenJDK របស់​អូផឹនស៊ូស៊ី អាច​ទាញយក​បាន​កំណែ​របស់ Oracle ពី <a href="http://oracle.com/java">http://oracle.com/java</a> ។</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="09">Removing 32-Bit XEN Hypervisor</a></h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  </div>
+
+  
+  
+  <div>
+   <h3><a name="10">Formatting Large Disk Partitions on Windows 8 Server</a></h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  </div>
+
+  <div>
+   
+   <h3><a name="11">Configuring Postfix</a></h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>ការ​ធ្វើ​ឲ្យ​ប្រព័ន្ធ​ប្រសើរ​ឡើង</h2>
+
+  <div>
+   
+   <h3><a name="12">Mounting Encrypted Partitions with dm-crypt</a></h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="13">Mounting Encrypted Partitions Using systemd</a></h3>
+   <p>
+If encrypted partitions are not automatically mounted when using
+systemd, the <tt>noauto</tt> flag in
+<tt>/etc/fstab</tt> for these partitions could be the
+cause. Replacing this flag with <tt>nofail</tt> will fix
+it. For instance, change the following line:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>ទៅ​ជា</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  </div>
+ </div>
+
+
+ <div>
+  <h2>បច្ចេកទេស</h2>
+  
+  <div>
+   <h3><a name="14">ចាប់ផ្ដើម​ក្រាហ្វិក​ជា​មួយ KMS (Kernel Mode Setting)</a></h3>
+   
+   <p>ជា​មួយ​អូផឹនស៊ូស៊ី ១១.៣ យើង​បាន​ប្ដូរ​ទៅ KMS (Kernel Mode Setting) សម្រាប់​ក្រាហ្វិក Intel, ATI និង NVIDIA ដែល​ឥឡូវ​ក្លាយ​ជា​លំនាំដើម​របស់​យើង ។ ប្រសិនបើ​អ្នក​ជួប​​បញ្ហា​ជា​មួយ​នឹង​កម្មវិធី​បញ្ជា​ការ​គាំទ្រ KMS  (intel, radeon, nouveau) បិទ KMS ដោយ​បន្ថែម​ក្រាហ្វិក ដែល​ឥឡូវ​ក្លាយជា​លំនាំដើម​របស់​យើង ។  <tt>nomodeset</tt> ទៅ​បន្ទាត់​ពាក្យ​បញ្ជា kernel boot ។ ដើម្បី​កំណត់​វា​អចិន្ត្រៃយ៍ បន្ថែម​វា​ទៅ​បន្ទាត់​ពាក្យ​បញ្ជា​របស់​ឃឺណែល​នៅ​ក្នុង​ <tt>/boot/grub/menu.lst</tt> ។ ជម្រើស​នេះ​ត្រូវ​ប្រាកដថា ម៉ូឌុល​ឃឺណែល (intel, radeon, nouveau) ត្រូវ​បាន​ផ្ឌុក​ដោយ​មាន <tt>modeset=0</tt> នៅ​ក្នុង <tt>initrd</tt> ឧ. KMS ត្រូវ​បានបិទ ។</p>
+
+   <p>ក្នុង​ករណី​ដ៏​កម្រ នៅពេល​ផ្ទុក​ម៉ូឌុល DRM ពី <tt>initrd</tt> គឺ​ជា​បញ្ហា​ទូទៅ និង​​មិន​ទាក់ទង​នឹង​ KMS ទេ ទោះ​បី​ជា​ត្រូវ​បិទ​ការ​ផ្ទុក​នៃ​ម៉ូឌុល DRM នៅ​ក្នុង <tt>initrd</tt> ទាំង​ស្រុង​ក៏​ដោយ ។ ចំពោះ​ការ​កំណត់​​អថេរ<tt>NO_KMS_IN_INITRD</tt> sysconfig ទៅ​ជា<tt>បាទ/ចាស</tt> តាម​រយៈ YAST ដែល​បន្ទាប់​មក​បង្កើត <tt>initrd</tt> ឡើង​វិញ ។ ចាប់ផ្ដើម​កុំព្យូទ័រ​របស់​អ្នក​ឡើង​វិញ ។</p>
+
+   <p>នៅ​លើ Intel ដែលគ្មាន KMS Xserver ត្រឡប់​ទៅ​កម្មវិធី​បញ្ជា <tt>fbdev</tt> (កម្មវិធី <tt>intel</tt> គាំទ្រ​តែ KMS) ជា​ជម្រើស​ មាន​កម្មវិធី​បញ្ជា "intellegacy" (កញ្ចប់ <tt>xorg-x11-driver-video-intel-legacy</tt> ) ដែល​នៅ​តែ​គាំទ្រ UMS (User Mode Setting) ។ ដើម្បី​ប្រើ​វា កែសម្រួល <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> ហើយ​ផ្លាស់ប្ដូរ​កម្មវិធី​បញ្ជាទៅ <tt>intellegacy</tt> ។</p>
+
+   <p>នៅ​លើ ATI សម្រាប់ GPUs បច្ចុប្បន្ន វា​ត្រឡប់​ទៅ​ជា <tt>radeonhd</tt> ។ នៅ​លើ NVIDIA ដោយ​គ្មាន KMS កម្មវិធី <tt>nv</tt> ត្រូវ​បាន​ប្រើ​ប្រាស់ (កម្មវិធី <tt>nouveau</tt> គាំទ្រ​តែ KMS) ។</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="15">Radeon HDMI Sound Output Being Disabled</a></h3>
+
+   <p>
+    Due to problems on some hardware HDMI sound output has been disabled
+    by default on the radeon driver, which is the default driver for
+    AMD/ATI graphics cards.
+   </p>
+   <p>
+    It can be re-enabled by adding <tt>radeon.audio=1</tt> as
+    a kernel parameter.  In YaST, go to System -&gt; Boot Loader, then
+    click Edit on the default entry, and add the following to the end of
+    'Optional Kernel Command Line Parameter':
+   </p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Then reboot to apply the change.</p>
+   <p>
+    Alternatively, users can install the proprietary driver from AMD.
+    For more information, see <a href="http://en.opensuse.org/SDB:ATI_drivers">http://en.opensuse.org/SDB:ATI_drivers</a>.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="16">Booting with systemd or sysvinit</a></h3>
+
+   <p>By default, openSUSE now boots using <tt>systemd</tt>. In case of trouble, you can switch back to the old way using <tt>sysvinit</tt> by pressing the F5 key on the boot.</p>
+
+   <p>If you want to switch to <tt>sysvinit</tt> permanently, install the <tt>sysvinit-init</tt> package. To switch back to <tt>systemd</tt>, reinstall the <tt>systemd-sysvinit</tt> package.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="17">systemd: Supplying Service Start-up Parameters</a></h3>
+   <p><tt>systemctl</tt> only supports "standard" parameters (see <a href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>).</p>
+   <p>You can bypass this new behavior by calling the start-up script directly, for example:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;your_parameters&gt;
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="18">systemd: System Shutdown</a></h3>
+
+   <p>ដើម្បី​ផ្អាក និង​បិទ​ប្រព័ន្ធ​នៅ​ពេល​ប្រើ <tt>systemd</tt>, ប្រើ​ពាក្យ​បញ្ជា <tt>halt -p</tt> ឬ <tt>shutdown -h now</tt> ឬ​ប្រើ​ប៊ូតុង​បិទ​ដែលបាន​ផ្ដល់​ដោយ​​​​បរិស្ថាន​ផ្ទៃតុ​របស់​អ្នក ។</p>
+
+   <p>ចំណាំ ៖ <tt>halt</tt> ធម្មតា នឹង​បិទ​ប្រព័ន្ធ​យ៉ាង​ត្រឹមត្រូវ ។</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="19">systemd: Making Use of tmpfs: /run, /var/run, /media, etc.</a></h3>
+
+   <p>
+    systemd mounts several directories that are meant to contain
+    volatile data only, as tmpfs filesystems: <tt>/run</tt>,
+    <tt>/var/run</tt>, <tt>/var/lock</tt>, and
+    <tt>/media</tt> are those directories.  For background
+    information, see <a href="http://lwn.net/Articles/436012/">http://lwn.net/Articles/436012/</a>.
+   </p>
+
+   <p>
+    Note: Do not store files that are meant to survive a reboot, in
+    <tt>/run</tt>, <tt>/var/run</tt>, etc.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="20">systemd: Cleaning Directories (/tmp and /var/tmp)</a></h3>
+
+   <p>
+systemd maintains directories as specified in the
+<tt>tmpfiles.d</tt> directories and in
+<tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>.  For
+more information, see the <tt>tmpfiles.d</tt> manpage.
+   </p>
+
+   <p>
+By default, systemd cleans <tt>tmp</tt> directories daily as
+configured in <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:
+   </p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>
+Note: systemd does not honor sysconfig variables in
+<tt>/etc/sysconfig/cron</tt> such as
+<tt>TMP_DIRS_TO_CLEAR</tt>.
+    </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="21">CUPS 1.5</a></h3>
+   <p>CUPS 1.5 ចេញ​មក​ដោយ​មាន​ការ​ផ្លាស់ប្ដូរ​មិន​ឆប​គ្នា​ខាង​ក្នុង ៖</p>
+   <ul>
+    <li>
+     <p>CUPS លែង​គាំទ្រ​ឯកសារ​​កំណត់​រចនាសម្ព័ន្ធ <tt>~/.cupsrc</tt> ឬ <tt>~/.lpoptions</tt> ពី​ CUPS 1.1 ។ ប្រើ <tt>~/.cups/client.conf</tt> និង <tt>~/.cups/lpoptions</tt> ជំនួស​វិញ ដែល​ត្រូវ​បា​ន​បង្ហាញ​ជា​មួយ​នឹង CUPS 1.2 ។</p>
+    </li>
+    <li>
+     <p>The scheduler now requires that filters and backends have group write permissions disabled for improved security. If you use third party printer drivers from manufacturers with relaxed file permissions, adjust the permissions manually.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   
+   <h3><a name="22">ពាក្យ​បញ្ជា​ប្ដូរ​ឈ្មោះ</a></h3>
+   <p>ដោយ​យោង​តាម​ស្តង់ដារ​កូដ​របស់ GNU ពាក្យ​បញ្ជា​ប្ដូរ​ឈ្មោះ​ឥឡូវ​ចាត់​ទុក​ដើម​ឃ្លា​ទាំងអស់​ដែល​មាន​​សញ្ញា(-) ជា​ជម្រើស​ពាក្យ​បញ្ជា ។ ដើម្បីការពារ​វា បំបែក​ជម្រើស​ពី​​អាគុយម៉ង់​ផ្សេងៗ​ទៀត​ <tt>--</tt> ដូច​ខាង​ក្រោម ៖</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="23">NetworkManager Command Line Interface</a></h3>
+
+   <p>
+    <tt>cnetworkmanager</tt> is no longer available—use
+    <tt>nmcli</tt> instead.  For migration information, see
+    <a href="http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html">http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</a>.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="24">rpm: %_topdir Changed for Non-root Users</a></h3>
+
+   <p>
+    Unprivileged users can no longer write to
+    <tt>/usr/src/packages</tt>.
+    <tt>rpmbuild</tt> now uses
+    <tt>~/rpmbuild</tt> by default.  To change the directory
+    add a line as follows to <tt>~/.rpmmacros</tt>:
+   </p>
+   <pre>%_topdir /some/where/else</pre>
+   <p>
+    To use the subdirectory <tt>foo</tt> of
+    <tt>$HOME</tt> add to <tt>~/.rpmmacros</tt>:
+   </p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  </div>
+ </div>
+</body>
+</html>

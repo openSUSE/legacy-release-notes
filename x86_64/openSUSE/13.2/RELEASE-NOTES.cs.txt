@@ -1,0 +1,345 @@
+Release Notes
+
+13.2.20170117
+
+Copyright © 2011, 2012, 2013 Jan Papež (honyczek@centrum.cz)
+
+Abstrakt
+
+openSUSE is a free and Linux-based operating system for your PC, Laptop or
+Server. You can surf the web, manage your e-mails and photos, do office work,
+play videos or music and have a lot of fun!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Obsah
+
+Instalace
+
+    Instalátor Živého CD a nastavení klávesnice
+    Síť po aktualizaci pomocí YaSTu
+    Upozornění: Nebylo vybráno umístění pro stage1 zavaděče
+    BtrFS and Windows XP
+    Neostylovaný Grub2 po nové Živé instalaci
+    Síťová instalace za použití Wifi
+
+Obecné
+
+    UEFI—Unified Extensible Firmware Interface
+    UEFI, GPT a oddíly MS-DOSu
+    Zavádění systému v režimu Secure Boot
+
+Aktualizace systému
+Technické
+
+    Nesmysly na obrazovce během instalace s ovladačem Nouveau
+    Informace o ovladači FGLRX
+    Druhý statický kurzor myši
+    Chybějící závislosti pro virt-manager
+    Ověření modemu po uspání
+    Chybí vyhledávání balíčků v GTK uživatelském rozhraní YaSTu
+    Migrace cifstab před openSUSE 13.2
+    Odstranění pozadí plochy openSUSE 13.1 po povýšení systému
+    Oficiální integrace pracovní plochy MATE
+    Pomalé spouštění v GNOME
+    AppArmor a nastavení oprávnění
+
+Různé
+
+    YaST (Qt GUI): Ikona "Správce služeb" se zobrazuje dvakrát
+
+Více informací a zpětná vazba
+
+The end of the maintenance period for openSUSE 13.2 is now reached. To keep
+your systems up to date and secure, migrate to a current openSUSE version.
+
+For more information about upgrading to a current openSUSE version, see http://
+en.opensuse.org/SDB:Distribution-Upgrade. Make sure that all maintenance
+updates for openSUSE 13.2 are applied before starting the update.
+
+Pokud aktualizujete openSUSE ze starší verze vydání, můžete si poznámky k
+vydání zobrazit zde: http://en.opensuse.org/openSUSE:Release_Notes
+
+Instalace
+
+Instalátor Živého CD a nastavení klávesnice
+
+Instalátor na živém CD obsahuje problém spojený s nastavením klávesnice. Pokud
+uživatel změní rozložení kláves z QWERTY (výchozí en-US varianta) na jiné, toto
+nastavení není řádně použito a nový systém si ponechá předkonfigurované QWERTY.
+
+Jako obejití použijte po instalaci nástroj příkazového řádku localectl.
+Například (pro instalaci Německého rozložení kláves):
+
+localectl set-x11-keymap de pc105 nodeadkeys
+
+Tato chyba se neobjevuje v instalátoru na DVD.
+
+Síť po aktualizaci pomocí YaSTu
+
+Pokud používáte notebook s wifi připojením, je po aktualizaci z 13.1 na 13.2 za
+použití YaSTu dost pravděpodobné, že zároveň běží nová síťová metoda Wicked a
+starý NetworkManager.
+
+Abyste to vyřešili, nejdříve zakažte Wicked a povolte znovu NetworkManager:
+
+systemctl is-active network.service && systemctl stop network.service
+systemctl is-active wickedd.service && systemctl stop wickedd.service
+systemctl disable wicked.service
+systemctl --force enable NetworkManager.service
+systemctl start network.service
+
+Pak zkontrolujte, že v současnosti vybraná služba je opravdu NetworkManager:
+
+systemctl -p Id show network.service
+
+A aktualizujte /etc/resolv.conf:
+
+netconfig update
+
+Nebo po příkazech systemctl restartujte počítač, aby se restartoval 
+wpa_supplicant.
+
+Upozornění: Nebylo vybráno umístění pro stage1 zavaděče
+
+Během úvodní instalace, v souhrnném pohledu YaSTu, se může objevit následující
+upozornění v oddíle zavaděče: „Upozornění: Nebylo vybráno umístění pro stage1
+zavaděče. Pokud to není záměr, vyberte umístění výše.“
+
+Toto varování je chyba YaSTu (nyní opravená ve Factory) a můžete ji bezpečně
+ignorovat.
+
+BtrFS and Windows XP
+
+If you have Windows XP and want to install openSUSE 13.2 with BtrFS, an error
+message in YaST will inform you about problems during the bootloader
+installation.
+
+Nejbezpečnější volba je instalovat openSUSE na Ext4 namísto BtrFS. Již existuje
+oprava, která brzy dorazí do Factory, ale nebude k dispozici pro 13.2.
+
+Neostylovaný Grub2 po nové Živé instalaci
+
+Chyba v YaSTu brání ostylování zavaděče GRUB2 při použití média živého CD.
+Vezměte na vědomí, že preferovaný způsob instalace openSUSE 13.2 je za použití
+DVD nebo Sítě. Obě média během instalace tvoří správný styl zavaděče.
+
+Síťová instalace za použití Wifi
+
+Provádění Síťové instalace za použití Wifi přestavuje některé problémy v YaSTu.
+Probíhá práce na opravě a bude brzy k dispozici. Zatím je jediná volba použít
+pro kompletní Síťovou instalaci drátové spojení.
+
+Obecné
+
+UEFI—Unified Extensible Firmware Interface
+
+Dříve než nainstalujete openSUSE na váš systém, který je zaváděn pomocí UEFI
+(Unified Extensible Firmware Interface), důrazně doporučujeme zkontrolovat, zda
+nejsou u výrobce hardwaru k dispozici doporučené aktualizace firmwaru. Pokud
+jsou k dispozici, nainstalujte je. Předinstalovaný systém Windows 8 je značnou
+známkou toho, že váš systém UEFI používá.
+
+Pozadí: Některý firmware UEFI obsahuje chyby, které způsobují znefunkčnění,
+pokud je zapsáno do uložného prostoru UEFI příliš mnoho dat. Nikdo ve
+skutečnosti neví, kolik je to "příliš mnoho". openSUSE snižuje riziko tím, že
+nezapisuje více než pouhé minimum potřebné pro zavedení OS. To minimum znamená
+sdělení firmwaru UEFI, kde se nachází zavaděč openSUSE. Upstreamové funkce
+jádra Linuxu, které používají úložný prostor UEFI pro ukládání informací o
+zavádění systému a jeho pádu (pstore) jsou ve výchozím stavu zakázané. Přesto
+však je doporučeno nainstalovat veškeré aktualizace firmwaru, které výrobce
+doporučuje.
+
+UEFI, GPT a oddíly MS-DOSu
+
+Společně se specifikací EFI/UEFI se objevil nový styl dělení disků: GPT (GUID
+Partition Table). Je to nové schéma, které k identifikaci zařízení a typů
+diskových oddílů používá globálně unikátní identifikátory (128bitové hodnoty
+zobrazené jako 32 šestnáctkových číslic).
+
+Navíc pak specifikace UEFI umožňuje užívání starších oddílů MBR (MS-DOS).
+Zavaděče Linuxu (ELILO nebo GRUB2) zkoušejí automaticky vygenerovat GUID těchto
+starších oddílů a zapsat je do firmwaru. Takový GUID se může často měnit, což
+způsobuje přepis firmwaru. Přepis se skládá ze dvou různých operací: odstranění
+starého záznamu a vytvoření nového, který nahradí ten původní.
+
+Moderní firmware má garbage collector, který sbírá smazané položky a uvolňuje
+paměť, která byla pro ně rezervována. Může se objevit problém, když chybný
+firmware tyto položky nesbírá a neuvolňuje; to může skončit nezaveditelným
+systémem.
+
+Je jednoduché to obejít: abyste se tomuto problému úplně vyhli, zkonvertujte
+starší oddíly MBR na nové GPT.
+
+Zavádění systému v režimu Secure Boot
+
+Toto ovlivňuje pouze stroje, které mají UEFI s povolenou volbou Secure Boot.
+
+Tato nová verze vloženého načítání umožňuje ještě více strojům zavádět systém v
+povoleném režimu Secure Boot, než tomu bylo u verze openSUSE 13.1. Nicméně v
+případě potíží nejdříve aktualizujte na nejnovější verzi BIOSu vašeho stroje.
+Pokud vám aktualizace BIOSu nepomůže, nahlašte model vašeho stroje na wiki
+(http://en.opensuse.org/openSUSE:UEFI). Tak jej budeme moci sledovat v příštím
+vydání.
+
+Aktualizace systému
+
+Technické
+
+Nesmysly na obrazovce během instalace s ovladačem Nouveau
+
+Na některých systémech s kartami NVIDIA se v instalátoru mohou zobrazovat
+nesmysly v horní části obrazovky kvůli problémům s výchozím ovladačem nouveau.
+Pokud se vás tento problém týká, můžete jaderný modul nouveau před instalací
+zakázat a po dokončení instalace nebo povýšení systému jej opět povolit.
+
+K tomu, abyste zakázali modul jádra při zavádění z instačního média, vyberte v
+grubu položku 'Instalace' a stiskněte 'e', abyste mohli upravit parametry. Pak
+se přesuňte na řádek začínající slovem 'linux' (respektive 'linuxefi') a
+přidejte na konec řádku řetězec brokenmodules=nouveau. Poté pro pokračování
+zavádění s novým parametrem stiskněte F10. Po instalaci systému můžete modul
+nouveau znovu povolit tak, že upravíte soubor /etc/modprobe.d/50-blacklist.conf
+a odstraníte z něj položku, která vede k zákazu nouveau.
+
+Informace o ovladači FGLRX
+
+Pro více informací o ovladačích AMD FGLRX na openSUSE 13.2 a jejich stavu čtěte
+https://lizards.opensuse.org/2014/11/01/fglrx-warning-opensuse-13-2-tumbleweed/
+.
+
+Druhý statický kurzor myši
+
+Pokud vidíte dva kurzory myši a máte dvě grafické karty, kde jedna z nich je od
+Intelu, zkuste odinstalovat xf86-video-intel a používat jen tu druhou. Statický
+kurzor by měl zmizet.
+
+Tyto a další chyby s ovladačem Intelu jako (čtěte http://bugzilla.opensuse.org/
+show_bug.cgi?id=901506) budou zfunkčněny a pokud to bude možné, objeví se v
+online aktualizacích.
+
+Chybějící závislosti pro virt-manager
+
+If you find a problem executing virt-manager, try installing
+typelib-1_0-Gtk-3_0, typelib-1_0-SpiceClientGtk-3_0 and typelib-1_0-GtkVnc-2_0.
+
+V online aktualizaci bude nová verze, která tyto závislosti učiní výslovnými.
+
+Ověření modemu po uspání
+
+openSUSE 13.2 je přísnější na bezpečnost, než 13.1. Pokud jste připojeni přes
+UMTS nebo 3G modem a uspíte stroj, systém se vás pak před znovupřipojením zeptá
+na heslo uživatele root.
+
+Pokud toto chování chcete změnit, upravte řádek v /etc/
+polkit-default-privs.standard:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin:auth_admin:yes
+
+
+na:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin_keep
+
+
+Chybí vyhledávání balíčků v GTK uživatelském rozhraní YaSTu
+
+GTK rozhraní YaSTu není vybaveno vyhledávacím políčkem balíčků. Pokud tedy
+používáte GNOME nebo XFCE a chcete mít tuto funkci k dispozici, použijte místo
+toho rozhraní QT:
+
+sudo /sbin/yast2 --qt
+
+Migrace cifstab před openSUSE 13.2
+
+Připojování cifs sdílení při spouštění systému pomocí /etc/samba/cifstab již
+nadále nebude pokračovat a bude považováno za zastaralé. Nyní toto obsluhuje
+obecný /etc/fstab.
+
+Migrační proces vyžaduje dva kroky:
+
+ 1. Dopište všechny přípojné body /etc/samba/cifstab.rpmsave do /etc/fstab.
+
+ 2. Přidejte na konec každého řádku cifs připojení 0 0 (v souboru /etc/fstab).
+
+Pro více informací a příklady čtěte v nainstalovaném systému soubor /usr/share/
+doc/packages/cifs-utils/README.cifstab.migration.
+
+Odstranění pozadí plochy openSUSE 13.1 po povýšení systému
+
+Pokud se po povýšení systému nadále objevuje pozadí plochy KDE z openSUSE 13.1,
+odstraňte je ručně z uživatelské cache:
+
+rm ~/.kde4/cache-*/plasma-wallpapers/usr/share/wallpapers/openSUSEdefault/contents/images/*
+
+Oficiální integrace pracovní plochy MATE
+
+Nyní je v openSUSE 13.2 oficiálně dostupná pracovní plocha MATE ve verzi 1.8.1,
+neposlednějším stabilním vydání. Poskytuje intuitivní a atraktivní prostředí
+pracovní plochy za použití tradičních metafor pro Linux a další Unixové
+operační systémy.
+
+Cílem pro openSUSE je poskytnout stejné uživatelské prostředí, které dříve
+uživatelé znali z GNOME před openSUSE 11.4, tedy s hlavní nabídkou a tématem
+Sonar.
+
+Pomalé spouštění v GNOME
+
+Automatické přihlášení GNOME může zpomalovat proces zavádění systému.
+Pravěpodobně dochází k závodu mezi službami, které nejsou správně označeny, jak
+na sobě vzájemně závisí. Dokud nebude v online aktualizacích k dispozici oprava
+této chyby, je obejitím dočasné vypnutí funkce automatického přihlašování
+GNOME.
+
+AppArmor a nastavení oprávnění
+
+Jako výchozí je AppArmor povolen. To sice znamená více bezpečnosti, ale také to
+může bránit službám v práci, pokud je spouštíte neočekávanými způsoby. Pokud se
+setkáte s podivnými problémy týkající se oprávnění, zkuste v profilu AppArmoru
+dané služby přepnout na režim stěžování si pomocí:
+
+aa-complain /usr/bin/$vase_sluzba
+
+Režim stěžování si znamená: povolit vše a zapsat do protokolu věci, které by
+profil neměl povolovat.
+
+I v případě, že to pomůže, nahlašte to jako chybu! Chceme opravit profily
+AppArmoru tak, aby pokryly i krajní případy.
+
+Různé
+
+YaST (Qt GUI): Ikona "Správce služeb" se zobrazuje dvakrát
+
+V oddíle Systém v YaSTu (Qt GUI) se zobrazuje dvakrát ikona Správce služeb. Je
+to chyba v Qt verzi Ovládacího centra YaSTu, která nectí příznak „hidden“ v
+souborech desktop.
+
+Bude to opraveno s další online aktualizací YaSTu.
+
+Více informací a zpětná vazba
+
+  • Přečtěte si README na CD.
+
+  • Získejte podrobné informace o změnách každého balíčku pomocí RPM:
+
+    rpm --changelog -qp <JMENOSOUBORU>.rpm
+
+    <JMENOSOUBORU>. je název balíčku RPM.
+
+  • Pro časový protokol všech změn provedených na aktualizovaných balíčcích si
+    prohlédněte soubor ChangeLog v kořenovém adresáři tohoto DVD.
+
+  • Další informace najdete na DVD v adresáři docu.
+
+  • https://activedoc.opensuse.org/ obsahuje dodatečnou nebo aktualizovanou
+    dokumentaci.
+
+  • Visit http://www.opensuse.org for the latest product news from openSUSE.
+
+Copyright © 2014 SUSE LLC
+
+Thanks for using openSUSE.
+
+The openSUSE Team.
+

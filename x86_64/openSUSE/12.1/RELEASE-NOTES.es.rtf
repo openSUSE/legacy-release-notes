@@ -1,0 +1,415 @@
+
+ <h1>openSUSE 12.1 Notas de la versión</h1>
+ <p>Versión: </p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>Queda permitida la copia, distribución y /o modificación de este documento bajo los términos de la licencia de GNU Free Documentation -Documentación libre de GNU-, versión 1.2 o cualquier otra versión posterior publicada por la Free Software Foundation; sin secciones invariables, textos de portada y contraportada. Se incluye una copia de la licencia en el archivo <tt> fdl.txt</tt>.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Si actualiza desde una versión anterior de openSUSE, lea las notas de las versiones anteriores listadas aquí: <tt>http://en.opensuse.org/Release_Notes</tt></p>
+
+ 
+ 
+ <p>Estas notas de versión cubren los siguientes aspectos:</p>
+
+ <ul>
+  <li>
+   <p>Misceláneo: estas entradas se incluyen automáticamente desde openFATE, el sistema de manejo de Características y Requerimientos  (<tt>http://features.opensuse.org</tt>).</p>
+   <p>Por el momento, estos fragmentos aparecen sin clasificar est</p>
+  </li>
+
+ <li>
+   <p>Instalación: lea aquí si desea instalar el sistema desde cero.</p>
+  </li>
+
+ <li>
+   <p>General: información que todos deberían leer.</p>
+  </li>
+
+  <li><p>Actualización del sistema: problemas relacionados al proceso de realizar una actualización del sistema desde una versión anterior de openSUSE.</p></li>
+
+  <li><p>Cuestiones técnicas: esta sección contiene una serie de cambios técnicos y mejoras dirigidas a usuarios experimentados.</p></li>
+ </ul>
+
+
+  <h2>Miscelánea</h2>
+    <h3>Módulo de Configuración de YaST AppArmor</h3><p>Categorías FATE para <tt>https://features.opensuse.org/305278</tt>: AppArmor, YaST.</p>
+
+<p>Encuentre el módulo de configuración de AppArmor en la sección "Seguridad y Usuarios" del Centro de Control de YaST.</p>
+
+
+  
+
+
+
+
+ 
+  <h2>Instalación</h2>
+  
+  
+   <h3>For Detailed Installation Information</h3>
+
+  <p>For detailed installation information, see the 
+  "openSUSE
+  Documentation"
+ referenced below.</p>
+  
+
+ 
+
+ 
+  <h2>General</h2>
+
+  
+  
+   <h3>Documentación de openSUSE</h3>
+
+   <ul>
+    <li><p>En Inicio, se encuentran las intrucciones de instalación paso a paso, asi como también introducciones a los escritorios KDE y Gnome y la suite LibreOffice. También se cubren aspectos básicos de administración, tales como instalación y administración de software, y una introducción al shell bash. </p></li>
+    <li>
+     <p>La guía de Referencia cubre los temas de administración y configuración del sistema en detalle, y explica como configurar varios de los servicios de red.</p>
+    </li>
+    <li><p>La Guía de Seguridad realiza una introducción de los conceptos de seguridad básicos, cubriendo tanto aspectos locales como de red.</p></li>
+    <li><p>En Analizador de Sistema y Guia de Ajustes ayuda con el problema de detección, resolución y optimización.</p>
+    </li>
+    <li><p>Virtualización con KVM ofrece una introducción para configurar y administrar virtualización con herramientas KVM, libvirt y QEMU.</p>
+    </li>
+   </ul>
+  
+
+  
+   <h3>GNOME 3</h3>
+   
+   <p>GNOME 3 ofrece un nuevo diseño para el escritorio, diferente de GNOME 2. Como resultado, a fin de que los usuarios puedan beneficiarse de los cambios, apariencia del escritorio GNOME 2 no se migrará automáticamente. Puede utilizar Configuración del Sistema para personalizar GNOME 3, también se incluye una herramienta avanzada (<tt>gnome-tweak-tool</tt>) para una personalización más detallada.</p>
+   <p>El modo estandar de GNOME 3 quiere soporte para aceleración 3D en los controladores de video. Cuando no se disponga de aceleración 3D, GNOME 3 utilizará un modo de reserva. En caso que GNOME 3 detecte aceleración 3D disponible, pero no sea posible utilizar el modo estandar, es posible que se deba a un error en los controladores de video. Puede forzarel modo de reserva utilizando "<tt>gnome.fallback=1</tt>" como argumento en la línea de inicio de grub.</p>
+   <p>Si utiliza el modo de reserva, puede personalizar los paneles manteniendo presionado Alt al realizar clic derecho sobre el panel.</p>
+   <p>Para una breve descripción de las características del entorno GNOME, tales como asignaciones de teclas, posibilidades de arrastrar y soltar, utilidades especiales, vea <tt>https://live.gnome.org/GnomeShell/CheatSheet</tt>.</p>
+  
+
+  
+   <h3>Sistema de Sonido PulseAudio</h3>
+   
+   <p>El sistema de sonido PulseAudio se encuentra integrado en todo el sistema y habilitado por defecto en una nueva instalación. Si en versiones previas lo deshabilitó y quiere volver a habilitarlo, verifique la variable <tt>PULSEAUDIO_ENABLE</tt> en<tt>/etc/sysconfig/sound</tt>:</p>
+
+   <p>Cambie <tt>PULSEAUDIO_ENABLE</tt> a "<tt>yes</tt>" para habilitar forzadamente PA en todo el sistema. Cambiando <tt>PULSEAUDIO_ENABLE</tt> a "<tt>no</tt>" desactivará por completo PulseAudio, y estableciedo "custom" dejará la configuración como está.</p>
+  
+
+
+  
+   
+   <h3>Btrfs</h3>
+   <p>
+Btrfs is the next generation filesystem for Linux. As a preview of the new
+technology, you can create btrfs partitions or setup your whole system with
+btrfs.
+   </p>
+
+   <p>
+Note: The btrfs filesystem is in active development, and check and
+repair functionality ("scrub") has been added just recently. "Scrub" is
+aimed to verify data and metadata assuming the tree structures are fine;
+it can (and should) be run periodically on a mounted filesystem: it runs
+as a background process during normal operation.
+   </p>
+
+   <p>
+Thus we advice to carefully consider, which data to put on the filesystem, and
+follow the usual suggestions for redundancy and backup. For more
+information, see <tt>http://btrfs.wiki.kernel.org</tt>.
+   </p>
+
+   <p>
+Btrfs contains many interesting new features, including the ability to
+take snapshots of your filesystem. Snapshot and rollback is supported by
+<tt>snapper</tt>, and already integrated into openSUSE package
+and system management tools such as <tt>zypper</tt> and YaST.
+   </p>
+  
+
+  
+   
+   <h3>Inicio de Sesión en Dominios Windows con KDM</h3>
+
+   <p>El tema KDM de SUSE no permite inicios de sesión en Dominios Windows.</p>
+
+   <p>Una manera de solucionar esto sería, establecer DISPLAYMANAGER_KDM_THEME a un valor vacío en  <tt>/etc/sysconfig/displaymanager</tt> para utilizar el tema KDM por defecto. </p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  
+
+  
+   <h3>Oracle Java Disponible por Separado</h3>
+   <p>El paquete java-1_6_0-sun package ya no es parte de openSUSE debido a cambios en su licencia. Como reemplazo incluímos la versión OpenJDK. Usuarios de openSUSE que prefieran la versión del JDK de Oracle JDK en lugar de OpenJDK, pueden obtenerla desde <tt>http://oracle.com/java</tt>.</p>
+  
+
+  
+   
+   <h3>Removing 32-Bit XEN Hypervisor</h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  
+
+  
+  
+  
+   <h3>Formatting Large Disk Partitions on Windows 8 Server</h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  
+
+  
+   
+   <h3>Configuring Postfix</h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  
+
+ 
+
+ 
+  <h2>Actualización del sistema</h2>
+
+  
+   
+   <h3>Mounting Encrypted Partitions with dm-crypt</h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  
+
+  
+   
+   <h3>Mounting Encrypted Partitions Using systemd</h3>
+   <p>
+If encrypted partitions are not automatically mounted when using
+systemd, the <tt>noauto</tt> flag in
+<tt>/etc/fstab</tt> for these partitions could be the
+cause. Replacing this flag with <tt>nofail</tt> will fix
+it. For instance, change the following line:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>por</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  
+ 
+
+
+ 
+  <h2>Cuestiones técnicas</h2>
+  
+  
+   <h3>Inicializando gráficos con KMS (Kernel Mode Setting)</h3>
+   
+   <p>Con openSUSE 11.3 cambiamos a KMS (Configuración Modo Kernel) para gráficos Intel, ATI y NVIDIA, el cual es ahora nuestro valor por defecto. Si se encuentran problemas con el soporte del controlador KMS (intel, radeon, nouveau), deshabilitar KMS agregando <tt>nomodeset</tt> a la línea de comando del arranque del kernel. Para establecer esto de forma permanente, agregarlo a la linea de comando del kernet en <tt>/boot/grub/menu.lst</tt>. Esta opción se asegura que se cargue el módulo del kernel apropiado (intel, radeon, nouveau) con <tt>modeset=0</tt> in <tt>initrd</tt>, por ejemplo KMS está desactivado.</p>
+
+   <p>En los casos raros cuando se está cargando el módulo DRM desde <tt>initrd</tt> es un problema general y no está relacionado con KMS, es aún posible desactivar la carga del módulo DRM en <tt>initrd</tt> completamente. Para esto establecer la variable de sysconfig <tt>NO_KMS_IN_INITRD</tt> con <tt>yes</tt> usando YAST, quien luego recrea luego <tt>initrd</tt>. Reinicie su computador.</p>
+
+   <p>En Intel sin KMS el Xserver regresa al controlador <tt>fbdev</tt> (el controlador <tt>intel</tt> sólo soporta KMS), altenativamente, para GPUs Intel legacy, el controlador "intellegacy" (paquete <tt>xorg-x11-driver-video-intel-legacy</tt>) esta disponible, el cual todavía soporta UMS (Configuración de Modo de Usuario). Para usarlo, editar <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> y cambiar el parámetro del controlador a <tt>intellegacy</tt>.</p>
+
+   <p>En ATI para los GPUs actuales, se regresa a <tt>radeonhd</tt>. En NVIDIA sin KMS se utiliza el controlador <tt>nv</tt> (el controlador <tt>nouveau</tt> sólo soporta KMS). Nota, los nuevos GPU de ATI y NVIDIA vuelven a <tt>fbdev</tt> si agrega y el parémetro <tt>nomodeset</tt> a las opciones de inicio del kernel.</p>
+  
+
+  
+   
+   <h3>El Sonido HDMI en Radeon será Deshabilitado</h3>
+
+   <p>Debido a problemas con algunas placas, por defecto, la salida de sonido HDMI en el driver radeon ha sido deshabilitada. Este es el driver utilizado en placas gráficas AMD/ATI.</p>
+   <p>Puede ser habilitado nuevamente agregando <tt>radeon.audio=1</tt> como parámetro del kernel. En YaST, vaya a Sistema &gt; Cargador de Inicio, luego seleccione Editar en la entrada por defecto, y agregue la siguiente línea al final de "Parámetro Opcional de la Línea de Comandos del Kernel":</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Luego reinicie para aplicar el cambio</p>
+   <p>Como alternativa, es posible instalar el controlador propietario de AMD. Para mayor información, consulte <tt>http://en.opensuse.org/SDB:ATI_drivers</tt>.</p>
+  
+
+  
+   
+   <h3>Iniciando con systemd o sysvinit</h3>
+
+   <p>Desde ahora, openSUSE utiliza <tt>systemd</tt>. En caso de problemas, es posible volver a utilizar <tt>sysvinit</tt> presionando F5 durante el inicio.</p>
+
+   <p>Si quiere cambiar permanentemente a <tt>sysvinit</tt>, instale el paquete <tt>sysvinit-init</tt>. Para volver a <tt>systemd</tt>, reinstale el paquete <tt>systemd-sysvinit</tt>.</p>
+  
+
+  
+   
+   <h3>systemd: Especificando parámetros de inicio</h3>
+   <p><tt>systemctl</tt> sólo soporta parámetros "estandar" (vea <tt>http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</tt>).</p>
+   <p>Puede evitar este nuevo comportamiento invocando los guiones de inicio directamente, por ejemplo:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;sus_parámetros&gt;
+</pre>
+  
+
+  
+   
+   <h3>systemd: System Shutdown</h3>
+
+   <p>Para detener y apagar el sistema al usar <tt>systemd</tt>, ejecute <tt>halt -p</tt> o <tt>shutdown -h now</tt> en la línea de comandos, o utilice la opción de apagado de su entorno de escritorio.</p>
+
+   <p>Nota: Un simple <tt>halt</tt> no apagará el sistema adecuadamente.</p>
+  
+
+  
+   
+   <h3>systemd: Making Use of tmpfs: /run, /var/run, /media, etc.</h3>
+
+   <p>
+    systemd mounts several directories that are meant to contain
+    volatile data only, as tmpfs filesystems: <tt>/run</tt>,
+    <tt>/var/run</tt>, <tt>/var/lock</tt>, and
+    <tt>/media</tt> are those directories.  For background
+    information, see <tt>http://lwn.net/Articles/436012/</tt>.
+   </p>
+
+   <p>
+    Note: Do not store files that are meant to survive a reboot, in
+    <tt>/run</tt>, <tt>/var/run</tt>, etc.
+   </p>
+  
+
+  
+   
+   <h3>systemd: Cleaning Directories (/tmp and /var/tmp)</h3>
+
+   <p>
+systemd maintains directories as specified in the
+<tt>tmpfiles.d</tt> directories and in
+<tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>.  For
+more information, see the <tt>tmpfiles.d</tt> manpage.
+   </p>
+
+   <p>
+By default, systemd cleans <tt>tmp</tt> directories daily as
+configured in <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:
+   </p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>
+Note: systemd does not honor sysconfig variables in
+<tt>/etc/sysconfig/cron</tt> such as
+<tt>TMP_DIRS_TO_CLEAR</tt>.
+    </p>
+  
+
+  
+   
+   <h3>CUPS 1.5</h3>
+   <p>CUPS 1.5 trae algunos cambios no compatibles con versiones anteriores:</p>
+   <ul>
+    <li>
+     <p>CUPS y ano soporte los archivos de configuración <tt>~/.cupsrc</tt> o <tt>~/.lpoptions</tt> de CUPS 1.1. En su lugar, use <tt>~/.cups/client.conf</tt> y <tt>~/.cups/lpoptions</tt> que fueron introducidos con CUPS 1.2.</p>
+    </li>
+    <li>
+     <p>A partir de ahora, el planificador requiere que los filtros y backends tengan permisos de escritura deshabilitados para el grupo para aumentar la seguridad. Si utiliza un controlador de impresora de terceros de fabricantes con permisos de archivo más flexibles, cambie los permisos manualmente.</p>
+    </li>
+   </ul>
+  
+
+  
+   
+   <h3>El comando rename (renombrar)</h3>
+   <p>De acuerdo de los estándares del codificación GNU, el comando rename (renombrar) trata todas la cadenas que comiencen con una guión (-) como una opción de la línea de comandos. Para prevenir esto, separe la opción de las otros argumentos con <tt>--</tt> de la siguiente manera:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  
+
+  
+   
+   <h3>Interfaz de Línea de Comandos de NetworkManager</h3>
+
+   <p><tt>cnetworkmanager</tt> ya no se encuentra disponible.—en su lugar utilice <tt>nmcli</tt>. Para información sobre migración, vea <tt>http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</tt>.</p>
+  
+
+  
+   
+   <h3>rpm: %_topdir Cambiado para Usuarios sin privilegios de root</h3>
+
+   <p>
+    Unprivileged users can no longer write to
+    <tt>/usr/src/packages</tt>.
+    <tt>rpmbuild</tt> now uses
+    <tt>~/rpmbuild</tt> by default.  To change the directory
+    add a line as follows to <tt>~/.rpmmacros</tt>:
+   </p>
+   <pre>%_topdir /algun/otro/lugar</pre>
+   <p>Para usar el sub directorio <tt>foo</tt> de <tt>$HOME</tt> agréguelo a <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  
+ 
+

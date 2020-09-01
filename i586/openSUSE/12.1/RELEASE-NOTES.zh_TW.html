@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>openSUSE 12.1發行紀事</title>
+</head>
+<body>
+ <h1>openSUSE 12.1發行紀事</h1>
+ <p>版本：</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>在 GNU 自由文件授權(GNU Free Documentation License) 1.2 版或之後版本的規範下，您被允許複製、散佈和/或修改此文件， GNU 自由文件授權(GNU Free Documentation License)是由自由軟體基金會(Free Software Foundation)所發行。使用無恆常章節(no Invariant Sections)，無封面文字(no Front-Cover Texts)及無封底文字(no Back-Cover Texts)。此授權的複本已包含在檔案 <tt>fdl.txt</tt>。</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>如果您從較舊的 openSUSE 發行版本升級，請由此查看之前的發行紀事： <a href="http://en.opensuse.org/openSUSE:Release_Notes">http://en.opensuse.org/openSUSE:Release_Notes</a></p>
+
+ 
+ 
+ <p>此版本摘要包括以下範圍：</p>
+<div>
+<dl>
+<dt>雜項</dt>
+<dd><ol><li><a href="#01">YaST AppArmor 組態模組</a></li></ol></dd>
+<dt>安裝</dt>
+<dd><ol><li><a href="#02">For Detailed Installation Information</a></li></ol></dd>
+<dt>一般</dt>
+<dd><ol>
+<li><a href="#03">openSUSE 文件</a></li>
+<li><a href="#04">GNOME 3</a></li>
+<li><a href="#05">PulseAudio 音效系統</a></li>
+<li><a href="#06">Btrfs</a></li>
+<li><a href="#07">用 KDM Windows 網域登入</a></li>
+<li><a href="#08">Oracle Java 額外提供</a></li>
+<li><a href="#09">Removing 32-Bit XEN Hypervisor</a></li>
+<li><a href="#10">Formatting Large Disk Partitions on Windows 8 Server</a></li>
+<li><a href="#11">Configuring Postfix</a></li>
+</ol></dd>
+<dt>系統升級</dt>
+<dd><ol>
+<li><a href="#12">Mounting Encrypted Partitions with dm-crypt</a></li>
+<li><a href="#13">Mounting Encrypted Partitions Using systemd</a></li>
+</ol></dd>
+<dt>技術</dt>
+<dd><ol>
+<li><a href="#14">使用 KMS (Kernel Mode Setting) 初始化顯示卡</a></li>
+<li><a href="#15">Radeon HDMI 聲音輸出已被停用</a></li>
+<li><a href="#16">使用 systemd 或 sysvinit 開機</a></li>
+<li><a href="#17">systemd: 提供服務啟動參數</a></li>
+<li><a href="#18">systemd: System Shutdown</a></li>
+<li><a href="#19">systemd: Making Use of tmpfs: /run, /var/run, /media, etc.</a></li>
+<li><a href="#20">systemd: Cleaning Directories (/tmp and /var/tmp)</a></li>
+<li><a href="#21">CUPS 1.5</a></li>
+<li><a href="#22">關於 rename 指令</a></li>
+<li><a href="#23">NetworkManager (網路管理員)命令行介面</a></li>
+<li><a href="#24">rpm: 非 root 的使用者 %_topdir 變更</a></li>
+</ol></dd>
+</dl>
+<hr>
+</div>
+
+ <ul>
+  <li>
+   <p>雜項： 這些項目是由 openFATE - 功能與需求管理系統 (<a href="http://features.opensuse.org">http://features.opensuse.org</a>)中自動被囊括。</p>
+   <p>For the moment, these snippets are listed unsorted—we are
+    working on improvements.</p>
+  </li>
+
+ <li>
+   <p>安裝：如果您想要從頭開始安裝此系統，請閱讀此。</p>
+  </li>
+
+ <li>
+   <p>一般：每個人應閱讀的資訊。</p>
+  </li>
+
+  <li><p>系統升級：關於從之前版本升級到此 openSUSE 版本的過程中的一些問題。</p></li>
+
+  <li><p>技術：本節包含數個技術變更與增強以提供給有經驗的使用者利用。</p></li>
+ </ul>
+
+
+  <div>
+<h2>雜項</h2>
+    <div>
+<h3><a name="01">YaST AppArmor 組態模組</a></h3>
+<p>FATE <a href="https://features.opensuse.org/305278">https://features.opensuse.org/305278</a>的分類： AppArmor, YaST.</p>
+
+<p>AppArmor 組態模組現在要到 YaST 控制中心的 "保全性與使用者" 分類中尋找。</p>
+
+</div>
+  </div>
+
+
+
+
+ <div>
+  <h2>安裝</h2>
+  
+  <div>
+   <h3><a name="02">For Detailed Installation Information</a></h3>
+
+  <p>For detailed installation information, see the 
+  "openSUSE
+  Documentation"
+ referenced below.</p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>一般</h2>
+
+  
+  <div>
+   <h3><a name="03">openSUSE 文件</a></h3>
+
+   <ul>
+    <li><p>在入門指引，您可以找到有詳細步驟的安裝教學，還有 KDE 和 GNOME 桌面，以及 LibreOffice 辦公室套裝軟體的介紹。 也涵蓋了基本管理的主題，像是佈署和軟體管理以及一個 bash shell 的介紹。</p></li>
+    <li>
+     <p>參考涵蓋了管理，以及系統設定的細節，並解釋如何設定各種不同的網路服務。</p>
+    </li>
+    <li><p>保全指引會介紹系統安全的基本概念，他同時包含了本地與網路保全的觀點。</p></li>
+    <li>
+<p>系統分析與微調指引會針對問題偵測、解決方案與最佳化提供幫助。</p>
+    </li>
+    <li>
+<p>使用 KVM 虛擬化提供了關於用 KVM, libvirt 以及 QEMU 工具設定、管理虛擬機的介紹。</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   <h3><a name="04">GNOME 3</a></h3>
+   
+   <p>GNOME 3 提供了一個和 GNOME 2 不同的桌面新設計。因此，也為了讓使用者從這個變更得到好處，您的 GNOME 2 桌面的外觀與感覺將不會自動被移植。系統設定 可以用來自訂 GNOME 3， 也提供了進階工具 (<tt>gnome-tweak-tool</tt>) 進行更細節的設定。</p>
+   <p>GNOME 3 的標準模式需要圖形驅動程式的 3D 加速支援。當 3D 加速無法使用時，GNOME 3 會使用後備模式。如果 GNOME 3 偵測到可使用 3D 加速，但標準模式無法使用，那您應該是遇到了圖形驅動程式的臭蟲。您可以在 grub 的開機參數中使用 "<tt>gnome.fallback=1</tt>" 來強迫使用後備模式。</p>
+   <p>如果您使用後備模式，您可以按著 Alt 並在面板上按滑鼠右鍵 來自訂面板。</p>
+   <p>許多關於 GNOME Shell 功能的簡短描述，像是快捷鍵設定， 拖曳與釋放相容性，以及特殊工具等，請參閱 <a href="https://live.gnome.org/GnomeShell/CheatSheet">https://live.gnome.org/GnomeShell/CheatSheet</a>。</p>
+  </div>
+
+  <div>
+   <h3><a name="05">PulseAudio 音效系統</a></h3>
+   
+   <p>PulseAudio 聲音系統現在已完全整合到整個系統，並對全新安裝時預設啟用。如果您在前一個版本停用它，且現在想要啟用，請在 <tt>/etc/sysconfig/sound</tt> 檢查 <tt>PULSEAUDIO_ENABLE</tt> 的變數：</p>
+
+   <p>設定 <tt>PULSEAUDIO_ENABLE</tt> 為 "<tt>yes</tt>" 全系統強迫啟用 PA。 設定 <tt>PULSEAUDIO_ENABLE</tt> 為 "<tt>no</tt>" 將完全停用 PulseAudio，設定為 "custom" 表示維持自訂的組態不變動。</p>
+  </div>
+
+
+  <div>
+   
+   <h3><a name="06">Btrfs</a></h3>
+   <p>
+Btrfs is the next generation filesystem for Linux. As a preview of the new
+technology, you can create btrfs partitions or setup your whole system with
+btrfs.
+   </p>
+
+   <p>
+Note: The btrfs filesystem is in active development, and check and
+repair functionality ("scrub") has been added just recently. "Scrub" is
+aimed to verify data and metadata assuming the tree structures are fine;
+it can (and should) be run periodically on a mounted filesystem: it runs
+as a background process during normal operation.
+   </p>
+
+   <p>
+Thus we advice to carefully consider, which data to put on the filesystem, and
+follow the usual suggestions for redundancy and backup. For more
+information, see <a href="http://btrfs.wiki.kernel.org">http://btrfs.wiki.kernel.org</a>.
+   </p>
+
+   <p>
+Btrfs contains many interesting new features, including the ability to
+take snapshots of your filesystem. Snapshot and rollback is supported by
+<tt>snapper</tt>, and already integrated into openSUSE package
+and system management tools such as <tt>zypper</tt> and YaST.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="07">用 KDM Windows 網域登入</a></h3>
+
+   <p>SUSE KDM 佈景主題不允許 Windows 網域登入。</p>
+
+   <p>要避免此問題，在 <tt>/etc/sysconfig/displaymanager</tt> 設定  DISPLAYMANAGER_KDM_THEME 為空白字串，來使用預設的 KDM 佈景主題：</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  </div>
+
+  <div>
+   <h3><a name="08">Oracle Java 額外提供</a></h3>
+   <p>java-1_6_0-sun 套件因為授權的變更，已不再是 openSUSE 的一部份。我們將搭載 OpenJDK 版本替代。習慣使用 Oracle JDK 二位元檔版本來取代 openSUSE OpenJDK 版的 openSUSE 使用者，可以從 <a href="http://oracle.com/java">http://oracle.com/java</a> 下載 Oracle 的版本。</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="09">Removing 32-Bit XEN Hypervisor</a></h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  </div>
+
+  
+  
+  <div>
+   <h3><a name="10">Formatting Large Disk Partitions on Windows 8 Server</a></h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  </div>
+
+  <div>
+   
+   <h3><a name="11">Configuring Postfix</a></h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>系統升級</h2>
+
+  <div>
+   
+   <h3><a name="12">Mounting Encrypted Partitions with dm-crypt</a></h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="13">Mounting Encrypted Partitions Using systemd</a></h3>
+   <p>
+If encrypted partitions are not automatically mounted when using
+systemd, the <tt>noauto</tt> flag in
+<tt>/etc/fstab</tt> for these partitions could be the
+cause. Replacing this flag with <tt>nofail</tt> will fix
+it. For instance, change the following line:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>改成</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  </div>
+ </div>
+
+
+ <div>
+  <h2>技術</h2>
+  
+  <div>
+   <h3><a name="14">使用 KMS (Kernel Mode Setting) 初始化顯示卡</a></h3>
+   
+   <p>在 openSUSE 11.3 我們已為 Intel, ATI 和 NVIDIA 顯示卡切換到 KMS (Kernel Mode Setting) ，這是我們的預設值。若您在 KMS 驅動程式支援(intel, radeon, nouveau)遇到問題，可以在核心開機指令行加上 <tt>nomodeset</tt> 來停用 KMS。要永久設定此參數，請將他加到 <tt>/boot/grub/menu.lst</tt> 的核心指令行中。此選項會確認相對應的核心模組(intel, radeon, nouveau)在 <tt>initrd</tt> 載入時會使用 <tt>modeset=0</tt>，也就是說，停用 KMS。</p>
+
+   <p>在少數情況下，當從 <tt>initrd</tt> 載入 DRM 模組時會產生問題，我們也可以完全在 <tt>initrd</tt> 停止載入 DRM 模組。要這樣做的話，用 YaST設定 sysconfig 變數 <tt>NO_KMS_IN_INITRD</tt> 為 <tt>yes</tt>，完成後會重新產生 <tt>initrd</tt>，接著請您重新開機。</p>
+
+   <p>在 Intel 顯示卡不用 KMS 的話，X伺服器會回歸到 <tt>fbdev</tt> 驅動程式(<tt>intel</tt> 驅動程式只支援 KMS); 然而對 Intel 較舊的  GPU，也可以使用 "intellegacy" 驅動程式 (<tt>xorg-x11-driver-video-intel-legacy</tt> 套件)，這個驅動程式仍支援 UMS (User Mode Setting)。要使用此驅動程式，編輯 <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> 並變更驅動程式項目為<tt>intellegacy</tt>。</p>
+
+   <p>在 ATI 當下主流的 GPU 顯示卡則會回歸使用 <tt>radeonhd</tt>。在 NVIDIA 顯示卡沒有 KMS 則會使用 <tt>nv</tt> 驅動程式(<tt> nouveau</tt> 驅動程式只支援 KMS)。注意，如果您在核心啟動參數中 指定 <tt>nomodeset</tt> ，較新的 ATI 和 NVIDIA GPU 會回歸 使用 <tt>fbdev</tt>。</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="15">Radeon HDMI 聲音輸出已被停用</a></h3>
+
+   <p>基於某些硬體有問題 HDMI 聲音輸出在 radeon 驅動程式已預設停用， radeon 是 AMD/ATI 顯示卡的預設驅動程式。</p>
+   <p>它可以加入一個核心參數 <tt>radeon.audio=1</tt> 來重新啟用。在YaST，在系統 -&gt; 開機載入器， 然後編輯預設項目，加入下列內容到'選擇性的核心 指令行參數'的最後面：</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>然後重新開機來套用變更。</p>
+   <p>另一種方法，使用者也可以安裝 AMD 的專有驅動程式。要得到 更進一步資訊，請參閱 <a href="http://en.opensuse.org/SDB:ATI_drivers">http://en.opensuse.org/SDB:ATI_drivers</a>。</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="16">使用 systemd 或 sysvinit 開機</a></h3>
+
+   <p>現在 openSUSE 開機預設使用 <tt>systemd</tt>。如果遇到麻煩，您可以在開機時按 F5 來切換回使用 <tt>sysvinit</tt> 的老方法。</p>
+
+   <p>如果您想要長久使用 <tt>sysvinit</tt> ，請安裝 <tt>sysvinit-init</tt> 套件。要切換回 <tt>systemd</tt>，重新安裝 <tt>systemd-sysvinit</tt> 套件。</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="17">systemd: 提供服務啟動參數</a></h3>
+   <p><tt>systemctl</tt> 僅支援 "標準" 參數 (詳見 <a href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>)。</p>
+   <p>您可以藉由直接呼叫啟動程序來迴避此新行為，例如：</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;您的_參數&gt;
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="18">systemd: System Shutdown</a></h3>
+
+   <p>使用 <tt>systemd</tt> 時系統要停機或電源關閉，請在命令行 用 <tt>halt -p</tt> 或 <tt>shutdown -h now</tt> 或 使用您的桌面環境所提供的關機按鍵。</p>
+
+   <p>注意：單單 <tt>halt</tt> 命令將無法正確關閉系統。</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="19">systemd: Making Use of tmpfs: /run, /var/run, /media, etc.</a></h3>
+
+   <p>
+    systemd mounts several directories that are meant to contain
+    volatile data only, as tmpfs filesystems: <tt>/run</tt>,
+    <tt>/var/run</tt>, <tt>/var/lock</tt>, and
+    <tt>/media</tt> are those directories.  For background
+    information, see <a href="http://lwn.net/Articles/436012/">http://lwn.net/Articles/436012/</a>.
+   </p>
+
+   <p>
+    Note: Do not store files that are meant to survive a reboot, in
+    <tt>/run</tt>, <tt>/var/run</tt>, etc.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="20">systemd: Cleaning Directories (/tmp and /var/tmp)</a></h3>
+
+   <p>
+systemd maintains directories as specified in the
+<tt>tmpfiles.d</tt> directories and in
+<tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>.  For
+more information, see the <tt>tmpfiles.d</tt> manpage.
+   </p>
+
+   <p>
+By default, systemd cleans <tt>tmp</tt> directories daily as
+configured in <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:
+   </p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>
+Note: systemd does not honor sysconfig variables in
+<tt>/etc/sysconfig/cron</tt> such as
+<tt>TMP_DIRS_TO_CLEAR</tt>.
+    </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="21">CUPS 1.5</a></h3>
+   <p>CUPS 1.5 帶來與之前不相容的變更：</p>
+   <ul>
+    <li>
+     <p>CUPS 不再支援從 CUPS 1.1 以來的 <tt>~/.cupsrc</tt> 或 <tt>~/.lpoptions</tt> 設定檔。取而代之的是使用由 CUPS 1.2 引進的 <tt>~/.cups/client.conf</tt> 以及 <tt>~/.cups/lpoptions</tt> 這兩個檔案。</p>
+    </li>
+    <li>
+     <p>現在排程器為了改進安全性，需要停用過濾器 與後端的群組寫入權限。如果您由製造商來的 第三方印表機驅動程式使用了較寬鬆的權限， 請自行調整權限。</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   
+   <h3><a name="22">關於 rename 指令</a></h3>
+   <p>基於 GNU 程式標準規定 (GNU Coding Standards)， rename 的指令現在會將所有以一個破折號開頭的字串視為指令行的選項。為避免問題，用 <tt>--</tt> 來分隔選項和其他參數，如下：</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="23">NetworkManager (網路管理員)命令行介面</a></h3>
+
+   <p><tt>cnetworkmanager</tt> 已不再可用—請用 <tt>nmcli</tt> 來代替。相關轉移的資訊，請參閱 <a href="http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html">http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</a>。</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="24">rpm: 非 root 的使用者 %_topdir 變更</a></h3>
+
+   <p>
+    Unprivileged users can no longer write to
+    <tt>/usr/src/packages</tt>.
+    <tt>rpmbuild</tt> now uses
+    <tt>~/rpmbuild</tt> by default.  To change the directory
+    add a line as follows to <tt>~/.rpmmacros</tt>:
+   </p>
+   <pre>%_topdir /其他/某些/地方</pre>
+   <p>要使用 <tt>$HOME</tt> 中的子目錄 <tt>foo</tt> 在 <tt>~/.rpmmacros</tt> 中加入：</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  </div>
+ </div>
+</body>
+</html>

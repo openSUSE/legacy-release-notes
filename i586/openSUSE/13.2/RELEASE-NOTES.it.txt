@@ -1,0 +1,378 @@
+Release Notes
+
+13.2.20170117
+
+Diritto d'autore © 2007,2011 Andrea Florio (andrea@opensuse.org)
+
+Diritto d'autore © 2008,2014 * Andrea Turrini (andrea.turrini@gmail.com)
+
+Diritto d'autore © 2011,2013 * Giacomo Barazzetti
+
+Diritto d'autore © 2011 * Eugenio Mastroviti (genia@genia.net)
+
+Diritto d'autore © 2008 * Giuseppe Bevacqua (gepeppe@gmail.com)
+
+Diritto d'autore © 2008 * Luca Giusti (addictedtox@hotmail.it)
+
+Diritto d'autore © 2008 * Ezio Tonetto (murdock2000@email.it)
+
+Diritto d'autore © 2008 * Roberta Di Mitri (robynica@hotmail.com)
+
+Diritto d'autore © perso, ma mai dimenticato * Ettore Perazzoli
+
+Diritto d'autore © 2005,2007 * Alberto Passalacqua (alberto.passalacqua@tin.it)
+
+Sommario
+
+openSUSE is a free and Linux-based operating system for your PC, Laptop or
+Server. You can surf the web, manage your e-mails and photos, do office work,
+play videos or music and have a lot of fun!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Indice
+
+Installazione
+
+    Installatore live CD e impostazioni della tastiera
+    Rete dopo l'aggiornamento con YaST
+    Attenzione: Nessuna ubicazione scelta per lo Stage1 del boot loader
+    BtrFS e Windows XP
+    Grub2 senza tema nelle nuove installazioni da live
+    Installazione di rete usando il wifi
+
+Generale
+
+    UEFI—Unified Extensible Firmware Interface
+    UEFI, GPT e partizioni MS-DOS
+    Avvio in modalità di Boot sicuro
+
+Aggiornamento del sistema
+Informazioni tecniche
+
+    Artefatti sullo schermo durante l'installazione con il driver Nouveau
+    Informazioni sul driver FGLRX
+    Secondo puntatore statico del mouse
+    Dipendenze mancanti per virt-manager
+    Autorizzazione per il modem dopo la sospensione
+    Ricerca dei pacchetti mancante nell'interfaccia GTK di YaST
+    Migrazione cifstab da openSUSE pre-13.2
+    Rimozione dello sfondo KDE 13.1 dopo l'aggiornamento
+    Integrazione ufficiale del desktop MATE
+    Avvio lento in GNOME
+    AppArmor e impostazioni dei permessi
+
+Varie
+
+    YaST (interfaccia Qt): L'icona "Gestore dei servizi" appare duplicata
+
+Maggiori informazioni e feedback
+
+The end of the maintenance period for openSUSE 13.2 is now reached. To keep
+your systems up to date and secure, migrate to a current openSUSE version.
+
+For more information about upgrading to a current openSUSE version, see http://
+en.opensuse.org/SDB:Distribution-Upgrade. Make sure that all maintenance
+updates for openSUSE 13.2 are applied before starting the update.
+
+Se si aggiorna da una versione vecchia a questo rilascio di openSUSE, conviene
+leggere le note di rilascio precedenti qui: http://en.opensuse.org/
+openSUSE:Release_Notes
+
+Installazione
+
+Installatore live CD e impostazioni della tastiera
+
+L'installatore live CD ha un problema con le impostazioni della tastiera. Se
+l'utente sceglie una mappatura della tastiera diversa dalla QWERTY (la variante
+en-US predefinita), tale impostazione non viene applicata correttamente e il
+nuovo sistema rimarrà con la pre-configurazione QWERTY.
+
+Come soluzione temporanea, usare lo strumento a riga di comando localectl dopo
+l'installazione. Ad esempio, per installare la mappatura di tastiera italiana:
+
+localectl set-x11-keymap it pc105 nodeadkeys
+
+Questo problema non è presente nell'installatore DVD.
+
+Rete dopo l'aggiornamento con YaST
+
+Dopo l'aggiornamento da 13.1 a 13.2 tramite YaST, ci sono buone probabilità che
+il nuovo metodo di gestione della rete Wicked sia in esecuzione assieme al
+vecchio NetworkManager, se si sta usando un portatile con connessione wireless.
+
+Per risolvere ciò, prima disabilitare Wicked e abilitare nuovamente
+NetworkManager:
+
+systemctl is-active network.service && systemctl stop network.service
+systemctl is-active wickedd.service && systemctl stop wickedd.service
+systemctl disable wicked.service
+systemctl --force enable NetworkManager.service
+systemctl start network.service
+
+Per verificare che il servizio attualmente selezionato sia effettivamente
+NetworkManager:
+
+systemctl -p Id show network.service
+
+E aggiornare /etc/resolv.conf:
+
+netconfig update
+
+Oppure riavviare il sistema dopo i comandi systemctl per riavviare anche 
+wpa_suplicant.
+
+Attenzione: Nessuna ubicazione scelta per lo Stage1 del boot loader
+
+Durante l'installazione iniziale, nel sommario di YaST, può apparire un avviso
+come il seguente, sotto la sezione del boot loader: «Attenzione: non è stata
+scelta l'ubicazione per il stage1 del boot loader. A meno che non si sappia
+cosa si sta facendo, selezionare l'ubicazione.»
+
+Questo avviso è un bug di YaST (ora corretto in Factory) e può essere ignorato
+senza problemi.
+
+BtrFS e Windows XP
+
+Se si ha Windows XP e si vuole installare openSUSE 13.2 con Brtfs, comparirà un
+messaggio di errore in YaST a riguardo di possibili problemi durante
+l'installazione del boot loader.
+
+L'opzione più sicura è quella di installare in una partizione con Ext4 invece
+di BtrFS. È già disponibile una correzione che entrerà presto in Factory, ma
+non sarà presente in 13.2.
+
+Grub2 senza tema nelle nuove installazioni da live
+
+Un bug in YaST impedisce di avere il tema del boot loader GRUB2 quando si
+installa dal supporto LiveCD. Si noti che il modo preferito per installare
+openSUSE 13.2 si basa sull'installazione da DVD o via rete. Entrambi i supporti
+generano durante l'installazione un boot loader con l'opportuno tema.
+
+Installazione di rete usando il wifi
+
+Ci possono essere alcuni problemi in YaST quando si installa via rete tramite
+wifi. La risoluzione di ciò è ancora in corso e sarà presto disponibile. Nel
+frattempo l'unica opzione consiste nell'usare una connessione via cavo per
+completare l'installazione di rete.
+
+Generale
+
+UEFI—Unified Extensible Firmware Interface
+
+Prima di installare openSUSE su un sistema che si avvia usando UEFI (Unified
+Extensible Firmware Interface), si verifichi urgentemente se esiste un
+aggiornamento del firwmare raccomandato dal fornitore dell'hardware e, se
+disponibile, lo si installi. Un sistema Windows 8 pre-installato indica che
+quasi sicuramente il sistema si avvia usando UEFI.
+
+Informazioni di base: alcuni firmware UEFI presentano dei bug che ne causano la
+rottura quando si scrivono troppi dati nell'area di memorizzazione UEFI.
+Nessuno conosce di preciso quanto siano questi "troppi dati", comunque.
+openSUSE minimizza il rischio non scrivendo alcun dato eccedente il minimo
+richiesto per avviare il sistema operativo. Il minimo significa dire al
+firmware UEFI la locazione del boot loader di openSUSE. Le funzionalità del
+kernel Linux upstream di usare l'area di memorizzazione UEFI per memorizzare le
+informazioni di avvio e crash (pstore) sono state disabilitate in modo
+predefinito. Comunque sia si raccomanda di installare ogni aggiornamento
+firmware raccomandato dal fornitore dell'hardware.
+
+UEFI, GPT e partizioni MS-DOS
+
+Assieme alla specifica EFI/UEFI è arrivato un nuovo stile di partizionamento:
+GPT (Tabella delle Partizioni GUID). Questo nuovo schema usa identificatori
+univoci globali (valori a 128 bit rappresentati con 32 caratteri esadecimali)
+per identificare dispositivi e tipi di partizione.
+
+La specifica UEFI permette inoltre le partizioni obsolete MBR (MS-DOS). I boot
+loader Linux (ELILO o GRUB2) cercano di generare automaticamente un GUID per
+tali partizioni obsolete e di scriverle nel firmware. Tale GUID può cambiare
+frequentemente causando la riscrittura nel firmware. Una riscrittura è composta
+da due operazioni diverse: rimozione della vecchia voce e creazione di una
+nuova voce che sostituisce la prima.
+
+Il firmware moderno possiede un garbage collector che raccoglie le voci
+cancellate e libera la memoria riservata per le vecchie voci. Sorge un problema
+quando il firmware erroneo non raccoglie e libera tali voci: può portare ad un
+sistema non avviabile.
+
+La soluzione è semplice: convertire le partizioni MBR obsolete nelle nuove GPT
+per prevenire completamente tale problema.
+
+Avvio in modalità di Boot sicuro
+
+Questo riguarda solamente le macchine in modalità UEFI con il boot sicuro
+abilitato.
+
+La nuova versione del loader shim permette a più macchine di avviarsi con il
+Boot sicuro abilitato rispetto a openSUSE 13.1. Comunque, in caso di problemi,
+prima aggiornare il BIOS della propria macchina all'ultima versione. Se
+l'aggiornamento non aiuta, riportare il modello della macchina nel wiki (http:/
+/en.opensuse.org/openSUSE:UEFI) in modo che possa essere tracciato per il
+prossimo rilascio.
+
+Aggiornamento del sistema
+
+Informazioni tecniche
+
+Artefatti sullo schermo durante l'installazione con il driver Nouveau
+
+In alcuni sistemi con schede NVIDIA l'installatore può mostrare artefatti nella
+parte superiore dello schermo a causa di problemi con il driver predefinito
+nouveau. Se si è afflitti da tale problema, si può disabilitare il modulo
+nouveau del kernel durante l'esecuzione dell'installatore e abilitarlo
+nuovamente una volta che il sistema è installato o aggiornato.
+
+Per disabilitare il modulo del kernel, una volta che si è avviato dal supporto
+di installazione, selezionare la voce 'Installazione' in grub e premere 'e' per
+modificare i parametri. Quindi spostarsi sulla linea che inizia con 'linux' (o
+'linuxefi') e aggiungere brokenmodules=nouveau alla fine. Premere F10 per
+continuare l'avvio con il nuovo parametro. Dopo che il sistema è stato
+installato, si può riabilitare il modulo nouveau modificando /etc/modprobe.d/
+50-blacklist.conf e rimuovendo la voce che esclude nouveau.
+
+Informazioni sul driver FGLRX
+
+Per maggiori informazioni sul driver AMD FGLRX in openSUSE 13.2 e il suo stato,
+si veda https://lizards.opensuse.org/2014/11/01/
+fglrx-warning-opensuse-13-2-tumbleweed/.
+
+Secondo puntatore statico del mouse
+
+Se si vedono due puntatori del mouse e si hanno due schede grafiche, dove una è
+una scheda Intel, si provi a disinstallare xf86-video-intel e quindi usare solo
+l'altra. Questo farà scomparire il puntatore statico del mouse.
+
+Questo e altri problemi con il driver Intel (si veda http://
+bugzilla.opensuse.org/show_bug.cgi?id=901506) verranno considerati e, se
+possibile, risolti con un aggiornamento in linea.
+
+Dipendenze mancanti per virt-manager
+
+Se si riscontrano problemi nell'eseguire virt-manager, si provi a installare
+typelib-1_0-Gtk-3_0, typelib-1_0-SpiceClientGtk-3_0 e typelib-1_0-GtkVnc-2_0.
+
+Nell'aggiornamento in linea sarà disponibile una nuova versione con tali
+dipendenze rese esplicite.
+
+Autorizzazione per il modem dopo la sospensione
+
+openSUSE 13.2 è più restrittiva riguardo la sicurezza rispetto a 13.1. Se ci si
+connette tramite un modem UMTS o 3G e si sospende la macchina, il sistema
+chiederà la password di root prima di riconnettersi.
+
+Si può modificare tale comportamento modificando la linea in /etc/
+polkit-default-privs.standard:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin:auth_admin:yes
+
+
+con:
+
+# ModemManager
+org.freedesktop.ModemManager.Device.Control    auth_admin_keep
+
+
+Ricerca dei pacchetti mancante nell'interfaccia GTK di YaST
+
+L'interfaccia GTK di YaST non include la casella per cercare i pacchetti. Se si
+usa GNOME o XFCE e si necessita di tale funzionalità, si usi l'interfaccia QT:
+
+sudo /sbin/yast2 --qt
+
+Migrazione cifstab da openSUSE pre-13.2
+
+L'uso di /etc/samba/cifstab per montare le condivisioni cifs all'avvio del
+sistema è obsoleto e sospeso. Ora viene gestito dal generico /etc/fstab.
+
+Il processo di migrazione richiede due passi:
+
+ 1. Aggiungere tutti i punti di montaggio definiti in /etc/samba/
+    cifstab.rpmsave a /etc/fstab.
+
+ 2. Aggiungere 0 0 alla fine di ogni nuova linea di montaggio cifs presente in
+    /etc/fstab.
+
+Per maggiori informazioni ed esempi, si veda /usr/share/doc/packages/cifs-utils
+/README.cifstab.migration nel sistema installato.
+
+Rimozione dello sfondo KDE 13.1 dopo l'aggiornamento
+
+Se dopo l'aggiornamento del sistema appare ancora lo sfondo KDE di openSUSE
+13.1, rimuoverlo manualmente dalla cache dell'utente:
+
+rm ~/.kde4/cache-*/plasma-wallpapers/usr/share/wallpapers/openSUSEdefault/contents/images/*
+
+Integrazione ufficiale del desktop MATE
+
+Il desktop MATE è ora disponibile ufficialmente in openSUSE 13.2 come MATE
+versione 1.8.1, l'ultimo rilascio stabile. Fornisce un ambiente desktop
+intuitivo ed attraente usando le metafore tradizionali per Linux e altri
+sistemi operativi in stile Unix.
+
+L'obiettivo, per openSUSE, è quello di fornire la stessa esperienza avuta dagli
+utenti quando usavano GNOME in openSUSE 11.4, con il menu principale e il tema
+Sonar.
+
+Avvio lento in GNOME
+
+Il login automatico di GNOME può causare un processo di boot lento.
+Probabilmente ciò è causato dall'erronea marcatura delle relative dipendenze
+tra servizi. In attesa della correzione che sarà disponibile tramite
+aggiornamento in linea, è possibile ovviare a ciò disabilitando il login
+automatico di GNOME.
+
+AppArmor e impostazioni dei permessi
+
+AppArmor è abilitato in modo predefinito. Questo significa maggiore sicurezza
+ma potrebbe impedire ai servizi di funzionare se li si esegue in modo non
+previsto. Se si riscontrano strani problemi di permessi, si provi a convertire
+il profilo AppArmor per il servizio in questione in modalità "protesta"
+tramite:
+
+aa-complain /usr/bin/$il_proprio_servizio
+
+La modalità "protesta" significa: permetti tutto, ma registra le cose the il
+profilo non permetterebbe.
+
+Per quanto questo aiuti, lo si riporti come un bug! Vogliamo correggere i
+profili AppArmor per funzionare anche per i casi estremi.
+
+Varie
+
+YaST (interfaccia Qt): L'icona "Gestore dei servizi" appare duplicata
+
+Nella sezione Sistema di YaST (interfaccia Qt), l'icona Gestore dei servizi
+appare due volte. Ciò è causato da un bug nella versione Qt del centro di
+controllo di YaST che non rispetta la marcatura «hidden» nei file desktop.
+
+Questo verrà risolto nel prossimo aggiornamento in linea di YaST.
+
+Maggiori informazioni e feedback
+
+  • Lettura dei README sui CD.
+
+  • Si possono ottenere informazioni dettagliate sulle modifiche relative ad un
+    particolare pacchetto dall'RPM:
+
+    rpm --changelog -qp <NOMEFILE>.rpm
+
+    <NOMEFILE> è il nome dell'RPM.
+
+  • Si controlli il file ChangeLog presente nel DVD per un log cronologico di
+    tutte le modifiche fatte ai pacchetti aggiornati.
+
+  • Maggiori informazioni sono disponibili nella directory docu del DVD.
+
+  • https://activedoc.opensuse.org/ contiene documentazione aggiuntiva o più
+    aggiornata.
+
+  • Visit http://www.opensuse.org for the latest product news from openSUSE.
+
+Copyright © 2014 SUSE LLC
+
+Thanks for using openSUSE.
+
+The openSUSE Team.
+

@@ -1,0 +1,415 @@
+
+ <h1>openSUSE 12.1 ملاحظات الاصدار</h1>
+ <p>الإصدار:</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>يتم منح الإذن نسخ، توزيع و/أو تعديل هذا المستند تحت شروط رخصة جنو للوثائق الحرة، الإصدار 1.2 أو أي إصدار أحدث المنشورة من قبل مؤسسة البرمجيات الحرة؛ مع لا الأقسام الثابتة ونصوص الغلاف الأمامي واي نصوص أخرى. وترد نسخة من الترخيص كملف في <tt>fdl.txt</tt> ملف.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>إذا قمت بالترقية من إصدار قديم إلى هذا الإصدار openSUSE، انظر ملاحظات الإصدار السابق المدرجة هنا: <tt>http://en.opensuse.org/openSUSE:Release_Notes</tt></p>
+
+ 
+ 
+ <p>ملاحظات الإصدار تغطي المناطق الالية:</p>
+
+ <ul>
+  <li>
+   <p>منوعات: هذه الإدخالات مضمنة تلقائياً من openFATE، مميزات ومتطلبات نظام الإدارة (<tt>http://features.opensuse.org</tt>).</p>
+   <p>في الوقت الحاضر، يتم سرد هذه المقتطفات التي لم يتم فرزها، ونحن نعمل على تحسينها.</p>
+  </li>
+
+ <li>
+   <p>التثبيت: إقرأ هذا إذا كنت تريد تثبيت النظام من البداية.</p>
+  </li>
+
+ <li>
+   <p>عام: معلومات يجب على الجميع قراءتها.</p>
+  </li>
+
+  <li><p>نظام الترقية: ما يتعلق بعملية ترقية النظام من الإصدار السابق لهذا الإصدار openSUSE.</p></li>
+
+  <li><p>التقنية: ما يتعلق بالتغييرات التقنية والتحسينات للمستخدمين ذوي الخبرة.</p></li>
+ </ul>
+
+
+  <h2>منوعات</h2>
+    <h3>YaST تكوين الوحدة النمطية لدرع التطبيقات</h3><p>تصنيفات FATE ل <tt>https://features.opensuse.org/305278</tt>: AppArmor، YaST.</p>
+
+<p>عثر على وحدة نمطية لتكوين درع التطبيقات الآن في المقطع "الأمن والمستخدمين" من مركز التحكم YaST.</p>
+
+
+  
+
+
+
+
+ 
+  <h2>التثبيت</h2>
+  
+  
+   <h3>For Detailed Installation Information</h3>
+
+  <p>For detailed installation information, see the 
+  "openSUSE
+  Documentation"
+ referenced below.</p>
+  
+
+ 
+
+ 
+  <h2>عام</h2>
+
+  
+  
+   <h3>وثائق أوبن سوزي</h3>
+
+   <ul>
+    <li><p>في البدء، تجد إرشادات التثبيت خطوة بخطوة، وكذلك مقدمات لسطح المكتب كيدي وجنوم وليبريوفيسي. وأيضا المواضيع الأساسية للإدارة مثل نشر وإدارة البرامج، ومقدمة للتعرف على الشل.</p></li>
+    <li>
+     <p>مرجع يغطي الإدارة، وتكوين النظام بالتفصيل، ويشرح كيفية إعداد مختلف خدمات شبكة الاتصال.</p>
+    </li>
+    <li><p>يقدم دليل الأمن المفاهيم الأساسية لنظام الأمن، تغطي كلا من الأمن المحلي وأمن الشبكة.</p></li>
+    <li><p>تحليل النظام ودليل الضبط مع اكتشاف المشاكل وتقديم الحل الأمثل.</p>
+    </li>
+    <li><p>المحاكاة الافتراضية تقدم KVM مقدمة لإعداد وإدارة المحاكاة الافتراضية مع أدوات KVM, libvirt QEMU.</p>
+    </li>
+   </ul>
+  
+
+  
+   <h3>جنوم 3</h3>
+   
+   <p>جنوم 3 تقدم تصميم جديد لسطح المكتب التي تختلف عن جنوم 2. ولكي يمكن للمستخدمين الاستفادة من التغييرات، لن يتم ترحيل مظهر سطح المكتب جنوم 2 تلقائياً. يمكن استخدام إعدادات النظام لتخصيص 3 جنوم، وأداة متقدمة (<tt>جنوم-tweak-أداة</tt>) لتخصيص أكثر تفصيلاً.</p>
+   <p>الوضع القياسي لجنوم 3 يتطلب دعم 3D في سواقة تشغيل الرسوميات. عند عدم توفر 3D، سيستخدم جنوم3 الوضع القياسي. إذا كان الوضع القياسي غير قابل للاستخدام مع جنوم 3 حتى بعد تعطيل 3D، قد يكون هذا ناتج لوجود خلل في سواقة تشغيل الرسومات. يمكنك تشغيل الوضع الاحتياطية عن طريق "<tt>gnome.fallback=1</tt>" على سطر الأوامل للشل.</p>
+   <p>إذا كنت تستخدم الوضع الاحتياطي، يمكنك تخصيص اللوحات بالضغط على Alt مع زر الماوس الأيمن على لوحة.</p>
+   <p>للحصول على وصف مختصر للعديد من ميزات جنوم شل، مثل مفاتيح الارتباط، والسحب والإفلات والإمكانيات والأدوات الخاصة، راجع <tt>https://live.gnome.org/GnomeShell/CheatSheet</tt>.</p>
+  
+
+  
+   <h3>نظام صوت PulseAudio</h3>
+   
+   <p>نظام PulseAudio منظومة متكاملة ممكنة بشكل افتراضي عند التنصيب الجديد. إذا قمت بتعطيله في إصدار سابق، وتريد تمكينه الآن، تحقق من متغير <tt>PULSEAUDIO_ENABLE</tt> في <tt>/etc/sysconfig/sound</tt>:</p>
+
+   <p>قم بتعيين <tt>PULSEAUDIO_ENABLE</tt> إلى "<tt>نعم</tt>" لتمكين PA في كل مكان. عين <tt>PULSEAUDIO_ENABLE</tt> إلى "<tt>لا</tt>" سيتم تعطيل PulseAudio تماما، والرجوع إلى الوضع "مخصص" للحفاظ على تكوين المستخدم.</p>
+  
+
+
+  
+   
+   <h3>Btrfs</h3>
+   <p>
+Btrfs is the next generation filesystem for Linux. As a preview of the new
+technology, you can create btrfs partitions or setup your whole system with
+btrfs.
+   </p>
+
+   <p>
+Note: The btrfs filesystem is in active development, and check and
+repair functionality ("scrub") has been added just recently. "Scrub" is
+aimed to verify data and metadata assuming the tree structures are fine;
+it can (and should) be run periodically on a mounted filesystem: it runs
+as a background process during normal operation.
+   </p>
+
+   <p>
+Thus we advice to carefully consider, which data to put on the filesystem, and
+follow the usual suggestions for redundancy and backup. For more
+information, see <tt>http://btrfs.wiki.kernel.org</tt>.
+   </p>
+
+   <p>
+Btrfs contains many interesting new features, including the ability to
+take snapshots of your filesystem. Snapshot and rollback is supported by
+<tt>snapper</tt>, and already integrated into openSUSE package
+and system management tools such as <tt>zypper</tt> and YaST.
+   </p>
+  
+
+  
+   
+   <h3>تسجيل الدخول إلى مجال Windows مع KDM</h3>
+
+   <p>لا يسمح الموضوع KDM سوسا تسجيلات دخول المجال Windows.</p>
+
+   <p>لحل هذه المشكلة، قم بتعيين DISPLAYMANAGER_KDM_THEME إلى سلسلة فارغة في <tt>/etc/sysconfig/displaymanager</tt> استخدام السمة KDM الافتراضية:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  
+
+  
+   <h3>جافا أوراكل المتاحة خارجياً</h3>
+   <p>حزمة جافا-1_6_0-sun ليست جزءا من أوبن سوزي نظراً لتغيير ترخيصها. ونحن على في الطريق لبناء OpenJDK كبديل لمستخدمي أوبن سوزي الذين يفضلون استخدام الإصدار Oracle JDK ثنائي عبر أوبن سوزي بناء OpenJDK، يمكن تحميل الإصدار Oracle من <tt>http://oracle.com/java</tt>.</p>
+  
+
+  
+   
+   <h3>Removing 32-Bit XEN Hypervisor</h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  
+
+  
+  
+  
+   <h3>Formatting Large Disk Partitions on Windows 8 Server</h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  
+
+  
+   
+   <h3>Configuring Postfix</h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  
+
+ 
+
+ 
+  <h2>ترقية النظام</h2>
+
+  
+   
+   <h3>Mounting Encrypted Partitions with dm-crypt</h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  
+
+  
+   
+   <h3>Mounting Encrypted Partitions Using systemd</h3>
+   <p>
+If encrypted partitions are not automatically mounted when using
+systemd, the <tt>noauto</tt> flag in
+<tt>/etc/fstab</tt> for these partitions could be the
+cause. Replacing this flag with <tt>nofail</tt> will fix
+it. For instance, change the following line:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl،user_xattr،noauto 0 2</pre>
+<p>إلى</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl،user_xattr،nofail 0 2</pre>
+  
+ 
+
+
+ 
+  <h2>تقني</h2>
+  
+  
+   <h3>تهيئة الرسومات مع KMS (إعداد وضع النواة)</h3>
+   
+   <p>منذ أوبن سوزي 11.3 ونحن نتحول إلى KMS (إعداد وضع النواة) للرسومات Intel ، ATI و NVIDIA، وهو إفتراضي لدينا الآن. إذا واجهت مشاكل مع سواقات تشغيل KMS لدعم (intel، radeon، nouveau) ، عطل KMS بإضافة <tt>nomodeset</tt> إلى سطر الأوامر إقلاع النواة. لتعيين هذا بشكل دائم، أضف إلى سطر أوامر النواة في <tt>/boot/grub/menu.lst</tt>. هذا الخيار يجعلك متأكد من تحميل وحدة النواة النمطية المناسبة (intel، radeon، nouveau). مع <tt>modeset = 0</tt> في <tt>initrd</tt>، سيتم تعطيلKMS.</p>
+
+   <p>في حالات نادرة عند تحميل DRM غير النمطية من <tt>initrd</tt> تحدث مشكلة عامة ذات صلة KMS، من الممكن تعطيل DRM في <tt>initrd</tt> تماما. لمجموعة هذ المتغيرات تكوين النظام <tt>NO_KMS_IN_INITRD</tt> إلى <tt>نعم</tt> عن طريق YAST، الذي سيستعيد <tt>initrd</tt> . ثم أعد تشغيل الحاسب.</p>
+
+   <p>على إنتل بدون KMS ومع الخادم X يستعيد سواقة التشغيل <tt>fbdev</tt> (برنامج التشغيل <tt>intel</tt> فقط يدعم KMS)؛ وبدلاً من ذلك، ل GPUs الموروثة من Intel "intellegacy" (مجموعة<tt>xorg-x11-driver-video-intel-legacy</tt> ) يتوفر سواقة تشغيل، التي ما زالت تدعم UMS (إعداد وضع المستخدم). لتستخدمها، حرر <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> وغير إدخال برنامج التشغيل إلى <tt>intellegacy</tt>.</p>
+
+   <p>على ATI ل GPUs الحالي يستعيد <tt>radeonhd</tt> . يتم استخدام سواقة التشغيل على NVIDIA دون KMS <tt>nv</tt> (تعتمد سواقة التشغيل <tt>nouveau</tt> KMS فقط). لاحظ أن ATI و NVIDIA GPUs الحديثة تعود إلى <tt>fbdev</tt>، إذا قمت بتحديد معلمة إقلاع النواة <tt>nomodeset</tt>.</p>
+  
+
+  
+   
+   <h3>يجري تعطيل إخراج الصوت HDMI Radeon</h3>
+
+   <p>نظراً للمشاكل على بعض الأجهزة تم تعطيل إخراج الصوت HDMI بشكل افتراضي على السواقة radeon، وهو برنامج التشغيل الافتراضي لبطاقات الرسومات AMD/ATI.</p>
+   <p>يمكن إعادة تمكينه بإضافة <tt>radeon.audio=1</tt> كمعلمة نواة. في YaST، انتقل إلى النظام--&gt; محمل الإقلاع، ثم انقر فوق تحرير على الدخول الافتراضي، وأضف الأمر التالي إلى نهاية 'معلمة سطر أوامر النواة الاختياري':</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>ثم إعادة تشغيل الكمبيوتر لتطبيق التغييرات.</p>
+   <p>بدلاً من ذلك، يمكن للمستخدمين تثبيت برنامج التشغيل الاحتكارية من AMD. للحصول على مزيد من المعلومات، انظر <tt>http://en.opensuse.org/SDB:ATI_drivers</tt>.</p>
+  
+
+  
+   
+   <h3>الإقلاع بواسطة systemd او sysvint</h3>
+
+   <p>بشكل افتراضي، إقلاع أوبن سوزي الآن يستخدم <tt>systemd</tt>. في حالة وجود مشكلة، يمكنك التبديل والعودة إلى الطريقة القديمة باستخدام <tt>systemd</tt> بضغط المفتاح F5 عند الإقلاع.</p>
+
+   <p>إذا رغبت في التبديل إلى <tt>sysvinit</tt> بشكل دائم، قم بتثبيت حزمة <tt>sysvinit-init</tt>. للرجوع إلى <tt>systemd</tt>, قم بإعادة تثبيت حزمة <tt>systemd-sysvinit</tt>.</p>
+  
+
+  
+   
+   <h3>systemd: توفير معلمات بدء الخدمة</h3>
+   <p><tt>systemctl</tt> يدعم فقط المعلمات "القياسية" (انظر <tt>http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</tt>).</p>
+   <p>يمكنك تجاوز هذا السلوك الجديد باستدعاء البرنامج النصي للبدء مباشرة، على سبيل المثال:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;your_parameters&gt;
+</pre>
+  
+
+  
+   
+   <h3>systemd: System Shutdown</h3>
+
+   <p>لإيقاف وإيقاف تشغيل النظام عند استخدام <tt>systemd</tt>، ومسألة <tt>وقف-p</tt> أو <tt>إيقاف التشغيل-h الآن</tt> على سطر الأوامر أو استخدام زر إيقاف التشغيل الذي تقدمه بيئة سطح المكتب.</p>
+
+   <p>ملاحظة: <tt>halt</tt> العادي سوف لن يوقف تشغيل النظام بشكل صحيح.</p>
+  
+
+  
+   
+   <h3>systemd: Making Use of tmpfs: /run, /var/run, /media, etc.</h3>
+
+   <p>
+    systemd mounts several directories that are meant to contain
+    volatile data only, as tmpfs filesystems: <tt>/run</tt>,
+    <tt>/var/run</tt>, <tt>/var/lock</tt>, and
+    <tt>/media</tt> are those directories.  For background
+    information, see <tt>http://lwn.net/Articles/436012/</tt>.
+   </p>
+
+   <p>
+    Note: Do not store files that are meant to survive a reboot, in
+    <tt>/run</tt>, <tt>/var/run</tt>, etc.
+   </p>
+  
+
+  
+   
+   <h3>systemd: Cleaning Directories (/tmp and /var/tmp)</h3>
+
+   <p>
+systemd maintains directories as specified in the
+<tt>tmpfiles.d</tt> directories and in
+<tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>.  For
+more information, see the <tt>tmpfiles.d</tt> manpage.
+   </p>
+
+   <p>
+By default, systemd cleans <tt>tmp</tt> directories daily as
+configured in <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:
+   </p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>
+Note: systemd does not honor sysconfig variables in
+<tt>/etc/sysconfig/cron</tt> such as
+<tt>TMP_DIRS_TO_CLEAR</tt>.
+    </p>
+  
+
+  
+   
+   <h3>CUPS 1.5</h3>
+   <p>CUPS 1.5 يأتي مع تغييرات غير متوافق مع الإصدارات السابقة:</p>
+   <ul>
+    <li>
+     <p>لم يعد CUPS يدعم ملفات إعداد <tt>~/.cupsrc</tt> أو <tt>~/.lpoptions</tt> من 1.1 CUPS. بدلاً من ذلك استخدم <tt>~/.cups/client.conf</tt> و <tt>~/.cups/lpoptions</tt> التي تم تقديمها مع CUPS 1.2.</p>
+    </li>
+    <li>
+     <p>يتطلب برنامج جدولة الآن أن عوامل ترشيح و مجموعات لديها أذونات أمنية للكتابة. إذا كنت تستخدم برامج تشغيل الطابعات من طرف ثالث كالشركات المصنعة مع أذونات ملف آمنة، اضبط الأذونات يدوياً.</p>
+    </li>
+   </ul>
+  
+
+  
+   
+   <h3>أمر إعادة تسمية</h3>
+   <p>وفقا لمعايير ترميز جنو، يعامل الأمر rename الآن كافة السلاسل التي تبدأ مع شرطة كخيار سطر الأوامر. لمنع هذا، افصل الخيار من الوسائط الأخرى مع <tt>–</tt> كما يلي:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ؛ do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ؛
+done
+</pre>
+  
+
+  
+   
+   <h3>واجهة سطر الأوامر مدير الشبكة</h3>
+
+   <p><tt>مدير الشبكة</tt> لم يعد يتوفر – استخدام <tt>nmcli</tt> بدلا من ذلك. للحصول على معلومات الانتقال، انظر <tt>http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</tt>.</p>
+  
+
+  
+   
+   <h3>rpm: %_topdir تغيرت للمستخدم التقليدي</h3>
+
+   <p>
+    Unprivileged users can no longer write to
+    <tt>/usr/src/packages</tt>.
+    <tt>rpmbuild</tt> now uses
+    <tt>~/rpmbuild</tt> by default.  To change the directory
+    add a line as follows to <tt>~/.rpmmacros</tt>:
+   </p>
+   <pre>%_topdir /some/where/else</pre>
+   <p>لاستخدام الدليل الفرعي <tt>foo</tt> ل <tt>$HOME</tt> إضافة إلى <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  
+ 
+

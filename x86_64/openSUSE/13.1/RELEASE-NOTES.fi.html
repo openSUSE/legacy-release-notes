@@ -1,0 +1,145 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>openSUSE 13.1 Julkaisutiedot</title><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="fi" class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idm140540153080000"></a><span class="phrase">openSUSE 13.1</span> Julkaisutiedot</h2></div><div><p class="releaseinfo">Version: 13.1.10 (2014-01-08)</p></div><div><p class="copyright">Tekijänoikeudet © &lt;br&gt;Janne Ahlskog,&lt;br&gt;Erkka Hakkarainen,&lt;br&gt;Tom Himanen,&lt;br&gt;Jani-Matti Hätinen,&lt;br&gt;Jouni Hätinen,&lt;br&gt;Asko Isonokari,&lt;br&gt;Joonas Niilola &lt;juippis@roskakori.org&gt;,&lt;br&gt;Mikko Piippo &lt;mikko.piippo@opensuse.fi&gt;,&lt;br&gt;Ilkka Pirskanen &lt;ilkka@opensuse.fi&gt;,&lt;br&gt; Ulla Pylkkänen, &lt;upylkkanen@novell.com&gt;,&lt;br&gt;Jami Saarikoski &lt;jami@opensuse.fi&gt;,&lt;br&gt;Janne Tanskanen,&lt;br&gt;Jarno Tukiainen,&lt;br&gt;Ilkka Tuohela,&lt;br&gt;Juho Valkila,&lt;br&gt;Jari Könönen,&lt;br&gt;Katariina Kemppainen &lt;katariina@opensuse.fi&gt;&lt;br&gt;Harri Miettinen&lt;harri.miettinen@opensuse.fi&gt; Jyri Palokangas (jyri.palokangas@opensuse.org)</p></div><div><div class="legalnotice"><a name="idm140540153077984"></a><p>Copyright © 2013 SUSE LLC</p><p>Tätä dokumenttia saa kopioida, levittää ja/tai muokata GNU Free Documentation License -lisenssin ehtojen mukaisesti, kuten mainittu versiossa 1.2 tai missä tahansa myöhemmässä versiossa, jonka Free Software Foundation on julkaissut. Dokumentissa ei saa olla muuttumattomia osioita, eikä se saa olla etu- tai takakannen teksti. Kopio käyttöoikeussopimuksesta löytyy tiedostosta <code class="filename">fdl.txt</code>.</p></div></div></div><hr></div><div class="toc"><dl class="toc"><dt><span class="sect1"><a href="#misc">1. Sekalaiset</a></span></dt><dt><span class="sect1"><a href="#installation">2. Asennus</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm140540153242384">2.1. Yksityiskohtaisempaa tietoa asennuksesta</a></span></dt></dl></dd><dt><span class="sect1"><a href="#general">3. Yleistä</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.123.documentation">3.1. openSUSE-dokumentaatio</a></span></dt><dt><span class="sect2"><a href="#sec.131.yastmodules">3.2. Poistetut YaST moduulit</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi">3.3. UEFI—Unified Extensible Firmware Interface</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi-part">3.4. UEFI, GPT, and MS-DOS Partitions</a></span></dt><dt><span class="sect2"><a href="#sec.131.secboot">3.5. Booting When in Secure Boot Mode</a></span></dt><dt><span class="sect2"><a href="#sec.131.acroread">3.6. Adobe Reader (acroread) ja muut PDF-ohjelmat</a></span></dt></dl></dd><dt><span class="sect1"><a href="#upgrade">4. Järjestelmäpäivitys</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm140540148009472">4.1. Päivittäminen Zypperillä (dup) vaatii /etc/fstab-tiedoston siivoamisen</a></span></dt><dt><span class="sect2"><a href="#sec.123.syslog">4.2. SYSLOG_DAEMON asetus poistettu</a></span></dt><dt><span class="sect2"><a href="#sec.131.systemd-networkif">4.3. Duplicated Network Interfaces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#technical">5. Tekninen</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.114.kms">5.1. Näytönohjaimet ja KMS (Kernel Mode Setting)</a></span></dt><dt><span class="sect2"><a href="#sec.131.nouveau-inst">5.2. Garbage on the Screen During Installation with the Nouveau
+   Driver</a></span></dt><dt><span class="sect2"><a href="#idm140540147935472">5.3. Samba versio 4.1</a></span></dt><dt><span class="sect2"><a href="#idm140540147933376">5.4. Määritä Postfix</a></span></dt><dt><span class="sect2"><a href="#idm140540147922176">5.5. xinetd: Loki kirjoitetaan järjestelmän lokiin</a></span></dt><dt><span class="sect2"><a href="#idm140540147914096">5.6. Apache versio 2.4</a></span></dt><dt><span class="sect2"><a href="#idm140540147911712">5.7. tomcat: Loki kirjoitetaan järjestelmän lokiin</a></span></dt><dt><span class="sect2"><a href="#sec.131.darktable">5.8. Darktable: Virkistetään tarvittavat välimuistitiedostot</a></span></dt><dt><span class="sect2"><a href="#sec.131.locate">5.9. Locate: Replacing findutils-locate by mlocate</a></span></dt><dt><span class="sect2"><a href="#sec.131.kdeandbt">5.10. KDE ja Bluetooth</a></span></dt><dt><span class="sect2"><a href="#sec.131.apparmor">5.11. AppArmor and Permission Settings</a></span></dt><dt><span class="sect2"><a href="#sec.131.skype">5.12. Skype</a></span></dt><dt><span class="sect2"><a href="#sec.131.autoyast">5.13. AutoYaST</a></span></dt></dl></dd></dl></div><p>Jos päivität vanhemmasta versiosta nykyiseen openSUSE-julkaisuun, katso edelliset julkaisutiedot: <a class="ulink" href="http://en.opensuse.org/openSUSE:Release_Notes" target="_top">http://en.opensuse.org/openSUSE:Release_Notes</a></p><p>Nämä julkaisutiedot sisältävät seuraavat kohdat:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="xref" href="#misc" title="1. Sekalaiset">Kohta 1, ”Sekalaiset”</a>: Nämä merkinnät sisältyvät automaattisesti openFATE-sisällönhallintajärjestelmään, the Feature- and Requirements Management System (<a class="ulink" href="http://features.opensuse.org" target="_top">http://features.opensuse.org</a>).</p><p>Ei saavilla</p></li><li class="listitem"><p><a class="xref" href="#installation" title="2. Asennus">Kohta 2, ”Asennus”</a>: Lue tästä, jos haluat aloittaa asennuksen aivan alusta.</p></li><li class="listitem"><p><a class="xref" href="#general" title="3. Yleistä">Kohta 3, ”Yleistä”</a>: Kaikille oleellista tietoa.</p></li><li class="listitem"><p><a class="xref" href="#upgrade" title="4. Järjestelmäpäivitys">Kohta 4, ”Järjestelmäpäivitys”</a>: Päivitysongelmat vanhemmasta openSUSE-versiosta nykyiseen versioon siirryttäessä.</p></li><li class="listitem"><p><a class="xref" href="#technical" title="5. Tekninen">Kohta 5, ”Tekninen”</a>: Tämä osio sisältää kokeneille käyttäjille suunnattua tietoa teknisistä muutoksista ja parannuksista.</p></li></ul></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="misc"></a>1. Sekalaiset</h2></div></div></div><p>Ei saavilla</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation"></a>2. Asennus</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540153242384"></a>2.1. Yksityiskohtaisempaa tietoa asennuksesta</h3></div></div></div><p>Yksityiskohtaisempaa tietoa asennuksesta saat katsomalla <a class="xref" href="#sec.123.documentation" title="3.1. openSUSE-dokumentaatio">Kohta 3.1, ”openSUSE-dokumentaatio”</a>.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="general"></a>3. Yleistä</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.documentation"></a>3.1. openSUSE-dokumentaatio</h3></div></div></div><p><span class="emphasis"><em>Aloitusoppaasta</em></span> löydät askel askelelta etenevät asennusohjeet sekä johdatuksen KDE- ja GNOME-työpöytiin ja LibreOffice-toimisto-ohjelmistoon. Muita käsiteltäviä aiheita ovat hallinnan perusteet kuten käyttöönotto ja ohjelmistojen hallinta sekä johdatus komentoriviohjelmointiin (bash shell).</p><p>Dokumentit löydät <code class="filename">/usr/share/doc/manual/opensuse-manuals_$LANG</code> asennettuasi <code class="systemitem">opensuse-startup_$LANG</code> paketin tai verkosta osoitteesta <a class="ulink" href="http://doc.opensuse.org" target="_top">http://doc.opensuse.org</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.yastmodules"></a>3.2. Poistetut YaST moduulit</h3></div></div></div><p>Seuraavat YaST-moduulit olivat vanhentuneita ja niitä käytetään nykyisin vähän:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+      <code class="systemitem">yast2-autofs</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-dbus-client</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-dirinstall</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-fingerprint-reader</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-irda</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-mouse</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-phone-services</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-power-management</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-profile-manager</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-sshd</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-tv</code>
+     </p></li></ul></div><p>Syy poistamiseen oli ylläpidon vähentäminen ja parempi keskittyminen enemmän käytettyihin moduuleihin.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi"></a>3.3. UEFI—Unified Extensible Firmware Interface</h3></div></div></div><p>Ennen openSUSE asennusta koneissa jotka käynnistyvät käyttäen UEFI (Unified Extensible Firmware Interface) kannattaa sinun varmistaa onko laitevalmistajalla tarjolla päivityksiä. Mikäli UEFI päivitys on saatavilla on suositeltavaa päivittää se ennen openSUSE asennusta. Esiasennettu Windows 8 on vahva merkki siitä, että kone käyttää UEFI käynnistyksessä.</p><p><span class="emphasis"><em>Taustaa:</em></span> Joissain UEFI laiteohjelmistoissa on bugi joka aiheuttaa sen hajoamisen mikäli tietoa kirjoitetaan liikaa UEFI tallennusalueelle. Kukaan ei tosin tiedä kuinka paljon "liikaa" oikeasti on. openSUSE minimoi tämän riskin kirjoittamalla vain pakollisen tiedon joka tarvitaan käyttöjärjestelmän käynnistymiseen. Pakollinen tarkoittaa, että UEFI:lle kerrotaan mistä löytyy openSUSEn käynnistyslataaja. Ytimen toiminne jossa käytetään UEFI tallennusaluetta käynnistys- ja kaatumistietojen tallentamiseen (<code class="literal">pstore</code>) on oletuksena pois käytöstä. On kuitenkin suositeltavaa asentaa kaikki laitetoimittajan laiteohjelmistopäivitykset.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi-part"></a>3.4. UEFI, GPT, and MS-DOS Partitions</h3></div></div></div><p>
+Together with the EFI/UEFI specification a new style of partitioning
+arrived: GPT (GUID Partition Table). This new schema uses globally
+unique identifiers (128-bit values displayed in 32 hexadecimal digits)
+to identify devices and partition types.
+   </p><p>
+Additionally, the UEFI specification also allows legacy MBR (MS-DOS)
+partitions. The Linux boot loaders (ELILO or GRUB2) try to generate
+automatically a GUID for those legacy partitions, and write them to the
+firmware. Such a GUID can change frequently, causing a rewrite in the
+firmware. A rewrite consist of two different operation: removing the old
+entry and creating a new entry that replaces the first one.
+   </p><p>
+Modern firmware has a garbage collector that collects deleted entries
+and frees the memory reserved for old entries. A problem arises when
+faulty firmware does not collect and free those entries; this may end up
+with a non-bootable system.
+   </p><p>
+The workaround is simple: convert the legacy MBR partition
+to the new GPT to avoid this problem completely.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.secboot"></a>3.5. Booting When in Secure Boot Mode</h3></div></div></div><p>Tämä vaikuttaa ainoastaan koneisiin joissa on UEFI-tila jossa on secure boot-käytössä.</p><p>
+    The new version of the shim loader allows more machines to boot with
+    Secure Boot enabled than with openSUSE 12.3.  Nevertheless, in case
+    of trouble, first update the BIOS of your machine to the latest
+    version. If the BIOS update does not help, report the model of your
+    machine it the wiki (http://en.opensuse.org/openSUSE:UEFI). Then we
+    can track it for the next release.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.acroread"></a>3.6. Adobe Reader (acroread) ja muut PDF-ohjelmat</h3></div></div></div><p>Adobe ei enää tarjoa (tietoturva) päivityksiä Adobe Readerille (<code class="systemitem">acroread</code>). <code class="systemitem">acroread</code> paketti poistettiin jakelusta openSUSE käyttäjien suojelemiseksi.</p><p>
+    openSUSE includes various PDF viewing tools like Okular, Evince, and
+    poppler-tools. These tools are actively maintained and get security
+    fixes from openSUSE and their upstream authors.
+   </p><p>
+    For more information, see <a class="ulink" href="http://en.opensuse.org/Adobe_Reader" target="_top">http://en.opensuse.org/Adobe_Reader</a>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="upgrade"></a>4. Järjestelmäpäivitys</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540148009472"></a>4.1. Päivittäminen Zypperillä (dup) vaatii /etc/fstab-tiedoston siivoamisen</h3></div></div></div><p>Kun päivitetään versiosta toiseen <span class="command"><strong>zypper dup</strong></span> komennolla, (YaST päivitys hoitaa tämän automaagisesti) käyttäjän pitää poistaa seuraavat <code class="filename">/etc/fstab</code> merkinnät jos  niitä on:</p><pre class="screen">tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc</pre><p>Tämä on erityisen tärkeää Gnome käyttäjille, koska muuten Gnome pääte antaa virheilmoituksen "<code class="literal">grantpt virhe: Toiminto ei sallittu</code>". Näitä liitoksia jatkossa hallinnoi <span class="command"><strong>systemd</strong></span> ja niden ei tulisi olla enää <code class="filename">/etc/fstab</code> tiedostossa.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.syslog"></a>4.2. SYSLOG_DAEMON asetus poistettu</h3></div></div></div><p>SYSLOG_DAEMON asetus on poistettu. Aikaisemmin sillä valittiin syslog demoni. Alkaen openSUSE 12.3 versiosta vain yksi syslog apuväline voi olla asennettuna kerrallaan ja se valitaan automaattisesti.</p><p>Lisää tietoa löytyy syslog(8) man-sivuilta.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.systemd-networkif"></a>4.3. Duplicated Network Interfaces</h3></div></div></div><p>
+    The current version of systemd uses a new convention for assigning
+    predictable names to network interfaces.  YaST is changed
+    accordingly.
+   </p><p>
+    Some reports indicate a bug in YaST when conversion from one naming
+    scheme to another takes place. If the same network interface has two
+    different names, you have been hit by this bug. In this case remove
+    the different network interfaces in
+    <code class="filename">/etc/sysconfig/network</code> and use YaST to
+    configure the network anew.
+   </p><p>
+    For more information about predictable network interface names, see
+    <a class="ulink" href="http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/" target="_top">http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/</a>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="technical"></a>5. Tekninen</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.114.kms"></a>5.1. Näytönohjaimet ja KMS (Kernel Mode Setting)</h3></div></div></div><p>openSUSE 11.3:ssa vaihdoimme Intel-, ATI- ja NVIDIA-näytönohjaimissa KMS-toimintoon (Kernel Mode Setting), joka on nyt oletus. Jos kohtaat ongelmia KMS-ajurituen kanssa (intel, radeon, nouveau), poista KMS käytöstä lisäämällä <code class="literal">nomodeset</code> ytimen käynnistysriville. Asettaaksesi tämän pysyväksi käyttäessäsi Grub 2, lisää se pääkäyttäjänä (root) ytimen käynnistysriville kohtaan <code class="literal">GRUB_CMDLINE_LINUX_DEFAULT</code> tiedostossa <code class="filename">/etc/default/grub</code>. </p><pre class="screen">sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg</pre><p>ottaaksesi muutokset käyttöön. Mikäli käytössä on perinteinen grub-käynnistyslataaja asettaaksesi tämän pysyväksi, lisää se ytimen käynnistysriville tiedostoon <code class="filename">/boot/grub/menu.lst</code>. Valinta varmistaa oikean ydinmoduulin (intel, radeon, nouveau) lataamisen <code class="literal">modeset=0</code> -tilassa <code class="filename">initrd</code>-tiedostosta, eli KMS on poistettu käytöstä. </p><p>Joissain harvinaisissa tapauksissa kun DRM-moduulin lataus <code class="filename">initrd</code>-tiedostosta epäonnistuu KMS:stä riippumattomista syistä, DRM-moduulin lataus on mahdollista poistaa <code class="filename">initrd</code>-tiedostosta kokonaan YaSTilla: vaihda sysconfig-muuttujan <code class="literal">NO_KMS_IN_INITRD</code> arvoksi <code class="literal">yes</code>, jolloin <code class="filename">initrd</code> päivitetään. Käynnistä järjestelmä uudelleen.</p><p>Ilman KMS-toimintoa Intel käyttää Xserverin <code class="literal">fbdev</code>-ajuria (<code class="literal">intel</code>-ajuri tukee vain KMS:ää). Vaihtoehtona voi käyttää "intellegacy"-ajuria (<code class="systemitem">xorg-x11-driver-video-intel-legacy</code>-paketti), joka yhä tukee UMS:ää eli käyttäjän asettamaa tilaa. Käyttääksesi sitä muokkaa tiedostoa <code class="filename">/etc/X11/xorg.conf.d/50-device.conf</code> ja muuttaa ajuriksi <code class="literal">intellegacy</code>.</p><p>ATI:n tapauksessa uudemmat grafiikkasuorittimet tiputetaan <code class="literal">radeonhd</code>-ajuriin. NVIDIA ilman KMS:ää käyttää  <code class="literal">nv</code>-ajuria (<code class="literal">nouveau</code>-ajuri tukee vain KMS:ää). Huomioi, uudemmat ATI ja NVIDIA GPU:t palaavat <code class="literal">fbdev:iin</code>, jos määrittelet <code class="literal">nomodeset</code> ytimen käynnistysparametrit.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.nouveau-inst"></a>5.2. Garbage on the Screen During Installation with the Nouveau
+   Driver</h3></div></div></div><p>
+On some systems with NVIDIA cards, the installer may show garbage on the
+top part of the screen due to problems with the default nouveau
+driver. If you are affected by this problem, you can disable the nouveau
+kernel module to run the installer and then enable it again once the
+system is installed or upgraded.
+   </p><p>
+To disable the kernel module, once you boot from the installation media,
+select the 'Installation' entry in grub and press 'e' to edit the
+parameters. Then go to the line starting with 'linux' (or 'linuxefi')
+and add <code class="literal">brokenmodules=nouveau</code> at the end. Now press
+F10 to continue booting with the new parameter.  After the system is
+installed, you can re-enable the nouveau module by editing
+<code class="filename">/etc/modprobe.d/50-blacklist.conf</code> and removing the
+entry that blacklists nouveau.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540147935472"></a>5.3. Samba versio 4.1</h3></div></div></div><p>openSUSE 13.1 sisältää Samba version 4.1, joka ei sisällä tukea toimia Active Directory tyyppisenä toimialueen ohjaimena. Tämä toiminne on tällähetkällä pois käytöstä, koska siitä puuttuu järjestelmän laajuinen MIT Kerberos tuki.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540147933376"></a>5.4. Määritä Postfix</h3></div></div></div><p>openSUSE 12.3:ssa <code class="filename">SuSEconfig.postfix</code> uudelleen nimettiin <code class="filename">/usr/sbin/config.postfix</code>. Mikäli muokkaat sysconfig asetuksia <code class="filename">/etc/sysconfig/postfix</code> tai <code class="filename">/etc/sysconfig/mail</code> tiedostoissa tulee sinun manuaalisesti pääkäyttäjänä (root) suorittaa <code class="filename">/usr/sbin/config.postfix</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540147922176"></a>5.5. xinetd: Loki kirjoitetaan järjestelmän lokiin</h3></div></div></div><p><span class="command"><strong>xinetd</strong></span> -komennon lokin uusi sijainti on muuttunut <code class="filename">/var/log/xinetd.log</code> tiedostosta järjestelmän lokiin. Tämä tarkoittaa, että kaikki <span class="command"><strong>xinetd</strong></span> -komennon viestit tallentuvat järjestelmän lokiin niin demonin kun eri lokitasojen tiedot.</p><p>Mikäli haluat palata vanhan lokitiedoston käyttöön muokkaa tiedostoa <code class="filename">/etc/xinetd.conf</code>. Lokitiedoston <code class="filename">xinetd.log</code> kierrätyksen komentojonon mallipohja löytyy tiedostosta <code class="filename">/usr/share/doc/packages/xinetd/logrotate</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540147914096"></a>5.6. Apache versio 2.4</h3></div></div></div><p>Apache 2.4 sisältää useita muutoksia määritystiedostoissa. Katso lisätietoa aiemmasta versiosta päivittämisestä  <a class="ulink" href="http://httpd.apache.org/docs/2.4/upgrading.html" target="_top">http://httpd.apache.org/docs/2.4/upgrading.html</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140540147911712"></a>5.7. tomcat: Loki kirjoitetaan järjestelmän lokiin</h3></div></div></div><p>Tomcatin käynnistys komento ei kirjoita enää tiedostoon <code class="filename">/var/log/tomcat/catalina.out</code>. Kaikki viestit ohjataan järjestelmän lokiin käyttäen <code class="systemitem">tomcat.service</code> palvelua (<code class="systemitem">tomcat-jsvc.service</code>) ja eri lokitasojen tiedot.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.darktable"></a>5.8. Darktable: Virkistetään tarvittavat välimuistitiedostot</h3></div></div></div><p>Mikäli päivitetään aikaisemmasta versiosta openSUSE 13.1 versioon, eivät vanhat välimuistitiedostot välttämättä toimi. Tässä tapauksessa tulee poistaa <code class="filename">~/.cache/darktable/mipmaps</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.locate"></a>5.9. Locate: Replacing findutils-locate by mlocate</h3></div></div></div><p>
+    The <span class="command"><strong>mlocate</strong></span> tool is the replacement for
+    <span class="command"><strong>findutils-locate</strong></span>.  In the default configuration
+    <span class="command"><strong>mlocate</strong></span> behave the same as
+    <span class="command"><strong>findutils-locate</strong></span>.  Because of an improved
+    permission handling, it could take up to 24 hours, until the
+    database file will become available to regular users.
+   </p><p>
+    In case you encounter a "Permission denied" message shortly
+    after installing <span class="command"><strong>mlocate</strong></span>, run
+   </p><pre class="screen">/etc/cron.daily/mlocate.cron</pre><p>
+    as root once.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.kdeandbt"></a>5.10. KDE ja Bluetooth</h3></div></div></div><p>
+The Bluetooth stack is provided by Bluez 5 (a major,
+backwards-incompatbile version), a necessary upgrade for GNOME desktop
+and some other components of the base system. Unfortunately, the KDE
+workspace only supports Bluez version 4 in its currently-released
+versions.
+   </p><p>
+Therefore, the openSUSE KDE community team offers an unofficial
+Bluedevil package providing at least basic functionality such as device
+pairing or support for bluetooth mice; Some other features are known not
+to work jet, like file transfer.
+   </p><p>
+For the moment, bugs should not be filed against Bluetooth support in KDE as
+the Bluez 5 port of Bluedevil is still ongoing.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.apparmor"></a>5.11. AppArmor and Permission Settings</h3></div></div></div><p>
+    AppArmor is enabled by default. This means more security, but might
+    prevent services from working, if you run them in unexpected
+    ways. If you encounter strange permission problems, try to switch
+    the AppArmor profile for the affected service to complain mode with:
+   </p><pre class="screen">aa-complain /usr/bin/$your_service</pre><p>
+    Complain mode means: allow everything, and log things that
+    the profile would not allow.
+   </p><p>
+    Even if it helps report it as a bug!  We want to fix AppArmor
+    profiles to cover also corner cases.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.skype"></a>5.12. Skype</h3></div></div></div><p>
+PulseAudio 4.0 exposes a bug in the current version of Skype for Linux
+(v4.2). Until Skype is fixed and updated, run <span class="command"><strong>skype</strong></span>
+from the command line:
+   </p><pre class="screen">PULSE_LATENCY_MSEC=60 skype</pre><p>
+For more information about this bug, see
+<a class="ulink" href="http://arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/" target="_top">http://arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/</a>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.autoyast"></a>5.13. AutoYaST</h3></div></div></div><p>
+    If the autoyast profile contains entries in an
+    <code class="literal">&lt;add-on&gt;</code> section there is a bug triggered that
+    prevents information in the profile from being transferred from the
+    first stage into the second stage. Therefore, in this case all
+    second stage configuration steps are skipped, which normally leads
+    to more or less completely unusable installations.
+   </p><p>
+    As a temporary workaround, avoid using
+    <code class="literal">&lt;add-on&gt;</code> sections in profiles with AutoYaST in
+    openSUSE 13.1.
+   </p></div></div></div></body></html>

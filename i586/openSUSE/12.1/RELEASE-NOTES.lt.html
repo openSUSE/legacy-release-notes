@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>openSUSE 12.1 laidos pastabos</title>
+</head>
+<body>
+ <h1>openSUSE 12.1 laidos pastabos</h1>
+ <p>Versija:</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Autorinės teisės © 2012 Novell, Inc.</p>
+ <p>Leidžiama kopijuoti, platinti ir/arba keisti šį dokumentą GNU laisvosios dokumentacijos licencijos, 1.2 ar bet kurios vėlesnės versijos, paskelbtos Laisvos Programinės Įrangos Fondo (Free Software Foundation), sąlygomis; jokių pakeistų skyrių, jokių tekstų priekyje ir jokių tekstų gale. Licencijos kopija įtraukta kaip rinkmena <tt>fdl.txt</tt>.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Jei senesnę sistemos versiją naujovinote iki šios openSUSE laidos, ankstesnių laidos informacijų ieškokite čia: <a href="http://en.opensuse.org/openSUSE:Release_Notes">http://en.opensuse.org/openSUSE:Release_Notes</a></p>
+
+ 
+ 
+ <p>Laidos pastabos aprėpia šias sritis:</p>
+<div>
+<dl>
+<dt>Įvairenybės</dt>
+<dd><ol><li><a href="#01">YaST AppArmor konfigūravimo modulis</a></li></ol></dd>
+<dt>Diegimas</dt>
+<dd><ol><li><a href="#02">Daugiau informacijos apie diegimą</a></li></ol></dd>
+<dt>Bendra</dt>
+<dd><ol>
+<li><a href="#03">openSUSE dokumentacija</a></li>
+<li><a href="#04">GNOME 3</a></li>
+<li><a href="#05">PulseAudio garso sistema</a></li>
+<li><a href="#06">Btrfs</a></li>
+<li><a href="#07">Windows Domain Logon with KDM</a></li>
+<li><a href="#08">Oracle Java pateikiamas atskirai</a></li>
+<li><a href="#09">32-Bit XEN Hypervisor pašalinimas</a></li>
+<li><a href="#10">Didelių disko skaidinių ženklinimas Windows 8 serveryje</a></li>
+<li><a href="#11">Postfix konfigūravimas</a></li>
+</ol></dd>
+<dt>Sistemos naujovinimas</dt>
+<dd><ol>
+<li><a href="#12">Užšifruotų skaidinių prijungimas su dm-crypt</a></li>
+<li><a href="#13">Užšifruotų skaidinių prijungimas naudojant systemd</a></li>
+</ol></dd>
+<dt>Techninės detalės</dt>
+<dd><ol>
+<li><a href="#14">Ruošiama grafika su KMS (Branduolio Veiksenos Parinktis)</a></li>
+<li><a href="#15">Uždraustas Radeon HDMI garso išvedimas</a></li>
+<li><a href="#16">Paleidimas su systemd arba sysvinit</a></li>
+<li><a href="#17">systemd: paleidimo paslaugų parametrų nurodymas</a></li>
+<li><a href="#18">systemd: sistemos išjungimas</a></li>
+<li><a href="#19">systemd: tmpfs naudojimas: /run, /var/run, /media, ir t. t.</a></li>
+<li><a href="#20">systemd: katalogų išvalymas (/tmp ir /var/tmp)</a></li>
+<li><a href="#21">CUPS 1.5</a></li>
+<li><a href="#22">Pervadinimo komanda „rename“</a></li>
+<li><a href="#23">NetworkManager komandinės eilutės sąsaja</a></li>
+<li><a href="#24">rpm: %_topdir pasikeitimas ne root naudotojams</a></li>
+</ol></dd>
+</dl>
+<hr>
+</div>
+
+ <ul>
+  <li>
+   <p>Įvairenybės: Šie įrašai įterpti automatiškai iš pageidaujamų savybių tvarkymo sistemos „openFATE“ (<a href="http://features.opensuse.org">http://features.opensuse.org</a>).</p>
+   <p>Kol kas elementai nesurūšiuoti — vis dar tobulinama.</p>
+  </li>
+
+ <li>
+   <p>Diegimas: skaitykite, jei ketinate diegti nuo nulio.</p>
+  </li>
+
+ <li>
+   <p>Bendra: informacija, kurią visi turėtų perskaityti.</p>
+  </li>
+
+  <li><p>Sistemos naujovinimas: klausimai, susiję su ankstesnės versijos naujovinimu iki šios openSUSE versijos.</p></li>
+
+  <li><p>Techninės detalės: šioje dalyje techniniai pakeitimai ir patobulinimai, skirti patyrusiam naudotojui.</p></li>
+ </ul>
+
+
+  <div>
+<h2>Įvairenybės</h2>
+    <div>
+<h3><a name="01">YaST AppArmor konfigūravimo modulis</a></h3>
+<p><a href="https://features.opensuse.org/305278">https://features.opensuse.org/305278</a> FATE kategorijos: AppArmor, YaST.</p>
+
+<p>AppArmor konfigūracijos modulį nuo šiol rasite YaST valdymo centro modulių grupėje „Saugumas ir naudotojai“.</p>
+
+</div>
+  </div>
+
+
+
+
+ <div>
+  <h2>Diegimas</h2>
+  
+  <div>
+   <h3><a name="02">Daugiau informacijos apie diegimą</a></h3>
+
+  <p>Daugiau informacijos apie diegimą 
+  "openSUSE dokumentacijoje"
+, į kurios nuoroda pateikta žemiau.</p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Bendra</h2>
+
+  
+  <div>
+   <h3><a name="03">openSUSE dokumentacija</a></h3>
+
+   <ul>
+    <li><p>Pradžiamokslyje rasite diegimo instrukcijas, KDE ir GNOME darbalaukių bei LibreOffice raštinės programų rinkinio trumpus aprašymus. Dokumentacija apima pagrindines administravimo temas, pvz., išskleidimą ir programinės įrangos tvarkymą, įvadą į bash apvalkalą.</p></li>
+    <li>
+     <p>Žinyne detaliai aprašyta išskleidimo, administravimo ir sistemos konfigūravimo temomis, paaiškinama, kaip nustatyti įvairias tinklo paslaugas.</p>
+    </li>
+    <li><p>Saugumo vadove supažindina su pagrindinėmis sistemos saugumo koncepcijomis, apimančias tiek vietinio, tiek tinklo saugumo aspektus.</p></li>
+    <li>
+<p>Sistemos analizavimo ir derinimo vadovas padeda aptikti problemas, rasti sprendimus, optimizuoti darbą.</p>
+    </li>
+    <li>
+<p>Virtualizacija su KVM pateikia įvadą apie virtualizacijos su KVM, libvirt, QEMU įrankiais įdiegimą ir tvarkymą.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   <h3><a name="04">GNOME 3</a></h3>
+   
+   <p>Siūlomas GNOME 3 darbalaukis skiriasi nuo GNOME 2. Tad tam, kad naudotojai pasinaudotų naujovėmis, nebus automatiškai migruojama iš GNOME 2 darbalaukio. GNOME 3 konfigūruokite per Sistemos nuostatas arba pasinaudoję sudėtingesniu įrankiu (<tt>gnome-tweak-tool</tt>).</p>
+   <p>
+    The standard mode of GNOME 3 requires support for 3D acceleration in
+    the graphic drivers. When 3D acceleration is not available, GNOME 3
+    then uses the fallback mode. If it turns out that GNOME 3 detects
+    availability of 3D acceleration, but the standard mode is unusable,
+    then you likely hit a bug in the graphic drivers. You can force the
+    fallback mode with the "<tt>gnome.fallback=1</tt>"
+    argument on the boot line in grub.
+   </p>
+   <p>
+    If you use the fallback mode, you can customize
+    the panels by pressing Alt when right-clicking on a panel.
+   </p>
+   <p>Trumpą GNOME apvalkalo savybių aprašą (klavišų kombinacijas, vilkimo galimybes, specialias paslaugų programas) rasite <a href="https://live.gnome.org/GnomeShell/CheatSheet">https://live.gnome.org/GnomeShell/CheatSheet</a>.</p>
+  </div>
+
+  <div>
+   <h3><a name="05">PulseAudio garso sistema</a></h3>
+   
+   <p>PulseAudio garso sistema dabar integruota į sistemą ir įjungiama diegiant naujai. Jei šią sistemą uždraudėte ankstesnėje versijoje, tačiau norite ją įjungti dabar, <tt>/etc/sysconfig/sound</tt> rinkmenoje keiskite <tt>PULSEAUDIO_ENABLE</tt> kintamojo reikšmę:</p>
+
+   <p>Norėdami visur priverstinai naudoti PA, ties <tt>PULSEAUDIO_ENABLE</tt> įrašykite "<tt>yes</tt>". Ties <tt>PULSEAUDIO_ENABLE</tt> nurodę "<tt>no</tt>", visiškai uždrausite PulseAudio. Nurodę "custom", išlaikysite savitą konfigūraciją.</p>
+  </div>
+
+
+  <div>
+   
+   <h3><a name="06">Btrfs</a></h3>
+   <p>
+Btrfs is the next generation filesystem for Linux. As a preview of the new
+technology, you can create btrfs partitions or setup your whole system with
+btrfs.
+   </p>
+
+   <p>
+Note: The btrfs filesystem is in active development, and check and
+repair functionality ("scrub") has been added just recently. "Scrub" is
+aimed to verify data and metadata assuming the tree structures are fine;
+it can (and should) be run periodically on a mounted filesystem: it runs
+as a background process during normal operation.
+   </p>
+
+   <p>
+Thus we advice to carefully consider, which data to put on the filesystem, and
+follow the usual suggestions for redundancy and backup. For more
+information, see <a href="http://btrfs.wiki.kernel.org">http://btrfs.wiki.kernel.org</a>.
+   </p>
+
+   <p>
+Btrfs contains many interesting new features, including the ability to
+take snapshots of your filesystem. Snapshot and rollback is supported by
+<tt>snapper</tt>, and already integrated into openSUSE package
+and system management tools such as <tt>zypper</tt> and YaST.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="07">Windows Domain Logon with KDM</a></h3>
+
+   <p>SUSE KDM apipavidalinimas neleidžia Windows srities prisijungimų.</p>
+
+   <p>Išeitis – naudoti numatytąjį KDM apipavidalinimą. Tam <tt>/etc/sysconfig/displaymanager</tt> rinkmenoje DISPLAYMANAGER_KDM_THEME kintamajam priskirti tuščią reikšmę:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  </div>
+
+  <div>
+   <h3><a name="08">Oracle Java pateikiamas atskirai</a></h3>
+   <p>java-1_6_0-sun paketas nebėra openSUSE dalis dėl pasikeitusių licencijos sąlygų. Todėl vietoj jo pateikiamas OpenJDK. openSUSE naudotojai, norintys vietoj openSUSE OpenJDK naudoti Oracle JDK versiją, ją gali parsisiųsti iš <a href="http://oracle.com/java">http://oracle.com/java</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="09">32-Bit XEN Hypervisor pašalinimas</a></h3>
+
+   <p>32-Bit XEN Hypervisor yra nebeprieinamas. 32 ir 64 bitų svečio sistemoms naudokite 64-bit XEN Hypervisor.</p>
+  </div>
+
+  
+  
+  <div>
+   <h3><a name="10">Didelių disko skaidinių ženklinimas Windows 8 serveryje</a></h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Techninis šios problemos apibūdinimas</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  </div>
+
+  <div>
+   
+   <h3><a name="11">Postfix konfigūravimas</a></h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Sistemos naujovinimas</h2>
+
+  <div>
+   
+   <h3><a name="12">Užšifruotų skaidinių prijungimas su dm-crypt</a></h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  </div>
+
+  <div>
+   
+   <h3><a name="13">Užšifruotų skaidinių prijungimas naudojant systemd</a></h3>
+   <p>Jei systemd automatiškai neprijungia užšifruotų skaidinių, greičiausiai <tt>/etc/fstab</tt> rinkmenoje tiems skaidiniams nurodyta reikšmė <tt>noauto</tt>. Problemą išspręsite šią reikšmę pakeitę į <tt>nofail</tt>. Pavyzdžiui, pakeiskite tokią eilutę:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>į</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  </div>
+ </div>
+
+
+ <div>
+  <h2>Techninės detalės</h2>
+  
+  <div>
+   <h3><a name="14">Ruošiama grafika su KMS (Branduolio Veiksenos Parinktis)</a></h3>
+   
+   <p>Nuo openSUSE 11.3 pereita prie KMS (branduolio veiksenos parinktis) Intel, ATI ir NVIDIA vaido plokštėms kaip numatytąja parinktimi. Jei kils nesklandumų naudojant KMS tvarkyklių palaikymą (intel, radeon, nouveau), uždrauskite KMS pridėdami <tt>nomodeset</tt> prie branduolio įkrovos komandinės eilutės. Norėdami, kad parinkties pakeitimas būtų ilgalaikis, pridėkite ją prie branduolio komandinės eilutės rinkmenoje <tt>/boot/grub/menu.lst</tt>. Tokia parinktis užtikrins, kad atitinkamas branduolio modulis (intel, radeon, nouveau) bus paleistas su parametru <tt>modeset=0</tt> ties <tt>initrd</tt>, t. y. KMS bus uždraustas.</p>
+
+   <p>Retais atvejais įkeliant DRM modulį iš <tt>initrd</tt> gali kilti nesklandumų, nesusijusių su KMS, tad galima visiškai uždrausti DRM modulio įkėlimą iš <tt>initrd</tt>. Tai galite padaryti nurodydami <tt>NO_KMS_IN_INITRD</tt> sysconfig kintamojo reikšmę <tt>yes</tt> per YAST, kuris po to iš naujo sukurs <tt>initrd</tt>. Perkraukite kompiuterį.</p>
+
+   <p>Intel be KMS plokštėse Xserver gali naudoti <tt>fbdev</tt> tvarkyklę (tik <tt>intel</tt> tvarkyklė palaiko KMS). Tačiau taip pat yra ir „intellegacy“ tvarkyklė (<tt>xorg-x11-driver-video-intel-legacy</tt> pakete) senoms Intel vaizdo plokštėms, kuri vis dar palaiko UMS (naudotojo veiksenos parinktį). Norėdami ją naudoti,  <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> rinkmenoje tuščią tvarkyklės (angl. driver) įrašą pakeiskite į <tt>intellegacy</tt>.</p>
+
+   <p>ATI plokštėms šiuolaikiniuose kompiuteriuose tiks <tt>radeonhd</tt>. NVIDIA be KMS plokštėse turėtų būti naudojama <tt>nv</tt> tvarkyklė (tik <tt>nouveau</tt> tvarkyklė palaiko KMS). Atminkite, jei branduolio įkėlimo parinktyse nurodysite <tt>nomodeset</tt>, sistemose su naujesnėmis ATI ir NVIDIA vaizdo plokštėmis bus naudojama <tt>fbdev</tt> tvarkyklė.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="15">Uždraustas Radeon HDMI garso išvedimas</a></h3>
+
+   <p>Kadangi pasitaiko tam tikrų nesklandumų kai kuriuose įrenginiuose, HDMI garso išvedimas numatytuoju atveju  uždraudžiamas, jei naudojama radeon tvarkyklė, kuri yra numatytoji AMD/ATI vaizdo plokščių tvarkyklė.</p>
+   <p>Jį galima vėl įgalinti prie branduolio parametrų pridėjus <tt>radeon.audio=1</tt>. Tam eikite į YaST, Sistema -&gt; Paleidyklė, spauskite Keisti ties numatytuoju įrašu ir ties „Pasirinktiniais branduolio komandinės eilutės parametrai“ dar prirašykite:</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Tam, kad įsigaliotų pakeitimai, iš naujo paleiskite kompiuterį.</p>
+   <p>Arba galite įdiegti nuosavybines AMD tvarkykles. Daugiau informacijos rasite <a href="http://en.opensuse.org/SDB:ATI_drivers">http://en.opensuse.org/SDB:ATI_drivers</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="16">Paleidimas su systemd arba sysvinit</a></h3>
+
+   <p>Numatytuoju atveju openSUSE paleidimui dabar naudojama <tt>systemd</tt>. Jei kyla problemų, galite rinktis senąją <tt>sysvinit</tt> sistemą paleidimo metu spausdami F5 klavišą.</p>
+
+   <p>Jei norite visada naudoti <tt>sysvinit</tt>, įdiekite <tt>sysvinit-init</tt> paketą. Jei po to vėl norėsite nuolat naudoti <tt>systemd</tt>, vėl įdiekite <tt>systemd-sysvinit</tt> paketą.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="17">systemd: paleidimo paslaugų parametrų nurodymas</a></h3>
+   <p><tt>systemctl</tt> palaiko tik tam tikrus parametrus (žr. <a href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>).</p>
+   <p>Norėdami įvykdyti savitą komandą, galite tiesiogiai iškviesti paleidimo scenarijų, pvz.:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;jūsų_parametrai&gt;
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="18">systemd: sistemos išjungimas</a></h3>
+
+   <p>Norėdami sustabdyti ir išjungti sistemą su <tt>systemd</tt>, komandinėje eilutėje įvykdykite <tt>halt -p</tt> arba <tt>shutdown -h now</tt>; arba darbalaukio aplinkoje nuspauskite atitinkamą mygtuką.</p>
+
+   <p>Pastaba: <tt>halt</tt> komanda sistemos tinkamai neišjungtų.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="19">systemd: tmpfs naudojimas: /run, /var/run, /media, ir t. t.</a></h3>
+
+   <p>systemd kai kuriuos aplankus, kuriuose gana dažnai keičiami duomenys, prijungiami kaip tmpfs rinkmenų išdėstymo sistema: <tt>/run</tt>, <tt>/var/run</tt>, <tt>/var/lock</tt> ir <tt>/media</tt>. Daugiau informacijos rasite <a href="http://lwn.net/Articles/436012/">http://lwn.net/Articles/436012/</a>.</p>
+
+   <p>Pastaba: <tt>/run</tt>, <tt>/var/run</tt> ir pan. kataloguose nelaikykite rinkmenų, kurios turėtų išlikti kompiuterį paleidus iš naujo.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="20">systemd: katalogų išvalymas (/tmp ir /var/tmp)</a></h3>
+
+   <p>systemd sistema aplankus tvarko pagal taisykles, esančias <tt>tmpfiles.d</tt> kataloge ir <tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>. Daugiau informacijos rasite <tt>tmpfiles.d</tt> žinyne.</p>
+
+   <p>Numatytuoju atveju systemd kasdien išvalo <tt>tmp</tt> katalogus – tai konfigūruojama <tt>/usr/lib/tmpfiles.d/tmp.conf</tt> rinkmenoje:</p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>Pastaba: systemd nekreipia dėmesio į <tt>/etc/sysconfig/cron</tt> rinkmenoje esančius sysconfig kintamuosius, pvz., <tt>TMP_DIRS_TO_CLEAR</tt>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="21">CUPS 1.5</a></h3>
+   <p>CUPS 1.5 turi pakeitimų, nesuderinamų su ankstesnėmis versijomis:</p>
+   <ul>
+    <li>
+     <p>CUPS nebepalaiko <tt>~/.cupsrc</tt> ir <tt>~/.lpoptions</tt> konfigūracijos rinkmenų, naudotų CUPS 1.1 versijoje. Vietoj jų naudokite <tt>~/.cups/client.conf</tt> ir <tt>~/.cups/lpoptions</tt>, kurios įvestos nuo CUPS 1.2 versijos.</p>
+    </li>
+    <li>
+     <p>Planuoklė dėl saugumo sumetimų dabar reikalauja, kad filtrai ir varikliai neturėtų grupės rašymo leidimų. Jei naudojate gamintojo pateikimas trečiųjų šalių spausdintuvų tvarkykles, kurios turi laisvesnius leidimus, tuomet leidimus pakeiskite rankiniu būdu.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   
+   <h3><a name="22">Pervadinimo komanda „rename“</a></h3>
+   <p>Pagal GNU programavimo standartus, pervadinimo komanda „rename“ visas eilutes, prasidedančias brūkšniu, interpretuoja kaip komandinės eilutės parinktis. Jei norite to išvengti, parinktį nuo kitų argumentų atskirkite naudodami <tt>--</tt>. Pavyzdžiui:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="23">NetworkManager komandinės eilutės sąsaja</a></h3>
+
+   <p><tt>cnetworkmanager</tt> nebepateikiama — naudokite <tt>nmcli</tt>. Daugiau informacijos apie pasikeitimus rasite <a href="http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html">http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="24">rpm: %_topdir pasikeitimas ne root naudotojams</a></h3>
+
+   <p>Eiliniai naudotojai nebeturi teisės rašyti <tt>/usr/src/packages</tt> kataloge. <tt>rpmbuild</tt> dabar numatytuoju atveju naudoja <tt>~/rpmbuild</tt>. Norėdami pakeisti aplanką, <tt>~/.rpmmacros</tt> rinkmenoje prirašykite:</p>
+   <pre>%_topdir /jūsų/norimas/katalogas</pre>
+   <p>Norėdami naudoti <tt>$HOME</tt> katalogo pakatalogį <tt>foo</tt>, prie  <tt>~/.rpmmacros</tt> pridėkite:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  </div>
+ </div>
+</body>
+</html>

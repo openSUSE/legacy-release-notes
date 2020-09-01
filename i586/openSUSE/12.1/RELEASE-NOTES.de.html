@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>openSUSE 12.1 Versionshinweise</title>
+</head>
+<body>
+ <h1>openSUSE 12.1 Versionshinweise</h1>
+ <p>Version:</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>Sie können dieses Dokument unter den Bedingungen der GNU-Free-Documentation-Lizenz (Version 1.2 oder jede später durch die Free-Software-Foundation veröffentlichte Version) kopieren, verteilen und/oder bearbeiten; mit keinen invarianten Abschnitten, Deckblatt- und Rückseitentexten. Eine Kopie der Lizenz ist als Datei <tt>fdl.txt</tt> enthalten.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Wenn Sie von einer älteren Version auf diese openSUSE-Veröffentlichung aktualisieren, schauen Sie bitte in die hier  <a href="http://de.opensuse.org/openSUSE:Release_Notes">http://de.opensuse.org/openSUSE:Release_Notes</a> aufgeführten Versionshinweise.</p>
+
+ 
+ 
+ <p>Diese Versionshinweise decken die folgenden Bereiche ab:</p>
+<div>
+<dl>
+<dt>Verschiedenes</dt>
+<dd><ol><li><a href="#01">YaST AppArmor Configuration Module</a></li></ol></dd>
+<dt>Installation</dt>
+<dd><ol><li><a href="#02">Für detaillierte Installationshinweise</a></li></ol></dd>
+<dt>Allgemeines</dt>
+<dd><ol>
+<li><a href="#03">openSUSE-Dokumentation</a></li>
+<li><a href="#04">GNOME 3</a></li>
+<li><a href="#05">PulseAudio Sound System</a></li>
+<li><a href="#06">Btrfs</a></li>
+<li><a href="#07">Windows Domain Logon mit KDM</a></li>
+<li><a href="#08">Oracle Java extern verfügbar</a></li>
+<li><a href="#09">Der 32-Bit XEN Hypervisor wurde entfernt</a></li>
+<li><a href="#10">Große Partitionen für Windows 8-Server</a></li>
+<li><a href="#11">Konfiguration von Postfix</a></li>
+</ol></dd>
+<dt>System Aktualisierung</dt>
+<dd><ol>
+<li><a href="#12">Verschlüsselte Partitionen mit dm-crypt einhängen</a></li>
+<li><a href="#13">Verschlüsselte Partitionen mit Systemd einhängen</a></li>
+</ol></dd>
+<dt>Technisch</dt>
+<dd><ol>
+<li><a href="#14">Initialisierung der Grafik mit KMS (Kernel Mode Setting)</a></li>
+<li><a href="#15">Radeon HDMI Sound Output ist deaktiviert</a></li>
+<li><a href="#16">Starten mit systemd oder sysvinit</a></li>
+<li><a href="#17">Systemd: Die Versorgung Service Start-up-Parameter</a></li>
+<li><a href="#18">systemd: System herunterfahren</a></li>
+<li><a href="#19">systemd: die Nutzung von tmpfs: /run, /var/run, /media, etc.</a></li>
+<li><a href="#20">systemd: Verzeichnisse aufräumen (/tmp und /var/tmp)</a></li>
+<li><a href="#21">CUPS 1.5</a></li>
+<li><a href="#22">Der Befehl: rename</a></li>
+<li><a href="#23">NetworkManager: Tool für die Kommandozeile</a></li>
+<li><a href="#24">rpm:% _topdir für Nicht-Root-Benutzer geändert</a></li>
+</ol></dd>
+</dl>
+<hr>
+</div>
+
+ <ul>
+  <li>
+   <p>Sonstiges: Diese Einträge wurden automatisch aus openFATE (<a href="http://features.opensuse.org">http://features.opensuse.org</a>) integriert. </p>
+   <p>Für den Moment ist diese liste unsortiert und etwas durcheinander, wir arbeiten an einer Verbesserungen.</p>
+  </li>
+
+ <li>
+   <p>Installation: Lesen Sie diesen Abschnitt, wenn Sie das System komplett neu installieren möchten.</p>
+  </li>
+
+ <li>
+   <p>Allgemein: Informationen die jeder lesen sollte.</p>
+  </li>
+
+  <li><p>Aktualisierung: Probleme die auftreten können, wenn von einer vorherigen auf diese openSUSE-Version aktualisiert werden soll.</p></li>
+
+  <li><p>Technisch: Dieser Abschnitt enthält eine Reihe technischer Änderungen und Erweiterungen für erfahrenere Benutzer.</p></li>
+ </ul>
+
+
+  <div>
+<h2>Verschiedenes</h2>
+    <div>
+<h3><a name="01">YaST AppArmor Configuration Module</a></h3>
+<p>FATE Kategorien für <a href="https://features.opensuse.org/305278">https://features.opensuse.org/305278</a>: AppArmor, YaST</p>
+
+<p>Das AppArmor-Konfiguration-Modul befindet sich jetzt in der Rubrik "Sicherheit und Benutzer" des YaST-Control-Centers.</p>
+
+</div>
+  </div>
+
+
+
+
+ <div>
+  <h2>Installation</h2>
+  
+  <div>
+   <h3><a name="02">Für detaillierte Installationshinweise</a></h3>
+
+  <p>Für detaillierte informationen, bitte die in 
+  "openSUSE Dokumentation"
+ nachlesen.</p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>Allgemeines</h2>
+
+  
+  <div>
+   <h3><a name="03">openSUSE-Dokumentation</a></h3>
+
+   <ul>
+    <li><p>In 'Start-Up' finden Sie Schritt-für-Schritt-Anleitungen, sowie Einführungen in die KDE- und Gnome-Desktops und die LibreOffice-Suite. Ebenfalls enthalten sind grundlegende Administrations Themen, wie Einsatz- und Software-Management und eine Einführung in die bash-Shell</p></li>
+    <li>
+     <p>Das Referenzhandbuch behandelt die Verwaltung und Systemkonfiguration ausführlich und erklärt, wie die verschiedenen Netzwerkdienste eingerichtet werden.</p>
+    </li>
+    <li><p>Das Sicherheits-Handbuch stellt grundlegende Konzepte der Systemsicherheit vor und behandelt sowohl lokale als auch Netzwerk-Sicherheitsaspekte.</p></li>
+    <li>
+<p>Der System-Analyse- und Tuning-Guide hilft bei der Problemerkennung, -Auflösung und Optimierung</p>
+    </li>
+    <li>
+<p>Virtualisierung mit KVM bietet eine Einführung in die Einrichtung und Verwaltung von Virtualisierungstechniken mit KVM, libvirt und QEMU-Tools.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   <h3><a name="04">GNOME 3</a></h3>
+   
+   <p>GNOME 3 bietet ein neues Design für den Desktop, das sich von GNOME 2 gravierend unterscheidet. Um dieses nutzen zu können, wird der alte GNOME 2 Desktop nicht vollständig migriert. Mit dem Werkzeug System-Einstellungen, kann die Arbeitsumgebung von GNOME 3 angepasst werden. Mit dem Werkzeug Erweiterten Einstellungen (<tt>gnome-tweak-tool</tt>), steht ein zusätzliches Werkzeug für Anpassung der GNOME-Shell bereit.</p>
+   <p>Der Standard-Modus von GNOME 3 erfordert die Unterstützung von 3D-Beschleunigung des Grafik-Treibers. Wenn die 3D-Beschleunigung nicht verfügbar ist, verwendet GNOME 3 den 'Fallback-Modus'. Sollte trotz aktivierter und funktionsfähiger 3D-Beschleunigung die GNOME 3 Oberfläche dennoch nicht starten, kann dies auch an einem Grafiktreiber-Problem liegen. Um GNOME 3 auch im 'Fallback-Modus' zu starten, kann in der Boot-Zeile des Bootmenü für GRUB das Argument: "<tt>gnome.fallback=1</tt>" eingetragen werden.</p>
+   <p>Im 'Fallback-Modus' können die Arbeitsflächen auch mit der Tastenkombination: 'Alt+Rechtsklick' auf dem Panel angepasst werden.</p>
+   <p>Eine kurze Beschreibung der vielen GNOME Shell-Funktionen wie Tastaturbelegung, Drag  Drop-Funktionen und spezielle Dienstprogramme befindet sich auf der Projektseite: .</p>
+  </div>
+
+  <div>
+   <h3><a name="05">PulseAudio Sound System</a></h3>
+   
+   <p>Das 'PulseAudio-Sound-System' ist nun System weit integriert und bei Neuinstallationen standardmäßig aktiviert. Wenn Upgrade von einer früheren Version auf openSUSE 12.1 ausgeführt wird, ist 'PulseAudio-Sound-System' allerdings noch deaktiviert. Soll dennoch PulseAudio verwenden werden, muss dazu die Variable <tt>PULSEAUDIO_ENABLE</tt> in <tt>/etc/sysconfig/sound</tt> überprüft werden.</p>
+
+   <p>Dazu den Wert in <tt>PULSEAUDIO_ENABLE</tt> auf "<tt>yes</tt>" setzen, um PulseAudio Systemweit zu verwenden. Um PulseAudio komplett zu deaktivieren, muss der Wert in  <tt>PULSEAUDIO_ENABLE</tt> auf "<tt>no</tt>" oder für eine benutzerdefinierte Konfiguration auf "custom" gesetzt werden.</p>
+  </div>
+
+
+  <div>
+   
+   <h3><a name="06">Btrfs</a></h3>
+   <p>Btrfs ist die nächste Generation eines Dateisystems für Linux Systeme. Als Vorschau auf die neue Technologie können Interessenten btrfs-Partitionen für das gesamte System einrichten.</p>
+
+   <p>Hinweis: Das btrfs Dateisystem ist in der aktiven Entwicklung und Überprüfung. Die Reparatur-Funktionalität ("scrub") wurde erst vor kurzem aufgenommen. Dabei zielt "scrub" darauf ab Daten und Metadaten zu überprüfen, vorausgesetzt die Baumstrukturen sind in Ordnung. Es kann (und sollte) in regelmäßigen Abständen auf einem gemounteten Dateisystem ausgeführt werden; was im Hintergrund während des normalen Betriebs abläuft.</p>
+
+   <p>Wir raten sorgfältig zu prüfen welche Daten auf dem btrfs Dateisystem gespeichert werden sollen. Befolgen Sie die üblichen Vorschläge für Redundanz- und Backups. Weitere Informationen finden Sie in folgender Seite: <a href="http://btrfs.wiki.kernel.org">http://btrfs.wiki.kernel.org</a>.</p>
+
+   <p>Btrfs enthält viele interessante neue Funktionen. Darunter die Fähigkeit Momentaufnahmen (Snapshots) des Dateisystems auszuführen. Diese 'Snapshot- und Rollback-Funktion' wird von <tt>snapper</tt> unterstützt und ist bereits als openSUSE-Paket in die 'System-Management-Werkzeuge' wie <tt>zypper</tt> und YaST integriert.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="07">Windows Domain Logon mit KDM</a></h3>
+
+   <p>Im SUSE KDM Thema funktionieren Windows Domänen-Anmeldungen nicht.</p>
+
+   <p>Um dieses Problem zu umgehen, setzen Sie <tt>DISPLAYMANAGER_KDM_THEME</tt> auf einen leeren String in <tt>/etc/sysconfig/displaymanager</tt> um das Standard-KDM Thema zu verwenden:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  </div>
+
+  <div>
+   <h3><a name="08">Oracle Java extern verfügbar</a></h3>
+   <p>Das Paket: 'java-1_6_0-sun' ist aufgrund von Lizenzänderungen nicht mehr Teil einer openSUSE Distribution. Stattdessen wird 'OpenJDK' als Ersatz verwendet. openSUSE Nutzer die Oracles 'JDK' Version statt des im openSUSE Build verfügbaren 'OpenJDK' verwenden möchten, können die Oracle-Version von <a href="http://oracle.com/java">http://oracle.com/java</a> herunterladen.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="09">Der 32-Bit XEN Hypervisor wurde entfernt</a></h3>
+
+   <p>Der 32-Bit-XEN-Hypervisor steht nicht länger zur Verfügung. Benutzen Sie stattdessen den 64-Bit-XEN-Hypervisor für virtuelle 32-Bit und 64-Bit Gäste.</p>
+  </div>
+
+  
+  
+  <div>
+   <h3><a name="10">Große Partitionen für Windows 8-Server</a></h3>
+   <p>Das installieren von Gastmaschinen auf einem Windows 8 Server kann fehlschlagen, wenn dem Gast ein großes virtuelles Diskimage (größer als 50 GB) im <tt>.vhdx</tt>-Format zugewiesen wird. Eine Behelfslösung für dieses Problem ist es entweder ein virtuelles Diskimage  mit einer festen Größe zu verwenden oder ein Diskimage mit dynamischer Größe mit Powershell zu erstellen.</p>
+
+   <dl>
+    
+     <dt>Technischer Hintergrund zu diesem Problem</dt>
+     <dd>
+      <p>Die <tt>.vhd</tt> und <tt>.vhdx</tt> Abbilder sind Sparse-Dateien. Wenn eine dynamische <tt>.vhdx</tt>-Datei mit einer Maximalgröße von 127GB angelegt wird, beträgt die Initialgröße ungefähr 256 KB. Weil die Standardblockgröße für <tt>.vhdx</tt>-Dateien 32MB beträgt, führt das schreiben eines 512-Byte-Sektors dazu, dass ein 32MB-Abschnitt in der Sparse-Datei reserviert wird. Wenn <tt>ext3</tt> den MBR, den Super-Block, den Reserve-Super-Block, die Inodes, die Verzeichnisse etc. anlegt wird Speicherplatz in der Sparse-Datei reserviert. Wegen <tt>ext3</tt>s suboptimaler Ein-/Ausgabe was die Auslage der Dateistruktur auf der Platte angeht und der großen Standardblockgröße, wird allein durch das formatieren bereits ein großer Teil der <tt>.vhdx</tt>-Datei belegt. Die Behelfslösung sieht vor eine <tt>.vhdx</tt>-Datei mit einer Blockgröße von 1MB, statt der standardmäßigen 32MB, zu verwenden.</p>
+      <p>Die Blockgröße kann nicht über das grafische Interface geändert werden. Sie kann nur verändert werden, wenn die VHDx-Datei durch Powershell erstellt wird. Um eine VHD-Datei mit einer veränderten Blockgröße zu erstellen, benutzen Sie dieses Powershell-Script (alles in einer Zeile):</p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  </div>
+
+  <div>
+   
+   <h3><a name="11">Konfiguration von Postfix</a></h3>
+
+   <p>Es gibt kein <tt>SuSEconfig</tt> postfix-Module mehr. Deshalb schreibt <tt>SuSEconfig</tt> auch nicht mehr die postfix-Konfigurationsdateien, nachdem Sie sysconfig-Variablen in <tt>/etc/sysconfig/postfix</tt> oder <tt>/etc/sysconfig/mail</tt> gesetzt haben.</p>
+
+   <p>Nachdem Sie sysconfig-Variablen bearbeitet haben müssen Sie <tt>/usr/sbin/SuSEconfig.postfix</tt> manuell als <tt>root</tt> ausführen.</p>
+  </div>
+
+ </div>
+
+ <div>
+  <h2>System Aktualisierung</h2>
+
+  <div>
+   
+   <h3><a name="12">Verschlüsselte Partitionen mit dm-crypt einhängen</a></h3>
+
+   <p>In uralten SUSE-Systemen wurde <tt>/etc/cryptotab</tt> verwendet um die mittlerweile veraltete cryptoloop-Technologie einzurichten. 12.1 unterstützt nur noch <tt>/etc/crypttab</tt> (ohne 'o'!), welches dm-crypt benutzt. Benutzer die immernoch eine <tt>cryptotab</tt>-Datei aus den alten Tagen haben, sollten den Befehl <tt>convert_cryptotab</tt> ausführen, welcher genauere Anweisungen ausgiebt, was Sie stattdessen in die Dateien <tt>crypttab</tt> und <tt>fstab</tt> einfügen müssen.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="13">Verschlüsselte Partitionen mit Systemd einhängen</a></h3>
+   <p>Wenn verschlüsselte Partitionen mit 'systemd' nicht automatisch verwendet werden, könnte dies an einem <tt>noauto</tt> Flag in <tt>/etc/fstab</tt> der betreffenden Partitionen liegen. Ersetzen Sie das <tt>noauto</tt> durch <tt>nofail</tt> mit abändern der folgende Zeile von:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>in</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  </div>
+ </div>
+
+
+ <div>
+  <h2>Technisch</h2>
+  
+  <div>
+   <h3><a name="14">Initialisierung der Grafik mit KMS (Kernel Mode Setting)</a></h3>
+   
+   <p>Mit erscheinen von openSUSE 11.3 wechselten wir zu KMS (Kernel Mode Setting) für Intel, ATI und NVIDIA-Grafik. Wenn Probleme mit der KMS-Treiber-Unterstützung (Intel, radeon, nouveau) auftreten, deaktivieren Sie KMS mit dem Eintrag: <tt>nomodeset</tt> in der Kernel-Boot-Befehlszeile des Bootmenüs. Um diese Einstellung dauerhaft zu verwenden, fügen Sie den Eintrag in der Kernel-Kommandozeile in <tt>/boot/grub/menu.lst</tt> hinzu. Mit der Option <tt>modeset</tt> wird sicher gestellt, dass das entsprechende Kernel-Modul (intel, radeon, nouveau) geladen wird. Ist der Eintrag auf <tt>modeset=0</tt> in <tt>initrd</tt> geändert, wird damit KMS (Kernel-Mode-Setting) deaktiviert.</p>
+
+   <p>In den seltenen Fällen kann das Laden des DRM-Modul von <tt>initrd</tt> ein generelles Problem darstellen. Dazu kann dann die Variable <tt>NO_KMS_IN_INITRD</tt> via YaST → System → 'Editor für /etc/sysconfig' im Menü/Reiter: 'Kernel' dauerhaft von Standardwert: <tt>no</tt> auf <tt>yes</tt> abgeändert werden. Beim Beenden wird <tt>initrd</tt> neu eingelesen und die geänderte Einstellung beim System-Neustart aktiv.</p>
+
+   <p>Auf Intel Hardware ohne KMS (Kernel-Kode-Setting), fällt <tt>X.org</tt> auf den <tt>fbdev</tt> Treiber (die Intel-Treiber unterstützt nur KMS) zurück. Alternativ dazu steht für ältere GPUs von Intel, der "intellegacy" Treiber (<tt>xorg-x11-driver-video-intel-legacy</tt> Paket) zur Verfügung. Um diesen benutzen zu können, muss <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> editiert werden. Dazu den Eintrag des Treibers nun auf: <tt>intellegacy</tt> abändern.</p>
+
+   <p>Auf ATI Hardware für aktuelle GPUs fällt das System wieder auf <tt>radeonhd</tt> zurück um mit NVIDIA Hardware ohne KMS den <tt>nvTreiber zu verwenden (der Nouveau-Treiber unterstfbdev Treiber nur verwenden, wenn nomodeset als Kernel-Boot-Paramente gesetzt wird.</tt></p>
+  </div>
+
+  <div>
+   
+   <h3><a name="15">Radeon HDMI Sound Output ist deaktiviert</a></h3>
+
+   <p>Aufgrund von Problemen bei einiger Hardware und Tonausgaben über HDMI, wurde standardmäßig der Radeon-Treiber deaktiviert wenn dieser der Standard-Treiber für AMD/ATI-Grafikkarten ist.</p>
+   <p>Dies kann durch die Eingabe von <tt>radeon.audio=1</tt> als Kernel-Parameter im Bootmeü wieder aktiviert werden. Dazu via 'YaST → System' zum <tt>Boot Loader</tt> wechseln, um den Standard Eintrag am Ende der 'Optional Kernel Command Line Parameter' zu ändern:</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Anschließend das System neu starten.</p>
+   <p>Alternativ dazu können Benutzer den proprietären Treiber von AMD installieren. Weitere Informationen auf <a href="http://de.opensuse.org/SDB:AMD/ATI-Grafiktreiber">http://de.opensuse.org/SDB:AMD/ATI-Grafiktreiber</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="16">Starten mit systemd oder sysvinit</a></h3>
+
+   <p>Standardmäßig startet openSUSE nun mit <tt>systemd</tt>. Bei Problemen können Sie wieder auf die bisherige Weise mit <tt>sysvinit</tt> starten. Drücken Sie dazu im Bootmenü die Taste 'F5' zu weiteren Auswahl von <tt>systemd</tt> oder <tt>sysvinit</tt>.</p>
+
+   <p>Wenn dauerhaft auf <tt>sysvinit</tt> umgestellt wird, muss das Paket <tt>sysvinit-init</tt> nach installiert werden. Um wieder zurück zum Standard <tt>systemd</tt> zu wechseln, muss das Paket <tt>systemd-sysvinit</tt> wieder installiert werden.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="17">Systemd: Die Versorgung Service Start-up-Parameter</a></h3>
+   <p><tt>systemctl</tt> unterstützt nur "Standard" -Parameter (siehe <a href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>.</p>
+   <p>Dieses neue Verhalten kann durch Aufruf des Start-up-Skript direkt, zum Beispiel zu umgangen werden:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;your_parameters&gt;
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="18">systemd: System herunterfahren</a></h3>
+
+   <p>Um das System zum Herunterfahren zu bewegen, nutzen Sie Ausgabe <tt>halt-p</tt> oder <tt>shutdown-h now</tt> auf der Kommandozeile. Oder ändern Sie die Belegung der Taste zum 'Herunterfahren' über 'Systemeinstellungen → Anmeldebildschirm → Herunterfahren' auf den Wert: <tt>/sbin/shutdown-h -P now</tt> ab.</p>
+
+   <p>Hinweis: Ein einfaches <tt>/sbin/halt</tt> fährt das System nicht herunter.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="19">systemd: die Nutzung von tmpfs: /run, /var/run, /media, etc.</a></h3>
+
+   <p>systemd legt verschiedene Verzeichnisse an, die zur vorübergehenden Speicherung von Daten dienen. Dateisysteme tmpfs: <tt>/run</tt>, <tt>/var/run</tt>, <tt>/var/lock</tt>, und <tt>/media</tt> sind solche Verzeichnisse. Mehr Information darüber finden sich auf <a href="http://lwn.net/Articles/436012/">http://lwn.net/Articles/436012/</a>.</p>
+
+   <p>Hinweis: Besser keine Daten in <tt>/run</tt>, <tt>/var/run</tt>, etc aufbewahren, weil diese beim Systemneustart gelöscht werden.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="20">systemd: Verzeichnisse aufräumen (/tmp und /var/tmp)</a></h3>
+
+   <p>systemd unterhält Verzeichnisse wie in <tt>tmpfiles.d</tt> Verzeichnis und in <tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt> angegebenen. Mehr Informationen finden sich in <tt>tmpfiles.d</tt> manpage.</p>
+
+   <p>Standardmäßig reinigt systemd das <tt>tmp</tt> Verzeichnis als tägliche Konfiguration in <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:</p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>Hinweis: Systemd schenkt den sysconfig-Variablen in <tt>/etc/sysconfig/cron</tt> keine Beachtung. Dies Betrifft z.B. <tt>TMP_DIRS_TO_CLEAR</tt>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="21">CUPS 1.5</a></h3>
+   <p>CUPS 1.5 kommt mit rückwärts inkompatible Änderungen:</p>
+   <ul>
+    <li>
+     <p>CUPS unterstützt die <tt>~/.Cupsrc</tt> oder <tt>~/.Lpoptions</tt> Konfigurationsdateien von CUPS 1.1 nicht mehr. Stattdessen sollte nun <tt>~/.cups/ client.conf</tt> und <tt>~/.cups/lpoptions</tt> was mit CUPS 1.2 eingeführt wurde verwendet werden.</p>
+    </li>
+    <li>
+     <p>Der Scheduler erfordert nun, dass Filter und Backends Gruppe Schreibrechte für verbesserte Sicherheit deaktiviert. Wenn Sie Dritten Druckertreiber von Herstellern mit entspannter Dateiberechtigungen verwenden, stellen Sie die Berechtigungen manuell.</p>
+    </li>
+   </ul>
+  </div>
+
+  <div>
+   
+   <h3><a name="22">Der Befehl: rename</a></h3>
+   <p>Nach Angaben der GNU Coding Standards, behandelt der Befehl 'rename' jetzt alle Strings, die mit einem Bindestrich als Kommandozeilen-Option verwendet werden. Um dies zu verhindern, trennen Sie die Option aus dem anderen Argumente mit <tt>--</tt> wie folgt:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  </div>
+
+  <div>
+   
+   <h3><a name="23">NetworkManager: Tool für die Kommandozeile</a></h3>
+
+   <p><tt>cnetworkmanager</tt> ist nicht mehr verfügbar, stattdessen wird <tt>nmcli</tt> weiter verwendet. Informationen über die Migration finden sich in <a href="http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html">http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</a>.</p>
+  </div>
+
+  <div>
+   
+   <h3><a name="24">rpm:% _topdir für Nicht-Root-Benutzer geändert</a></h3>
+
+   <p>Normale Benutzer können nicht mehr auf <tt>/usr/src/packages</tt> schreiben. <tt>rpmbuild</tt> nutzt nun <tt>~/rpmbuild</tt> standardmäßig. Um das Verzeichnis zu ändern, fügen Sie wie folgt eine Zeile zu <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir /some/where/else</pre>
+   <p>So verwenden Sie das Unterverzeichnis <tt>foo</tt> von <tt>$HOME</tt> hinzufügen <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  </div>
+ </div>
+</body>
+</html>

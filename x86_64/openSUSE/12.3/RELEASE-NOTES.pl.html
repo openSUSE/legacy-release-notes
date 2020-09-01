@@ -1,0 +1,133 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Informacje o wydaniu openSUSE 12.3</title><meta name="generator" content="DocBook XSL Stylesheets V1.78.0"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="pl" class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idm47183829927744"></a>Informacje o wydaniu <span class="phrase">openSUSE 12.3</span></h2></div><div><p class="releaseinfo">Version: 12.3.11 (2013-08-22)</p></div><div><p class="copyright">Copyright © do 2008 Aviary.pl (team@aviary.pl)</p></div><div><div class="legalnotice"><a name="idm47183829925024"></a><p>Copyright © 2013 Novell, Inc.</p><p>Udziela się zgody na kopiowanie, dystrybucję i/lub modyfikacje tego dokumentu zgodnie z zasadami licencji GNU Free Documentation Licence w wersji 1.2 lub późniejszej wydanej przez Free Software Foundation; bez stałych sekcji oraz bez tekstów z okładek przedniej i tylnej. Kopia licencji została dołączona jako plik <code class="filename">fdl.txt</code>.</p></div></div></div><hr></div><div class="toc"><dl class="toc"><dt><span class="sect1"><a href="#misc">1. Informacje dodatkowe</a></span></dt><dt><span class="sect1"><a href="#installation">2. Instalacja</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm47183830032432">2.1. Szczegółowe informacje o instalacji</a></span></dt><dt><span class="sect2"><a href="#idm47183830030096">2.2. No Network after Installation</a></span></dt><dt><span class="sect2"><a href="#idm47183830028192">2.3. The Proprietary NVIDIA Driver Requires Users to Have Access to
+   /dev/nvidia* Devices</a></span></dt><dt><span class="sect2"><a href="#idm47183830020400">2.4. Non-existent Floppy Drive Enabled in BIOS Causes Hang</a></span></dt></dl></dd><dt><span class="sect1"><a href="#general">3. Informacje ogólne</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.123.documentation">3.1. Dokumentacja openSUSE</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi">3.2. UEFI— interfejs UEFI</a></span></dt><dt><span class="sect2"><a href="#idm47183824819232">3.3. Enable Secure Boot in YaST Not Enabled by Default When in
+   Secure Boot Mode</a></span></dt><dt><span class="sect2"><a href="#idm47183824816688">3.4. Wrong Bootloader When Installing from a Live Medium in a UEFI
+   Environment</a></span></dt><dt><span class="sect2"><a href="#idm47183824814304">3.5. openSUSE 12.3 Medium May Not Boot on
+   Future Secure Boot Enabled Hardware</a></span></dt><dt><span class="sect2"><a href="#idm47183824810896">3.6. Crypted LVM in UEFI Mode Needs /boot Partition</a></span></dt></dl></dd><dt><span class="sect1"><a href="#upgrade">4. Aktualizacja systemu</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.123.sysv">4.1. Sysvinit Support No Longer Available</a></span></dt><dt><span class="sect2"><a href="#sec.123.systemd-nm">4.2. systemd: uruchomienie NetworkManager przy pomocy aliasu network.service</a></span></dt><dt><span class="sect2"><a href="#idm47183824761536">4.3. Usunięcie zmiennej SYSLOG_DAEMON</a></span></dt></dl></dd><dt><span class="sect1"><a href="#technical">5. Informacje techniczne</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.114.kms">5.1. Inicjalizacja grafiki z KMS (Ustawienia trybu jądra)</a></span></dt><dt><span class="sect2"><a href="#sec.123.systemd-tmpdir">5.2. systemd: Czyszczenie katalogów (/tmp i /var/tmp)</a></span></dt><dt><span class="sect2"><a href="#idm47183824710032">5.3. systemd: Persistent Journal across Reboots</a></span></dt><dt><span class="sect2"><a href="#idm47183824704160">5.4. pwdutils Replaced by shadow</a></span></dt><dt><span class="sect2"><a href="#idm47183824701968">5.5. Konfiguracja Postfix</a></span></dt><dt><span class="sect2"><a href="#idm47183824690832">5.6. GTK+ Applications Output a Fontconfig Warning</a></span></dt><dt><span class="sect2"><a href="#idm47183824687952">5.7. GNOME: Workaround to Set Shift or Ctrl+Shift as
+   Shortcut Keys for Input Source Selection</a></span></dt><dt><span class="sect2"><a href="#idm47183824678880">5.8. 
+    SSH Installation Blocked by SuSEFirewall Service
+   </a></span></dt></dl></dd></dl></div><p>Jeśli openSUSE jest aktualizowane ze starszej wersji, zobacz wcześniejsze informacje o wydaniu zamieszczone na: <a class="ulink" href="http://en.opensuse.org/openSUSE:Release_Notes" target="_top">http://en.opensuse.org/openSUSE:Release_Notes</a></p><p>Niniejsze informacje opisują następujące zagadnienia:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Informacje dodatkowe: Te wpisy są automatycznie zawarte w openFATE, systemie zbierającym dane o oczekiwanych funkcjach i właściwościach (<a class="ulink" href="http://features.opensuse.org" target="_top">http://features.opensuse.org</a>).</p><p>Nie dotyczy</p></li><li class="listitem"><p><a class="xref" href="#installation" title="2. Instalacja">Sekcja 2, „Instalacja”</a>: należy przeczytać poniższe informacje w przypadku instalacji systemu od podstaw.</p></li><li class="listitem"><p><a class="xref" href="#general" title="3. Informacje ogólne">Sekcja 3, „Informacje ogólne”</a>: Informacje, które każdy powinien przeczytać.</p></li><li class="listitem"><p><a class="xref" href="#upgrade" title="4. Aktualizacja systemu">Sekcja 4, „Aktualizacja systemu”</a>: Problemy związane z przebiegiem procesu, jeśli wykonywana jest aktualizacja z poprzedniego wydania do obecnej wersji openSUSE.</p></li><li class="listitem"><p><a class="xref" href="#technical" title="5. Informacje techniczne">Sekcja 5, „Informacje techniczne”</a>: Ta część zawiera szereg informacji o zmianach technicznych i usprawnieniach dla zaawansowanych użytkowników.</p></li></ul></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="misc"></a>1. Informacje dodatkowe</h2></div></div></div><p>Nie dotyczy</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation"></a>2. Instalacja</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183830032432"></a>2.1. Szczegółowe informacje o instalacji</h3></div></div></div><p>Szczegółowe informacje o instalacji dostępne są w dokumentacji <a class="xref" href="#sec.123.documentation" title="3.1. Dokumentacja openSUSE">Sekcja 3.1, „Dokumentacja openSUSE”</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183830030096"></a>2.2. No Network after Installation</h3></div></div></div><p>
+    Directly after installation, NetworkManager is not started
+    automatically and thus WiFi cannot be configured.  To enable
+    networking (WiFi), reboot the machine once manually.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183830028192"></a>2.3. The Proprietary NVIDIA Driver Requires Users to Have Access to
+   /dev/nvidia* Devices</h3></div></div></div><p>
+    Default and new users are no longer added to the
+    <code class="literal">video</code> group automatically.  But the proprietary
+    NVIDIA driver requires users to have access to /dev/nvidia* devices.
+   </p><p>
+    Symptoms: OpenGL applications report that they cannot operate on
+    <code class="filename">/dev/nvidiactl</code>. Or GNOME only showing a blank
+    screen with a mouse pointer.
+   </p><p>
+    Because the NVIDIA driver does not use the usual kernel methods that
+    allow to install ACLs on the device nodes, users have to be added
+    manually to the <code class="literal">video</code> group; as
+    <code class="systemitem">root</code> call (replace <code class="literal">$USER</code>
+    with the actual username):
+   </p><pre class="screen">usermod -a -G video $USER</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183830020400"></a>2.4. Non-existent Floppy Drive Enabled in BIOS Causes Hang</h3></div></div></div><p>
+    If a floppy drive support is enabled in the BIOS, but does not
+    actually exist in the machine, it can cause hangs during the
+    installation while YaST is searching for partitions.
+   </p><p>
+    To avoid this issue, disable floppy drive support in the BIOS.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="general"></a>3. Informacje ogólne</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.documentation"></a>3.1. Dokumentacja openSUSE</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>W podręczniku <span class="emphasis"><em>Start-Up</em></span> można znaleźć zarówno instrukcje instalacji krok po kroku, jak i instrukcje korzystania ze środowisk KDE i Gnome oraz pakietu biurowego LibreOffice. Przewodnik zawiera także podstawowe zagadnienia związane z administracją systemu, takie jak zarządzanie oprogramowaniem oraz wstęp do powłoki bash.</p></li><li class="listitem"><p>Podręcznik <span class="emphasis"><em>Reference</em></span> opisuje szczegółowo zagadnienia związane z administracją i konfiguracją systemu oraz wyjaśnia, jak skonfigurować różnorodne usługi sieciowe.</p></li><li class="listitem"><p>Podręcznik <span class="emphasis"><em>Security Guide</em></span> pozwola poznać podstawowe pojęcia związane z bezpieczeństwem systemu, zarówno lokalnym jak i sieciowym.</p></li><li class="listitem"><p>Podręcznik <span class="emphasis"><em>System Analysis and Tuning Guide</em></span> pomaga w wykrywaniu i rozwiązywaniu problemów oraz w optymalizacji.</p></li><li class="listitem"><p>Podręcznik <span class="emphasis"><em>Virtualization with KVM</em></span> zawiera wprowadzenie do konfiguracji i zarządzania wirtualizacją przy pomocy narzędzi KVM, libvirt oraz QEMU.</p></li></ul></div><p>Dokumentacja będzie dostępna w katalogu <code class="filename">/usr/share/doc/manual/opensuse-manuals_$LANG</code> po zainstalowaniu pakietu <code class="systemitem">opensuse-manuals_$LANG</code>. Jest też dostępna online pod adresem <a class="ulink" href="http://doc.opensuse.org" target="_top">http://doc.opensuse.org</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi"></a>3.2. UEFI— interfejs UEFI</h3></div></div></div><p>
+Prior to installing openSUSE on a system that boots using UEFI (Unified
+Extensible Firmware Interface) you are urgently advised to check for any
+firmware updates the hardware vendor recommends and, if available, to
+install such an update.  A pre-installed Windows 8 is a strong
+indication that your system boots using UEFI.
+   </p><p><span class="emphasis"><em>Wyjaśnienie:</em></span> Zdarza się, że firmware interfejsu UEFI zawiera błędy, które powodują niepoprawne działanie, gdy zbyt duża ilość danych jest zapisywana w buforze UEFI. Nie wiadomo jak dużo to "za dużo". openSUSE ogranicza ryzyko zapisania większej ilości danych niż jest to niezbędne. Wskazane jest wyłącznie położenie menadżera rozruchu openSUSE. Jądro Linux zapewnia możliwość użycia bufora UEFI do zapisywania informacji dotyczących uruchamiania i błędów, jednakże funkcja (<code class="literal">pstore</code>) domyślnie jest zablokowana. Niezależnie od tego zaleca się instalowanie aktualizacji firmware polecanych przez producenta sprzętu.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824819232"></a>3.3. Enable Secure Boot in YaST Not Enabled by Default When in
+   Secure Boot Mode</h3></div></div></div><p>
+    This only affects machines in UEFI mode with secure boot enabled.
+   </p><p>
+    YaST does not automatically detect if the machine has secure boot
+    enabled and will therefore install an unsigned bootloader by
+    default.  But the unsigned bootloader will not be accepted by the
+    firmware. To have a signed bootloader installed the option "Enable
+    Secure Boot" has to be manually enabled.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824816688"></a>3.4. Wrong Bootloader When Installing from a Live Medium in a UEFI
+   Environment</h3></div></div></div><p>
+    This only affects machines in UEFI mode.
+   </p><p>
+    When using the installer on the live medium, YaST does not detect
+    UEFI mode and therefore installs the legacy bootloader.  This
+    results in a not bootable system. The bootloader has to be switched
+    from grub2 to grub2-efi manually.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824814304"></a>3.5. openSUSE 12.3 Medium May Not Boot on
+   Future Secure Boot Enabled Hardware</h3></div></div></div><p>
+    This only affects machines in UEFI mode.
+   </p><p>
+    Our double signed shim on openSUSE 12.3 medium may be rejected by
+    future firmwares.
+   </p><p>
+    If the openSUSE 12.3 medium does not boot on future secure boot
+    enabled hardware, temporarily disable secure boot, install openSUSE
+    and apply all online updates to get an updated shim.
+   </p><p>
+    After installing all updates secure boot can be turned on again.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824810896"></a>3.6. Crypted LVM in UEFI Mode Needs /boot Partition</h3></div></div></div><p>
+    This only affects installations in UEFI mode.
+   </p><p>
+    In the partitioning proposal when checking the option to use LVM
+    (which is required for full disk encryption) YaST does not create a
+    separate <code class="filename">/boot</code> partition. That means kernel and
+    initrd end up in the (potentially encrypted) LVM container,
+    inaccessible to the boot loader. To get full disk encryption when
+    using UEFI, partitioning has to be done manually.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="upgrade"></a>4. Aktualizacja systemu</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.sysv"></a>4.1. Sysvinit Support No Longer Available</h3></div></div></div><p>
+    sysvinit is no longer supported in this release.  It has been
+    deprecated since the last two releases.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.systemd-nm"></a>4.2. systemd: uruchomienie NetworkManager przy pomocy aliasu network.service</h3></div></div></div><p>By uruchomić NetworManager domyślnie używa się modułu YaST (<span class="command"><strong>yast2 network</strong></span>) do zarządzania siecią. Można również wykonać następujące czynności.</p><p>Zmienna <code class="literal">NETWORKMANAGER</code> w pliku <code class="filename">/etc/sysconfig/network/config</code> została zastąpiona przez alias <code class="literal">network.service</code> menadżera systemu systemd, który zostanie utworzony przy pomocy polecenia</p><pre class="screen">systemctl enable  NetworkManager.service</pre><p>Powoduje ono utworzenie aliasu <code class="literal">network.service</code> wskazującego <code class="literal">NetworkManager.service</code>, co wyłączy skrypt <code class="filename">/etc/init.d/network</code>. Polecenie</p><pre class="screen">systemctl -p Id show network.service</pre><p>pozwala uzyskać informacje dotyczącą bieżącej konfiguracji.</p><p>By uruchomić NetworManager, należy:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Najpierw należy zatrzymać aktualnie uruchomioną usługę:</p><pre class="screen">systemctl     is-active network.service &amp;&amp; \
+ systemctl     stop      network.service</pre></li><li class="listitem"><p>Uaktywnić usługę NetworkManager:</p><pre class="screen">systemctl --force        enable NetworkManager.service</pre></li><li class="listitem"><p>Uruchomić usługę NetworkManager (przy pomocy aliasu):</p><pre class="screen">systemctl     start     network.service</pre></li></ul></div><p>Aby zatrzymać NetworkManager, należy:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Zatrzymać uruchomioną usługę:</p><pre class="screen">systemctl     is-active network.service &amp;&amp; \
+systemctl     stop      network.service</pre></li><li class="listitem"><p>Zatrzymać usługę NetworkManager:</p><pre class="screen">systemctl disable NetworkManager.service</pre></li><li class="listitem"><p>Uruchomić usługę <span class="command"><strong>/etc/init.d/network</strong></span>:  </p><pre class="screen">systemctl     start  network.service</pre></li></ul></div><p>W celu uzyskania informacji o wybranej usłudze, należy wydać polecenie:</p><pre class="screen">systemctl -p Id show     network.service</pre><p>zostanie wyświetlone  "<code class="literal">Id=NetworkManager.service</code>" jeżeli usługa NetworkManager jest uruchomiona. W innym wypadku "<code class="literal">Id=network.service</code>" i <span class="command"><strong>/etc/init.d/network</strong></span> będą działać jako usługa dostarczania sieci.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824761536"></a>4.3. Usunięcie zmiennej SYSLOG_DAEMON</h3></div></div></div><p>Zmienna SYSLOG_DAEMON została usunięta. Wcześniej wykorzystywano ją do wyboru usługi rejestrowania zdarzeń systemowych. Począwszy od openSUSE 12.3 tylko jedna taka usługa może być zainstalowana. Zostanie ona wybrana automatycznie.</p><p>Więcej informacji w dostępnych w podręczniku: syslog(8) manpage.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="technical"></a>5. Informacje techniczne</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.114.kms"></a>5.1. Inicjalizacja grafiki z KMS (Ustawienia trybu jądra)</h3></div></div></div><p>Od wersji 11.3 openSUSE domyślne używa KMS (ustawienie trybu jądra) dla kart graficznych Intel, ATI oraz NVIDIA. W przypadku problemów ze wsparciem sterowników KMS (intel, radeon, nouveau), można wyłączyć KMS dodając parametr <code class="literal">nomodeset</code> podczas uruchamiania jądra. W tym celu należy wykorzystać Grub 2, domyślny menadżer uruchamiania, i w terminalu jako użytkownik root dodać wpis w pliku <code class="filename">/etc/default/grub</code> do wiersza zawierającego domyślne parametry uruchamiania jądra <code class="literal">GRUB_CMDLINE_LINUX_DEFAULT</code>.</p><pre class="screen">sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg</pre><p>aby wprowadzić zmiany. W innym wypadku, dla wcześniejszej wersji Grub,  należy dodać wpis do pliku <code class="filename">/boot/grub/menu.lst</code> w linii parametrów jądra . Parametr ten powoduje, że właściwy moduł jądra (intel, radeon, nouveau) zostaje załadowany z opcją <code class="literal">modeset=0</code> <code class="filename">initrd</code>, czyli KMS jest wyłączone.</p><p>W wyjątkowych sytuacjach, kiedy ładowanie modułu DRM z <code class="filename">initrd</code> jest problematyczne, jednak niezwiązane z KMS, możliwe jest wówczas nawet całkowite wyłączenie modułu DRM w <code class="filename">initrd</code>. W tym celu należy za pomocą YaST ustawić zmienną sysconfig <code class="literal">NO_KMS_IN_INITRD</code> na <code class="literal">yes</code> a <code class="filename">initrd</code> zostanie ponownie utworzony. Po wykonaniu tej operacji konieczne jest ponowne uruchomienie komputera.</p><p>Na platformie Intel bez KMS Xserver powraca do sterownika <code class="literal">fbdev</code> (sterownik <code class="literal">intel</code> wspiera tylko KMS); opcjonalnie, istnieje sterownik  "intellegacy" (pakiet <code class="systemitem">xorg-x11-driver-video-intel-legacy</code>), który nadal wspiera UMS (ustawienia trybu użytkownika). Aby go użyć należy edytować plik <code class="filename">/etc/X11/xorg.conf.d/50-device.conf</code> zmieniając wpis dotyczący sterownika na <code class="literal">intellegacy</code>.</p><p>Na platformie ATI dla obecnych GPU powraca do <code class="literal">radeonhd</code>. Dla NVIDIA bez KMS, używany jest sterownik <code class="literal">nv</code> (sterownik <code class="literal">nouveau</code> wspiera jedynie KMS).</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.systemd-tmpdir"></a>5.2. systemd: Czyszczenie katalogów (/tmp i /var/tmp)</h3></div></div></div><p>Domyślnie systemd codziennie usuwa zawartość katalogów tymczasowych tak, jak jest to skonfigurowane w pliku <code class="filename">/usr/lib/tmpfiles.d/tmp.conf</code>. Użytkownicy mogą wprowadzić zmiany kopiując plik <code class="filename">/usr/lib/tmpfiles.d/tmp.conf</code> do <code class="filename">/etc/tmpfiles.d/tmp.conf</code>, a następnie edytując go. Zawartość <code class="filename">/usr/lib/tmpfiles.d/tmp.conf</code> zostanie pominięta.</p><p>Uwaga: usługa systemd nie uwzględnia zdezaktualizowanych zmiennych sysconfig zapisanych w pliku <code class="filename">/etc/sysconfig/cron</code>, takich jak <code class="literal">TMP_DIRS_TO_CLEAR</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824710032"></a>5.3. systemd: Persistent Journal across Reboots</h3></div></div></div><p>
+On openSUSE 12.3, the systemd journal is not persistent across
+reboots. If you want to enable journal persistence, either create the
+<code class="filename">/var/log/journal</code> directory (as root) or install
+the <code class="systemitem">systemd-logger</code> package. Installing
+<code class="systemitem">systemd-logger</code> package will signal a conflict
+with other syslog implementations, and thus ensuring that the system 
+uses only the systemd journal, if installed.
+   </p><p>
+If your system has been upgraded from openSUSE 12.2 (where
+<code class="filename">/var/log/journal</code> was created by default) and if you
+want to disable journal persistence, just remove the
+<code class="filename">/var/log/journal</code> directory.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824704160"></a>5.4. pwdutils Replaced by shadow</h3></div></div></div><p>
+    The pwdutils package was replaced by the shadow package. The shadow
+    package is mostly a drop-in replacement, but some commandline
+    options have been removed or changed.  See
+    <code class="filename">/usr/share/doc/packages/shadow/README.changes-pwdutils</code>
+    for a list of all the changes.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824701968"></a>5.5. Konfiguracja Postfix</h3></div></div></div><p><code class="filename">SuSEconfig.postfix</code> został zmieniony na <code class="filename">/usr/sbin/config.postfix</code>. Jeżeli zdefiniowano zmienne w pliku <code class="filename">/etc/sysconfig/postfix</code> lub <code class="filename">/etc/sysconfig/mail</code>, należy jako root uruchomić <code class="filename">/usr/sbin/config.postfix</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824690832"></a>5.6. GTK+ Applications Output a Fontconfig Warning</h3></div></div></div><p>
+  Because the location of the fontconfig files was changed, Emacs and
+  other applications linked against GTK+ output warning messages when started.
+ </p><p>
+  Move the files to the new location:
+ </p><pre class="screen">mkdir -p ~/.config/fontconfig
+mv ~/.fonts.conf ~/.config/fontconfig/fonts.conf</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824687952"></a>5.7. GNOME: Workaround to Set Shift or Ctrl+Shift as
+   Shortcut Keys for Input Source Selection</h3></div></div></div><p>
+    In Gnome 3.6 use the following workaround to set Shift or Ctrl+Shift 
+    as shortcut keys for input source selection:
+   </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+      Install gnome-tweak-tool.
+     </p></li><li class="listitem"><p>
+      Start gnome-tweak-tool
+      (<span class="guimenu">'Activities'</span>&gt;<span class="guimenu">'advanced
+      settings'</span>).
+     </p></li><li class="listitem"><p>
+Via the left menu, select <span class="guimenu">'Typing'</span>, in the right window, change the settings.
+     </p></li></ol></div><p>
+    This is also being tracked in the upstream bug report
+    <a class="ulink" href="https://bugzilla.gnome.org/show_bug.cgi?id=689839" target="_top">https://bugzilla.gnome.org/show_bug.cgi?id=689839</a>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm47183824678880"></a>5.8. 
+    SSH Installation Blocked by SuSEFirewall Service
+   </h3></div></div></div><p>
+    During the second stage of an SSH installation YaST freezes.  It is
+    blocked by the SuSEFirewall service because the
+    <code class="literal">SYSTEMCTL_OPTIONS</code> environment variable is not set
+    properly.
+   </p><p>
+    Workaround: When logged in for the second time to start the second
+    stage of the SSH installation, call <span class="command"><strong>yast.ssh</strong></span> with
+    the <code class="literal">--ignore-dependencies</code> as follows:
+   </p><pre class="screen">SYSTEMCTL_OPTIONS=--ignore-dependencies yast.ssh</pre></div></div></div></body></html>

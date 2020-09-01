@@ -1,0 +1,408 @@
+openSUSE 13.1 Σημειώσεις Έκδοσης
+
+Version: 13.1.10 (2014-01-08)
+
+Πνευματικά Δικαιώματα © 2007 Κώστας Μπουκουβάλας quantis@hellug.gr
+
+Πνευματικά Δικαιώματα © 2012, 2013 Ευστάθιος Ιωσηφίδης
+iosifidis@opensuse.org 2011
+
+Copyright © 2013 SUSE LLC
+
+Χορηγήθηκε άδεια για αντιγραφή, διανομή και / ή τροποποίηση του εγγράφου
+υπό τους όρους του GNU Free Documentation License, Έκδοση 1.2 ή νεότερη
+έκδοση δημοσιευμένη από το Free Software Foundation χωρίς Αμετάβλητα
+Τμήματα, χωρίς κείμενα στα εξώφυλλα και οπισθόφυλλα. Ένα αντίγραφο της
+άδειας συμπεριλαμβάνεται στο αρχείο fdl.txt.
+
+---------------------------------------------------------------------------
+
+1. Διάφορα
+2. Εγκατάσταση
+
+    2.1. Για Λεπτομερείς Πληροφορίες Εγκατάστασης
+
+3. Γενικά
+
+    3.1. Τεκμηρίωση openSUSE
+    3.2. Dropped YaST Modules
+    3.3. UEFI—Unified Extensible Firmware Interface
+    3.4. Κατατμήσεις UEFI, GPT, και MS-DOS
+    3.5. Booting When in Secure Boot Mode
+    3.6. Adobe Reader (acroread) και άλλα προγράμματα ανάγνωσης PDF
+
+4. Αναβάθμιση Συστήματος
+
+    4.1. Αναβάθμιση με Zypper (dup) απαιτεί εκκαθάριση του /etc/fstab
+    4.2. Η μεταβλητή SYSLOG_DAEMON αφαιρέθηκε
+    4.3. Duplicated Network Interfaces
+
+5. Τεχνικά
+
+    5.1. Αρχικοποίηση Γραφικών με το KMS (Kernel Mode Setting)
+    5.2. Garbage on the Screen During Installation with the Nouveau Driver
+    5.3. Samba Έκδοση 4.1
+    5.4. Ρύθμιση Postfix
+    5.5. xinetd: Καταγραφή στο αρχείο καταγραφών συστήματος
+    5.6. Apache Έκδοση 2.4
+    5.7. tomcat: Καταγραφή στο αρχείο καταγραφών συστήματος
+    5.8. Darktable: Απαιτείται Ανανέωση Αρχείων Λανθάνουσας Μνήμης
+    5.9. Locate: Replacing findutils-locate by mlocate
+    5.10. KDE και Bluetooth
+    5.11. Ρυθμίσεις AppArmor και Δικαιωμάτων
+    5.12. Skype
+    5.13. AutoYaST
+
+Εάν αναβαθμίζετε από μία παλιότερη έκδοση σε αυτή την έκδοση openSUSE,
+δείτε τις προηγούμενες σημειώσεις έκδοσης που βρίσκονται εδώ: http://
+en.opensuse.org/openSUSE:Release_Notes
+
+Αυτές οι σημειώσεις έκδοσης καλύπτουν τους ακόλουθους τομείς:
+
+  o Τμήμα 1, «Διάφορα»: Αυτές οι καταχωρήσεις συμπεριλαμβάνονται αυτόματα
+    από το openFATE, το Σύστημα Διαχείρισης Χαρακτηριστικών και Απαιτήσεων
+    (http://features.opensuse.org).
+
+    Μη διαθέσιμο
+
+  o Τμήμα 2, «Εγκατάσταση»: Διαβάστε αυτό εάν θέλετε να εγκαταστήσετε το
+    σύστημα από την αρχή.
+
+  o Τμήμα 3, «Γενικά»: Πληροφορίες που θα πρέπει να διαβάσει ο καθένας.
+
+  o Τμήμα 4, «Αναβάθμιση Συστήματος»: Προβλήματα σχετικά με τη διαδικασία
+    εάν εκτελέσετε μία αναβάθμιση συστήματος από προηγούμενη κυκλοφορία σε
+    αυτή την έκδοση openSUSE.
+
+  o Τμήμα 5, «Τεχνικά»: Αυτή η ενότητα περιέχει έναν αριθμό από τεχνικές
+    αλλαγές και βελτιώσεις για τον έμπειρο χρήστη.
+
+1. Διάφορα
+
+Μη διαθέσιμο
+
+2. Εγκατάσταση
+
+2.1. Για Λεπτομερείς Πληροφορίες Εγκατάστασης
+
+Για λεπτομερείς πληροφορίες εγκατάστασης, ανατρέξτε στην Τμήμα 3.1,
+«Τεκμηρίωση openSUSE».
+
+3. Γενικά
+
+3.1. Τεκμηρίωση openSUSE
+
+Στην Εκκίνηση, βρείτε τις οδηγίες εγκατάστασης βήμα-βήμα, όπως επίσης
+γνωριμία με τα γραφικά περιβάλλοντα KDE και Gnome και με τη σουίτα γραφείου
+LibreOffice. Συμπεριλαμβάνονται επίσης βασικά θέματα διαχείρισης, όπως
+ανάπτυξη και διαχείριση εφαρμογών και μια εισαγωγή στο κέλυφος bash.
+
+Find the documentation in /usr/share/doc/manual/opensuse-manuals_$LANG
+after installing the package opensuse-startup_$LANG, or online on http://
+doc.opensuse.org.
+
+3.2. Dropped YaST Modules
+
+Τα παρακάτω αρθρώματα YaST είναι απαρχαιωμένα και τελευταία
+χρησιμοποιούνται ελάχιστα:
+
+  o yast2-autofs
+
+  o yast2-dbus-client
+
+  o yast2-dirinstall
+
+  o yast2-fingerprint-reader
+
+  o yast2-irda
+
+  o yast2-mouse
+
+  o yast2-phone-services
+
+  o yast2-power-management
+
+  o yast2-profile-manager
+
+  o yast2-sshd
+
+  o yast2-tv
+
+The main reason for dropping was to decrease the maintenance effort and
+better focus on other more used modules.
+
+3.3. UEFI—Unified Extensible Firmware Interface
+
+Πριν την εγκατάσταση openSUSE σε σύστημα που εκκινεί με την χρήση UEFI
+(Unified Extensible Firmware Interface) συνίσταται επειγόντως να ελέγξετε
+για προτεινόμενες ενημερώσεις firmware από τον κατασκευαστή υλικού και, εάν
+είναι διαθέσιμες, να τις εγκαταστήσετε. Ένα προ-εγκατεστημένο σύστημα με
+Windows 8 είναι μια ισχυρή ένδειξη ότι το σύστημά σας εκκινεί με χρήση
+UEFI.
+
+Ιστορικό: Μερικά UEFI firmware έχουν σφάλματα που μπορούν να προκαλέσουν
+κατάρρευση εάν εγγραφούν πολλά δεδομένα στο αποθηκευτικό μέσο UEFI. Εν
+τούτοις, κανείς δεν γνωρίζει στην πραγματικότητα πόσο είναι το "πολλά". Το
+openSUSE ελαχιστοποιεί τον κίνδυνο με την εγγραφή των ελάχιστων
+απαιτουμένων για την εκκίνηση του λειτουργικού. Το ελάχιστο σημαίνει
+ενημέρωση του UEFI firmware σχετικά με την τοποθεσία του διαχειριστή
+εκκίνησης του openSUSE. Upstream λειτουργίες του Πυρήνα Linux που
+χρησιμοποιούν το αποθηκευτικό μέσο UEFI για αποθήκευση πληροφοριών
+εκκίνησης και κατάρρευσης (pstore), έχουν απενεργοποιηθεί από προεπιλογή.
+Παρ' όλα αυτά συνίσταται να εγκαταστήσετε τις ενημερώσεις firmware που
+συνιστά ο προμηθευτής υλικού.
+
+3.4. Κατατμήσεις UEFI, GPT, και MS-DOS
+
+Together with the EFI/UEFI specification a new style of partitioning
+arrived: GPT (GUID Partition Table). This new schema uses globally unique
+identifiers (128-bit values displayed in 32 hexadecimal digits) to identify
+devices and partition types.
+
+Additionally, the UEFI specification also allows legacy MBR (MS-DOS)
+partitions. The Linux boot loaders (ELILO or GRUB2) try to generate
+automatically a GUID for those legacy partitions, and write them to the
+firmware. Such a GUID can change frequently, causing a rewrite in the
+firmware. A rewrite consist of two different operation: removing the old
+entry and creating a new entry that replaces the first one.
+
+Modern firmware has a garbage collector that collects deleted entries and
+frees the memory reserved for old entries. A problem arises when faulty
+firmware does not collect and free those entries; this may end up with a
+non-bootable system.
+
+The workaround is simple: convert the legacy MBR partition to the new GPT
+to avoid this problem completely.
+
+3.5. Booting When in Secure Boot Mode
+
+Αυτό επηρεάζει μόνο μηχανήματα σε κατάσταση UEFI με ενεργοποιημένη ασφαλή
+εκκίνηση.
+
+The new version of the shim loader allows more machines to boot with Secure
+Boot enabled than with openSUSE 12.3. Nevertheless, in case of trouble,
+first update the BIOS of your machine to the latest version. If the BIOS
+update does not help, report the model of your machine it the wiki (http://
+en.opensuse.org/openSUSE:UEFI). Then we can track it for the next release.
+
+3.6. Adobe Reader (acroread) και άλλα προγράμματα ανάγνωσης PDF
+
+Η Adobe δεν παρέχει ενημερώσεις (ασφαλείας) για το Adobe Reader (acroread).
+Έτσι το πακέτο acroread εγκαταλήφθηκε από την διανομή για να προστατευτούν
+οι χρήστες openSUSE.
+
+openSUSE includes various PDF viewing tools like Okular, Evince, and
+poppler-tools. These tools are actively maintained and get security fixes
+from openSUSE and their upstream authors.
+
+For more information, see http://en.opensuse.org/Adobe_Reader.
+
+4. Αναβάθμιση Συστήματος
+
+4.1. Αναβάθμιση με Zypper (dup) απαιτεί εκκαθάριση του /etc/fstab
+
+When upgrading with zypper dup (YaST upgrade handles it automatically)
+users should remove the following /etc/fstab entries if present:
+
+tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc
+
+This is especially important for Gnome users, otherwise the Gnome terminal
+will fail with "grantpt failed: Operation not permitted". These mount
+points are managed by systemd and should no longer be present in /etc/
+fstab.
+
+4.2. Η μεταβλητή SYSLOG_DAEMON αφαιρέθηκε
+
+Η μεταβλητή SYSLOG_DAEMON έχει αφαιρεθεί. Παλαιότερα, χρησιμοποιούνταν για
+επιλογή της υπηρεσίας syslog. Από την openSUSE 12.3, μόνο μια υλοποίηση
+syslog μπορεί να εγκατασταθεί κάθε φορά στο σύστημα και επιλέγεται αυτόματα
+για χρήση.
+
+Για λεπτομέρειες, δείτε στην σελίδα syslog(8).
+
+4.3. Duplicated Network Interfaces
+
+The current version of systemd uses a new convention for assigning
+predictable names to network interfaces. YaST is changed accordingly.
+
+Some reports indicate a bug in YaST when conversion from one naming scheme
+to another takes place. If the same network interface has two different
+names, you have been hit by this bug. In this case remove the different
+network interfaces in /etc/sysconfig/network and use YaST to configure the
+network anew.
+
+For more information about predictable network interface names, see http://
+www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/
+.
+
+5. Τεχνικά
+
+5.1. Αρχικοποίηση Γραφικών με το KMS (Kernel Mode Setting)
+
+Με το openSUSE 11.3 περάσαμε στο KMS (Kernel Mode Setting) για τα γραφικά
+της Intel, ATI και NVIDIA, τα οποία είναι τώρα προεπιλεγμένα. Εάν
+συναντήσετε προβλήματα με την υποστήριξη του οδηγού KMS (intel, radeon,
+nouveau), απενεργοποιείστε το KMS προσθέτοντας το nomodeset στην γραμμή
+εντολών εκκίνησης του πυρήνα. Για να το ρυθμίσετε μόνιμα με την χρήση του
+Grub 2, του προεπιλεγμένου διαχειριστή εκκίνησης, προσθέστε το στις
+προεπιλεγμένες επιλογές φόρτωσης πυρήνα στο GRUB_CMDLINE_LINUX_DEFAULT, στο
+αρχείο /etc/default/grub ως διαχειριστής και εκτελέστε την εντολή
+τερματικού
+
+sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+ώστε να εφαρμοστούν οι αλλαγές. Διαφορετικά, για το Grub, προσθέστε το, ως
+διαχειριστές, στη γραμμή εντολών του πυρήνα στο /boot/grub/menu.lst. Αυτή η
+επιλογή σιγουρεύει ότι το σωστό άρθρωμα πυρήνα (intel, radeon, nouveau)
+φορτώνεται με το modeset=0 στο initrd, δηλαδή το KMS είναι
+απενεργοποιημένο.
+
+Σε σπάνιες περιπτώσεις που όταν φορτώνεται το άρθρωμα DRM από το initrd
+είναι ένα γενικό πρόβλημα και δεν σχετίζεται με το KMS, είναι ακόμα δυνατό
+να απενεργοποιηθεί εντελώς η φόρτωση του αρθρώματος DRM στο initrd. Γι'
+αυτό ρυθμίστε τη NO_KMS_IN_INITRD sysconfig μεταβλητή σε yes μέσω του YaST,
+το οποίο μετά επαναδημιουργεί το initrd. Επανεκκινήστε το μηχάνημά σας.
+
+Στις Intel χωρίς KMS ο Xserver χρησιμοποιεί τον οδηγό fbdev (ο οδηγός intel
+υποστηρίζει μόνο KMS), εναλλακτικά, για παλιές κάρτες γραφικών από την
+Intel είναι διαθέσιμος ο οδηγός "intellegacy" (πακέτο
+xorg-x11-driver-video-intel-legacy), ο οποίος ακόμα υποστηρίζει UMS (User
+Mode Setting). Για να το χρησημοποιήσετε, επεξεργαστείτε το /etc/X11/
+xorg.conf.d/50-device.conf και αλλάξτε την καταχώριση του οδηγού σε
+intellegacy.
+
+Στις πρόσφατες κάρτες γραφικών ATI επιστρέφει στον οδηγό radeonhd. Στις
+NVIDIA χωρίς το KMS ο οδηγός nv χρησημοποιείται (ο οδηγός nouveau
+υποστηρίζει μόνο KMS). Σημειώστε ότι οι νεότερες κάρτες γραφικών ATI και
+NVIDIA επιστρέφουν στον οδηγό fbdev, εάν ορίσετε την παράμετρο nomodeset
+στον πυρήνα κατά την εκκίνηση.
+
+5.2. Garbage on the Screen During Installation with the Nouveau Driver
+
+Σε μερικά συστήματα με κάρτες NVIDIA, ο εγκαταστάτης πιθανό να μην
+εμφανίζει σωστά το επάνω μέρος της οθόνης λόγω προβλημάτων με τον οδηγό
+nouveau. Εάν σας επηρεάζει το πρόβλημα, μπορείτε να απενεργοποιήσετε το
+άρθρωμα πυρήνα nouveau ώστε να εκτελέσετε τον εγκαταστάτη και μετά να το
+ενεργοποιήσετε ξανά μόλις το σύστημα εγκατασταθεί ή αναβαθμιστεί.
+
+To disable the kernel module, once you boot from the installation media,
+select the 'Installation' entry in grub and press 'e' to edit the
+parameters. Then go to the line starting with 'linux' (or 'linuxefi') and
+add brokenmodules=nouveau at the end. Now press F10 to continue booting
+with the new parameter. After the system is installed, you can re-enable
+the nouveau module by editing /etc/modprobe.d/50-blacklist.conf and
+removing the entry that blacklists nouveau.
+
+5.3. Samba Έκδοση 4.1
+
+Samba version 4.1 shipped with openSUSE 13.1 does not include support to
+operate as an Active Directory style domain controller. This functionality
+is currently disabled, as it lacks integration with system-wide MIT
+Kerberos.
+
+5.4. Ρύθμιση Postfix
+
+Στην openSUSE 12.3, το SuSEconfig.postfix μετονομάστηκε ως /usr/sbin/
+config.postfix. Εάν θέσετε μεταβλητές του sysconfig στο /etc/sysconfig/
+postfix ή στο /etc/sysconfig/mail, πρέπει να εκτελέσετε χειροκίνητα την /
+usr/sbin/config.postfix ως διαχειριστές.
+
+5.5. xinetd: Καταγραφή στο αρχείο καταγραφών συστήματος
+
+Η νέα προεπιλογή για την εντολή xinetd αλλάζει το προεπιλεγμένο αρχείο
+καταγραφής από /var/log/xinetd.log στο αρχείο καταγραφής συστήματος. Αυτό
+σημαίνει ότι όλα τα μηνύματα από την xinetd θα εμφανίζονται σε ένα αρχείο
+καταγραφής συστήματος ως μονάδα υπηρεσίας και ως πληροφορία επιπέδου
+καταγραφής.
+
+Εάν θέλετε να επιστρέψετε στον παλιό τρόπο, βρείτε ένα κατάλληλο απόσπασμα
+στο /etc/xinetd.conf. Το πρότυπο για το logrotate script για το xinetd.log
+βρίσκεται στο /usr/share/doc/packages/xinetd/logrotate.
+
+5.6. Apache Έκδοση 2.4
+
+Apache 2.4 features various changes in the configuration files. For more
+information about upgrading from a previous version, see http://
+httpd.apache.org/docs/2.4/upgrading.html.
+
+5.7. tomcat: Καταγραφή στο αρχείο καταγραφών συστήματος
+
+Τα scripts εκκίνησης tomcat δεν γράφουν πια το αποτέλεσμα στο /var/log/
+tomcat/catalina.out. Όλα τα μηνύματα πλέον ανακατευθύνονται στο αρχείο
+καταγραφής συστήματος μέσω του tomcat.service (tomcat-jsvc.service) και το
+επίπεδο πληροφορίας καταγραφής.
+
+5.8. Darktable: Απαιτείται Ανανέωση Αρχείων Λανθάνουσας Μνήμης
+
+Εάν αναβαθμίζετε από προηγούμενη έκδοση σε openSUSE 13.1, τα παλιά αρχεία
+λανθάνουσας μνήμης μπορεί πλέον να μην λειτουργούν. Σε αυτή την περίπτωση
+είναι απαραίτητη η αφαίρεση του ~/.cache/darktable/mipmaps.
+
+5.9. Locate: Replacing findutils-locate by mlocate
+
+The mlocate tool is the replacement for findutils-locate. In the default
+configuration mlocate behave the same as findutils-locate. Because of an
+improved permission handling, it could take up to 24 hours, until the
+database file will become available to regular users.
+
+In case you encounter a "Permission denied" message shortly after
+installing mlocate, run
+
+/etc/cron.daily/mlocate.cron
+
+as root once.
+
+5.10. KDE και Bluetooth
+
+The Bluetooth stack is provided by Bluez 5 (a major, backwards-incompatbile
+version), a necessary upgrade for GNOME desktop and some other components
+of the base system. Unfortunately, the KDE workspace only supports Bluez
+version 4 in its currently-released versions.
+
+Therefore, the openSUSE KDE community team offers an unofficial Bluedevil
+package providing at least basic functionality such as device pairing or
+support for bluetooth mice; Some other features are known not to work jet,
+like file transfer.
+
+For the moment, bugs should not be filed against Bluetooth support in KDE
+as the Bluez 5 port of Bluedevil is still ongoing.
+
+5.11. Ρυθμίσεις AppArmor και Δικαιωμάτων
+
+AppArmor is enabled by default. This means more security, but might prevent
+services from working, if you run them in unexpected ways. If you encounter
+strange permission problems, try to switch the AppArmor profile for the
+affected service to complain mode with:
+
+aa-complain /usr/bin/$your_service
+
+Complain mode means: allow everything, and log things that the profile
+would not allow.
+
+Even if it helps report it as a bug! We want to fix AppArmor profiles to
+cover also corner cases.
+
+5.12. Skype
+
+PulseAudio 4.0 exposes a bug in the current version of Skype for Linux
+(v4.2). Until Skype is fixed and updated, run skype from the command line:
+
+PULSE_LATENCY_MSEC=60 skype
+
+Για περισσότερες πληροφορίες σχετικά με το σφάλμα, δείτε http://
+arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/.
+
+5.13. AutoYaST
+
+If the autoyast profile contains entries in an <add-on> section there is a
+bug triggered that prevents information in the profile from being
+transferred from the first stage into the second stage. Therefore, in this
+case all second stage configuration steps are skipped, which normally leads
+to more or less completely unusable installations.
+
+As a temporary workaround, avoid using <add-on> sections in profiles with
+AutoYaST in openSUSE 13.1.
+

@@ -1,0 +1,401 @@
+openSUSE 13.1 Julkaisutiedot
+
+Version: 13.1.10 (2014-01-08)
+
+Tekijänoikeudet © <br>Janne Ahlskog,<br>Erkka Hakkarainen,<br>Tom Himanen,
+<br>Jani-Matti Hätinen,<br>Jouni Hätinen,<br>Asko Isonokari,<br>Joonas
+Niilola <juippis@roskakori.org>,<br>Mikko Piippo
+<mikko.piippo@opensuse.fi>,<br>Ilkka Pirskanen <ilkka@opensuse.fi>,<br>
+Ulla Pylkkänen, <upylkkanen@novell.com>,<br>Jami Saarikoski
+<jami@opensuse.fi>,<br>Janne Tanskanen,<br>Jarno Tukiainen,<br>Ilkka
+Tuohela,<br>Juho Valkila,<br>Jari Könönen,<br>Katariina Kemppainen
+<katariina@opensuse.fi><br>Harri Miettinen<harri.miettinen@opensuse.fi>
+Jyri Palokangas (jyri.palokangas@opensuse.org)
+
+Copyright © 2013 SUSE LLC
+
+Tätä dokumenttia saa kopioida, levittää ja/tai muokata GNU Free
+Documentation License -lisenssin ehtojen mukaisesti, kuten mainittu
+versiossa 1.2 tai missä tahansa myöhemmässä versiossa, jonka Free Software
+Foundation on julkaissut. Dokumentissa ei saa olla muuttumattomia osioita,
+eikä se saa olla etu- tai takakannen teksti. Kopio käyttöoikeussopimuksesta
+löytyy tiedostosta fdl.txt.
+
+---------------------------------------------------------------------------
+
+1. Sekalaiset
+2. Asennus
+
+    2.1. Yksityiskohtaisempaa tietoa asennuksesta
+
+3. Yleistä
+
+    3.1. openSUSE-dokumentaatio
+    3.2. Poistetut YaST moduulit
+    3.3. UEFI—Unified Extensible Firmware Interface
+    3.4. UEFI, GPT, and MS-DOS Partitions
+    3.5. Booting When in Secure Boot Mode
+    3.6. Adobe Reader (acroread) ja muut PDF-ohjelmat
+
+4. Järjestelmäpäivitys
+
+    4.1. Päivittäminen Zypperillä (dup) vaatii /etc/fstab-tiedoston
+        siivoamisen
+    4.2. SYSLOG_DAEMON asetus poistettu
+    4.3. Duplicated Network Interfaces
+
+5. Tekninen
+
+    5.1. Näytönohjaimet ja KMS (Kernel Mode Setting)
+    5.2. Garbage on the Screen During Installation with the Nouveau Driver
+    5.3. Samba versio 4.1
+    5.4. Määritä Postfix
+    5.5. xinetd: Loki kirjoitetaan järjestelmän lokiin
+    5.6. Apache versio 2.4
+    5.7. tomcat: Loki kirjoitetaan järjestelmän lokiin
+    5.8. Darktable: Virkistetään tarvittavat välimuistitiedostot
+    5.9. Locate: Replacing findutils-locate by mlocate
+    5.10. KDE ja Bluetooth
+    5.11. AppArmor and Permission Settings
+    5.12. Skype
+    5.13. AutoYaST
+
+Jos päivität vanhemmasta versiosta nykyiseen openSUSE-julkaisuun, katso
+edelliset julkaisutiedot: http://en.opensuse.org/openSUSE:Release_Notes
+
+Nämä julkaisutiedot sisältävät seuraavat kohdat:
+
+  o Kohta 1, "Sekalaiset": Nämä merkinnät sisältyvät automaattisesti
+    openFATE-sisällönhallintajärjestelmään, the Feature- and Requirements
+    Management System (http://features.opensuse.org).
+
+    Ei saavilla
+
+  o Kohta 2, "Asennus": Lue tästä, jos haluat aloittaa asennuksen aivan
+    alusta.
+
+  o Kohta 3, "Yleistä": Kaikille oleellista tietoa.
+
+  o Kohta 4, "Järjestelmäpäivitys": Päivitysongelmat vanhemmasta
+    openSUSE-versiosta nykyiseen versioon siirryttäessä.
+
+  o Kohta 5, "Tekninen": Tämä osio sisältää kokeneille käyttäjille
+    suunnattua tietoa teknisistä muutoksista ja parannuksista.
+
+1. Sekalaiset
+
+Ei saavilla
+
+2. Asennus
+
+2.1. Yksityiskohtaisempaa tietoa asennuksesta
+
+Yksityiskohtaisempaa tietoa asennuksesta saat katsomalla Kohta 3.1,
+"openSUSE-dokumentaatio".
+
+3. Yleistä
+
+3.1. openSUSE-dokumentaatio
+
+Aloitusoppaasta löydät askel askelelta etenevät asennusohjeet sekä
+johdatuksen KDE- ja GNOME-työpöytiin ja LibreOffice-toimisto-ohjelmistoon.
+Muita käsiteltäviä aiheita ovat hallinnan perusteet kuten käyttöönotto ja
+ohjelmistojen hallinta sekä johdatus komentoriviohjelmointiin (bash shell).
+
+Dokumentit löydät /usr/share/doc/manual/opensuse-manuals_$LANG asennettuasi
+opensuse-startup_$LANG paketin tai verkosta osoitteesta http://
+doc.opensuse.org.
+
+3.2. Poistetut YaST moduulit
+
+Seuraavat YaST-moduulit olivat vanhentuneita ja niitä käytetään nykyisin
+vähän:
+
+  o yast2-autofs
+
+  o yast2-dbus-client
+
+  o yast2-dirinstall
+
+  o yast2-fingerprint-reader
+
+  o yast2-irda
+
+  o yast2-mouse
+
+  o yast2-phone-services
+
+  o yast2-power-management
+
+  o yast2-profile-manager
+
+  o yast2-sshd
+
+  o yast2-tv
+
+Syy poistamiseen oli ylläpidon vähentäminen ja parempi keskittyminen
+enemmän käytettyihin moduuleihin.
+
+3.3. UEFI—Unified Extensible Firmware Interface
+
+Ennen openSUSE asennusta koneissa jotka käynnistyvät käyttäen UEFI (Unified
+Extensible Firmware Interface) kannattaa sinun varmistaa onko
+laitevalmistajalla tarjolla päivityksiä. Mikäli UEFI päivitys on saatavilla
+on suositeltavaa päivittää se ennen openSUSE asennusta. Esiasennettu
+Windows 8 on vahva merkki siitä, että kone käyttää UEFI käynnistyksessä.
+
+Taustaa: Joissain UEFI laiteohjelmistoissa on bugi joka aiheuttaa sen
+hajoamisen mikäli tietoa kirjoitetaan liikaa UEFI tallennusalueelle. Kukaan
+ei tosin tiedä kuinka paljon "liikaa" oikeasti on. openSUSE minimoi tämän
+riskin kirjoittamalla vain pakollisen tiedon joka tarvitaan
+käyttöjärjestelmän käynnistymiseen. Pakollinen tarkoittaa, että UEFI:lle
+kerrotaan mistä löytyy openSUSEn käynnistyslataaja. Ytimen toiminne jossa
+käytetään UEFI tallennusaluetta käynnistys- ja kaatumistietojen
+tallentamiseen (pstore) on oletuksena pois käytöstä. On kuitenkin
+suositeltavaa asentaa kaikki laitetoimittajan laiteohjelmistopäivitykset.
+
+3.4. UEFI, GPT, and MS-DOS Partitions
+
+Together with the EFI/UEFI specification a new style of partitioning
+arrived: GPT (GUID Partition Table). This new schema uses globally unique
+identifiers (128-bit values displayed in 32 hexadecimal digits) to identify
+devices and partition types.
+
+Additionally, the UEFI specification also allows legacy MBR (MS-DOS)
+partitions. The Linux boot loaders (ELILO or GRUB2) try to generate
+automatically a GUID for those legacy partitions, and write them to the
+firmware. Such a GUID can change frequently, causing a rewrite in the
+firmware. A rewrite consist of two different operation: removing the old
+entry and creating a new entry that replaces the first one.
+
+Modern firmware has a garbage collector that collects deleted entries and
+frees the memory reserved for old entries. A problem arises when faulty
+firmware does not collect and free those entries; this may end up with a
+non-bootable system.
+
+The workaround is simple: convert the legacy MBR partition to the new GPT
+to avoid this problem completely.
+
+3.5. Booting When in Secure Boot Mode
+
+Tämä vaikuttaa ainoastaan koneisiin joissa on UEFI-tila jossa on secure
+boot-käytössä.
+
+The new version of the shim loader allows more machines to boot with Secure
+Boot enabled than with openSUSE 12.3. Nevertheless, in case of trouble,
+first update the BIOS of your machine to the latest version. If the BIOS
+update does not help, report the model of your machine it the wiki (http://
+en.opensuse.org/openSUSE:UEFI). Then we can track it for the next release.
+
+3.6. Adobe Reader (acroread) ja muut PDF-ohjelmat
+
+Adobe ei enää tarjoa (tietoturva) päivityksiä Adobe Readerille (acroread).
+acroread paketti poistettiin jakelusta openSUSE käyttäjien suojelemiseksi.
+
+openSUSE includes various PDF viewing tools like Okular, Evince, and
+poppler-tools. These tools are actively maintained and get security fixes
+from openSUSE and their upstream authors.
+
+For more information, see http://en.opensuse.org/Adobe_Reader.
+
+4. Järjestelmäpäivitys
+
+4.1. Päivittäminen Zypperillä (dup) vaatii /etc/fstab-tiedoston siivoamisen
+
+Kun päivitetään versiosta toiseen zypper dup komennolla, (YaST päivitys
+hoitaa tämän automaagisesti) käyttäjän pitää poistaa seuraavat /etc/fstab
+merkinnät jos niitä on:
+
+tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc
+
+Tämä on erityisen tärkeää Gnome käyttäjille, koska muuten Gnome pääte antaa
+virheilmoituksen "grantpt virhe: Toiminto ei sallittu". Näitä liitoksia
+jatkossa hallinnoi systemd ja niden ei tulisi olla enää /etc/fstab
+tiedostossa.
+
+4.2. SYSLOG_DAEMON asetus poistettu
+
+SYSLOG_DAEMON asetus on poistettu. Aikaisemmin sillä valittiin syslog
+demoni. Alkaen openSUSE 12.3 versiosta vain yksi syslog apuväline voi olla
+asennettuna kerrallaan ja se valitaan automaattisesti.
+
+Lisää tietoa löytyy syslog(8) man-sivuilta.
+
+4.3. Duplicated Network Interfaces
+
+The current version of systemd uses a new convention for assigning
+predictable names to network interfaces. YaST is changed accordingly.
+
+Some reports indicate a bug in YaST when conversion from one naming scheme
+to another takes place. If the same network interface has two different
+names, you have been hit by this bug. In this case remove the different
+network interfaces in /etc/sysconfig/network and use YaST to configure the
+network anew.
+
+For more information about predictable network interface names, see http://
+www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/
+.
+
+5. Tekninen
+
+5.1. Näytönohjaimet ja KMS (Kernel Mode Setting)
+
+openSUSE 11.3:ssa vaihdoimme Intel-, ATI- ja NVIDIA-näytönohjaimissa
+KMS-toimintoon (Kernel Mode Setting), joka on nyt oletus. Jos kohtaat
+ongelmia KMS-ajurituen kanssa (intel, radeon, nouveau), poista KMS käytöstä
+lisäämällä nomodeset ytimen käynnistysriville. Asettaaksesi tämän pysyväksi
+käyttäessäsi Grub 2, lisää se pääkäyttäjänä (root) ytimen käynnistysriville
+kohtaan GRUB_CMDLINE_LINUX_DEFAULT tiedostossa /etc/default/grub.
+
+sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+ottaaksesi muutokset käyttöön. Mikäli käytössä on perinteinen
+grub-käynnistyslataaja asettaaksesi tämän pysyväksi, lisää se ytimen
+käynnistysriville tiedostoon /boot/grub/menu.lst. Valinta varmistaa oikean
+ydinmoduulin (intel, radeon, nouveau) lataamisen modeset=0 -tilassa
+initrd-tiedostosta, eli KMS on poistettu käytöstä.
+
+Joissain harvinaisissa tapauksissa kun DRM-moduulin lataus
+initrd-tiedostosta epäonnistuu KMS:stä riippumattomista syistä,
+DRM-moduulin lataus on mahdollista poistaa initrd-tiedostosta kokonaan
+YaSTilla: vaihda sysconfig-muuttujan NO_KMS_IN_INITRD arvoksi yes, jolloin
+initrd päivitetään. Käynnistä järjestelmä uudelleen.
+
+Ilman KMS-toimintoa Intel käyttää Xserverin fbdev-ajuria (intel-ajuri tukee
+vain KMS:ää). Vaihtoehtona voi käyttää "intellegacy"-ajuria
+(xorg-x11-driver-video-intel-legacy-paketti), joka yhä tukee UMS:ää eli
+käyttäjän asettamaa tilaa. Käyttääksesi sitä muokkaa tiedostoa /etc/X11/
+xorg.conf.d/50-device.conf ja muuttaa ajuriksi intellegacy.
+
+ATI:n tapauksessa uudemmat grafiikkasuorittimet tiputetaan
+radeonhd-ajuriin. NVIDIA ilman KMS:ää käyttää nv-ajuria (nouveau-ajuri
+tukee vain KMS:ää). Huomioi, uudemmat ATI ja NVIDIA GPU:t palaavat
+fbdev:iin, jos määrittelet nomodeset ytimen käynnistysparametrit.
+
+5.2. Garbage on the Screen During Installation with the Nouveau Driver
+
+On some systems with NVIDIA cards, the installer may show garbage on the
+top part of the screen due to problems with the default nouveau driver. If
+you are affected by this problem, you can disable the nouveau kernel module
+to run the installer and then enable it again once the system is installed
+or upgraded.
+
+To disable the kernel module, once you boot from the installation media,
+select the 'Installation' entry in grub and press 'e' to edit the
+parameters. Then go to the line starting with 'linux' (or 'linuxefi') and
+add brokenmodules=nouveau at the end. Now press F10 to continue booting
+with the new parameter. After the system is installed, you can re-enable
+the nouveau module by editing /etc/modprobe.d/50-blacklist.conf and
+removing the entry that blacklists nouveau.
+
+5.3. Samba versio 4.1
+
+openSUSE 13.1 sisältää Samba version 4.1, joka ei sisällä tukea toimia
+Active Directory tyyppisenä toimialueen ohjaimena. Tämä toiminne on
+tällähetkällä pois käytöstä, koska siitä puuttuu järjestelmän laajuinen MIT
+Kerberos tuki.
+
+5.4. Määritä Postfix
+
+openSUSE 12.3:ssa SuSEconfig.postfix uudelleen nimettiin /usr/sbin/
+config.postfix. Mikäli muokkaat sysconfig asetuksia /etc/sysconfig/postfix
+tai /etc/sysconfig/mail tiedostoissa tulee sinun manuaalisesti
+pääkäyttäjänä (root) suorittaa /usr/sbin/config.postfix.
+
+5.5. xinetd: Loki kirjoitetaan järjestelmän lokiin
+
+xinetd -komennon lokin uusi sijainti on muuttunut /var/log/xinetd.log
+tiedostosta järjestelmän lokiin. Tämä tarkoittaa, että kaikki xinetd
+-komennon viestit tallentuvat järjestelmän lokiin niin demonin kun eri
+lokitasojen tiedot.
+
+Mikäli haluat palata vanhan lokitiedoston käyttöön muokkaa tiedostoa /etc/
+xinetd.conf. Lokitiedoston xinetd.log kierrätyksen komentojonon mallipohja
+löytyy tiedostosta /usr/share/doc/packages/xinetd/logrotate.
+
+5.6. Apache versio 2.4
+
+Apache 2.4 sisältää useita muutoksia määritystiedostoissa. Katso lisätietoa
+aiemmasta versiosta päivittämisestä http://httpd.apache.org/docs/2.4/
+upgrading.html.
+
+5.7. tomcat: Loki kirjoitetaan järjestelmän lokiin
+
+Tomcatin käynnistys komento ei kirjoita enää tiedostoon /var/log/tomcat/
+catalina.out. Kaikki viestit ohjataan järjestelmän lokiin käyttäen
+tomcat.service palvelua (tomcat-jsvc.service) ja eri lokitasojen tiedot.
+
+5.8. Darktable: Virkistetään tarvittavat välimuistitiedostot
+
+Mikäli päivitetään aikaisemmasta versiosta openSUSE 13.1 versioon, eivät
+vanhat välimuistitiedostot välttämättä toimi. Tässä tapauksessa tulee
+poistaa ~/.cache/darktable/mipmaps.
+
+5.9. Locate: Replacing findutils-locate by mlocate
+
+The mlocate tool is the replacement for findutils-locate. In the default
+configuration mlocate behave the same as findutils-locate. Because of an
+improved permission handling, it could take up to 24 hours, until the
+database file will become available to regular users.
+
+In case you encounter a "Permission denied" message shortly after
+installing mlocate, run
+
+/etc/cron.daily/mlocate.cron
+
+as root once.
+
+5.10. KDE ja Bluetooth
+
+The Bluetooth stack is provided by Bluez 5 (a major, backwards-incompatbile
+version), a necessary upgrade for GNOME desktop and some other components
+of the base system. Unfortunately, the KDE workspace only supports Bluez
+version 4 in its currently-released versions.
+
+Therefore, the openSUSE KDE community team offers an unofficial Bluedevil
+package providing at least basic functionality such as device pairing or
+support for bluetooth mice; Some other features are known not to work jet,
+like file transfer.
+
+For the moment, bugs should not be filed against Bluetooth support in KDE
+as the Bluez 5 port of Bluedevil is still ongoing.
+
+5.11. AppArmor and Permission Settings
+
+AppArmor is enabled by default. This means more security, but might prevent
+services from working, if you run them in unexpected ways. If you encounter
+strange permission problems, try to switch the AppArmor profile for the
+affected service to complain mode with:
+
+aa-complain /usr/bin/$your_service
+
+Complain mode means: allow everything, and log things that the profile
+would not allow.
+
+Even if it helps report it as a bug! We want to fix AppArmor profiles to
+cover also corner cases.
+
+5.12. Skype
+
+PulseAudio 4.0 exposes a bug in the current version of Skype for Linux
+(v4.2). Until Skype is fixed and updated, run skype from the command line:
+
+PULSE_LATENCY_MSEC=60 skype
+
+For more information about this bug, see http://arunraghavan.net/2013/08/
+pulseaudio-4-0-and-skype/.
+
+5.13. AutoYaST
+
+If the autoyast profile contains entries in an <add-on> section there is a
+bug triggered that prevents information in the profile from being
+transferred from the first stage into the second stage. Therefore, in this
+case all second stage configuration steps are skipped, which normally leads
+to more or less completely unusable installations.
+
+As a temporary workaround, avoid using <add-on> sections in profiles with
+AutoYaST in openSUSE 13.1.
+

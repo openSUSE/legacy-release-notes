@@ -1,0 +1,162 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>openSUSE 13.1 Σημειώσεις Έκδοσης</title><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="el" class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idm140384081099360"></a><span class="phrase">openSUSE 13.1</span> Σημειώσεις Έκδοσης</h2></div><div><p class="releaseinfo">Version: 13.1.10 (2014-01-08)</p></div><div><p class="copyright">Πνευματικά Δικαιώματα © 2007 Κώστας Μπουκουβάλας quantis@hellug.gr</p></div><div><p class="copyright">Πνευματικά Δικαιώματα © 2012, 2013 Ευστάθιος Ιωσηφίδης iosifidis@opensuse.org 2011</p></div><div><div class="legalnotice"><a name="idm140384081094096"></a><p>Copyright © 2013 SUSE LLC</p><p>Χορηγήθηκε άδεια για αντιγραφή, διανομή και / ή τροποποίηση του εγγράφου υπό τους όρους του GNU Free Documentation License, Έκδοση 1.2 ή νεότερη έκδοση δημοσιευμένη από το Free Software Foundation χωρίς Αμετάβλητα Τμήματα, χωρίς κείμενα στα εξώφυλλα και οπισθόφυλλα. Ένα αντίγραφο της άδειας συμπεριλαμβάνεται στο αρχείο <code class="filename">fdl.txt</code>.</p></div></div></div><hr></div><div class="toc"><dl class="toc"><dt><span class="sect1"><a href="#misc">1. Διάφορα</a></span></dt><dt><span class="sect1"><a href="#installation">2. Εγκατάσταση</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm140384081256544">2.1. Για Λεπτομερείς Πληροφορίες Εγκατάστασης</a></span></dt></dl></dd><dt><span class="sect1"><a href="#general">3. Γενικά</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.123.documentation">3.1. Τεκμηρίωση openSUSE</a></span></dt><dt><span class="sect2"><a href="#sec.131.yastmodules">3.2. Dropped YaST Modules</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi">3.3. UEFI—Unified Extensible Firmware Interface</a></span></dt><dt><span class="sect2"><a href="#sec.123.uefi-part">3.4. Κατατμήσεις UEFI, GPT, και MS-DOS</a></span></dt><dt><span class="sect2"><a href="#sec.131.secboot">3.5. Booting When in Secure Boot Mode</a></span></dt><dt><span class="sect2"><a href="#sec.131.acroread">3.6. Adobe Reader (acroread) και άλλα προγράμματα ανάγνωσης PDF</a></span></dt></dl></dd><dt><span class="sect1"><a href="#upgrade">4. Αναβάθμιση Συστήματος</a></span></dt><dd><dl><dt><span class="sect2"><a href="#idm140384076361616">4.1. Αναβάθμιση με Zypper (dup) απαιτεί εκκαθάριση του /etc/fstab</a></span></dt><dt><span class="sect2"><a href="#sec.123.syslog">4.2. Η μεταβλητή SYSLOG_DAEMON αφαιρέθηκε</a></span></dt><dt><span class="sect2"><a href="#sec.131.systemd-networkif">4.3. Duplicated Network Interfaces</a></span></dt></dl></dd><dt><span class="sect1"><a href="#technical">5. Τεχνικά</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sec.114.kms">5.1. Αρχικοποίηση Γραφικών με το KMS (Kernel Mode Setting)</a></span></dt><dt><span class="sect2"><a href="#sec.131.nouveau-inst">5.2. Garbage on the Screen During Installation with the Nouveau
+   Driver</a></span></dt><dt><span class="sect2"><a href="#idm140384076291728">5.3. Samba Έκδοση 4.1</a></span></dt><dt><span class="sect2"><a href="#idm140384076289888">5.4. Ρύθμιση Postfix</a></span></dt><dt><span class="sect2"><a href="#idm140384076278576">5.5. xinetd: Καταγραφή στο αρχείο καταγραφών συστήματος</a></span></dt><dt><span class="sect2"><a href="#idm140384076269648">5.6. Apache Έκδοση 2.4</a></span></dt><dt><span class="sect2"><a href="#idm140384076267360">5.7. tomcat: Καταγραφή στο αρχείο καταγραφών συστήματος</a></span></dt><dt><span class="sect2"><a href="#sec.131.darktable">5.8. Darktable: Απαιτείται Ανανέωση Αρχείων Λανθάνουσας Μνήμης</a></span></dt><dt><span class="sect2"><a href="#sec.131.locate">5.9. Locate: Replacing findutils-locate by mlocate</a></span></dt><dt><span class="sect2"><a href="#sec.131.kdeandbt">5.10. KDE και Bluetooth</a></span></dt><dt><span class="sect2"><a href="#sec.131.apparmor">5.11. Ρυθμίσεις AppArmor και Δικαιωμάτων</a></span></dt><dt><span class="sect2"><a href="#sec.131.skype">5.12. Skype</a></span></dt><dt><span class="sect2"><a href="#sec.131.autoyast">5.13. AutoYaST</a></span></dt></dl></dd></dl></div><p>Εάν αναβαθμίζετε από μία παλιότερη έκδοση σε αυτή την έκδοση openSUSE, δείτε τις προηγούμενες σημειώσεις έκδοσης που βρίσκονται εδώ: <a class="ulink" href="http://en.opensuse.org/openSUSE:Release_Notes" target="_top">http://en.opensuse.org/openSUSE:Release_Notes</a></p><p>Αυτές οι σημειώσεις έκδοσης καλύπτουν τους ακόλουθους τομείς:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="xref" href="#misc" title="1. Διάφορα">Τμήμα 1, «Διάφορα»</a>: Αυτές οι καταχωρήσεις συμπεριλαμβάνονται αυτόματα από το openFATE, το Σύστημα Διαχείρισης Χαρακτηριστικών και Απαιτήσεων (<a class="ulink" href="http://features.opensuse.org" target="_top">http://features.opensuse.org</a>).</p><p>Μη διαθέσιμο</p></li><li class="listitem"><p><a class="xref" href="#installation" title="2. Εγκατάσταση">Τμήμα 2, «Εγκατάσταση»</a>: Διαβάστε αυτό εάν θέλετε να εγκαταστήσετε το σύστημα από την αρχή.</p></li><li class="listitem"><p><a class="xref" href="#general" title="3. Γενικά">Τμήμα 3, «Γενικά»</a>: Πληροφορίες που θα πρέπει να διαβάσει ο καθένας.</p></li><li class="listitem"><p><a class="xref" href="#upgrade" title="4. Αναβάθμιση Συστήματος">Τμήμα 4, «Αναβάθμιση Συστήματος»</a>: Προβλήματα σχετικά με τη διαδικασία εάν εκτελέσετε μία αναβάθμιση συστήματος από προηγούμενη κυκλοφορία σε αυτή την έκδοση openSUSE.</p></li><li class="listitem"><p><a class="xref" href="#technical" title="5. Τεχνικά">Τμήμα 5, «Τεχνικά»</a>: Αυτή η ενότητα περιέχει έναν αριθμό από τεχνικές αλλαγές και βελτιώσεις για τον έμπειρο χρήστη.</p></li></ul></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="misc"></a>1. Διάφορα</h2></div></div></div><p>Μη διαθέσιμο</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation"></a>2. Εγκατάσταση</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384081256544"></a>2.1. Για Λεπτομερείς Πληροφορίες Εγκατάστασης</h3></div></div></div><p>Για λεπτομερείς πληροφορίες εγκατάστασης, ανατρέξτε στην <a class="xref" href="#sec.123.documentation" title="3.1. Τεκμηρίωση openSUSE">Τμήμα 3.1, «Τεκμηρίωση openSUSE»</a>.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="general"></a>3. Γενικά</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.documentation"></a>3.1. Τεκμηρίωση openSUSE</h3></div></div></div><p>Στην <span class="emphasis"><em>Εκκίνηση</em></span>, βρείτε τις οδηγίες εγκατάστασης βήμα-βήμα, όπως επίσης γνωριμία με τα γραφικά περιβάλλοντα KDE και Gnome και με τη σουίτα γραφείου LibreOffice. Συμπεριλαμβάνονται επίσης βασικά θέματα διαχείρισης, όπως ανάπτυξη και διαχείριση εφαρμογών και μια εισαγωγή στο κέλυφος bash.</p><p>
+    Find the documentation in
+    <code class="filename">/usr/share/doc/manual/opensuse-manuals_$LANG</code> after
+    installing the package <code class="systemitem">opensuse-startup_$LANG</code>,
+    or online on <a class="ulink" href="http://doc.opensuse.org" target="_top">http://doc.opensuse.org</a>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.yastmodules"></a>3.2. Dropped YaST Modules</h3></div></div></div><p>Τα παρακάτω αρθρώματα YaST είναι απαρχαιωμένα και τελευταία χρησιμοποιούνται ελάχιστα:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+      <code class="systemitem">yast2-autofs</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-dbus-client</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-dirinstall</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-fingerprint-reader</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-irda</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-mouse</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-phone-services</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-power-management</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-profile-manager</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-sshd</code>
+     </p></li><li class="listitem"><p>
+      <code class="systemitem">yast2-tv</code>
+     </p></li></ul></div><p>
+    The main reason for dropping was to decrease the maintenance effort
+    and better focus on other more used modules.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi"></a>3.3. UEFI—Unified Extensible Firmware Interface</h3></div></div></div><p>Πριν την εγκατάσταση openSUSE σε σύστημα που εκκινεί με την χρήση UEFI (Unified Extensible Firmware Interface) συνίσταται επειγόντως να ελέγξετε για προτεινόμενες ενημερώσεις firmware από τον κατασκευαστή υλικού και, εάν είναι διαθέσιμες, να τις εγκαταστήσετε. Ένα προ-εγκατεστημένο σύστημα με Windows 8 είναι μια ισχυρή ένδειξη ότι το σύστημά σας εκκινεί με χρήση UEFI.</p><p><span class="emphasis"><em>Ιστορικό:</em></span> Μερικά UEFI firmware έχουν σφάλματα που μπορούν να προκαλέσουν κατάρρευση εάν εγγραφούν πολλά δεδομένα στο αποθηκευτικό μέσο UEFI. Εν τούτοις, κανείς δεν γνωρίζει στην πραγματικότητα πόσο είναι το "πολλά". Το openSUSE ελαχιστοποιεί τον κίνδυνο με την εγγραφή των ελάχιστων απαιτουμένων για την εκκίνηση του λειτουργικού. Το ελάχιστο σημαίνει ενημέρωση του UEFI firmware σχετικά με την τοποθεσία του διαχειριστή εκκίνησης του openSUSE. Upstream λειτουργίες του Πυρήνα Linux που χρησιμοποιούν το αποθηκευτικό μέσο UEFI για αποθήκευση πληροφοριών εκκίνησης και κατάρρευσης (<code class="literal">pstore</code>), έχουν απενεργοποιηθεί από προεπιλογή. Παρ' όλα αυτά συνίσταται να εγκαταστήσετε τις ενημερώσεις firmware που συνιστά ο προμηθευτής υλικού.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.uefi-part"></a>3.4. Κατατμήσεις UEFI, GPT, και MS-DOS</h3></div></div></div><p>
+Together with the EFI/UEFI specification a new style of partitioning
+arrived: GPT (GUID Partition Table). This new schema uses globally
+unique identifiers (128-bit values displayed in 32 hexadecimal digits)
+to identify devices and partition types.
+   </p><p>
+Additionally, the UEFI specification also allows legacy MBR (MS-DOS)
+partitions. The Linux boot loaders (ELILO or GRUB2) try to generate
+automatically a GUID for those legacy partitions, and write them to the
+firmware. Such a GUID can change frequently, causing a rewrite in the
+firmware. A rewrite consist of two different operation: removing the old
+entry and creating a new entry that replaces the first one.
+   </p><p>
+Modern firmware has a garbage collector that collects deleted entries
+and frees the memory reserved for old entries. A problem arises when
+faulty firmware does not collect and free those entries; this may end up
+with a non-bootable system.
+   </p><p>
+The workaround is simple: convert the legacy MBR partition
+to the new GPT to avoid this problem completely.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.secboot"></a>3.5. Booting When in Secure Boot Mode</h3></div></div></div><p>Αυτό επηρεάζει μόνο μηχανήματα σε κατάσταση UEFI με ενεργοποιημένη ασφαλή εκκίνηση.</p><p>
+    The new version of the shim loader allows more machines to boot with
+    Secure Boot enabled than with openSUSE 12.3.  Nevertheless, in case
+    of trouble, first update the BIOS of your machine to the latest
+    version. If the BIOS update does not help, report the model of your
+    machine it the wiki (http://en.opensuse.org/openSUSE:UEFI). Then we
+    can track it for the next release.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.acroread"></a>3.6. Adobe Reader (acroread) και άλλα προγράμματα ανάγνωσης PDF</h3></div></div></div><p>Η Adobe δεν παρέχει ενημερώσεις (ασφαλείας) για το Adobe Reader (<code class="systemitem">acroread</code>). Έτσι το πακέτο <code class="systemitem">acroread</code> εγκαταλήφθηκε από την διανομή για να προστατευτούν οι χρήστες openSUSE.</p><p>
+    openSUSE includes various PDF viewing tools like Okular, Evince, and
+    poppler-tools. These tools are actively maintained and get security
+    fixes from openSUSE and their upstream authors.
+   </p><p>
+    For more information, see <a class="ulink" href="http://en.opensuse.org/Adobe_Reader" target="_top">http://en.opensuse.org/Adobe_Reader</a>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="upgrade"></a>4. Αναβάθμιση Συστήματος</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384076361616"></a>4.1. Αναβάθμιση με Zypper (dup) απαιτεί εκκαθάριση του /etc/fstab</h3></div></div></div><p>
+    When upgrading with <span class="command"><strong>zypper dup</strong></span> (YaST upgrade
+    handles it automatically) users should remove the following 
+    <code class="filename">/etc/fstab</code> entries if present:
+   </p><pre class="screen">tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc</pre><p>
+    This is especially important for Gnome users, otherwise the Gnome
+    terminal will fail with "<code class="literal">grantpt failed: Operation not
+    permitted</code>".  These mount points are managed by
+    <span class="command"><strong>systemd</strong></span> and should no longer be present in
+    <code class="filename">/etc/fstab</code>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.123.syslog"></a>4.2. Η μεταβλητή SYSLOG_DAEMON αφαιρέθηκε</h3></div></div></div><p>Η μεταβλητή SYSLOG_DAEMON έχει αφαιρεθεί. Παλαιότερα, χρησιμοποιούνταν για επιλογή της υπηρεσίας syslog. Από την openSUSE 12.3, μόνο μια υλοποίηση syslog μπορεί να εγκατασταθεί κάθε φορά στο σύστημα και επιλέγεται αυτόματα για χρήση.</p><p>Για λεπτομέρειες, δείτε στην σελίδα syslog(8).</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.systemd-networkif"></a>4.3. Duplicated Network Interfaces</h3></div></div></div><p>
+    The current version of systemd uses a new convention for assigning
+    predictable names to network interfaces.  YaST is changed
+    accordingly.
+   </p><p>
+    Some reports indicate a bug in YaST when conversion from one naming
+    scheme to another takes place. If the same network interface has two
+    different names, you have been hit by this bug. In this case remove
+    the different network interfaces in
+    <code class="filename">/etc/sysconfig/network</code> and use YaST to
+    configure the network anew.
+   </p><p>
+    For more information about predictable network interface names, see
+    <a class="ulink" href="http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/" target="_top">http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/</a>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="technical"></a>5. Τεχνικά</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.114.kms"></a>5.1. Αρχικοποίηση Γραφικών με το KMS (Kernel Mode Setting)</h3></div></div></div><p>Με το openSUSE 11.3 περάσαμε στο KMS (Kernel Mode Setting) για τα γραφικά της Intel, ATI και NVIDIA, τα οποία είναι τώρα προεπιλεγμένα. Εάν συναντήσετε προβλήματα με την υποστήριξη του οδηγού KMS (intel, radeon, nouveau), απενεργοποιείστε το KMS προσθέτοντας το <code class="literal">nomodeset</code> στην γραμμή εντολών εκκίνησης του πυρήνα. Για να το ρυθμίσετε μόνιμα με την χρήση του Grub 2, του προεπιλεγμένου διαχειριστή εκκίνησης, προσθέστε το στις προεπιλεγμένες επιλογές φόρτωσης πυρήνα στο <code class="literal">GRUB_CMDLINE_LINUX_DEFAULT</code>, στο αρχείο <code class="filename">/etc/default/grub</code> ως διαχειριστής και εκτελέστε την εντολή τερματικού</p><pre class="screen">sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg</pre><p>ώστε να εφαρμοστούν οι αλλαγές. Διαφορετικά, για το Grub, προσθέστε το, ως διαχειριστές, στη γραμμή εντολών του πυρήνα στο <code class="filename">/boot/grub/menu.lst</code>. Αυτή η επιλογή σιγουρεύει ότι το σωστό άρθρωμα πυρήνα (intel, radeon, nouveau) φορτώνεται με το <code class="literal">modeset=0</code> στο <code class="filename">initrd</code>, δηλαδή το KMS είναι απενεργοποιημένο.</p><p>Σε σπάνιες περιπτώσεις που όταν φορτώνεται το άρθρωμα DRM από το <code class="filename">initrd</code> είναι ένα γενικό πρόβλημα και δεν σχετίζεται με το KMS, είναι ακόμα δυνατό να απενεργοποιηθεί εντελώς η φόρτωση του αρθρώματος DRM στο <code class="filename">initrd</code>. Γι' αυτό ρυθμίστε τη <code class="literal">NO_KMS_IN_INITRD</code> sysconfig μεταβλητή σε <code class="literal">yes</code> μέσω του YaST, το οποίο μετά επαναδημιουργεί το <code class="filename">initrd</code>. Επανεκκινήστε το μηχάνημά σας.</p><p>Στις Intel χωρίς KMS ο Xserver χρησιμοποιεί τον οδηγό <code class="literal">fbdev</code> (ο οδηγός <code class="literal">intel</code> υποστηρίζει μόνο KMS), εναλλακτικά, για παλιές κάρτες γραφικών από την Intel είναι διαθέσιμος ο οδηγός "intellegacy" (πακέτο <code class="systemitem">xorg-x11-driver-video-intel-legacy</code>), ο οποίος ακόμα υποστηρίζει UMS (User Mode Setting). Για να το χρησημοποιήσετε, επεξεργαστείτε το <code class="filename">/etc/X11/xorg.conf.d/50-device.conf</code> και αλλάξτε την καταχώριση του οδηγού σε <code class="literal">intellegacy</code>.</p><p>Στις πρόσφατες κάρτες γραφικών ATI επιστρέφει στον οδηγό <code class="literal">radeonhd</code>. Στις NVIDIA χωρίς το KMS ο οδηγός <code class="literal">nv</code> χρησημοποιείται (ο οδηγός <code class="literal">nouveau</code> υποστηρίζει μόνο KMS). Σημειώστε ότι οι νεότερες κάρτες γραφικών ATI και NVIDIA επιστρέφουν στον οδηγό <code class="literal">fbdev</code>, εάν ορίσετε την παράμετρο <code class="literal">nomodeset</code> στον πυρήνα κατά την εκκίνηση.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.nouveau-inst"></a>5.2. Garbage on the Screen During Installation with the Nouveau
+   Driver</h3></div></div></div><p>Σε μερικά συστήματα με κάρτες NVIDIA, ο εγκαταστάτης πιθανό να μην εμφανίζει σωστά το επάνω μέρος της οθόνης λόγω προβλημάτων με τον οδηγό nouveau. Εάν σας επηρεάζει το πρόβλημα, μπορείτε να απενεργοποιήσετε το άρθρωμα πυρήνα nouveau ώστε να εκτελέσετε τον εγκαταστάτη και μετά να το ενεργοποιήσετε ξανά μόλις το σύστημα εγκατασταθεί ή αναβαθμιστεί.</p><p>
+To disable the kernel module, once you boot from the installation media,
+select the 'Installation' entry in grub and press 'e' to edit the
+parameters. Then go to the line starting with 'linux' (or 'linuxefi')
+and add <code class="literal">brokenmodules=nouveau</code> at the end. Now press
+F10 to continue booting with the new parameter.  After the system is
+installed, you can re-enable the nouveau module by editing
+<code class="filename">/etc/modprobe.d/50-blacklist.conf</code> and removing the
+entry that blacklists nouveau.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384076291728"></a>5.3. Samba Έκδοση 4.1</h3></div></div></div><p>
+    Samba version 4.1 shipped with openSUSE 13.1 does not include
+    support to operate as an Active Directory style domain
+    controller. This functionality is currently disabled, as it lacks
+    integration with system-wide MIT Kerberos.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384076289888"></a>5.4. Ρύθμιση Postfix</h3></div></div></div><p>Στην openSUSE 12.3, το <code class="filename">SuSEconfig.postfix</code> μετονομάστηκε ως <code class="filename">/usr/sbin/config.postfix</code>. Εάν θέσετε μεταβλητές του sysconfig στο <code class="filename">/etc/sysconfig/postfix</code> ή στο <code class="filename">/etc/sysconfig/mail</code>, πρέπει να εκτελέσετε χειροκίνητα την <code class="filename">/usr/sbin/config.postfix</code> ως διαχειριστές.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384076278576"></a>5.5. xinetd: Καταγραφή στο αρχείο καταγραφών συστήματος</h3></div></div></div><p>Η νέα προεπιλογή για την εντολή <span class="command"><strong>xinetd</strong></span> αλλάζει το προεπιλεγμένο αρχείο καταγραφής από <code class="filename">/var/log/xinetd.log</code> στο αρχείο καταγραφής συστήματος. Αυτό σημαίνει ότι όλα τα μηνύματα από την <span class="command"><strong>xinetd</strong></span> θα εμφανίζονται σε ένα αρχείο καταγραφής συστήματος ως μονάδα υπηρεσίας και ως πληροφορία επιπέδου καταγραφής.</p><p>Εάν θέλετε να επιστρέψετε στον παλιό τρόπο, βρείτε ένα κατάλληλο απόσπασμα στο <code class="filename">/etc/xinetd.conf</code>. Το πρότυπο για το logrotate script για το <code class="filename">xinetd.log</code> βρίσκεται στο <code class="filename">/usr/share/doc/packages/xinetd/logrotate</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384076269648"></a>5.6. Apache Έκδοση 2.4</h3></div></div></div><p>
+    Apache 2.4 features various changes in the configuration files.  For
+    more information about upgrading from a previous version, see <a class="ulink" href="http://httpd.apache.org/docs/2.4/upgrading.html" target="_top">http://httpd.apache.org/docs/2.4/upgrading.html</a>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="idm140384076267360"></a>5.7. tomcat: Καταγραφή στο αρχείο καταγραφών συστήματος</h3></div></div></div><p>Τα scripts εκκίνησης tomcat δεν γράφουν πια το αποτέλεσμα στο <code class="filename">/var/log/tomcat/catalina.out</code>. Όλα τα μηνύματα πλέον ανακατευθύνονται στο αρχείο καταγραφής συστήματος μέσω του <code class="systemitem">tomcat.service</code> (<code class="systemitem">tomcat-jsvc.service</code>) και το επίπεδο πληροφορίας καταγραφής.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.darktable"></a>5.8. Darktable: Απαιτείται Ανανέωση Αρχείων Λανθάνουσας Μνήμης</h3></div></div></div><p>Εάν αναβαθμίζετε από προηγούμενη έκδοση σε openSUSE 13.1, τα παλιά αρχεία λανθάνουσας μνήμης μπορεί πλέον να μην λειτουργούν. Σε αυτή την περίπτωση είναι απαραίτητη η αφαίρεση του <code class="filename">~/.cache/darktable/mipmaps</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.locate"></a>5.9. Locate: Replacing findutils-locate by mlocate</h3></div></div></div><p>
+    The <span class="command"><strong>mlocate</strong></span> tool is the replacement for
+    <span class="command"><strong>findutils-locate</strong></span>.  In the default configuration
+    <span class="command"><strong>mlocate</strong></span> behave the same as
+    <span class="command"><strong>findutils-locate</strong></span>.  Because of an improved
+    permission handling, it could take up to 24 hours, until the
+    database file will become available to regular users.
+   </p><p>
+    In case you encounter a "Permission denied" message shortly
+    after installing <span class="command"><strong>mlocate</strong></span>, run
+   </p><pre class="screen">/etc/cron.daily/mlocate.cron</pre><p>
+    as root once.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.kdeandbt"></a>5.10. KDE και Bluetooth</h3></div></div></div><p>
+The Bluetooth stack is provided by Bluez 5 (a major,
+backwards-incompatbile version), a necessary upgrade for GNOME desktop
+and some other components of the base system. Unfortunately, the KDE
+workspace only supports Bluez version 4 in its currently-released
+versions.
+   </p><p>
+Therefore, the openSUSE KDE community team offers an unofficial
+Bluedevil package providing at least basic functionality such as device
+pairing or support for bluetooth mice; Some other features are known not
+to work jet, like file transfer.
+   </p><p>
+For the moment, bugs should not be filed against Bluetooth support in KDE as
+the Bluez 5 port of Bluedevil is still ongoing.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.apparmor"></a>5.11. Ρυθμίσεις AppArmor και Δικαιωμάτων</h3></div></div></div><p>
+    AppArmor is enabled by default. This means more security, but might
+    prevent services from working, if you run them in unexpected
+    ways. If you encounter strange permission problems, try to switch
+    the AppArmor profile for the affected service to complain mode with:
+   </p><pre class="screen">aa-complain /usr/bin/$your_service</pre><p>
+    Complain mode means: allow everything, and log things that
+    the profile would not allow.
+   </p><p>
+    Even if it helps report it as a bug!  We want to fix AppArmor
+    profiles to cover also corner cases.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.skype"></a>5.12. Skype</h3></div></div></div><p>
+PulseAudio 4.0 exposes a bug in the current version of Skype for Linux
+(v4.2). Until Skype is fixed and updated, run <span class="command"><strong>skype</strong></span>
+from the command line:
+   </p><pre class="screen">PULSE_LATENCY_MSEC=60 skype</pre><p>Για περισσότερες πληροφορίες σχετικά με το σφάλμα, δείτε <a class="ulink" href="http://arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/" target="_top">http://arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.131.autoyast"></a>5.13. AutoYaST</h3></div></div></div><p>
+    If the autoyast profile contains entries in an
+    <code class="literal">&lt;add-on&gt;</code> section there is a bug triggered that
+    prevents information in the profile from being transferred from the
+    first stage into the second stage. Therefore, in this case all
+    second stage configuration steps are skipped, which normally leads
+    to more or less completely unusable installations.
+   </p><p>
+    As a temporary workaround, avoid using
+    <code class="literal">&lt;add-on&gt;</code> sections in profiles with AutoYaST in
+    openSUSE 13.1.
+   </p></div></div></div></body></html>

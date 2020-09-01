@@ -1,0 +1,387 @@
+
+ <h1>openSUSE 12.1 Udgivelsesnoter</h1>
+ <p>Version:</p>
+ <p>12.1.12 (2012-04-13)</p>
+
+ <p>Copyright © 2012 Novell, Inc.</p>
+ <p>Det er tilladt at kopiere, distribuere og modificere dette dokument ifølge betingelserne i GNU Free Documentation License, Version 1.2 eller enhver senere version, der udgives af Free Software Foundation; uden nogen ufravigelige sektioner, ingen forsidetekst og ingen bagsidetekst. En kopi af licensen er includeret som filen <tt>fdl.txt</tt>.</p>
+
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ <p>Hvis du opgraderer fra en ældre version til denne openSUSE-udgivelse, så se de forrige udgivelsesnoter der er oplistet her: <tt>http://en.opensuse.org/openSUSE:Release_Notes</tt></p>
+
+ 
+ 
+ <p>Disse udgivelsesnoter dækker de følgende områder:</p>
+
+ <ul>
+  <li>
+   <p>Diverse: Disse indgange inkluderes automatisk fra openFATE, systemet til håndtering af nye funktioner og krav (<tt>http://features.opensuse.org</tt>).</p>
+   <p>I øjeblikket oplistes disse tekststumper usorteret—vi arbejder på forbedringer.</p>
+  </li>
+
+ <li>
+   <p>Installation: Læs dette hvis du vil lave en frisk installation.</p>
+  </li>
+
+ <li>
+   <p>Generelt: Information som alle bør læse.</p>
+  </li>
+
+  <li><p>Systemopgradering: Problemstillinger relateret til processen hvis du kører en systemopgradering fra den forrige udgivelse til denne openSUSE-version.</p></li>
+
+  <li><p>Teknisk: Denne sektion indeholder et antal tekniske ændringer og forbedringer for den erfarne bruger.</p></li>
+ </ul>
+
+
+  <h2>Diverse</h2>
+    <h3>YaST konfigurationsmodul til AppArmor</h3><p>FATE-kategorier for <tt>https://features.opensuse.org/305278</tt>: AppArmor, YaST.</p>
+
+<p>Konfigurationsmodulet til AppArmor findes nu i sektionen "Sikkerhed og brugere" i YaST kontrolcenter.</p>
+
+
+  
+
+
+
+
+ 
+  <h2>Installation</h2>
+  
+  
+   <h3>For detaljeret information om installation</h3>
+
+  <p>Se 
+  "openSUSE dokumentationen"
+ som der henvises til nedenfor, for detaljeret information om installation.</p>
+  
+
+ 
+
+ 
+  <h2>Generelt</h2>
+
+  
+  
+   <h3>openSUSE-dokumentation</h3>
+
+   <ul>
+    <li><p>Du finder en trin-for-trin installationsvejledning i Start-Up, såvel som introduktion til skrivebordsmiljøerne KDE og GNOME samt LibreOffice-suiten. Basale administrationstemaer såsom udrulning og håndtering af software og en introduktion til bash-skallen er også omfattet.</p></li>
+    <li>
+     <p>Reference dækker administration og systemkonfiguration i detaljer og forklarer hvordan diverse netværkstjenester sættes op.</p>
+    </li>
+    <li><p>Security Guide introducerer basale koncepter indenfor systemsikkerhed og dækker sikkerhedsaspekter både lokalt og på netværket.</p></li>
+    <li><p>System Analysis og Tuning Guide hjælper med detektion og løsning af problemer samt optimering.</p>
+    </li>
+    <li><p>Virtualization with KVM giver en introduktion til opsætning og administration af virtualisering med værktøjerne KVM, libvirt og QEMU.</p>
+    </li>
+   </ul>
+  
+
+  
+   <h3>GNOME 3</h3>
+   
+   <p>GNOME 3 leverer et nyt design af skrivebordet som er anderledes end GNOME 2. Derfor, og for at brugere kan drage fordel af ændringerne, vil udseendet og opførslen fra dit GNOME 2-skrivebord ikke blive migreret automatisk. System Settings kan bruges til at tilpasse GNOME 3, og et avanceret værktøj (<tt>gnome-tweak-tool</tt>) er til rådighed til mere detaljeret tilpasning.</p>
+   <p>Standardtilstanden i GNOME 3 kræver understøttelse af 3D-acceleration i grafikdriverne. Når 3D-acceleration ikke er tilgængelig, så bruger GNOME 3 fallback-tilstanden. Hvis det viser sig at GNOME 3 detekterer tilgængelig 3D-acceleration, men at standardtilstanden er ubrugelig, så er du sandsynligvis stødt på en fejl i grafikdriverne. Du kan gennemtvinge fallback-tilstanden med argumentet "<tt>gnome.fallback=1</tt>" på bootlinjen i grub.</p>
+   <p>Hvis du bruger fallback-tilstanden kan du tilpasse panelerne ved at holde Alt nede mens du højreklikker på et panel.</p>
+   <p>For en kort beskrivelse af mange GNOME Shell-funktioner, såsom tastebindinger, træk og slip-muligheder og særlige værktøjer, se <tt>https://live.gnome.org/GnomeShell/CheatSheet</tt>.</p>
+  
+
+  
+   <h3>Lydsystemet PulseAudio</h3>
+   
+   <p>Lydsystemet PulseAudio er nu integreret i hele systemet og aktiveret som standard for nye installationer. Hvis du deaktiverede det i en tidligere udgivelse og nu ønsker at aktivere det, så se variablen <tt>PULSEAUDIO_ENABLE</tt> i <tt>/etc/sysconfig/sound</tt>:</p>
+
+   <p>Sæt <tt>PULSEAUDIO_ENABLE</tt> til "<tt>yes</tt>" for at aktivere PA overalt med magt. At sætte  <tt>PULSEAUDIO_ENABLE</tt> til "<tt>no</tt>" vil deaktivere PulseAudio helt, og at sætte det til "custom" betyder at beholde en brugertilpasset konfiguration uberørt.</p>
+  
+
+
+  
+   
+   <h3>Btrfs</h3>
+   <p>
+Btrfs is the next generation filesystem for Linux. As a preview of the new
+technology, you can create btrfs partitions or setup your whole system with
+btrfs.
+   </p>
+
+   <p>
+Note: The btrfs filesystem is in active development, and check and
+repair functionality ("scrub") has been added just recently. "Scrub" is
+aimed to verify data and metadata assuming the tree structures are fine;
+it can (and should) be run periodically on a mounted filesystem: it runs
+as a background process during normal operation.
+   </p>
+
+   <p>
+Thus we advice to carefully consider, which data to put on the filesystem, and
+follow the usual suggestions for redundancy and backup. For more
+information, see <tt>http://btrfs.wiki.kernel.org</tt>.
+   </p>
+
+   <p>
+Btrfs contains many interesting new features, including the ability to
+take snapshots of your filesystem. Snapshot and rollback is supported by
+<tt>snapper</tt>, and already integrated into openSUSE package
+and system management tools such as <tt>zypper</tt> and YaST.
+   </p>
+  
+
+  
+   
+   <h3>Logon til Windows Domæne med KDM</h3>
+
+   <p>SUSEs KDEM-tema tillader ikke logon til Windows-domæner.</p>
+
+   <p>For at arbejde udenom det problem, så sæt DISPLAYMANAGER_KDM_THEME til en tom streng i  <tt>/etc/sysconfig/displaymanager</tt> for at bruge standard KDM-tema:</p>
+
+   <pre>DISPLAYMANAGER_KDM_THEME=""</pre>
+  
+
+  
+   <h3>Oracle Java er tilgængeligt eksternt</h3>
+   <p>Pakken java-1_6_0-sun er ikke længere en del af openSUSE pga. en licensændring. Vi leverer OpenJDK som erstatning. openSUSE-brugere som foretrækker at bruge den binære version af Oracle JDK frem for openSUSEs openJDK-pakke, kan downloade Oracles version fra <tt>http://oracle.com/java</tt>.</p>
+  
+
+  
+   
+   <h3>Removing 32-Bit XEN Hypervisor</h3>
+
+   <p>
+    The 32-Bit XEN Hypervisor is no longer available. Use the 64-bit
+    XEN Hypervisor instead for 32-bit and 64-bit virtual guests.
+   </p>
+  
+
+  
+  
+  
+   <h3>Formatting Large Disk Partitions on Windows 8 Server</h3>
+   <p>
+Installing a guest hosted on Windows 8 Server may fail when a large
+virtual disk image (larger than 50 GB) in <tt>.vhdx</tt>
+format is assigned to the guest. To workaround this issue use either
+virtual disk images with a fixed size, or create the dynamically sized
+disk image using Powershell.
+   </p>
+
+   <dl>
+    
+     <dt>Technical Background about the Issue</dt>
+     <dd>
+      <p>
+The <tt>.vhd</tt> and <tt>.vhdx</tt> images are
+sparse files.  When a dynamic <tt>.vhdx</tt> is created with a
+maximum size of 127 GB, the initial size is about 256 KB.  Because the
+default block size for <tt>.vhdx</tt> files is 32 MB, writing
+one 512 byte sector will result in a 32 MB section of the sparse file
+being allocated.  When <tt>ext3</tt> is allocating the MBR,
+the super block, the backup super blocks, inodes, directories, etc.,
+space is being allocated in the sparse file.  Because of
+<tt>ext3</tt>'s suboptimal IO, how the data structures are
+laid out on disk, and the default block size, a large partition of the
+<tt>.vhdx</tt> file is allocated just by formatting.  The
+workaround is to create a <tt>.vhdx</tt> file with a 1 MB block
+size rather than the default 32 MB.
+      </p>
+      <p>
+Changing the block size in the UI is not implemented. It can only be
+changed when the VHDx file is created through Powershell.  To create a
+VHD with a modified block size, use this Powershell script (all in one
+line):
+      </p>
+
+<pre>New-VHD -Path C:\MyVHDs\test.vhdx -SizeBytes (127GB)
+  -Dynamic -BlockSizeBytes (1MB) -VHDFormat vhdx</pre>
+     </dd>
+    
+   </dl>
+  
+
+  
+   
+   <h3>Configuring Postfix</h3>
+
+   <p>
+    There is no <tt>SuSEconfig</tt> postfix module any more.
+    Thus <tt>SuSEconfig</tt> no longer writes the postfix
+    configuration files, if you set sysconfig variables in
+    <tt>/etc/sysconfig/postfix</tt> or
+    <tt>/etc/sysconfig/mail</tt>.
+   </p>
+
+   <p>
+    After modifying sysconfig variables you must manually run
+    <tt>/usr/sbin/SuSEconfig.postfix</tt> as
+    <tt>root</tt>.
+   </p>
+  
+
+ 
+
+ 
+  <h2>Systemopgradering</h2>
+
+  
+   
+   <h3>Mounting Encrypted Partitions with dm-crypt</h3>
+
+   <p>
+On ancient SUSE systems, <tt>/etc/cryptotab</tt> was used
+for setting up devices with the now deprecated cryptoloop
+technology. 12.1 only supports <tt>/etc/crypttab</tt>
+(without 'o'!), which uses dm-crypt. Users who still have a
+<tt>cryptotab</tt> from the old days should run
+<tt>convert_cryptotab</tt>, which prints instructions about
+what to put in <tt>crypttab</tt> and
+<tt>fstab</tt> instead.
+   </p>
+  
+
+  
+   
+   <h3>Mounting Encrypted Partitions Using systemd</h3>
+   <p>
+If encrypted partitions are not automatically mounted when using
+systemd, the <tt>noauto</tt> flag in
+<tt>/etc/fstab</tt> for these partitions could be the
+cause. Replacing this flag with <tt>nofail</tt> will fix
+it. For instance, change the following line:</p>
+
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre>
+<p>til</p>
+<pre>/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre>
+  
+ 
+
+
+ 
+  <h2>Teknisk</h2>
+  
+  
+   <h3>Initialisering af grafik med KMS (Kernel Mode Setting)</h3>
+   
+   <p>Med openSUSE 11.3 skiftede vi til KMS (Kernel Mode Setting) for Intel-, ATI- og NVIDIA-grafikkort, hvilket nu er vores standard. Hvis du støder på problemer med KMS-driverunderstøttelsen (intel, radeon, nouveau), så deaktivér KMS ved at føje <tt>nomodeset</tt> til kernens boot-kommandolinje. For at angive dette permant, føjes det til kerne-kommandolinjen i  <tt>/boot/grub/menu.lst</tt>. Dette tilvalg sørger for at det det passende kernemodul (intel, radeon, nouveau) indlæses med  <tt>modeset=0</tt> i <tt>initrd</tt>, dvs. KMS deaktiveres.</p>
+
+   <p>I de sjældne tilfælde hvor indlæsning af DRM-modulet fra <tt>initrd</tt> er et generelt problem og ikke relateret til KMS, er det endda muligt at deaktivere indlæsning af DRM-modulet i <tt>initrd</tt> fuldstændigt. For at gøre dette så sæt sysconfig-variablen <tt>NO_KMS_IN_INITRD</tt> til <tt>yes</tt> via YAST, hvilket så genopretter <tt>initrd</tt> bagefter. Genstart din maskine.</p>
+
+   <p>Med Intel uden KMS falder X-serveren tilbage til <tt>fbdev</tt>-driveren (<tt>intel</tt>-driveren understøtter kun KMS). Alternativt er driveren "intellegacy" (pakken <tt>xorg-x11-driver-video-intel-legacy</tt>) som stadig understøtter UMS (User Mode Setting), tilgængelig til forældede grafikkort. For at bruge den, så redigér <tt>/etc/X11/xorg.conf.d/50-device.conf</tt> og ændr driver-indgangen til  <tt>intellegacy</tt>.</p>
+
+   <p>Med ATI til tidsvarende GPU'er faldes tilbage til <tt>radeonhd</tt>. Med NVIDIA uden KMS bruges <tt>nv</tt>-driveren (<tt>nouveau</tt>-driveren understøtter kun KMS). Bemærk at nyere ATI- og NVIDIA-grafikkort falder tilbage til <tt>fbdev</tt>, hvis du angiver <tt>nomodeset</tt> som bootparameter til kernen.</p>
+  
+
+  
+   
+   <h3>Radeon HDMI-lydoutput deaktiveret</h3>
+
+   <p>På grund af problemer med noget hardware er HDMI-lydoutput blevet slået fra som standard med radeon-driveren, hvilket er standarddriveren til AMD/ATI-grafikkort.</p>
+   <p>Det kan genaktiveret ved at tilføje <tt>radeon.audio=1</tt> som kerneparameter. I YaST, gå til System -&gt; Bootloader, klik så på Redigér på standardindgangen og tilføj følgende til slutningen af "Valgfri parameter for kernekommandolinje":</p>
+
+   <pre>radeon.audio=1</pre>
+
+   <p>Genstart så for at anvende ændringen.</p>
+   <p>Alternativt kan brugere installere den proprietære driver fra AMD. For mere information, se <tt>http://en.opensuse.org/SDB:ATI_drivers</tt>.</p>
+  
+
+  
+   
+   <h3>Boot med systemd eller sysvinit</h3>
+
+   <p>Som standard booter openSUSE nu med brug af <tt>systemd</tt>. Hvis du får problemer kan du skrifte til den gamle metode med <tt>sysvinit</tt> ved at trykke på F5-tasten ved boot.</p>
+
+   <p>Hvis du vil skifte permanent til <tt>sysvinit</tt> så installér pakken <tt>sysvinit-init</tt>. For at skifte tilbage til <tt>systemd</tt>, så geninstallér pakken <tt>systemd-sysvinit</tt>.</p>
+  
+
+  
+   
+   <h3>systemd: Angivelse af parametre til opstart af tjenester</h3>
+   <p><tt>systemctl</tt> understøtter kun "standard"-parametre (se <tt>http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</tt>).</p>
+   <p>Du kan omgå denne opførsel ved at kalde opstarts-scriptet direkte, f.eks.:</p>
+   <pre>cd /etc/init.d
+./apache2 &lt;dine_parametre&gt;
+</pre>
+  
+
+  
+   
+   <h3>systemd: Nedlukning af systemet</h3>
+
+   <p>For at stoppe og slukke systemet når der bruges <tt>systemd</tt>, så kør <tt>halt -p</tt> eller <tt>shutdown -h now</tt> på kommandolinjen eller brug knappen til nedlukning som findes i dit skrivebordsmiljø.</p>
+
+   <p>Bemærk: En ren <tt>halt</tt> vil ikke lukke systemet korrekt ned.</p>
+  
+
+  
+   
+   <h3>systemd: Gør brug af tmpfs: /run, /var/run, /media, osv.</h3>
+
+   <p>systemd monterer flere mapper der kun er beregnet til at indeholde flygtige data, som tmpfs-filsystemer: Disse maper er <tt>/run</tt>, <tt>/var/run</tt>, <tt>/var/lock</tt>, og <tt>/media</tt>. Se <tt>http://lwn.net/Articles/436012/</tt> for baggrundsinformation.</p>
+
+   <p>Bemærk: Gem ikke filer der skal overleve en genstart i <tt>/run</tt>, <tt>/var/run</tt>, osv.</p>
+  
+
+  
+   
+   <h3>systemd: Rydning af mapper (/tmp og /var/tmp)</h3>
+
+   <p>systemd vedligeholder mapper som angivet i <tt>tmpfiles.d</tt>-mapperne og i <tt>/lib/systemd/system/systemd-tmpfiles-clean.timer</tt>. For mere information, se man-siden <tt>tmpfiles.d</tt>.</p>
+
+   <p>Som standard rydder systemd <tt>tmp</tt>-mapper dagligt som konfigureret i <tt>/usr/lib/tmpfiles.d/tmp.conf</tt>:</p>
+
+<pre>d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre>
+
+    <p>Bemærk: systemd overholder ikke sysconfig-variable i <tt>/etc/sysconfig/cron</tt> såsom  <tt>TMP_DIRS_TO_CLEAR</tt>.</p>
+  
+
+  
+   
+   <h3>CUPS 1.5</h3>
+   <p>CUPS 1.5 kommer med ændringer der ikke er bagud kompatible:</p>
+   <ul>
+    <li>
+     <p>CUPS understøtter ikke længere konfigurationsfilerne fra CUPS 1.1 <tt>~/.cupsrc</tt> eller <tt>~/.lpoptions</tt>. Brug i stedet <tt>~/.cups/client.conf</tt> og <tt>~/.cups/lpoptions</tt> som blev introduceret med CUPS 1.2.</p>
+    </li>
+    <li>
+     <p>Skemalægningen kræver nu at filtre og backends har gruppe-skriverettigheder deaktiveret for at opnå øget sikkerhed. Hvis du bruger printerdrivere fra tredjepart fra producenter med for løse filrettigheder, skal du justere rettighederne manuelt.</p>
+    </li>
+   </ul>
+  
+
+  
+   
+   <h3>Kommandoen rename</h3>
+   <p>I henhold til GNU kodestandarder, behandler kommandoen rename nu alle strenge der begynder med en bindestreg som kommandolinje-tilvalg. For at undgå dette, så adskil tilvalg fra andre argumenter med <tt>--</tt> som følgende:</p>
+   <pre>#!/bin/bash
+for f in *.jpg ; do
+  rename -- ".jpg" "-$RANDOM.jpg" $f ;
+done
+</pre>
+  
+
+  
+   
+   <h3>Kommandolinjegrænseflade til NetworkManager</h3>
+
+   <p><tt>cnetworkmanager</tt> er ikke længere tilgængelig—brug<tt>nmcli</tt> i stedet. For migrationsinformation, se <tt>http://repo.or.cz/w/cnetworkmanager.git/blob_plain/HEAD:/nmcli-migration.html</tt>.</p>
+  
+
+  
+   
+   <h3>rpm: %_topdir ændret for ikke-root-brugere</h3>
+
+   <p>Almindelige brugere kan ikke længere skrive til <tt>/usr/src/packages</tt>. <tt>rpmbuild</tt> bruger nu <tt>~/rpmbuild</tt> som standard. For at ændre mappen, føj en linje som følgende til <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir /et/andet/sted</pre>
+   <p>For at bruge undermappen <tt>foo</tt> i <tt>$HOME</tt> så tilføj følgende til <tt>~/.rpmmacros</tt>:</p>
+   <pre>%_topdir %{getenv:HOME}/foo</pre>
+  
+ 
+

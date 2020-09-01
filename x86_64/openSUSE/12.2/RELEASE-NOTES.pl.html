@@ -1,0 +1,116 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>openSUSE 12.2 Release Notes</title><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="pl" class="article"><div class="titlepage"><div><div><h2 class="title"><a name="id303838"></a><span class="phrase">openSUSE 12.2</span> Release
+  Notes</h2></div></div><hr></div><p>Wersja:</p><p>12.2.9 (2012-10-22)</p><p>Copyright © 2012 Novell, Inc.</p><p>Udziela się zgody na kopiowanie, dystrybucję i/lub modyfikacje tego dokumentu zgodnie z zasadami licencji GNU Free Documentation Licence w wersji 1.2 lub późniejszej wydanej przez Free Software Foundation; bez stałych sekcji oraz bez tekstów z okładek przedniej i tylnej. Kopia licencji została dołączona jako plik <code class="filename">fdl.txt</code>.</p><p>Jeśli openSUSE jest aktualizowane ze starszej wersji, zobacz wcześniejsze informacje o wydaniu zamieszczone na: <a class="ulink" href="http://en.opensuse.org/openSUSE:Release_Notes" target="_top">http://en.opensuse.org/openSUSE:Release_Notes</a></p><p>Niniejsze informacje opisują następujące zagadnienia:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="xref" href="#misc" title="1. Informacje dodatkowe">Sekcja 1, „Informacje dodatkowe”</a>:
+    These entries are automatically included from openFATE, the Feature- and
+    Requirements
+    Management System (<a class="ulink" href="http://features.opensuse.org" target="_top">http://features.opensuse.org</a>).</p><p>Niedostępne</p></li><li class="listitem"><p><a class="xref" href="#installation" title="2. Instalacja">Sekcja 2, „Instalacja”</a>:
+    Read this if you want to install the system from scratch.</p></li><li class="listitem"><p><a class="xref" href="#general" title="3. Informacje ogólne">Sekcja 3, „Informacje ogólne”</a>:
+    Information that everybody should read.</p></li><li class="listitem"><p><a class="xref" href="#upgrade" title="4. Aktualizacja systemu">Sekcja 4, „Aktualizacja systemu”</a>:
+    Issues related to the process if you run a system upgrade from the previous
+    release to this openSUSE version.</p></li><li class="listitem"><p><a class="xref" href="#technical" title="5. Techniczne">Sekcja 5, „Techniczne”</a>:
+    This section contains a number of technical changes
+    and enhancements for the experienced user.</p></li></ul></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="misc"></a>1. Informacje dodatkowe</h2></div></div></div><p>Niedostępne</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="installation"></a>2. Instalacja</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="id387902"></a>2.1. Szczegółowe informacje o instalacji</h3></div></div></div><p>For detailed installation information, see the <span class="quote">„<span class="quote">openSUSE
+  Documentation</span>”</span> referenced below.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="general"></a>3. Informacje ogólne</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.115.documentation"></a>3.1. Dokumentacja openSUSE</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>W podręczniku "Start-Up" można znaleźć zarówno instrukcję instalacji krok po kroku, jak i instrukcje dla środowiska KDE i Gnome oraz pakietu LibreOffice. Przewodnik zawiera także podstawowe zagadnienia związane z administracją systemu, tj. jak zarządzanie oprogramowaniem oraz wstęp do powłoki bash.</p></li><li class="listitem"><p>Podręcznik "Reference" opisuje szczegółowo zagadnienia związane z administracją i konfiguracją systemu oraz wyjaśnia jak skonfigurować różnorodne usługi sieciowe.</p></li><li class="listitem"><p>Podręcznik "Security Guide" pozwoli poznać podstawowe pojęcia związane z bezpieczeństwem systemu, zarówno lokalnym jak i sieciowym.</p></li><li class="listitem"><p>Podręcznik "System Analysis and Tuning" pomaga w wykrywaniu i rozwiązywaniu problemów oraz w optymalizacji.</p></li><li class="listitem"><p>Podręcznik "Virtualization with KVM" zawiera wprowadzenie do konfiguracji i zarządzania wirtualizacją za pomocą narzędzi KVM, libvirt oraz QEMU.</p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="id396853"></a>3.2. Pre-installation Memory Test Incorrectly Identifies Good
+   Memory as Bad</h3></div></div></div><p>
+The pre-installation memory test (<span class="command"><strong>memtest</strong></span>) on the
+openSUSE 12.2 media got miscompiled. It reports errors in test 7 on good RAM
+modules. Use the openSUSE 12.1 media if you need to run
+<span class="command"><strong>memtest</strong></span>.
+   </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="upgrade"></a>4. Aktualizacja systemu</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.122.zypper-openssh"></a>4.1. Remote Update via "zypper dup"</h3></div></div></div><p>
+When upgrading from openSUSE 12.1 (or older), openSSH connections will be
+closed when the new openssh package is upgraded. If you are upgrading with
+"zypper dup" over SSH, run "zypper dup" inside a resumable terminal
+multiplexer (e.g., "screen" or "tmux") so that you can re-connect easily,
+or at least immune to connection loss (e.g., via "nohup").
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.122.sysv"></a>4.2. sysvinit Deprecated</h3></div></div></div><p>
+    Some desktop components depend on services provided by systemd
+    only. So while openSUSE 12.2 still has basic support for booting a
+    system with sysvinit as fallback, sysvinit nevertheless is
+    considered deprecated and probably even faulty or broken in some
+    regard. If you have any issues with a sysvinit booted system, use
+    systemd before filing bug reports.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.122.cryptoloop"></a>4.3. mount and losetup Dropped Support for cryptoloop</h3></div></div></div><p>
+    <span class="command"><strong>cryptoloop</strong></span> has known weaknesses and is therefore
+    considered obsolete in favor of <span class="command"><strong>dm-crypt</strong></span> since
+    years. <span class="command"><strong>mount</strong></span> (e.g., via <code class="filename">/etc/fstab</code>)
+    and <span class="command"><strong>losetup</strong></span> now finally dropped support for
+    <span class="command"><strong>cryptoloop</strong></span>. This means old fstab entries that use
+    <span class="command"><strong>cryptoloop</strong></span> to access encrypted containers no longer work
+    this way. The containers can still be accessed with
+    <span class="command"><strong>dm-crypt</strong></span> (<code class="filename">/etc/crypttab</code>), though.
+    Refer to <a class="ulink" href="http://en.opensuse.org/Encrypted_Filesystems" target="_top">http://en.opensuse.org/Encrypted_Filesystems</a> for
+    examples how to use to the new method.
+</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="crypto-part-systemd"></a>4.4. Montowanie szyfrowanych partycji przy pomocy systemd</h3></div></div></div><p>Jeżeli szyfrowane partycje nie są montowane automatycznie przy pomocy systemd, to przyczyną takiego zachowania może być flaga <code class="literal">noauto</code> w pliku <code class="filename">/etc/fstab</code>. Zamiana tej flagi na <code class="literal">nofail</code> może rozwiązać problem. Na przykład, należy zmienić poniższą linię:</p><pre class="screen">/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,noauto 0 2</pre><p>na</p><pre class="screen">/dev/mapper/cr_sda3  /home   ext4    acl,user_xattr,nofail 0 2</pre></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="technical"></a>5. Techniczne</h2></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.114.kms"></a>5.1. Inicjalizacja grafiki z KMS (Ustawienia trybu jądra)</h3></div></div></div><p>
+With openSUSE 11.3 we switched to KMS (Kernel Mode Setting) for Intel, ATI
+and NVIDIA graphics, which now is our default. If you encounter problems with
+the KMS driver support (intel, radeon, nouveau), disable KMS by adding
+<code class="literal">nomodeset</code> to the kernel boot command line.
+
+To set this permanently using Grub 2, the default boot loader, add it to
+the <code class="literal">GRUB_CMDLINE_LINUX_DEFAULT</code> kernel default load
+options line in your <code class="filename">/etc/default/grub</code> text file as
+root and running the terminal command
+   </p><pre class="screen">sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg</pre><p>
+for the changes to take effect.  Else, for Grub Legacy, add it to the kernel
+command line in <code class="filename">/boot/grub/menu.lst</code>, also done as root.
+
+This option makes sure the appropriate kernel module (intel, radeon,
+nouveau) is loaded with <code class="literal">modeset=0</code> in
+<code class="filename">initrd</code>, i.e. KMS is disabled.
+   </p><p>
+In the rare cases when loading the DRM module from <code class="filename">initrd</code>
+is a general problem and unrelated to KMS, it is even possible to disable
+loading of the DRM module in <code class="filename">initrd</code> completely.  For this
+set the <code class="literal">NO_KMS_IN_INITRD</code> sysconfig variable to
+<code class="literal">yes</code> via YaST, which then recreates
+<code class="filename">initrd</code> afterwards. Reboot your machine.</p><p>Na platformie Intel bez KMS Xserver powraca do sterownika <code class="literal">fbdev</code> (sterownik <code class="literal">intel</code> wspiera tylko KMS); opcjonalnie, istnieje sterownik  "intellegacy" (pakiet <code class="systemitem">xorg-x11-driver-video-intel-legacy</code>), który nadal wspiera UMS (ustawienia trybu użytkownika). Aby go użyć należy edytować plik <code class="filename">/etc/X11/xorg.conf.d/50-device.conf</code> zmieniając wpis dotyczący sterownika na <code class="literal">intellegacy</code>.</p><p>Na platformie ATI dla obecnych GPU powraca do <code class="literal">radeonhd</code>. Dla NVIDIA bez KMS, używany jest sterownik <code class="literal">nv</code> (sterownik <code class="literal">nouveau</code> wspiera jedynie KMS).</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.121.systemd-sysvinit"></a>5.2. Booting with Deprecated sysvinit</h3></div></div></div><p>By default, openSUSE now boots using
+   <span class="command"><strong>systemd</strong></span>.  In case of trouble, you can try to switch back
+   to the deprecated <span class="command"><strong>sysvinit</strong></span> way by pressing the F5
+   key on the boot.  For more information about limitations when booting
+   with sysvinit, see <a class="xref" href="#sec.122.sysv" title="4.2. sysvinit Deprecated">Sekcja 4.2, „sysvinit Deprecated”</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.121.systemd-ctl"></a>5.3. systemd: podawanie parametrów uruchamiania usługi</h3></div></div></div><p><span class="command"><strong>systemctl</strong></span> obsługuje tylko "standardowe" parametry (zobacz <a class="ulink" href="http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities" target="_top">http://www.freedesktop.org/wiki/Software/systemd/Incompatibilities</a>).</p><p>Można ominąć nowe zachowanie, wywołując skrypt startowy bezpośrednio, na przykład:</p><pre class="screen">cd /etc/init.d
+./apache2 &lt;your_parameters&gt;
+</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.121.systemd-shutdown"></a>5.4. systemd: Zamykanie systemu</h3></div></div></div><p>Aby wstrzymać i wyłączyć system używając <span class="command"><strong>systemd</strong></span>, należy użyć polecenia <span class="command"><strong>halt -p</strong></span> lub <span class="command"><strong>shutdown -h now</strong></span> w linii poleceń lub skorzystać z przycisku zamykania systemu dostępnego w środowisku graficznym.</p><p>Uwaga: Polecenie <span class="command"><strong>halt</strong></span> bez podania parametrów nie zamknie systemu prawidłowo.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.121.systemd-tmpfs"></a>5.5. systemd: Wykorzystanie tmpfs: /run, /var/run, /media, etc.</h3></div></div></div><p>systemd montuje także katalogi, które zawierają tylko ulotne dane, a systemy plikowe tmpfs: <code class="filename">/run</code>, <code class="filename">/var/run</code>, <code class="filename">/var/lock</code>, i <code class="filename">/media</code> są takim katalogami. Dodatkowe informacje dostępne są pod adresem <a class="ulink" href="http://lwn.net/Articles/436012/" target="_top">http://lwn.net/Articles/436012/</a>.</p><p>Uwaga: Nie należy przechowywać plików które mają przetrwać ponownie uruchomienie komputera w <code class="filename">/run</code>, <code class="filename">/var/run</code>, itd.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.121.systemd-tmpdir"></a>5.6. systemd: Czyszczenie katalogów (/tmp i /var/tmp)</h3></div></div></div><p>systemd zarządza katalogami tak jak określono w katalogu <code class="filename">tmpfiles.d</code> oraz w pliku <code class="filename">/lib/systemd/system/systemd-tmpfiles-clean.timer</code>. Więcej informacji dostępnych jest na stronach podręcznika <code class="filename">tmpfiles.d</code>.</p><p>Domyślnie, systemd czyści katalogi <code class="filename">tmp</code> codziennie, tak jak skonfigurowano w pliku <code class="filename">/usr/lib/tmpfiles.d/tmp.conf</code>:</p><pre class="screen">d /tmp 1777 root root 10d
+d /var/tmp 1777 root root 30d
+</pre><p>Uwaga: systemd nie bierze pod uwagę ustawień sysconfig zapisanych w pliku <code class="filename">/etc/sysconfig/cron</code>, takich jak <code class="literal">TMP_DIRS_TO_CLEAR</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.122.mount-usb"></a>5.7. Auto-mounting USB Media</h3></div></div></div><p>
+    Gnome and Xfce now use <code class="literal">udisks2</code> to automatically
+    mount USB media under <code class="filename">/run/media/$USER</code>.  KDE
+    still uses udisks version 1 and mounts USB media under
+    <code class="filename">/media</code>.
+
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="sec.122.loopback"></a>5.8. Specifying Partitions for Loopback Devices</h3></div></div></div><p>
+With Kernel 3.4 there are two ways to have partitions for loopback
+devices. The first is with <code class="literal">max_part</code> and the second is
+with the <code class="literal">-P</code> parameter to <span class="command"><strong>losetup</strong></span>.
+They behave slightly differently since <code class="literal">-P</code> will
+dynamically allocate minor numbers for each device (including adding or
+removing them on the fly with <span class="command"><strong>blockdev
+--rereadpt</strong></span>). Using the <code class="literal">max_part</code> parameter
+causes each loop device to allocate that many minor numbers for each
+device.
+   </p><p>
+So when you use <code class="literal">max_part=8</code> and do not change
+<code class="literal">max_loop</code>, which defaults to <code class="literal">8</code>, you
+are using all of the allocated minor numbers with the first device.
+   </p><p>
+The solution is either to use <code class="literal">-P</code> or to
+<span class="emphasis"><em>also</em></span> use <code class="literal">max_loop</code>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="id397552"></a>5.9. Timezone Information in <code class="filename">/etc/adjtime</code></h3></div></div></div><p>
+The third line of <code class="filename">/etc/adjtime</code> now contains
+information whether your BIOS clock runs on UTC or in local timezone
+(previously stored in <code class="literal">HWCLOCK</code> in
+<code class="filename">/etc/sysconfig/clock</code>).
+   </p><p>
+If <code class="filename">/etc/adjtime</code> contains wrong drift information
+(for example after fixing date and time with <span class="command"><strong>ntpdate</strong></span>
+or have <span class="command"><strong>ntpd</strong></span> running), set the variable
+<code class="literal">USE_ADJUST</code> to "<code class="literal">no</code>" in
+<code class="filename">/etc/sysconfig/clock</code>.
+   </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="id397619"></a>5.10. GNU tar Defaults to Creating POSIX-compliant Archives</h3></div></div></div><p>
+GNU tar now defaults to <code class="literal">--format=posix</code> and create
+POSIX-compliant archives with PAX extended headers.  Check whether your
+scripts and applications are compatible with this format.
+   </p><p>
+    The former behavior (and upstream default) can
+    be restored by setting the environment:
+   </p><pre class="screen">TAR_OPTIONS='--format=gnu'</pre><p>
+    or
+   </p><pre class="screen">TAR_OPTIONS='--pax-option=delete=[ac]time*'</pre></div></div></div></body></html>

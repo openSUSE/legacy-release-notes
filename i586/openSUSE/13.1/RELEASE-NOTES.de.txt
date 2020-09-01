@@ -1,0 +1,420 @@
+openSUSE 13.1 Versionshinweise
+
+Version: 13.1.10 (2014-01-08)
+
+Copyright © 2007-2009; Marko Schugardt <mail.sapex@gmx.de>, 2008-2009;
+Hermann-Josef Beckers <hj.beckers@web.de>; Christian Boltz
+<opensuse@cboltz.de>, 2009; Sarah Julia Kriesch
+<sarah-julia.kriesch@gmx.de>, 2013 Übersetzer-Credits: Michael Skiba
+(trans@michael-skiba.de)
+
+Copyright © 2013 SUSE LLC
+
+Sie können dieses Dokument unter den Bedingungen der
+GNU-Free-Documentation-Lizenz (Version 1.2 oder jede später durch die
+Free-Software-Foundation veröffentlichte Version) kopieren, verteilen und/
+oder bearbeiten; mit keinen invarianten Abschnitten, Deckblatt- und
+Rückseitentexten. Eine Kopie der Lizenz ist als Datei fdl.txt enthalten.
+
+---------------------------------------------------------------------------
+
+1. Verschiedenes
+2. Installation
+
+    2.1. Für detaillierte Installationshinweise
+
+3. Allgemeines
+
+    3.1. openSUSE-Dokumentation
+    3.2. Entfernte YaST-Module
+    3.3. UEFI—Unified Extensible Firmware Interface
+    3.4. UEFI, GPT, und MS-DOS-Partitionen
+    3.5. Systemstart im Secure Boot-Modus
+    3.6. Adobe Reader (acroread) und andere PDF-Betrachter
+
+4. System Aktualisierung
+
+    4.1. Eine Aktualisierung auf die neue Version mit Zypper (dup)
+        erfordert eine Bereinigung von /etc/fstab
+    4.2. SYSLOG_DAEMON-Variable entfernt
+    4.3. doppelte Netzwerkschnittstellen
+
+5. Technisch
+
+    5.1. Initialisierung der Grafik mit KMS (Kernel Mode Setting)
+    5.2. Müll auf dem Bildschirm während der Installation mit dem
+        Nouveau-Treiber
+    5.3. Samba-Version 4.1
+    5.4. Postfix einrichten
+    5.5. xinetd: Protokollierung ins System-Log
+    5.6. Apache Version 2.4
+    5.7. Tomcat: Protokollierung ins System-Log
+    5.8. Darktable: Aktualisierung der Cache-Dateien notwendig
+    5.9. Locate: Ersetzung von findutils-locate durch mlocate
+    5.10. KDE und Bluetooth
+    5.11. AppArmor und Einstellen von Berechtigungen
+    5.12. Skype
+    5.13. AutoYaST
+
+Wenn Sie von einer älteren Version auf diese openSUSE-Veröffentlichung
+aktualisieren, schauen Sie bitte in die hier http://de.opensuse.org/
+Versionshinweise aufgeführten Versionshinweise.
+
+Diese Versionshinweise decken die folgenden Bereiche ab:
+
+  o Abschnitt 1, „Verschiedenes": Diese Einträge wurden automatisch aus
+    openFATE (http://features.opensuse.org) integriert.
+
+    N/A
+
+  o Abschnitt 2, „Installation": Lesen Sie diesen Abschnitt, wenn Sie das
+    System komplett neu installieren möchten.
+
+  o Abschnitt 3, „Allgemeines": Informationen die jeder lesen sollte.
+
+  o Abschnitt 4, „System Aktualisierung": Probleme die auftreten können,
+    wenn von einer vorherigen auf diese openSUSE-Version aktualisiert
+    werden soll.
+
+  o Abschnitt 5, „Technisch": Dieser Abschnitt enthält eine Reihe
+    technischer Änderungen und Erweiterungen für erfahrenere Benutzer.
+
+1. Verschiedenes
+
+N/A
+
+2. Installation
+
+2.1. Für detaillierte Installationshinweise
+
+Detaillierte Informationen finden Sie unter Abschnitt 3.1,
+„openSUSE-Dokumentation".
+
+3. Allgemeines
+
+3.1. openSUSE-Dokumentation
+
+In Start-Up finden Sie Schritt-für-Schritt-Anleitungen, sowie Einführungen
+in die KDE- und Gnome-Desktops und die LibreOffice-Suite. Ebenfalls
+enthalten sind grundlegende Administrationsthemen, wie Einsatz- und
+Software-Management und eine Einführung in die bash-Shell.
+
+Die Dokumentation finden Sie, nach dem installieren des Pakets
+opensuse-startup_$LANG, unter /usr/share/doc/manual/opensuse-manuals_$LANG
+oder online unter http://doc.opensuse.org.
+
+3.2. Entfernte YaST-Module
+
+Die folgenden YaST-Module waren veraltet und wurden heutzutage selten
+benutzt:
+
+  o yast2-autofs (Autofs)
+
+  o yast2-dbus-client
+
+  o yast2-dirinstall (Installation in Verzeichnis)
+
+  o yast2-fingerprint-reader (Fingerabdruck-Leser)
+
+  o yast2-irda (Infrarot-Gerät)
+
+  o yast2-mouse (Maus in Textkonsole (GPM))
+
+  o yast2-phone-services (Fax, Anrufbeantworter)
+
+  o yast2-power-management (Energieverwaltung)
+
+  o yast2-profile-manager (Profil-Verwaltung)
+
+  o yast2-sshd (SSHD-Einrichtung)
+
+  o yast2-tv (TV-Karte)
+
+Der Hauptgrund für das Entfernen war die Verringerung des Pflegeaufwands
+und dafür die Konzentration auf andere mehr genutzte Module.
+
+3.3. UEFI—Unified Extensible Firmware Interface
+
+Bevor Sie openSUSE auf einem System installieren, welches UEFI (Unified
+Extensible Firmware Interface) zum Booten verwendet, sollten Sie unbedingt
+nach empfohlenen Firmwareaktualisierungen Ihres Hardwareherstellers suchen
+und diese, falls verfügbar, installieren. Ein vorinstalliertes Windows 8
+ist ein starkes Indiz, dafür dass Ihr System UEFI nutzt.
+
+Hintergrund: Einige UEFI-Firmware haben Fehler, die dazu führen dass das
+System dauerhaft nicht mehr startet, wenn zu viele Daten in den
+UEFI-Speicherbereich geschrieben werden. Niemand weiß allerdings wirklich
+wie viel "zu viel" ist. openSUSE minimiert das Risiko, indem es nicht mehr
+Daten schreibt, als für das Starten des Betriebssystems absolut notwendig.
+Die UEFI-Firmware bekommt also nur den Ort gesagt, an dem es den
+openSUSE-Bootloader findet. Neue Linux-Kernel-Funktionen, welche den
+UEFI-Speicherbereich nutzen um Boot- und Absturzinformationen (pstore) zu
+hinterlegen, wurden standardmäßig deaktiviert. Dennoch wird empfohlen alle
+Firmwareaktualisierungen zu installieren, die vom Hardwarehersteller
+empfohlen werden.
+
+3.4. UEFI, GPT, und MS-DOS-Partitionen
+
+Zusammen mit der EFI/UEFI-Spezifikation kam eine neue Art der
+Partitionierung auf: GPT (GUID Partition Table). Dieses neue Schema benutzt
+global eindeutige Bezeichner (128-Bit-Werte, dargestellt als 32
+hexadezimale Ziffern), um Geräte und Partitionstypen zu identifizieren.
+
+Zusätzlich erlaubt die UEFI-Spezifikation auch herkömmliche MBR-Partitionen
+(MS-DOS). Die Linux-Bootloader (ELILO oder GRUB2) versuchen, automatisch
+eine GUID für diese herkömmlichen Partitionen zu erzeugen, und schreiben
+sie in die Firmware. So eine GUID-Änderung kann häufig passieren und
+verursacht ein Überschreiben in der Firmware. Das Überschreiben besteht aus
+zwei verschiedenen Operationen: Entfernen des alten Eintrags und Erzeugen
+eines neuen Eintrags, der den ersten ersetzt.
+
+Moderne Firmware hat einen Garbage Collector (Aufräum-Mechanismus), der den
+Speicherplatz freigibt, der von alten Einträgen belegt war. Es kommt zu
+Problemen, wenn eine fehlerhafte Firmware die alten Einträge nicht
+wegräumt. Das kann dazu führen, dass das System nicht mehr startet.
+
+Die Lösung ist einfach: Konvertieren Sie die herkömmlichen MBR-Partitionen
+in neue GPT-Partitionen, um das Problem gänzlich zu vermeiden.
+
+3.5. Systemstart im Secure Boot-Modus
+
+Dies betrifft nur Maschinen im UEFI-Modus, welche Secure Boot aktiviert
+haben.
+
+Die neue Version des Shim-Boot-Loaders erlaubt es mehr Maschinen mit
+aktiviertem Secure Boot zu starten, als mit openSUSE 12.3. Bei Problemen
+sollten Sie jedoch erst das BIOS Ihrer Maschine auf die neueste Version
+aktualisieren. Wenn die BIOS-Aktualisierung nicht hilft, melden Sie das
+Modell Ihrer Maschine im Wiki (http://en.opensuse.org/openSUSE:UEFI). Dann
+können wir es für die nächste Veröffentlichung beachten.
+
+3.6. Adobe Reader (acroread) und andere PDF-Betrachter
+
+Adobe stellt keine (Sicherheits-) Updates für Adobe Reader (acroread) mehr
+zur Verfügung. Deshalb wurde das acroread-Paket aus der Distribution
+entfernt, um die openSUSE-Benutzer zu schützen.
+
+openSUSE beinhaltet verschiedene PDF-Anzeigeprogramme wie Okular, Evince
+und Poppler-Werkzeuge. Diese Programme werden aktiv gepflegt und erhalten
+Sicherheitsupdates von openSUSE und den Programm-Autoren.
+
+Finden Sie weitere detaillierte Informationen über neue Funktionen auf
+http://en.opensuse.org/AppArmor/Changes_AppArmor_2_1.
+
+4. System Aktualisierung
+
+4.1. Eine Aktualisierung auf die neue Version mit Zypper (dup) erfordert
+eine Bereinigung von /etc/fstab
+
+Bei der Aktualisierung mit zypper dup (die YaST-Aktualisierung macht das
+automatisch) sollten die Benutzer die folgenden /etc/fstab-Einträge
+entfernen, falls vorhanden:
+
+tmpfs   /dev/shm
+devpts  /dev/pts
+sysfs   /sys sysfs
+proc    /proc proc
+
+Das ist besonders wichtig für Gnome-Benutzer, weil sonst das Gnome-Terminal
+nicht funktioniert mit "grantpt failed: Operation not permitted". Diese
+Einhängepunkte werden von systemd verwaltet und sollten nicht länger in /
+etc/fstab enthalten sein.
+
+4.2. SYSLOG_DAEMON-Variable entfernt
+
+Die SYSLOG_DAEMON-Variable wurde entfernt. Bisher wurde Sie genutzt um den
+syslog-Daemon auszuwählen. Beginnend mit openSUSE 12.3 kann nur noch eine
+syslog-Implementierung gleichzeitig auf dem System installiert werden und
+wird dann automatisch für die Verwendung ausgewählt.
+
+Sehen Sie in der syslog(8)-Manpage nach, für weitere Details.
+
+4.3. doppelte Netzwerkschnittstellen
+
+Die aktuelle Version von systemd benutzt eine neue Konvention für die
+Zuordnung von vorhersehbaren Namen zu den Netzwerkschnittstellen. YaST ist
+entsprechend angepasst.
+
+Einige Meldungen lassen einen Fehler in YaST vermuten, wenn die Umwandlung
+von einem Namensschema in das andere stattfindet. Wenn eine
+Netzwerkschnittstelle zwei verschiedene Namen hat, sind Sie von diesem
+Fehler betroffen. In diesem Fall entfernen Sie die verschiedenen
+Netzwerkschnittstellen aus /etc/sysconfig/network und konfigurieren Sie das
+Netzwerk erneut über YaST.
+
+Weitere Informationen über vorhersehbare Netzwerkschnittstellen-Namen
+finden Sie auf http://www.freedesktop.org/wiki/Software/systemd/
+PredictableNetworkInterfaceNames/.
+
+5. Technisch
+
+5.1. Initialisierung der Grafik mit KMS (Kernel Mode Setting)
+
+Mit erscheinen von openSUSE 11.3 wechselten wir zu KMS (Kernel Mode
+Setting) für Intel, ATI und NVIDIA-Grafik, was nun unser Standard ist. Wenn
+Probleme mit der KMS-Treiber-Unterstützung (Intel, radeon, nouveau)
+auftreten, deaktivieren Sie KMS indem Sie nomodeset in der
+Kernel-Boot-Befehlszeile hinzufügen. Um diese Einstellung mit Grub 2, dem
+Standard-Bootloader, dauerhaft zu speichern, fügen Sie diesen Eintrag als
+root bei GRUB_CMDLINE_LINUX_DEFAULT in Ihre /etc/default/grub ein und
+führen anschließend, ebenfalls als root, den folgenden Befehl in einem
+Terminal aus:
+
+sudo /usr/sbin/grub2-mkconfig --output=/boot/grub2/grub.cfg
+
+damit die Änderungen in kraft treten. Für das alte Grub, fügen Sie als
+root, den Eintrag in dem Kernel-Parameter in /boot/grub/menu.lst hinzu.
+Diese Option stellt sicher das die passenden Kernel-Module (intel, radeon,
+nouveau) mit dem Parameter modset=0 in initrd geladen werden, d.h. KMS ist
+deaktiviert.
+
+In den seltenen Fällen kann das Laden des DRM-Modul von initrd ein
+generelles Problem darstellen. Dazu kann dann die Variable NO_KMS_IN_INITRD
+via YaST → System → 'Editor für /etc/sysconfig' im Menü/Reiter: 'Kernel'
+dauerhaft von Standardwert: no auf yes abgeändert werden. Beim Beenden wird
+initrd neu eingelesen und die geänderte Einstellung beim System-Neustart
+aktiv.
+
+Auf Intel Hardware ohne KMS (Kernel-Mode-Setting), fällt X.org auf den
+fbdev Treiber (die Intel-Treiber unterstützt nur KMS) zurück. Alternativ
+dazu steht für ältere GPUs von Intel, der "intellegacy" Treiber
+(xorg-x11-driver-video-intel-legacy Paket) zur Verfügung. Um diesen
+benutzen zu können, muss /etc/X11/xorg.conf.d/50-device.conf editiert
+werden. Dazu den Eintrag des Treibers nun auf: intellegacy abändern.
+
+Auf ATI Hardware für aktuelle GPUs fällt das System wieder auf radeonhd
+zurück um mit NVIDIA Hardware ohne KMS den nvTreiber zu verwenden (der
+Nouveau-Treiber unterstfbdev Treiber nur verwenden, wenn nomodeset als
+Kernel-Boot-Parameter gesetzt wird.
+
+5.2. Müll auf dem Bildschirm während der Installation mit dem
+Nouveau-Treiber
+
+Auf einigen Systemen mit NVIDIA-Grafikkarten kann das Installationsprogramm
+im oberen Teil des Bildschirms Müll anzeigen wegen Problemen mit dem
+standardmäßigen nouveau-Treiber. Wenn Sie von diesem Problem betroffen
+sind, können Sie das nouveau-Kernel-Modul während der Installation
+deaktivieren, und wieder aktivieren, nachdem das System installiert oder
+aktualisiert ist.
+
+Um das Kernel-Modul zu deaktivieren, wählen Sie den Eintrag 'Installation'
+aus, wenn Sie vom Installationsmedium booten, und drücken Sie 'e', um die
+Parameter zu ändern. Gehen Sie zu der Zeile, die mit 'linux' (oder
+'linuxefi') beginnt, und fügen Sie brokenmodules=nouveau am Ende hinzu.
+Drücken Sie nun F10, um mit dem neuen Parameter weiter zu booten. Nachdem
+das System installiert ist, können Sie nouveau wieder aktivieren, indem Sie
+die Datei /etc/modprobe.d/50-blacklist.conf ändern, und den Eintrag
+entfernen, der nouveau sperrt.
+
+5.3. Samba-Version 4.1
+
+Die mit openSUSE 13.1 ausgelieferte Version 4.1 von Samba enthält nicht die
+Funktion, als Active Directory-artiger Domänen-Controller zu agieren. Diese
+Funktionalität ist derzeit deaktiviert, weil es ihr an der Integration mit
+dem im System verwendeten MIT-Kerberos fehlt.
+
+5.4. Postfix einrichten
+
+Mit openSUSE 12.3 wurdeSuSEconfig.postfix in /usr/sbin/config.postfix
+umbenannt. Wenn Sie sysconfig-Variablen in /etc/sysconfig/postfix oder /etc
+/sysconfig/mail eintragen, müssen Sie /usr/sbin/config.postfix manuell, als
+root, ausführen.
+
+5.5. xinetd: Protokollierung ins System-Log
+
+Der neue Standard für xinetd ändert das vorgegebene Ziel zur
+Protokollierung von /var/log/xinetd.log zum System-Log. Das bedeutet, dass
+alle Nachrichten von xinetd in einem System-Log als Einrichtungsdaemon und
+im Log-Level info erscheinen werden.
+
+Wenn Sie zum alten Weg zurück wechseln wollen, finden Sie einen passenden
+Schnipsel in /etc/xinetd.conf. Die Vorlage des Logrotate-Skripts für
+xinetd.log kann in /usr/share/doc/packages/xinetd/logrotate gefunden
+werden.
+
+5.6. Apache Version 2.4
+
+Apache 2.4 bringt verschiedene Änderungen in den Konfigurationsdateien mit
+sich. Weitere Informationen über eine Aktualisierung von einer älteren
+Version finden Sie unter http://httpd.apache.org/docs/2.4/upgrading.html.
+
+5.7. Tomcat: Protokollierung ins System-Log
+
+Die Start-Skripte vom Tomcat schreiben die Ausgabe nicht mehr ins /var/log/
+tomcat/catalina.out. Alle Nachrichten werden jetzt zum System-Log über
+tomcat.service (tomcat-jsvc.service) and das Log-Level info umgeleitet.
+
+5.8. Darktable: Aktualisierung der Cache-Dateien notwendig
+
+Bei einer Aktualisierung von einer vorherigen Version zu openSUSE 13.1
+können alte Cache-Dateien nicht mehr arbeiten. In diesem Fall ist das
+Löschen von ~/.cache/darktable/mipmaps notwendig.
+
+5.9. Locate: Ersetzung von findutils-locate durch mlocate
+
+Das mlocate-Programm ist der Ersatz für findutils-locate. In der
+Standard-Konfiguration verhält sich mlocate genau so wie findutils-locate.
+Wegen einer verbesserten Rechteverwaltung kann es bis zu 24 Stunden dauern,
+bis die Datenbankdatei für normale Benutzer verfügbar ist.
+
+Falls Sie kurz nach der Installation von mlocate eine Meldung "keine
+Berechtigung" bekommen, starten Sie
+
+/etc/cron.daily/mlocate.cron
+
+einmalig als root.
+
+5.10. KDE und Bluetooth
+
+Die Bluetooth-Unterstützung wird von Bluez 5 bereitgestellt (eine nicht
+abwärtskompatible Hauptversionsänderung), die nötig ist für den
+Gnome-Desktop und einige andere Basissystemkomponenten. Leider unterstützt
+KDE in den derzeit veröffentlichten Versionen nur die Bluez-Version 4.
+
+Deshalb bietet das openSUSE-KDE-Community-Team ein inoffizielles
+Bluedevil-Paket an, das wenigstens Basisfunktionen wie die Geräte-Kopplung
+oder Unterstützung für Bluetooth-Mäuse bietet. Einige andere Funktionen,
+wie die Dateiübertragung, funktionieren bekanntermaßen noch nicht.
+
+Derzeit sollten keine Fehler in der Bluetooth-Unterstützung in KDE gemeldet
+werden, da die Umstellung von Bluedevil auf Bluez 5 noch in Arbeit ist.
+
+5.11. AppArmor und Einstellen von Berechtigungen
+
+AppArmor ist standardmäßig eingeschaltet. Das bedeutet mehr Sicherheit,
+verhindert aber evtl. das Funktionieren von Diensten, wenn Sie diese auf
+weniger übliche Art und Weise verwenden. Wenn Sie seltsame
+Berechtigungsprobleme haben, versuchen Sie, AppArmor für den betroffenen
+Dienst in den "complain"-Modus zu schalten, mit:
+
+aa-complain /usr/bin/$ihr_dienst
+
+"complain"-Modus bedeutet: Erlaube alles und protokolliere Dinge, die das
+Profil nicht erlauben würde.
+
+Auch wenn das hilft, melden Sie es bitte als Fehler! Wir möchten die
+AppArmor-Profile auch für Randfälle anpassen.
+
+5.12. Skype
+
+PulseAudio 4.0 bringt einen Fehler in der aktuellen Version von Skype für
+Linux (v4.2) zum Vorschein. Bis das in Skype behoben und Skype aktualisiert
+ist, starten Sie skype von der Kommandozeile:
+
+PULSE_LATENCY_MSEC=60 skype
+
+Weitere Informationen über diesen Fehler finden Sie unter http://
+arunraghavan.net/2013/08/pulseaudio-4-0-and-skype/.
+
+5.13. AutoYaST
+
+Wenn das AutoYast-Profil Einträge in einer <Zusatz-Produkt>-Sektion
+(Add-On) enthält, tritt ein Fehler auf, der verhindert, dass Informationen
+aus dem Profil von der ersten in die zweite Stufe übertragen werden.
+Deshalb werden in diesem Fall in der zweiten Stufe alle
+Konfigurationsschritte übersprungen, was normalerweise zu mehr oder weniger
+komplett unbenutzbaren Installationen führt.
+
+Um das Problem zu umgehen, vermeiden Sie es, <Zusatz-Produkt>-Sektionen in
+AutoYast-Profilen mit openSUSE 13.1 zu benutzen.
+
